@@ -1,0 +1,45 @@
+Rhythm Tweezers
+---------------------
+0x100 X - Spawn Hair
+	0 - Normal (8th note)
+	1 - Normal (16th note) (Successive)
+	2 - Normal (32nd note) (Unused)
+	3 - Curly (8th note)
+	4 - Curly (16th note) (Unused)
+	5 - Curly (32nd note) (Unused)
+
+0x101 - Reset Hairs (At the beginning of a pattern)
+
+0x102 - Spawn Tweezers (2 Beats before the start of the pattern)
+
+0x103 - Seen at the end of a pattern (Supposedly if 0x106 0 is 0?)
+
+0x104 - Despawn Vegetable (every next one will have debug numbers for eyes, unused)
+
+0x105 X - Next Vegetable
+	0 - Onion
+	1 - Potato
+	2 - Glitchy Background
+
+0x106 0 - Seen at the end of every patern (Seems to do nothing and possibly unused)
+
+0x107 X - "Don't Peek" Sign (Leftover)
+0x107<1> - Remove Sign
+	0 - Both Sides
+	1 - Right Side
+	2 - Left Side
+
+0x108<X> - Vegetable Change
+	0 - Disable
+	1 - Enable
+---------------------
+Subs:
+0x56 - "Don't Peek" Sign (Both Sides) (Leftover)
+0x57 - "Don't Peek" Sign (Left) (Unused)
+0x58 - "Don't Peek" Sign (Right) (Unused)
+0x59 - Rhythm Tweezers (Practice)
+0x5A - Rhythm Tweezers 2 (Practice)
+0x5B - Rhythm Tweezers (Real Game)
+0x5C - Rhythm Tweezers 2 (Real Game)
+0x5D - Rhythm Tweezers (Skipped Practice)
+0x5E - Rhythm Tweezers 2 (Skipped Practice)
