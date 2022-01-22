@@ -110,7 +110,7 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 0x20 - ??? (Unused?)
 
 0x21 X - Tempo
-	X = Sets tempo to X/256 of the original tempo
+	X = Sets tempo to X/256 of the original tempo(?) Original docs said that, but it's more likely it just sets the tempo to X bpm, not relative to anything (iirc only Quiz Show uses it with a value of 0x78, which is 120 in hex)
 
 0x22 X, Y, Z - Tempo, Relative
 	X = Multiplies tempo by X/256
@@ -276,12 +276,12 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 	0xE - Right-Hand Remix
 	0xF - Unused Remix
 	0x10 - Final Remix
-0x2B<1> X - Check Setup
+0x2B<1> X - Check Version
 	X = Game Scene ID
 	Used in Super Samurai Slice to determine which sfx to play for enemies coming out
 	from the bottom (water, bush or none)
 
-0x2C - ???
+0x2C - Stops most of the scene visually, some animations are still functional. Cues and some camera movements go on normally. (Unused)
 0x2C<1> - Appears only once in sub56 in Airboarder, seems to set condvar to 1 for something. Seems to be used to stop beat animations at some point
 
 0x2D X - Pausing
@@ -333,7 +333,7 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 	U = Which Screen
 	0+- Top (Unused)
 	2 - Bottom
-	V = ??? (Used value: 1)
+	V = Slot (Used value: 1)
 	W = Animation (Used value: "cmn_star00")
 	X = X Position (Used value: 0)
 	Y = Y Position (Used value: 0)
@@ -342,7 +342,7 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 
 0x3C - ??? (Unused?)
 
-0x3D - ??? (Unused?)
+0x3D - Stop any effect that's currently on screen
 
 0x3E<0> X, Y, Z - set_layout X, Y, Z
 0x3E<1> X - effect_layout X (Sets coditional variable to 1 if X is changing)
@@ -412,12 +412,15 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 
 0x52 - Set condvar to 1 if something involving .aacs is true (does it check to see if the .aac is fully loaded and playable?) (Used in sub 1)
 
-0x53 0xXXXXXXX - Practice theme
-	X = ID of the Sound Effect (Used values: 0x100019D, 0x100019E, 0x100019F)
+0x53 0xXXXXXXX - Set practice theme (or looping music in general, e.g. Sick Beats) to be used in 0x55. Almost always paired with 0x23. Seems to apply the tempo of the tempo file of 0xXXXXXXX regardless of the presence of 0x23
+	X = Sound Effect ID (Used values: 0x100019D, 0x100019E, 0x100019F)
+(The SFX value for songs match values with their respective tempo file. Ex: 0x1000132 is both the SFX value for Working Dough's practice theme and its tempo file value.)
 
 0x54 0xXXXXXXX, Y - Play sfx as music (used in Quiz Show) (can be faded out with 0x57)
 	X = ID of the Sound Effect (Used values: 0x100019D, 0x100019E, 0x100019F)
-	Y = ??? (Used value: 1)
+	Y = Use corresponding tempo file(?) (Used value: 1)
+	0 - No (Tempo will be default 120 bpm?) (Unused)
+	1 - Yes
 
 0x55 X - Play sfx loaded in 0x53 (Used value: 1)
 
@@ -426,11 +429,13 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 0x57 X - Music Fade Out
 	X = Time in ticks (Used values: 0, 0x1E, 0x30, 0x32, 0x78, 0xC0)
 
-0x58 X, Y - Music Fade Out (Used in Sneaky Spirits practice and Quiz Show)
+0x58 X, Y - Music Volume Control (Used in Sneaky Spirits practice and Quiz Show)
 	X = Volume (Used values: 0, 0xFF, 0x100)
 	Y = Time in Ticks (Used values: 1, 0x3C, 0x60)
 
-0x59 - ??? (Unused?)
+0x59 X, Y - Something related to SFX (Used in sub 0xC)
+	X = ??? (Used value: 0x100)
+	Y = ??? (Used value: 0)
 
 0x5A<W> X, Y, Z - All SFX volume control (Used in Flock Step)
 	W = Type(?)
@@ -444,9 +449,12 @@ If it's not equal to any, run default. Use break to not run cases you don't want
 
 0x5C - ??? (Unused?)
 
-0x5D - set_sfx X, Y
-	X = Slot to put SFX Group in
-	Y = Group Name of SFX
+0x5D X, u"Y" - set_sfx X, Y (Assign BCGRP (SFX file) to slot)
+0x5D<1> - ??? (Unused?)
+0x5D<2> u"Y" - Set SFX to be assigned to a slot (Used everywhere except medley remix asset loading, Quiz Show, Big Rock Finish, and Endless games)
+0x5D<3> X - Assign SFX specified in 0x5D<2> to slot
+	X = Slot number (Vanilla game has a range between 0 and 9)
+	Y = BCGRP file name
 
 0x5E - ??? (Unused?)
 
@@ -599,23 +607,24 @@ Used only in Big Rock Finish and Built to Scale in the original game
 
 0x6E - ??? (Unused?)
 
-0x6F<X> - "Skip" in the Pause menu
+0x6F<X> - "Skip" in Pause menu
 	0 - Disable
 	1 - Enable
 
-0x70 - ???
+0x70 X - Related to "Skip" in Pause menu
+	X = ??? (Used value: 0)
 0x70<1> 0xXX - Send player to sub 0xXX after skip
 
-0x71 - ??? (Unused?)
+0x71 - Disables or resets something related to "Skip" in the Pause menu?
 
 0x72<X> - "Start Over" in the Pause menu (Unused?)
 	0 - Disable
 	1 - Enable
 
-0x73 - ??? (Unused?)
+0x73 - Related to "Start Over" in Pause menu? (Unused?)
 0x73<1> 0xXX - Send player to sub 0xXX after starting over (Unused?) (Super broken?)
 
-0x74 - ??? (Unused?)
+0x74 - Disables or resets something related to "Start over" in the Pause menu? (Unused?)
 
 0x75 X - Sets your "Start Over" state
 	0 - You are not starting over
@@ -637,9 +646,13 @@ This is why prologues only play the first time you enter a game
 	0 - Disable
 	1 - Enable
 
-0x77 X, Y - ???
+0x77 X, Y - Opacity of Solid Color
 	X = ??? (Used values: 1)
-	Y = ??? (Used values: 0x78, 0xC0, 0xFF)
+	Y = Transparency (Used values: 0x78, 0xC0, 0xFF) (0 is invisible, 0xFF is opaque)
+0x79 X, Y - Depth of Solid Color
+	X = ??? (Used values: 1)
+	Y = Depth level (Used values: 0, 1, 8)
+	Ex: Setting Y to 0x10 in Micro-Row will place the overlay behind the Microbes, but in front of the background
 
 0x78 X, R, G, B - Solid Color (RGB values)
 	X = ??? (Used values: 1)
@@ -655,7 +668,7 @@ This is why prologues only play the first time you enter a game
 	X = ??? (Used values: 1)
 	Y = ??? (Used values: 0, 1)
 
-0x7B<W> X, Y, Z - Fade (Gradual)
+0x7B<W> X, Y, Z - Opacity of Solid Color (Gradual)
 	W = ???
 	X = Which Screen
 	0 - Bottom
@@ -684,17 +697,14 @@ This is why prologues only play the first time you enter a game
 
 0x80<0> - rotate N, A
 0x80<1> - rotate_gradual N, I, S, D, A
-
 	N = View (Usually 3 or 4)
 	2 - Translations persist after scene transitions
-
 	I = Interpolation
 	0 - Linear
 	1 - Fast Start
 	2 - Fast End
 	3 - Fast Middle (Smooth)
 	4 - Slow Middle
-	
 	S = Intensity of I
 	D = Duration
 	X, Y = x and y zoom factor (0x100 = default)
@@ -743,7 +753,7 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 	2 - Set condvar to the amount of lives for Life Goal
 	3 - ??? (Unused)
 	4 - ??? (Unused)
-	5 - Used in every game at the start
+	5 - Apply "Tempo Up!" speed. Glitchy if triggered outside of Challenge Land
 	6 - ??? (Unused)
 	7 - Sets condvar to 1 if playing the "Wario... Where?" Challenge Train courses
 
@@ -771,7 +781,10 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 0x8A<7> - ??? Used just before a scene transition in remixes, sets condvar to 1, if 1 goes to a stop
 
 0x8B X, Y - "You"
-	X = ??? (Used value: 0)
+	X = ???
+	0 - ??? Used in almost every instance of the operation
+	1 - ??? (Unused)
+	2 - ??? Found in subs 0xB and 0xD
 	Y = "You"
 	0 - Disable
 	1 - Enable
@@ -819,7 +832,10 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 
 0x96 - ??? (Unused?)
 
-0x97 - ??? (Unused?)
+0x97 X, Y - Score thereshold (Unused?)
+	X - OK threshold
+	Y - Superb threshold
+Multiply the hex form of the score needed for the rating by 0x64 to get the value you want. For example, to set the OK threshold to 90, multiply 90's hex form, 0x5A, by 0x64 to get 0x2328. Use 0x2328 for your X value
 
 0x98 X, Y - ??? (Related to Results text)
 
@@ -855,9 +871,15 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 0x9D<1> - Show Rhythm Help Display
 
 0x9E X, Y, Z - Rhythm Help Display
-0x9E<1> - ??? (Unused)
-0x9E<2> 0, 0, 0x18 - ???
-0x9E<3> - ??? (Used in Rhythm Tweezers, Rat Race, Animal Acrobat, Super Samurai Slice, Glee Club, Frog Hop, Fan Club, Fillbots, Exhibition Match, Flock Step)
+0x9E<1> X, Y - Blink specified button
+0x9E<2> X, Y, Z - Expect input at specified button in Z ticks, if something's there
+	X = Slot (0 ~ 7)
+	Y = Row
+	0 - Row 1
+	1 - Row 2
+	2 - Row 3 (Unused)
+	Z = Time in ticks (Used value: 0x18)
+0x9E<3> - ??? (Used in games where you have to hold a button)
 0x9E<4> X, Y, Z - Enlarge buttons (for offbeats) (X = even numbers, Z = 1 always)
 	X = Slot (0 ~ 7)
 	Y = Row
@@ -879,14 +901,18 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 	0xB+- Glitchy
 
 0x9F X - "X more times!"/"X more sets!" (Used values: 1, 2, 3, 4, 0x10)
-0x9F<1> - ??? (Used when 0xA2<2> is 0)
-0x9F<4> - Sets condvar to 1 if successfully completed the set(?)
+0x9F<1> - Decrease "X more times" counter
+0x9F<2> - Sets condvar to however many times the counter has been decreased minus 1 (Used in See-Saw's practice to stop byte execution)
+0x9F<3> - Sets condvar to whatever 0x9F was most recently set to (Unused)
+0x9F<4> - Sets condvar to 1 if all inputs were hit since the last 0xA2
 0x9F<5> X - Performance check
-	0 - Start
-	1 - End
-	2 - ???
-	0x58 - ???
-	0x63 - ???
+	0 - Inputs count towards decreasing "X more times!" counter
+	1 - Decrease "X more times!" counter if input(s) are hit AND inputs affected by 0x9F<5> 0 OR 2 were also hit since the last 0xA2
+	2 - Track performance
+	3 - Used in Karate Man Combos! and Karate Man Senior
+	0x58 - Used in Bunny Hop, seems to freeze the scene
+	0x63 - Inputs will not count towards decreasing the "X more times!" counter
+0x9F<6> - Sets condvar to whatever 0x9F<5> was most recently set to (Unused)
 0x9F<7> - Show the "X more times!"/"X more sets!" text
 0x9F<8> X, Y - Position of the "X more times!"/"X more sets!" text
 	X = X position (Used values: -0xBE, 0, 0xBE)
@@ -900,21 +926,31 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 0xA0 8, 0x50983C, 3 - ??? (Used in Shoot-'em-up practice)
 0xA0<1> X - ??? (Used in Figure Fighter practice) (Used values: 4, 6)
 
-0xA1<X> - Set related 
-	0 - ???
+0xA1<X> - Set related
+	0 - Start current set?
 	1 - End current set
-	2 - ???
+	2 - ??? (Found only in Rhythm Tweezers and its sections in remixes)
 
 0xA2<X> - Performance
-	0 - Check Performance
-	1 - ???
+	0 - Set unknown flag to 0 (Start/restart tracking performance)
+	1 - Set unknown flag to 1
 	2 - Set condvar to 1 if the player missed since the last check
 	3 - ???
-	4 - Checks how many times the set has been failed
+	4 - Set condvar to the amount of times the player has failed
 
-0xA3 X, Y - ???
-	X = ??? (Used values: 1 ~ 7)
-	Y = ??? (Used values: 1)
+0xA3 X, Y - Make inputs detectable in Rhythm Help Display
+	X - see 0x6B<1> for unused values
+	0 - A Button
+	1 - B Button
+	2 - D-Pad Left
+	3 - D-Pad Right
+	4 - D-Pad Up
+	5 - D-Pad Down
+	6 - A Button (Release)
+	7 - B Button (Release)
+	Y - Flag
+	0 - Disable
+	1 - Enable
 
 0xA4 X - Prologue Scene (Handles the animation and jingle, but not the name)
 	0 - The Clappy Trio
@@ -1077,7 +1113,7 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 	1 - ???
 	2 - ??? (Unused)
 	3 - ??? Uses argument 1, sets condvar to 1, if 1, activates 0xAC 0, else 0xAD 0
-	4 - ???
+	4 - ??? Sets condvar apparently
 0xAB<1> - ???
 0xAB<2> - ??? Used 3 times in two different subs for the results scene
 0xAB<3> X - Check if playing a "Go for Perfect!" challenge (?) (Used value: 1)
@@ -1107,11 +1143,11 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 0xAF 0 - Related to score/performance
 0xAF<1>  - ???
 0xAF<2> X, Y, "Z" - Gate explanation
-	X = ???
-	0 - Normal
-	1 - Empty string (Game over?)
-	2 - Empty string (Game start?)
-	7 - ???
+	X = Graphic to use
+	0 - Stone box
+	1 - Game Over
+	2 - Game Clear!
+	Y = MSBT File (see 0x65)
 	Z = string
 	"" - None
 	"agbVirus_explain" - "Protect us from those viruses!"
@@ -1122,7 +1158,7 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 0xAF<4> X - "Aim for X!" (Used values: 0xA, 0xF, 0x14)
 0xAF<5> X - ??? Used in Endless Games
 0xAF<6> X - Score Counter
-0xAF<7> X - ???
+0xAF<7> X - Best score
 	0 - Disable
 	1 - Enable
 
@@ -1148,13 +1184,33 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 	1 - Top
 	2 - Bottom
 
-0xB1 - ??? Used near the start of remixes
+0xB1 - Reset the value of every slot of 0xB2 to 0(?) (Used near the start of remixes)
 
-0xB2 0 - Sets condvar to 1 if the player hasn't missed in Sneaky Spirits in Barbershop Remix apparently (Used in Flipper-Flop's second section of Barbershop Remix)
+0xB2 X - Sets condvar to the stored value in slot X (Functions like get_countdown)
 
-0xB3 - ??? (Unused?)
+0xB3 X, Y - Sets the stored value to Y in slot X (Functions like set_countdown, Unused)
 
-0xB4 0, 1 - Used in Sneaky Spirits in Barbershop Remix
+0xB4 X, Y - Adds Y to the stored value in slot X (Functions similarly dec_countdown)
+
+Ex:	0xB4 0, 3
+	0xB4 0, 4
+	0xB4 1, 5
+	0xB2 0
+Sets condvar to 7.
+
+	0xB4 0, 2
+	0xB4 0, 3
+	0xB4 1, 4
+	0xB2 1
+Sets condvar to 4.
+
+	0xB4 2, 1
+	0xB4 2, 5
+	0xB3 2, 8
+	0xB2 2
+Sets condvar to 8.
+
+These are used to count how many ghosts the player has hit in Sneaky Spirits in Barbershop Remix, so that the one in Flipper-Flop's second section will appear only if the player has hit all of them up to that point.
 
 0xB5 - ??? (Unused?)
 
@@ -1167,7 +1223,7 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 0xB8<X> - random X
 	Stores a random number between 0 and X in condvar
 
-0xB9 - Sets condvar to 1 if (something), found in Launch Party
+0xB9 - Sets condvar to 1 if playing on a New 3DS (Used in Launch Party)
 
 0xBA - ???
 
@@ -1179,137 +1235,7 @@ zoom 2, 0xF0, 0xF0 - perfect zoom out for true widescreen
 
 0xBE - seems to play a cowbell sound after a delay(?) (Unused)
 
-0xBF - ??? (Unused?)
-
-0xC0 - ??? (Unused?)
-
-0xC1 - ??? (Unused?)
-
-0xC2 - ??? (Unused?)
-
-0xC3 - ??? (Unused?)
-
-0xC4 - ??? (Unused?)
-
-0xC5 - ??? (Unused?)
-
-0xC6 - ??? (Unused?)
-
-0xC7 - ??? (Unused?)
-
-0xC8 - ??? (Unused?)
-
-0xC9 - ??? (Unused?)
-
-0xCA - ??? (Unused?)
-
-0xCB - ??? (Unused?)
-
-0xCC - ??? (Unused?)
-
-0xCD - ??? (Unused?)
-
-0xCE - ??? (Unused?)
-
-0xCF - ??? (Unused?)
-
-0xD0 - ??? (Unused?)
-
-0xD1 - ??? (Unused?)
-
-0xD2 - ??? (Unused?)
-
-0xD3 - ??? (Unused?)
-
-0xD4 - ??? (Unused?)
-
-0xD5 - ??? (Unused?)
-
-0xD6 - ??? (Unused?)
-
-0xD7 - ??? (Unused?)
-
-0xD8 - ??? (Unused?)
-
-0xD9 - ??? (Unused?)
-
-0xDA - ??? (Unused?)
-
-0xDB - ??? (Unused?)
-
-0xDC - ??? (Unused?)
-
-0xDD - ??? (Unused?)
-
-0xDE - ??? (Unused?)
-
-0xDF - ??? (Unused?)
-
-0xE0 - ??? (Unused?)
-
-0xE1 - ??? (Unused?)
-
-0xE2 - ??? (Unused?)
-
-0xE3 - ??? (Unused?)
-
-0xE4 - ??? (Unused?)
-
-0xE5 - ??? (Unused?)
-
-0xE6 - ??? (Unused?)
-
-0xE7 - ??? (Unused?)
-
-0xE8 - ??? (Unused?)
-
-0xE9 - ??? (Unused?)
-
-0xEA - ??? (Unused?)
-
-0xEB - ??? (Unused?)
-
-0xEC - ??? (Unused?)
-
-0xED - ??? (Unused?)
-
-0xEE - ??? (Unused?)
-
-0xEF - ??? (Unused?)
-
-0xF0 - ??? (Unused?)
-
-0xF1 - ??? (Unused?)
-
-0xF2 - ??? (Unused?)
-
-0xF3 - ??? (Unused?)
-
-0xF4 - ??? (Unused?)
-
-0xF5 - ??? (Unused?)
-
-0xF6 - ??? (Unused?)
-
-0xF7 - ??? (Unused?)
-
-0xF8 - ??? (Unused?)
-
-0xF9 - ??? (Unused?)
-
-0xFA - ??? (Unused?)
-
-0xFB - ??? (Unused?)
-
-0xFC - ??? (Unused?)
-
-0xFD - ??? (Unused?)
-
-0xFE - ??? (Unused?)
-
-0xFF - ??? (Unused?)
-
-0x100 and up are Scene-Specific
+0xBF~0xFF don't exist. 0x100 and up are Scene-Specific
 ---------------------
 Subs:
 0x00 - Pause tickflow while text box is on screen
