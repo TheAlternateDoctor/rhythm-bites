@@ -2,7 +2,7 @@ cell
 2 - coin (never change)
 3 - karate
 4 - woodCat
-5- agbHair
+5/6- lastgame
 
 effect
 2 - karate

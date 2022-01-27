@@ -1,0 +1,158 @@
+//Special cases
+
+loadPMDCharm:
+    0xB2 5
+    if 1
+        remove_sfx 0xC
+        rest 0x60
+        set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_PMD_CHARM"
+        0xB3 5,0
+    else 
+        0xB2 0
+        if 1
+            remove_sfx 0xD
+        else
+            0xB3 8,1
+        endif
+        rest 0x60
+        set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_PMD_CHARM"
+        0xB3 5,1
+    endif
+stop
+
+loadKirbyVictory:
+    0xB2 5
+    if 1
+        remove_sfx 0xC
+        rest 0x60
+        set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_KIRBY_VICTORY"
+        0xB3 5,0
+    else 
+        0xB2 0
+        if 1
+            remove_sfx 0xD
+        else
+            0xB3 8,1
+        endif
+        rest 0x60
+        set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_KIRBY_VICTORY"
+        0xB3 5,1
+    endif
+stop
+
+//Normal cases
+loadShorts1:
+0xB3 6,0
+0xB2 3
+if 1
+    0xB3 6,1
+endif
+0xB2 4
+if 1
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
+        0xB3 3,1
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_1"
+        0xB3 4,1
+        0xB3 2,1
+    endif
+endif
+stop
+
+loadShorts2:
+0xB3 6,0
+0xB2 3
+if 2
+    0xB3 6,1
+endif
+0xB2 4
+if 2
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_2"
+        0xB3 3,2
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
+        0xB3 4,2
+        0xB3 2,1
+    endif
+endif
+stop
+
+loadShorts3:
+0xB3 6,0
+0xB2 3
+if 3
+    0xB3 6,1
+endif
+0xB2 4
+if 3
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_3"
+        0xB3 3,3
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_3"
+        0xB3 4,3
+        0xB3 2,1
+    endif
+endif
+stop
+
+loadShorts4:
+0xB3 6,0
+0xB2 3
+if 4
+    0xB3 6,1
+endif
+0xB2 4
+if 4
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_4"
+        0xB3 3,4
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_4"
+        0xB3 4,4
+        0xB3 2,1
+    endif
+endif
+stop

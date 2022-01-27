@@ -20,7 +20,7 @@
 
 // OK, here's where everything starts. This template is based off of the Lush Remix.
 // #index determines which game slot you want to replace. See https://pastebin.com/vJzWn2vm for the list of IDs. By default, the ID is 0x5E, or Lush Remix's ID, meaning this remix will replace Lush Remix.
-#index 0x1A
+#index 0x104
 
 start:
 
@@ -1396,7 +1396,6 @@ fade<1> 1,1,0x30
 input 1
 0x103 2
 0x103 0
-call loadPool4
 
 async_call playTomodachi
 

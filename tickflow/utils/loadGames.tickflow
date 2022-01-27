@@ -1,0 +1,518 @@
+
+loadKarateGBA:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts1
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_KARATE"
+    set_cellanim 4, u"rom:/cellanim/rvlKarate_1.zlib", -1
+    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x28, 4
+    game_effect 0x28, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_KARATE"
+    set_cellanim 5, u"rom:/cellanim/rvlKarate_1.zlib", -1
+    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x28, 5
+    game_effect 0x28, 5
+    0xB3 1, 1
+endif
+stop
+
+loadLumbearjack:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts2
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_WOOD_CAT"
+    set_cellanim 4, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
+    set_effect 4, u"rom:/effect/ctrWoodCat.zlib", -1
+    game_cellanim 0x3F, 4
+    game_effect 0x3F, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_WOOD_CAT"
+    set_cellanim 5, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
+    set_effect 5, u"rom:/effect/ctrWoodCat.zlib", -1
+    game_cellanim 0x3F, 5
+    game_effect 0x3F, 5
+    0xB3 1, 1
+endif
+stop
+
+loadTweezers:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts2
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_HAIR"
+    set_cellanim 4, u"rom:/cellanim/agbHair_long.zlib", -1
+    game_cellanim 0x3, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_HAIR"
+    set_cellanim 5, u"rom:/cellanim/agbHair_long.zlib", -1
+    game_cellanim 0x3, 5
+    0xB3 1, 1
+endif
+stop
+
+loadNightWalk:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts2
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_NIGHT_WALK"
+    set_cellanim 4, u"rom:/cellanim/agbNightWalk_v0.zlib", -1
+    game_cellanim 0x6, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_NIGHT_WALK"
+    set_cellanim 5, u"rom:/cellanim/agbNightWalk_v0.zlib", -1
+    game_cellanim 0x6, 5
+    0xB3 1, 1
+endif
+stop
+
+loadGolf:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts2
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_GOLF"
+    set_cellanim 4, u"rom:/cellanim/rvlGolf_long.zlib", -1
+    game_cellanim 0x25, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_GOLF"
+    set_cellanim 5, u"rom:/cellanim/rvlGolf_long.zlib", -1
+    game_cellanim 0x25, 5
+    0xB3 1, 1
+endif
+stop
+
+loadBtSWii:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts2
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_OTTOSEI"
+    set_cellanim 4, u"rom:/cellanim/rvlAssemble_v0.zlib", -1
+    game_cellanim 0x1C, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_OTTOSEI"
+    set_cellanim 5, u"rom:/cellanim/rvlAssemble_v0.zlib", -1
+    game_cellanim 0x1C, 5
+    0xB3 1, 1
+endif
+stop
+
+loadHopping:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts3
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_HOPPING"
+    set_cellanim 4, u"rom:/cellanim/agbHopping_v0.zlib", -1
+    game_cellanim 0x4, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_HOPPING"
+    set_cellanim 5, u"rom:/cellanim/agbHopping_v0.zlib", -1
+    game_cellanim 0x4, 5
+    0xB3 1, 1
+endif
+stop
+
+loadAirboarders:
+0xB2 1
+if 1
+    0x31<2> 4
+    if 1
+        remove_model 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x31<2> 5
+    if 1
+        remove_model 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadPMDCharm //Special case
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_AIR_BOARD"
+    set_model 4, u"rom:/model/ntrAirBoard_long.zlib", 1
+    set_effect 4, u"rom:/effect/ntrAirBoard.zlib", -1
+    game_model 0xE, 4
+    game_effect 0xE, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_AIR_BOARD"
+    set_model 5, u"rom:/model/ntrAirBoard_long.zlib", 1
+    set_effect 5, u"rom:/effect/ntrAirBoard.zlib", -1
+    game_model 0xE, 5
+    game_effect 0xE, 5
+    0xB3 1, 1
+endif
+stop
+
+loadFruitBasket:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts3
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_FRUITSBASKET"
+    set_cellanim 4, u"rom:/cellanim/ctrFruitbasket_short.zlib", -1
+    set_effect 4, u"rom:/effect/ctrFruitbasket.zlib", -1
+    game_cellanim 0x38, 4
+    game_effect 0x38, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_FRUITSBASKET"
+    set_cellanim 5, u"rom:/cellanim/ctrFruitbasket_short.zlib", -1
+    set_effect 5, u"rom:/effect/ctrFruitbasket.zlib", -1
+    game_cellanim 0x38, 5
+    game_effect 0x38, 5
+    0xB3 1, 1
+endif
+stop
+
+loadDazzles:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadKirbyVictory
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_BOX_SHOW"
+    set_cellanim 4, u"rom:/cellanim/ntrBoxShow_v0.zlib", -1
+    set_effect 4, u"rom:/effect/ntrBoxShow.zlib", -1
+    game_cellanim 0x11, 4
+    game_effect 0x11, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_BOX_SHOW"
+    set_cellanim 5, u"rom:/cellanim/ntrBoxShow_v0.zlib", -1
+    set_effect 5, u"rom:/effect/ntrBoxShow.zlib", -1
+    game_cellanim 0x11, 5
+    game_effect 0x11, 5
+    0xB3 1, 1
+endif
+stop
+
+loadSSWii:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts3
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_IAI"
+    set_cellanim 4, u"rom:/cellanim/rvlSamurai_long.zlib", -1
+    game_cellanim 0x30, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_IAI"
+    set_cellanim 5, u"rom:/cellanim/rvlSamurai_long.zlib", -1
+    game_cellanim 0x30, 5
+    0xB3 1, 1
+endif
+stop
+
+loadSpaceDance:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts4
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_SPACE"
+    set_cellanim 4, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
+    game_cellanim 0xB, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_SPACE"
+    set_cellanim 5, u"rom:/cellanim/agbSpaceDance_long.zlib", -1
+    game_cellanim 0xB, 5
+    0xB3 1, 1
+endif
+stop
+
+loadBRF:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts4
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_SHORT_LIVE"
+    set_cellanim 4, u"rom:/cellanim/ntrShortLive_v0.zlib", -1
+    game_cellanim 0x1A, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_SHORT_LIVE"
+    set_cellanim 5, u"rom:/cellanim/ntrShortLive_v0.zlib", -1
+    game_cellanim 0x1A, 5
+    0xB3 1, 1
+endif
+stop
+
+loadTap:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    0x3E<2> 4
+    if 1
+        remove_layout 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    0x3E<2> 5
+    if 1
+        remove_layout 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts4
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_TAP"
+    set_cellanim 4, u"rom:/cellanim/agbTap_long.zlib", -1
+    set_effect 4, u"rom:/effect/agbTap.zlib", -1
+    set_layout 4, u"rom:/layout/agbTap.zlib", -1
+    game_cellanim 0xC, 4
+    game_effect 0xC, 4
+    game_layout 0xC, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_TAP"
+    set_cellanim 5, u"rom:/cellanim/agbTap_long.zlib", -1
+    set_effect 5, u"rom:/effect/agbTap.zlib", -1
+    set_layout 5, u"rom:/layout/agbTap.zlib", -1
+    game_cellanim 0xC, 5
+    game_effect 0xC, 5
+    game_layout 0xC, 5
+    0xB3 1, 1
+endif
+stop
