@@ -50,7 +50,6 @@ sequenceAGB:
 
 	input 1
 	0x100 0
-	0x111<0>
 	rest 0x30
 	0x111<0>
 	rest 0x30
@@ -66,10 +65,6 @@ sequenceAGB:
 	rest 0x60
 	fade 1, 1, 1
 	rest 0x30
-	0xA2<2>
-	if 1
-		call deadSubAGB
-	endif
 stop
 
 hitDrumLeft:
@@ -146,24 +141,31 @@ zooms:
 	zoom_gradual 3, 2, 3, 0x30, 0x100, 0x100
 stop
 
+unfreeze:
+	0x102<2>
+	if 1
+		0xB3 7, 1
+	endif
+	0x102<1>
+stop
+
 sequenceTomodachi:
 	set_cat 0
-	setrest 7, 0x480
+	setrest 7, 0x450
 	call changeEngine
 	engine 0x4F
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 7, 0
+	0xB3 9, 0x4F
 	fade<1> 1,1,0x30
 	input 1
 	0x103 2
 	0x103 0
 
+	0x102 	
 	async_call playTomodachi
-	0xA1
-	0xA2
-	0x9F 1
-	0x9F<5> 1
 
 	rest 0x60
 	async_call zooms
@@ -173,12 +175,11 @@ sequenceTomodachi:
 	async_call hitDrumLeft
 	rest 0xC0
 	async_call hitDrumRight
-	rest 0xC0
+	rest 0x90
+	rest 0x90
 	async_call hitDrumLeft
 	rest 0x60
-	async_call hitDrumRight
-	rest 0x60
-	// call perfCheckTuto
+	async_call unfreeze
 stop
 
 smallLog:
@@ -236,12 +237,13 @@ stop
 
 sequenceZeldaWoodCat:
 	set_cat 0
-	setrest 7, 0x258
+	setrest 7, 0x2B8
 	call changeEngine
 	engine 0x3F
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x3F
 	fade<1> 1,1,0x30
 
 	async_call playZeldaWoodCat
@@ -264,6 +266,7 @@ sequenceZeldaHair:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x3
 	fade<1> 1,1,0x30
 
 	async_call playZeldaHair
@@ -314,6 +317,7 @@ sequenceSonic:
 	0x103<1> 0
 	0x103<1> 1
 	rest 0x30
+	0xB3 9, 0x6
 	fade<1> 1,1,0x30
 
 	async_call playSonic
@@ -403,6 +407,7 @@ sequenceRhythmDr:
 	0x104<1> 0
 	0x8B 0, 0
 	rest 0x30
+	0xB3 9, 0x25
 	fade<1> 1,1,0x30
 
 	async_call playRhythmDr
@@ -436,6 +441,7 @@ sequenceValve:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x1C
 
 	async_call playValve
 	fade<1> 1,1,0x30
@@ -474,6 +480,7 @@ sequenceWariowareDIY:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x4
 
 	async_call playWariowareDIY
 	fade<1> 1,1,0x30
@@ -494,6 +501,7 @@ sequencePMD:
 	0x102<1> 0,3,1
 	async_call playPMD
 	rest 0x30
+	0xB3 9, 0xE
 
 	async_sub 0x56
 	fade<1> 1,1,0x30
@@ -525,8 +533,8 @@ sequencePMD:
 	rest 0x18	// 0.5 beats
 	0x106 0
 	rest 0x18	// 0.5 beats
-	0x103 0,3,0x30,4,1
-	// 0x103<1> 0,3,0x30,3,1
+	0x103 0,3,0x30,4,2
+	0x103<1> 0,3,0x30,3,1
 
 
 stop
@@ -539,6 +547,7 @@ sequenceDodo:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x38
 
 	async_call playDodo
 	fade<1> 1,1,0x30
@@ -558,6 +567,7 @@ sequenceKirby:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x11
 
 	async_call playKirby
 	fade<1> 1,1,0x30
@@ -605,6 +615,7 @@ sequenceIaiGiri:
 	0x105<4> 20
 	0x10F
 	rest 0x30
+	0xB3 9, 0x30
 
 	async_call playIaiGiri
 	async_call beatLoop
@@ -641,6 +652,7 @@ sequenceSmash:
 	setrest 0, 0x20
 	setrest 1, 0x10
 	rest 0x30
+	0xB3 9, 0xB
 	fade<1> 1,1,0x30
 	0x21 125
 	async_call beatSpace
@@ -652,9 +664,12 @@ sequenceSmash:
 	async_call playSmash
 	input 1
 	async_sub 0x59
-	rest 0x90
+	rest 0x60
+	0x108
+	rest 0x30
+	async_sub 0x5F
 	async_sub 0x58
-	kill_sub beatSpace
+	kill_loc beatSpace
 	rest 0x150
 stop
 
@@ -762,6 +777,7 @@ sequenceSims:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0x1A
 
 	async_call playSims
 	rest 0x30
@@ -783,16 +799,16 @@ sequenceSims:
 stop
 
 smallTap:
-0x8E 0
-0x102 0
-0x100 
-rest 0x30	// 1.0 beats
-0x102 4
+	0x8E 0
+	0x102 0
+	0x100 
+	rest 0x30	// 1.0 beats
+	0x102 4
 return
 
 smallCrouch:
-0x102 9
-rest 0x18	// 1.0 beats
+	0x102 9
+	rest 0x18	// 1.0 beats
 return 
 
 sequenceRhythmMasters:
@@ -803,6 +819,7 @@ sequenceRhythmMasters:
 	sub 4
 	0x29<2> 
 	rest 0x30
+	0xB3 9, 0xC
 
 	async_call playRhythmMasters
 	fade<1> 1,1,0x30
