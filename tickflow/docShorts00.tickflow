@@ -3,10 +3,10 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include utils/patterns.tickflow
-#include utils/audio.tickflow
-#include utils/loadGames.tickflow
-#include utils/loadAudio.tickflow
+#include utils/patterns00.tickflow
+#include utils/audio00.tickflow
+#include utils/loadGames00.tickflow
+#include utils/loadAudio00.tickflow
 
 #index 0x10C
 start:
