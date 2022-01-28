@@ -142,11 +142,6 @@ zooms:
 stop
 
 unfreeze:
-	0x102<2>
-	if 1
-		0xB3 7, 1
-	endif
-	0x102<1>
 stop
 
 sequenceTomodachi:
@@ -175,11 +170,15 @@ sequenceTomodachi:
 	async_call hitDrumLeft
 	rest 0xC0
 	async_call hitDrumRight
-	rest 0x90
-	rest 0x90
+	rest 0xC0
 	async_call hitDrumLeft
-	rest 0x60
-	async_call unfreeze
+	rest 0x90
+	0x102<2>
+	if 1
+		0xB3 7, 1
+		0x105
+		0x102<1>
+	endif
 stop
 
 smallLog:
