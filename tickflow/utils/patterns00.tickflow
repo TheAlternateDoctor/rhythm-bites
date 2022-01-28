@@ -141,46 +141,6 @@ zooms:
 	zoom_gradual 3, 2, 3, 0x30, 0x100, 0x100
 stop
 
-unfreeze:
-stop
-
-sequenceTomodachi:
-	set_cat 0
-	setrest 7, 0x450
-	call changeEngine
-	engine 0x4F
-	sub 4
-	0x29<2> 
-	rest 0x30
-	0xB3 7, 0
-	0xB3 9, 0x4F
-	fade<1> 1,1,0x30
-	input 1
-	0x103 2
-	0x103 0
-
-	0x102 	
-	async_call playTomodachi
-
-	rest 0x60
-	async_call zooms
-	rest 0x120
-	async_call hitDrumRight
-	rest 0xC0
-	async_call hitDrumLeft
-	rest 0xC0
-	async_call hitDrumRight
-	rest 0xC0
-	async_call hitDrumLeft
-	rest 0x90
-	0x102<2>
-	if 1
-		0xB3 7, 1
-		0x105
-		0x102<1>
-	endif
-stop
-
 smallLog:
 	0x102<1> 0
 	rest 0x18

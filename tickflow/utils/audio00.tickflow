@@ -1,20 +1,8 @@
 
-playBanner:
-0x40<1> 0x1000FD8, 0x44
-0x21 230
-speed 0x100
-stop
-
 playGBA:
 play_sfx 0x1000FDD
 0x21 135
 speed 0x100
-stop
-
-playTomodachi:
-rest 0x60
-play_sfx 0x1000FDB
-0x21 134
 stop
 
 playZeldaWoodCat:
