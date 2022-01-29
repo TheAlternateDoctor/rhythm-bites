@@ -1,5 +1,6 @@
-bin/docShorts00.bin
+bin/docShorts*.bin
 songs/vrac
 songs/wav
 songs/mp3
 Docs/
+*.msbt

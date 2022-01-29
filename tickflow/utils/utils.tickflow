@@ -57,6 +57,12 @@ lifeCheck:
 			call deadSub
 		endif
 		break
+	case 0x40
+		0x108
+		if 1
+			call deadSub
+		endif
+		break
 	default
 		0xA2<2>
 		if 1

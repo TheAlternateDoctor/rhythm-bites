@@ -3,17 +3,17 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include utils/patterns00.tickflow
+#include utils/patterns01.tickflow
 #include utils/patternsCommon.tickflow
-#include utils/audio00.tickflow
+#include utils/audio01.tickflow
 #include utils/audioCommon.tickflow
-#include utils/loadGames00.tickflow
+#include utils/loadGames01.tickflow
 #include utils/loadGamesCommon.tickflow
-#include utils/loadAudio00.tickflow
+#include utils/loadAudio01.tickflow
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
-#index 0x10C
+#index 0x10D
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -107,23 +107,20 @@ engine<4> 1
 async_call assets
 0x7C<1> 7, 1, 1
 fade 2, 1, 0
-0xAD 1
 
+0xAD 1
 0x8C 0
 0x8E 0
 0x8F 3
 input 0
 
 call changeEngine
-engine 0x41
-0xB3 9,0x41
+engine 0x40
+0xB3 9,0x40
+0x109 1
 sub 4
 0x29<2> 
-		0x103 1
-		0x102 0
-		0x108<1> 3
 0xAF<6> 0
-0x102 1
 // call tempoAndMusic
 set_cat 0
 0x9C<2>	// These two lines enable then unload the practice assets, for Air Rally performance checking
@@ -149,9 +146,9 @@ if 0
 	goto 0x54D
 endif 
 
-0x21 230
-async_call loadKarateGBA
-async_call sequenceBannerCoin
+0x21 115
+async_call loadKarateWii
+async_call sequenceBannerSickBeats
 rest 0x30
 getrest 7
 rest 0x30
@@ -159,96 +156,25 @@ call fade
 call lifeCheck
 
 0xA2
-async_call sequenceAGB
+async_call sequenceWii
 rest 0x30
 getrest 7
-rest 0x60
+call fade
 call lifeCheck
 
 async_call sequenceTomodachi
 rest 0x30
-async_call loadLumbearjack
+async_call loadTangotronic
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceZeldaWoodCat
-rest 0x30
-async_call unloadTutorial
-async_call loadTweezers
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceZeldaHair
-rest 0x30
-async_call loadNightWalk
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceSonic
-rest 0x30
-async_call loadGolf
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceRhythmDr
-rest 0x30
-async_call loadBtSWii
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceValve
-rest 0x30
-async_call loadHopping
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceWariowareDIY
-rest 0x30
-async_call loadAirboarders
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequencePMD
-rest 0x30
-async_call loadFruitBasket
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceDodo
-rest 0x30
-async_call loadDazzles
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceKirby
-rest 0x30
-async_call loadSSWii
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceIaiGiri
-rest 0x30
-async_call loadSpaceDance
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceSmash
+async_call sequenceJackson
 rest 0x30
 async_call loadBRF
 getrest 7
 call fade
-call lifeCheck
+// call lifeCheck
 
 async_call sequenceSims
 rest 0x30
@@ -261,6 +187,7 @@ async_call sequenceRhythmMasters
 rest 0x30
 getrest 7
 call lifeCheck
+
 
 input 0
 fade 1, 1, 0x18
@@ -356,15 +283,25 @@ stop
 
 
 loadInitialGames:
-set_cellanim 2, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+set_cellanim 4, u"rom:/cellanim/agbVirus_v0.zlib", -1
 label 0x4D2
-cellanim_busy 2
+cellanim_busy 4
 if 0
 	goto 0x10E1
 endif 
 rest 1	// 0.020833334 beats
 goto 0x4D2
 label 0x10E1
+
+set_cellanim 2, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+label 0x4D3
+cellanim_busy 2
+if 0
+	goto 0x10E2
+endif 
+rest 1	// 0.020833334 beats
+goto 0x4D3
+label 0x10E2
 
 set_layout 0x1E, u"rom:/layout/gate.zlib", -1
 set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
@@ -381,18 +318,23 @@ sub 7
 0x8C<2> 5
 set_sfx 1, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
-set_sfx 2, u"GROUP_NTR_COIN_TOSS"
+set_sfx 2, u"GROUP_AGB_VIRUS"
 rest 0x18	// 0.5 beats
 set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
 set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
 rest 0xC	// 0.25 beats
-set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
+set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_6"
 sub 3
 0x83 0
 
 game_cellanim 0x41, 2
+game_cellanim 0x40, 4
+
+0xB3 1, 0
+
 return 
+
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,272 @@
+
+loadKarateWii:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts1
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_KARATE"
+    set_cellanim 4, u"rom:/cellanim/rvlKarate_3.zlib", -1
+    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x28, 4
+    game_effect 0x28, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_KARATE"
+    set_cellanim 5, u"rom:/cellanim/rvlKarate_3.zlib", -1
+    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x28, 5
+    game_effect 0x28, 5
+    0xB3 1, 1
+endif
+stop
+
+loadTangotronic:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x31<2> 0
+    if 1
+        remove_model 0
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x31<2> 1
+    if 1
+        remove_model 1
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts6
+rest 0x60
+set_model 4, u"rom:/__test/DefaultFragmentLight.bcenv", 1
+set_model 5, u"rom:/__test/DefaultSceneEnvironmentSetting.bcenv", 1
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_TANGO"
+    set_model 0, u"rom:/model/ctrTango_long.zlib", 1
+    set_effect 4, u"rom:/effect/ctrTango.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/ctrTango_michael.zlib", -1
+    game_cellanim 0x3D, 4
+    game_model 0x3D, 0
+    game_effect 0x3D, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_TANGO"
+    set_model 1, u"rom:/model/ctrTango_long.zlib", 1
+    set_effect 5, u"rom:/effect/ctrTango.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/ctrTango_michael.zlib", -1
+    game_cellanim 0x3D, 5
+    game_model 0x3D, 1
+    game_effect 0x3D, 5
+    0xB3 1, 1
+endif
+stop
+
+loadShootEmUp:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts6
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_SHOOTING"
+    set_cellanim 4, u"rom:/cellanim/ntrShooting_short.zlib", -1
+    set_effect 4, u"rom:/effect/ntrShooting.zlib", -1
+    game_cellanim 0x19, 4
+    game_effect 0x19, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_SHOOTING"
+    set_cellanim 5, u"rom:/cellanim/ntrShooting_short.zlib", -1
+    set_effect 5, u"rom:/effect/ntrShooting.zlib", -1
+    game_cellanim 0x19, 5
+    game_effect 0x19, 5
+    0xB3 1, 1
+endif
+stop
+
+loadMicroRow:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts6
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_MIJINKO"
+    set_cellanim 4, u"rom:/cellanim/rvlFlea_short.zlib", -1
+    set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
+    game_cellanim 0x23, 4
+    game_effect 0x23, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_MIJINKO"
+    set_cellanim 5, u"rom:/cellanim/rvlFlea_short.zlib", -1
+    set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
+    game_cellanim 0x23, 5
+    game_effect 0x23, 5
+    0xB3 1, 1
+endif
+stop
+
+loadSuperSamuraiSlice:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts6
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_IAI_NEW"
+    set_cellanim 4, u"rom:/cellanim/ctrDotSamurai_long.zlib", -1
+    set_effect 4, u"rom:/effect/ctrDotSamurai.zlib", -1
+    game_cellanim 0x37, 4
+    game_effect 0x37, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_IAI_NEW"
+    set_cellanim 5, u"rom:/cellanim/ctrDotSamurai_long.zlib", -1
+    set_effect 5, u"rom:/effect/ctrDotSamurai.zlib", -1
+    game_cellanim 0x37, 5
+    game_effect 0x37, 5
+    0xB3 1, 1
+endif
+stop
+
+loadSumoBros:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts6
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_SUMOU"
+    set_cellanim 4, u"rom:/cellanim/ctrSumou_long.zlib", -1
+    set_effect 4, u"rom:/effect/ctrSumou.zlib", -1
+    game_cellanim 0x3C, 4
+    game_effect 0x3C, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_SUMOU"
+    set_cellanim 5, u"rom:/cellanim/ctrSumou_long.zlib", -1
+    set_effect 5, u"rom:/effect/ctrSumou.zlib", -1
+    game_cellanim 0x3C, 5
+    game_effect 0x3C, 5
+    0xB3 1, 1
+endif
+stop
