@@ -398,3 +398,29 @@ sequenceHatInTime:
     rest 0xC0
     rest 0xC0
 stop
+
+
+sequenceKlonoa:
+	set_cat 0
+	setrest 7, 0x240
+    call changeEngine
+    engine 0x3A
+    sub 4
+    0x29<2> 
+    rest 0x30
+	0xB3 9, 0x3A
+
+    async_call playKlonoa
+    fade<1> 1,1,0x30
+
+    rest 0x60
+    input 1
+    async_sub 0x56
+    rest 0xC0
+    async_sub 0x57
+    rest 0x90
+    async_sub 0x59
+    rest 0x150
+    fade 1, 1, 0x20
+    rest 0x30
+return

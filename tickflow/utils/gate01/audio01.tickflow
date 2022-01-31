@@ -74,3 +74,8 @@ playHatInTime:
 speed 0x100
 stop
 
+playKlonoa:
+0x21 125
+0x40<1> 0x1000FF2, 0x77
+speed 0x100
+stop

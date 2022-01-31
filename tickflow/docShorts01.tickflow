@@ -244,14 +244,14 @@ call fade
 
 async_call sequenceHatInTime
 rest 0x30
-async_call loadSeeSaw
+async_call loadPajama
 getrest 7
 call fade
 // call lifeCheck
 
-async_call sequenceBanjoKazooie
+async_call sequenceKlonoa
 rest 0x30
-async_call loadSeeSaw
+async_call loadBRF
 getrest 7
 call fade
 // call lifeCheck

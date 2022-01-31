@@ -461,3 +461,34 @@ else
     0xB3 1, 1
 endif
 stop
+
+loadPajama:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts4
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_PAJAMAS"
+    set_cellanim 4, u"rom:/cellanim/ctrPillow_klonoa.zlib", -1
+    game_cellanim 0x3A, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_SHUGYO"
+    set_cellanim 5, u"rom:/cellanim/ctrPillow_klonoa.zlib", -1
+    game_cellanim 0x3A, 5
+    0xB3 1, 1
+endif
+stop
