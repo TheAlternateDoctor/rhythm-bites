@@ -3,13 +3,14 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include utils/patterns01.tickflow
+#include utils/gate01/patterns01.tickflow
+#include utils/gate01/audio01.tickflow
+#include utils/gate01/loadGames01.tickflow
+#include utils/gate01/loadAudio01.tickflow
+
 #include utils/patternsCommon.tickflow
-#include utils/audio01.tickflow
 #include utils/audioCommon.tickflow
-#include utils/loadGames01.tickflow
 #include utils/loadGamesCommon.tickflow
-#include utils/loadAudio01.tickflow
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
@@ -92,13 +93,21 @@ if 1
 endif 
 0x2D 1
 
-0x2B 0x41, 10
+0x2B 0x40, 10
 0x2B 0x28, 10
-0x2B 0x3F, 10
-0x2B 0x03, 10
-0x2B 0x06, 10
-0x2B 0x25, 2
-0x2B 0xC, 2
+0x2B 0x3D, 10
+0x2B 0x19, 10
+0x2B 0x23, 10
+0x2B 0x37, 10
+0x2B 0x3C, 10
+0x2B 0x2, 10
+0x2B 0x18, 10
+0x2B 0x36, 10
+0x2B 0x9, 10
+0x2B 0x1B, 10
+0x2B 0x3A, 10
+0x2B 0x1A, 10
+0x2B 0xC, 10
 
 0x21 0x78
 speed 0x100
@@ -148,6 +157,7 @@ endif
 
 0x21 115
 async_call loadKarateWii
+// async_call loadSneakySpirits
 async_call sequenceBannerSickBeats
 rest 0x30
 getrest 7
@@ -171,7 +181,77 @@ call lifeCheck
 
 async_call sequenceJackson
 rest 0x30
-async_call loadBRF
+async_call loadShootEmUp
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceDuckHunt
+rest 0x30
+async_call loadMicroRow
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceGalaga
+rest 0x30
+async_call loadSuperSamuraiSlice
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceMetroid
+rest 0x30
+async_call loadSumoBros
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceWiiFit
+rest 0x30
+async_call loadSneakySpirits
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequencePhantomThief
+rest 0x30
+async_call loadFillbots
+getrest 7
+call fade
+// call lifeCheck
+
+async_call sequenceMegaman
+rest 0x30
+async_call loadTongueLashing
+getrest 7
+call fade
+// call lifeCheck
+
+async_call sequencePokemonBadge
+rest 0x30
+async_call loadRatRace
+getrest 7
+call fade
+// call lifeCheck
+
+async_call sequenceRescueVvvvvv
+rest 0x30
+async_call loadMunchyMonk
+getrest 7
+call fade
+// call lifeCheck
+
+async_call sequenceHatInTime
+rest 0x30
+async_call loadSeeSaw
+getrest 7
+call fade
+// call lifeCheck
+
+async_call sequenceBanjoKazooie
+rest 0x30
+async_call loadSeeSaw
 getrest 7
 call fade
 // call lifeCheck
@@ -181,12 +261,12 @@ rest 0x30
 async_call loadTap
 getrest 7
 call fade
-call lifeCheck
+// call lifeCheck
 
 async_call sequenceRhythmMasters
 rest 0x30
 getrest 7
-call lifeCheck
+// call lifeCheck
 
 
 input 0

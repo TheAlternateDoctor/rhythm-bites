@@ -1,0 +1,78 @@
+
+loadDuckHunt:
+    0xB2 5
+    if 1
+        remove_sfx 0xC
+        rest 0x60
+        set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_DUCK_HUNT"
+        0xB3 5,0
+    else 
+        0xB2 0
+        if 1
+            remove_sfx 0xD
+        else
+            0xB3 8,1
+        endif
+        rest 0x60
+        set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_DUCK_HUNT"
+        0xB3 5,1
+    endif
+stop
+
+loadShorts6:
+0xB3 6,0
+0xB2 3
+if 6
+    0xB3 6,1
+endif
+0xB2 4
+if 6
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_6"
+        0xB3 3,6
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_6"
+        0xB3 4,6
+        0xB3 2,1
+    endif
+endif
+stop
+
+loadShorts7:
+0xB3 6,0
+0xB2 3
+if 7
+    0xB3 6,1
+endif
+0xB2 4
+if 7
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_7"
+        0xB3 3,7
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_7"
+        0xB3 4,7
+        0xB3 2,1
+    endif
+endif
+stop

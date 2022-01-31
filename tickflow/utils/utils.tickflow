@@ -72,3 +72,10 @@ lifeCheck:
 	endswitch
 	0xA2
 return
+
+beatLoop:
+	label 0xBEA7
+	0x101
+	rest 0x30
+	goto 0xBEA7
+stop

@@ -243,9 +243,9 @@ stop
 loadAirboarders:
 0xB2 1
 if 1
-    0x31<2> 4
+    0x31<2> 0
     if 1
-        remove_model 4
+        remove_model 0
     endif
     0x39<2> 4
     if 1
@@ -253,9 +253,9 @@ if 1
     endif
     remove_sfx 4
 else
-    0x31<2> 5
+    0x31<2> 1
     if 1
-        remove_model 5
+        remove_model 1
     endif
     0x39<2> 5
     if 1

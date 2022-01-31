@@ -481,13 +481,6 @@ sequenceKirby:
 	0x102
 stop
 
-beatLoop:
-	label 0xBEA7
-	0x101
-	rest 0x30
-	goto 0xBEA7
-stop
-
 sequenceIaiGiri:
 	set_cat 0
 	setrest 7,0x150

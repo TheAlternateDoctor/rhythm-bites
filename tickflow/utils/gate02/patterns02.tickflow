@@ -1,0 +1,33 @@
+
+bytesBanjo:
+bytes 1,1,1,0,2
+return
+
+bytesKazooie:
+bytes 0,0,1,0
+return
+
+sequenceBanjoKazooie:
+	set_cat 0
+	setrest 7, 0x300
+    call changeEngine
+    engine 0x31
+    sub 4
+    0x29<2> 
+    rest 0x30
+	0xB3 9, 0x31
+
+    async_call playBanjoKazooie
+    0x104<1>
+    fade<1> 1,1,0x30
+    input 1
+    0x104 1,bytesBanjo
+    0x104 0,bytesKazooie
+    0x102 0
+    0x101 1
+    0x100<3> 1, 0
+    0x100<3> 0, 0
+    0x100<4> 1, 0
+    0x100 0
+    
+stop
