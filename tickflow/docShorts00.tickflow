@@ -150,7 +150,6 @@ if 0
 	goto 0x54D
 endif 
 
-0x21 230
 async_call loadKarateGBA
 async_call sequenceBannerCoin
 rest 0x30
