@@ -3,10 +3,10 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include utils/gate00/patterns00.tickflow
-#include utils/gate00/loadAudio00.tickflow
-#include utils/gate00/audio00.tickflow
-#include utils/gate00/loadGames00.tickflow
+#include utils/gate00/patterns.tickflow
+#include utils/gate00/loadAudio.tickflow
+#include utils/gate00/audio.tickflow
+#include utils/gate00/loadGames.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow
@@ -286,18 +286,6 @@ rest 0xC0	// 4.0 beats
 rest 0x60	// 2.0 beats
 0x28<2> 
 stop 
-
-
-unloadTutorial:
-	//remove extra stuff like tutorial stuff
-	remove_cellanim 8
-	rest 0xC
-	remove_cellanim 9
-	rest 0xC
-	remove_layout 0xB
-	rest 0xC
-	rest 0x60
-stop
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------

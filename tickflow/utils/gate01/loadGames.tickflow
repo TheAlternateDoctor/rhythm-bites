@@ -333,7 +333,7 @@ else
     endif
     remove_sfx 5
 endif
-async_call loadShorts7
+async_call loadMegaman
 rest 0x60
 0xB2 1
 if 1

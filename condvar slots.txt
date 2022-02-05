@@ -8,3 +8,5 @@
 7 - Game specific (Coin Toss)
 8 - Audio Special case has already loaded
 9 - Engine loaded
+10 - next game?
+11 - Variants...?

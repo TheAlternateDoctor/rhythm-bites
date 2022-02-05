@@ -8,13 +8,21 @@
 #include utils/gate01/loadGames.tickflow
 #include utils/gate01/loadAudio.tickflow
 
+#include utils/gate00/patterns.tickflow
+#include utils/gate00/loadAudio.tickflow
+#include utils/gate00/audio.tickflow
+#include utils/gate00/loadGames.tickflow
+
+#include utils/endless/loadGames.tickflow
+#include utils/endless/utils.tickflow
+
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow
 #include utils/loadGamesCommon.tickflow
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
-#index 0x10D
+#index 0x10F
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -132,142 +140,25 @@ sub 4
 0xAF<6> 0
 // call tempoAndMusic
 set_cat 0
-0x9C<2>	// These two lines enable then unload the practice assets, for Air Rally performance checking
-0x9C<3>
 async_call startingGame
-0x53 0x1000251
-0x23 0x1000251
-speed 0x100
-rest 0x60	// 2.0 beats
-sub 2
-0x55 1
-0xAF<2> 0, 0, "gate_explain_short"
-play_sfx 0x10002DC
-rest 0xC0	// 4.0 beats
-rest 0xC0	// 4.0 beats
-rest 0x46	// 1.4583334 beats
-play_sfx 0x10002DD
 rest 0x60	// 2.0 beats
 label 0x54D
-0xAF<3> 0
-if 0
-	rest 0xC	// 0.25 beats
-	goto 0x54D
-endif 
 
 0x21 115
-async_call loadKarateWii
-// async_call loadShootEmUp
 async_call sequenceBannerSickBeats
 rest 0x30
+async_call loadKarateGBA
 getrest 7
 rest 0x30
 call fade
 call lifeCheck
 
 0xA2
-async_call sequenceWii
-rest 0x30
-getrest 7
-call fade
-call lifeCheck
 
-async_call sequenceTomodachi
-rest 0x30
-async_call loadTangotronic
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceJackson
-rest 0x30
-async_call loadShootEmUp
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceDuckHunt
-rest 0x30
-async_call loadMicroRow
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceGalaga
-rest 0x30
-async_call loadSuperSamuraiSlice
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceMetroid
-rest 0x30
-async_call loadSumoBros
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceWiiFit
-rest 0x30
-async_call loadSneakySpirits
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequencePhantomThief
-rest 0x30
-async_call loadFillbots
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequenceMegaman
-rest 0x30
-async_call loadTongueLashing
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequencePokemonBadge
-rest 0x30
-async_call loadRatRace
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequenceRescueVvvvvv
-rest 0x30
-async_call loadMunchyMonk
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequenceHatInTime
-rest 0x30
-async_call loadPajama
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequenceKlonoa
-rest 0x30
-async_call loadBRF
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequenceSims
-rest 0x30
-async_call loadTap
-getrest 7
-call fade
-// call lifeCheck
-
-async_call sequenceRhythmMasters
-rest 0x30
-getrest 7
-// call lifeCheck
-
+//main loop
+label 0x1009
+	call playNextGame
+goto 0x1009
 
 input 0
 fade 1, 1, 0x18
@@ -277,7 +168,7 @@ rest 0x30
 0x77 1, 0xFF	// Immediate opacity level
 0x78 1, 0,0,0	// Color, RGB
 0x79 1, 0	// Depth of the screen.
-engine 0x41
+engine 0x43
 0xAF<6> 1
 rest 0xC
 0xAF<6> 0
@@ -292,6 +183,18 @@ rest 0xC0	// 4.0 beats
 rest 0x60	// 2.0 beats
 0x28<2> 
 stop 
+
+
+unloadTutorial:
+	//remove extra stuff like tutorial stuff
+	remove_cellanim 8
+	rest 0xC
+	remove_cellanim 9
+	rest 0xC
+	remove_layout 0xB
+	rest 0xC
+	rest 0x60
+stop
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -361,7 +264,7 @@ rest 1	// 0.020833334 beats
 goto 0x4D2
 label 0x10E1
 
-set_cellanim 2, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+set_cellanim 2, u"rom:/cellanim/ctrChicken_v0.zlib", -1
 label 0x4D3
 cellanim_busy 2
 if 0
@@ -370,6 +273,16 @@ endif
 rest 1	// 0.020833334 beats
 goto 0x4D3
 label 0x10E2
+
+set_effect 2, u"rom:/effect/ctrChicken.zlib", -1
+label 0x4D4
+effect_busy 2
+if 0
+	goto 0x10E3
+endif 
+rest 1	// 0.020833334 beats
+goto 0x4D4
+label 0x10E3
 
 set_layout 0x1E, u"rom:/layout/gate.zlib", -1
 set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
@@ -386,17 +299,19 @@ sub 7
 0x8C<2> 5
 set_sfx 1, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
-set_sfx 2, u"GROUP_AGB_VIRUS"
+set_sfx 2, u"GROUP_CHIKEN"
+rest 0x18	// 0.5 beats
+set_sfx 9, u"GROUP_AGB_VIRUS"
 rest 0x18	// 0.5 beats
 set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
 set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
 rest 0xC	// 0.25 beats
-set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_6"
 sub 3
 0x83 0
 
-game_cellanim 0x41, 2
+game_cellanim 0x43, 2
+game_effect 0x43, 2
 game_cellanim 0x40, 4
 
 0xB3 1, 0
@@ -986,56 +901,299 @@ endif
 return 
 
 choosePrologue://Chooses a prologue randomly
-random 16
+random 0x60
 switch
-	case 0
-		0xA4 0x103
-	break
-	case 1
-		0xA4 0x5C
-	break
-	case 2
-		0xA4 0x5F
-	break
-	case 3
-		0xA4 0x4B
-	break
-	case 4
-		0xA4 0x6
-	break
-	case 5
-		0xA4 0x32
-	break
-	case 6
-		0xA4 0x45
-	break
-	case 7
-		0xA4 0x4A
-	break
-	case 8
-		0xA4 0x11
-	break
-	case 9
-		0xA4 0x27
-	break
-	case 10
-		0xA4 0x44
-	break
-	case 11
-		0xA4 0x18
-	break
-	case 12
-		0xA4 0x2A
-	break
-	case 13
-		0xA4 0x48
-	break
-	case 14
-		0xA4 0x29
-	break
-	case 15
-		0xA4 0x1B
-	break
+    case 0x0
+    0xA4 0x0
+    break
+    case 0x1
+    0xA4 0x1
+    break
+    case 0x2
+    0xA4 0x2
+    break
+    case 0x3
+    0xA4 0x3
+    break
+    case 0x4
+    0xA4 0x4
+    break
+    case 0x5
+    0xA4 0x5
+    break
+    case 0x6
+    0xA4 0x6
+    break
+    case 0x7
+    0xA4 0x7
+    break
+    case 0x8
+    0xA4 0x8
+    break
+    case 0x9
+    0xA4 0x9
+    break
+    case 0xa
+    0xA4 0xa
+    break
+    case 0xb
+    0xA4 0xb
+    break
+    case 0xc
+    0xA4 0xc
+    break
+    case 0xd
+    0xA4 0xd
+    break
+    case 0xe
+    0xA4 0xe
+    break
+    case 0xf
+    0xA4 0xf
+    break
+    case 0x10
+    0xA4 0x10
+    break
+    case 0x11
+    0xA4 0x11
+    break
+    case 0x12
+    0xA4 0x12
+    break
+    case 0x13
+    0xA4 0x13
+    break
+    case 0x14
+    0xA4 0x14
+    break
+    case 0x15
+    0xA4 0x15
+    break
+    case 0x16
+    0xA4 0x16
+    break
+    case 0x17
+    0xA4 0x17
+    break
+    case 0x18
+    0xA4 0x18
+    break
+    case 0x19
+    0xA4 0x19
+    break
+    case 0x1a
+    0xA4 0x1a
+    break
+    case 0x1b
+    0xA4 0x1b
+    break
+    case 0x1c
+    0xA4 0x1c
+    break
+    case 0x1d
+    0xA4 0x1d
+    break
+    case 0x1e
+    0xA4 0x1e
+    break
+    case 0x1f
+    0xA4 0x1f
+    break
+    case 0x20
+    0xA4 0x20
+    break
+    case 0x21
+    0xA4 0x21
+    break
+    case 0x22
+    0xA4 0x22
+    break
+    case 0x23
+    0xA4 0x23
+    break
+    case 0x24
+    0xA4 0x24
+    break
+    case 0x25
+    0xA4 0x25
+    break
+    case 0x26
+    0xA4 0x26
+    break
+    case 0x27
+    0xA4 0x27
+    break
+    case 0x28
+    0xA4 0x28
+    break
+    case 0x29
+    0xA4 0x29
+    break
+    case 0x2a
+    0xA4 0x2a
+    break
+    case 0x2b
+    0xA4 0x2b
+    break
+    case 0x2c
+    0xA4 0x2c
+    break
+    case 0x2d
+    0xA4 0x2d
+    break
+    case 0x2e
+    0xA4 0x2e
+    break
+    case 0x2f
+    0xA4 0x2f
+    break
+    case 0x30
+    0xA4 0x30
+    break
+    case 0x31
+    0xA4 0x31
+    break
+    case 0x32
+    0xA4 0x32
+    break
+    case 0x33
+    0xA4 0x33
+    break
+    case 0x34
+    0xA4 0x34
+    break
+    case 0x35
+    0xA4 0x35
+    break
+    case 0x36
+    0xA4 0x36
+    break
+    case 0x37
+    0xA4 0x37
+    break
+    case 0x38
+    0xA4 0x38
+    break
+    case 0x39
+    0xA4 0x39
+    break
+    case 0x3a
+    0xA4 0x3a
+    break
+    case 0x3b
+    0xA4 0x3b
+    break
+    case 0x3c
+    0xA4 0x3c
+    break
+    case 0x3d
+    0xA4 0x3d
+    break
+    case 0x3e
+    0xA4 0x3e
+    break
+    case 0x3f
+    0xA4 0x3f
+    break
+    case 0x40
+    0xA4 0x40
+    break
+    case 0x41
+    0xA4 0x41
+    break
+    case 0x42
+    0xA4 0x42
+    break
+    case 0x43
+    0xA4 0x43
+    break
+    case 0x44
+    0xA4 0x44
+    break
+    case 0x45
+    0xA4 0x45
+    break
+    case 0x46
+    0xA4 0x46
+    break
+    case 0x47
+    0xA4 0x47
+    break
+    case 0x48
+    0xA4 0x48
+    break
+    case 0x49
+    0xA4 0x49
+    break
+    case 0x4a
+    0xA4 0x4a
+    break
+    case 0x4b
+    0xA4 0x4b
+    break
+    case 0x4c
+    0xA4 0x4c
+    break
+    case 0x4d
+    0xA4 0x4d
+    break
+    case 0x4e
+    0xA4 0x4e
+    break
+    case 0x4f
+    0xA4 0x4f
+    break
+    case 0x50
+    0xA4 0x50
+    break
+    case 0x51
+    0xA4 0x51
+    break
+    case 0x52
+    0xA4 0x52
+    break
+    case 0x53
+    0xA4 0x53
+    break
+    case 0x54
+    0xA4 0x54
+    break
+    case 0x55
+    0xA4 0x55
+    break
+    case 0x56
+    0xA4 0x56
+    break
+    case 0x57
+    0xA4 0x57
+    break
+    case 0x58
+    0xA4 0x58
+    break
+    case 0x59
+    0xA4 0x59
+    break
+    case 0x5a
+    0xA4 0x5a
+    break
+    case 0x5b
+    0xA4 0x5b
+    break
+    case 0x5c
+    0xA4 0x5c
+    break
+    case 0x5d
+    0xA4 0x5d
+    break
+    case 0x5e
+    0xA4 0x5e
+    break
+    case 0x5f
+    0xA4 0x5f
+    break
+    case 0x60
+    0xA4 0x60
+    break
 endswitch
 return
 

@@ -1,0 +1,68 @@
+loadTutorial:
+    set_layout 0x1E, u"rom:/layout/gate.zlib", -1
+    set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
+    set_cellanim 9, u"rom:/cellanim/common.zlib", -1
+    set_layout 0xB, u"rom:/layout/lesson.zlib", -1
+stop
+
+loadSickBeats:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts1
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_VIRUS"
+    set_cellanim 4, u"rom:/cellanim/agbVirus_v0.zlib", -1
+    game_cellanim 0x40, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_VIRUS"
+    set_cellanim 5, u"rom:/cellanim/agbVirus_v0.zlib", -1
+    game_cellanim 0x40, 5
+    0xB3 1, 1
+endif
+stop
+
+loadCoinToss:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts1
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_COIN_TOSS"
+    set_cellanim 4, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+    game_cellanim 0x41, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_COIN_TOSS"
+    set_cellanim 5, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
+    game_cellanim 0x41, 5
+    0xB3 1, 1
+endif
+stop

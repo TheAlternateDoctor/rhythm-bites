@@ -3,12 +3,17 @@
 loadPMDCharm:
     0xB2 5
     if 1
-        remove_sfx 0xC
+        0xB2 8
+        if 2
+            remove_sfx 0xC
+        else
+            0xB3 8,2
+        endif
         rest 0x60
         set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_PMD_CHARM"
         0xB3 5,0
     else 
-        0xB2 0
+        0xB2 8
         if 1
             remove_sfx 0xD
         else
@@ -23,13 +28,18 @@ stop
 loadKirbyVictory:
     0xB2 5
     if 1
-        remove_sfx 0xC
+        0xB2 8
+        if 2
+            remove_sfx 0xC
+        else
+            0xB3 8,2
+        endif
         rest 0x60
         set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_KIRBY_VICTORY"
         0xB3 5,0
     else 
-        0xB2 0
-        if 1
+        0xB2 8
+        if_gt 0
             remove_sfx 0xD
         else
             0xB3 8,1

@@ -1,0 +1,243 @@
+loadNextGame:
+    0xB2 10
+    if 0x4F
+        async_call unloadTutorial
+    endif
+    0xB3 10,0
+    0xB3 11,0
+    random 0x63
+    switch
+        case 0x2 //Phantom Thief
+            0xB3 10,0x2
+            async_call loadSneakySpirits
+        break
+        case 0x3 //Zelda Cooking
+            0xB3 10,0x3
+            async_call loadTweezers
+        break
+        case 0x4 //Warioware?
+            0xB3 10,0x4
+            async_call loadHopping
+        break
+        case 0x6 //Sonic
+            0xB3 10,0x6
+            async_call loadNightWalk
+        break
+        case 0x9 //VVVVVV Rescue
+            0xB3 10,0x9
+            async_call loadRatRace
+        break
+        case 0xB //Smash
+            0xB3 10,0xB
+            async_call loadSpaceDance
+        break
+        case 0xC //Rhythm Masters
+            0xB3 10,0xC
+            async_call loadTap
+        break
+        case 0xE //Pokémon Mystery Dungeon
+            0xB3 10,0xE
+            async_call loadAirboarders
+        break
+        case 0x11 //Kirby Victory
+            0xB3 10,0x11
+            async_call loadDazzles
+        break
+        case 0x18 //Megaman
+            0xB3 10,0x18
+            async_call loadFillbots
+        break
+        case 0x19 //Duck Hunt
+            0xB3 10,0x19
+            async_call loadShootEmUp
+        break
+        case 0x1A //Sims
+            0xB3 10,0x1A
+            async_call loadBRF
+        break
+        case 0x1B //Hat in Time
+            0xB3 10,0x1B
+            async_call loadMunchyMonk
+        break
+        case 0x1C //Valve
+            0xB3 10,0x1C
+            async_call loadBtSWii
+        break
+        case 0x23 //Galaga
+            0xB3 10,0x23
+            async_call loadMicroRow
+        break
+        case 0x25 //Rhythm Dr
+            0xB3 10,0x25
+            async_call loadGolf
+        break
+        case 0x30 //Iai Giri
+            0xB3 10,0x30
+            async_call loadSSWii
+        break
+        case 0x36 //Badge Pokémon
+            0xB3 10,0x36
+            async_call loadTongueLashing
+        break
+        case 0x37 //Super Metroid
+            0xB3 10,0x37
+            async_call loadSuperSamuraiSlice
+        break
+        case 0x38 //Animal Crossing Dodo
+            0xB3 10,0x38
+            async_call loadFruitBasket
+        break
+        case 0x3A //Klonoa
+            0xB3 10,0x3A
+            async_call loadPajama
+        break
+        case 0x3C //Wii Fit
+            0xB3 10,0x3C
+            async_call loadSumoBros
+        break
+        case 0x3D //Michael Jackson
+            0xB3 10,0x3D
+            async_call loadTangotronic
+        break
+        case 0x3F //Zelda Mastersword
+            0xB3 10,0x3F
+            async_call loadLumbearjack
+        break
+        case 0x40 //Sick Beats
+            0xB3 10,0x40
+            async_call loadSickBeats
+        break
+        case 0x41 //Coin Toss
+            0xB3 10,0x40
+            async_call loadCoinToss
+        break
+        // case 0x4F //Tutorial
+        //     0xB3 10,0x4F
+        //     async_call loadTutorial
+        // break
+        case 0x61 //Remix Wii
+            0xB3 10,0x28
+            0xB3 11,0x3
+            async_call loadKarateWii
+        break
+        default //Use Karateman GBA as default? idk
+            0xB3 10,0x28
+            0xB3 11,0x1
+            async_call loadKarateGBA
+        break
+    endswitch
+stop
+
+playNextGame:
+    0xB2 10
+    switch
+        case 0x2 //Phantom Thief
+            async_call sequencePhantomThief
+        break
+        case 0x3 //Zelda Cooking
+            async_call sequenceZeldaHair
+        break
+        case 0x4 //Warioware?
+            async_call sequenceWariowareDIY
+        break
+        case 0x6 //Sonic
+            async_call sequenceSonic
+        break
+        case 0x9 //VVVVVV Rescue
+            async_call sequenceRescueVvvvvv
+        break
+        case 0xB //Smash
+            async_call sequenceSmash
+        break
+        case 0xC //Rhythm Masters
+            async_call sequenceRhythmMasters
+        break
+        case 0xE //Pokémon Mystery Dungeon
+            async_call sequencePMD
+        break
+        case 0x11 //Kirby Victory
+            async_call sequenceKirby
+        break
+        case 0x18 //Megaman
+            async_call sequenceMegaman
+        break
+        case 0x19 //Duck Hunt
+            async_call sequenceDuckHunt
+        break
+        case 0x1A //Sims
+            async_call sequenceSims
+        break
+        case 0x1B //Hat in Time
+            async_call sequenceHatInTime
+        break
+        case 0x1C //Valve
+            async_call sequenceValve
+        break
+        case 0x23 //Galaga
+            async_call sequenceGalaga
+        break
+        case 0x25 //Rhythm Dr
+            async_call sequenceRhythmDr
+        break
+        case 0x28 //Karate Man
+            0xB2 11
+            switch
+                case 0x1
+                    async_call sequenceAGB
+                    break
+                case 0x3
+                    async_call sequenceWii
+                    break
+            endswitch
+        break
+        case 0x30 //Iai Giri
+            async_call sequenceIaiGiri
+        break
+        case 0x36 //Badge Pokémon
+            async_call sequencePokemonBadge
+        break
+        case 0x37 //Super Metroid
+            async_call sequenceMetroid
+        break
+        case 0x38 //Animal Crossing Dodo
+            async_call sequenceDodo
+        break
+        case 0x3A //Klonoa
+            async_call sequenceKlonoa
+        break
+        case 0x3C //Wii Fit
+            async_call sequenceWiiFit
+        break
+        case 0x3D //Michael Jackson
+            async_call sequenceJackson
+        break
+        case 0x3F //Zelda Mastersword
+            async_call sequenceZeldaWoodCat
+        break
+        case 0x40 //Sick Beats
+            async_call sequenceBannerSickBeats
+        break
+        case 0x41 //Coin Toss
+            async_call sequenceBannerCoin
+        break
+        case 0x4F //Tutorial
+            async_call sequenceTomodachi
+        break
+        default:
+            set_countdown_condvar
+            label 0x4E16
+            get_countdown
+            if_neq 0
+                play_sfx 0x1000291
+                dec_countdown
+                rest 0x30
+                goto 0x4E16
+            rest 0x30
+            // call deadSubEndless
+        break
+    endswitch
+	rest 0x30
+	async_call loadNextGame
+	getrest 7
+	call fade
+return
