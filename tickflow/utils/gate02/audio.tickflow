@@ -11,6 +11,32 @@ play_sfx 0x1000FDF
 speed 0x100
 stop
 
+playKahoot:
+0x21 149
+play_sfx 0x1000FE4
+speed 0x100
+stop
+
+playMarioHurryUp:
+0x21 190
+rest 0xC0
+play_sfx 0x1000FE0
+speed 0x100
+stop
+
+playTMPokemon:
+0x21 139
+play_sfx 0x1000FE1
+speed 0x100
+stop
+
+playCoH:
+0x21 150
+rest 0xC0
+play_sfx 0x1000FE2
+speed 0x100
+stop
+
 playBanjoKazooie:
 0x21 190
 play_sfx 0x1000FEE

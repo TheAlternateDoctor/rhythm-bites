@@ -176,14 +176,14 @@ rest 0x60
 if 1
     set_sfx 4, u"GROUP_NTR_NINJA"
     set_cellanim 4, u"rom:/cellanim/ntrNinja_long.zlib", -1
-    set_effect 4, u"rom:/effect/ntrNinja.zlib", -1
+    set_layout 4, u"rom:/layout/ntrNinja.zlib", -1
     game_cellanim 0x16, 4
     game_layout 0x16, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_NINJA"
     set_cellanim 5, u"rom:/cellanim/ntrNinja_long.zlib", -1
-    set_effect 5, u"rom:/effect/ntrNinja.zlib", -1
+    set_layout 5, u"rom:/layout/ntrNinja.zlib", -1
     game_cellanim 0x16, 5
     game_layout 0x16, 5
     0xB3 1, 1

@@ -18,6 +18,7 @@ sequenceBannerCoin:
 				0x6B<1> 6
 				0xB3 7,1
 				async_call playBanner
+				0x21 230
 				input 1
 				0x6B<0> 0
 			endif
