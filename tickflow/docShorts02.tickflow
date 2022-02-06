@@ -108,6 +108,8 @@ endif
 0x2B 0x3A, 10
 0x2B 0x1A, 10
 0x2B 0xC, 10
+0x2B 0x20, 3
+0x2B 0x31, 3
 
 0x21 0x78
 speed 0x100
@@ -156,7 +158,6 @@ endif
 
 0x21 115
 async_call loadKarate3DS
-// async_call loadKitties
 async_call sequenceBannerClapTrap
 rest 0x30
 getrest 7
@@ -180,18 +181,18 @@ call lifeCheck
 
 async_call sequenceFinned
 rest 0x30
-async_call loadBunnyHop
+async_call loadQuiz
 async_call unloadTutorial
 getrest 7
 call fade
 call lifeCheck
 
-// async_call sequenceKahoot
-// rest 0x30
-// async_call loadBunnyHop
-// getrest 7
-// call fade
-// call lifeCheck
+async_call sequenceKahoot
+rest 0x30
+async_call loadBunnyHop
+getrest 7
+call fade
+call lifeCheck
 
 async_call sequenceMarioHurryUp
 rest 0x30
@@ -205,26 +206,68 @@ rest 0x30
 async_call loadMarcher
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call sequenceCoH
+rest 0x30
+async_call loadExhibitionMatch
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceTetris
+rest 0x30
+async_call loadAnimalAcrobat
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceRivalsAether
+rest 0x30
+async_call loadCatchyTune
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceCSD
+rest 0x30
+async_call loadGleeClub
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceWiiMusic
+rest 0x30
+async_call loadCheerReaders
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceDukeNukem
+rest 0x30
+async_call loadSeeSaw
+getrest 7
+call fade
+call lifeCheck
+
+async_call sequenceBanjoKazooie
 rest 0x30
 async_call loadBRF
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call sequenceSims
 rest 0x30
 async_call loadTap
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call sequenceRhythmMasters
 rest 0x30
 getrest 7
-// call lifeCheck
+call lifeCheck
 
 
 input 0

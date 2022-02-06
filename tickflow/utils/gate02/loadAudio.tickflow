@@ -27,3 +27,32 @@ if_neq 1
     endif
 endif
 stop
+
+loadShorts11:
+0xB3 6,0
+0xB2 3
+if 11
+    0xB3 6,1
+endif
+0xB2 4
+if 11
+    0xB3 6,1
+endif
+0xB2 6
+if_neq 1
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        rest 0x60
+        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_11"
+        0xB3 3,11
+        0xB3 2,0
+    else 
+        remove_sfx 0xB
+        rest 0x60
+        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_11"
+        0xB3 4,11
+        0xB3 2,1
+    endif
+endif
+stop

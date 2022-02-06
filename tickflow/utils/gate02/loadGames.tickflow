@@ -80,11 +80,19 @@ if 1
     if 1
         remove_cellanim 4
     endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
     remove_sfx 4
 else
     0x35<2> 5
     if 1
         remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
     endif
     remove_sfx 5
 endif
@@ -94,12 +102,16 @@ rest 0x60
 if 1
     set_sfx 4, u"GROUP_AGB_QUIZ"
     set_cellanim 4, u"rom:/cellanim/agbQuiz_v0.zlib", -1
+    set_effect 4, u"rom:/effect/agbQuiz.zlib", -1
     game_cellanim 0x7, 4
+    game_effect 0x7, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_QUIZ"
     set_cellanim 5, u"rom:/cellanim/agbQuiz_v0.zlib", -1
+    set_effect 5, u"rom:/effect/agbQuiz.zlib", -1
     game_cellanim 0x7, 5
+    game_effect 0x7, 5
     0xB3 1, 1
 endif
 stop
@@ -221,6 +233,185 @@ else
 endif
 stop
 
+loadExhibitionMatch:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts11
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_BATTING"
+    set_cellanim 4, u"rom:/cellanim/rvlBatting_long.zlib", -1
+    set_effect 4, u"rom:/effect/rvlBatting.zlib", -1
+    game_cellanim 0x1E, 4
+    game_effect 0x1E, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_BATTING"
+    set_cellanim 5, u"rom:/cellanim/rvlBatting_long.zlib", -1
+    set_effect 5, u"rom:/effect/rvlBatting.zlib", -1
+    game_cellanim 0x1E, 5
+    game_effect 0x1E, 5
+    0xB3 1, 1
+endif
+stop
+
+loadAnimalAcrobat:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts11
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_BLANCO"
+    set_cellanim 4, u"rom:/cellanim/ctrBlanco_arrange.zlib", -1
+    set_effect 4, u"rom:/effect/ctrBlanco.zlib", -1
+    game_cellanim 0x35, 4
+    game_effect 0x35, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_BLANCO"
+    set_cellanim 5, u"rom:/cellanim/ctrBlanco_arrange.zlib", -1
+    set_effect 5, u"rom:/effect/ctrBlanco.zlib", -1
+    game_cellanim 0x35, 5
+    game_effect 0x35, 5
+    0xB3 1, 1
+endif
+stop
+
+loadCatchyTune:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts11
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_STEP"
+    set_cellanim 4, u"rom:/cellanim/ctrStep_short.zlib", -1
+    game_cellanim 0x3B, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_STEP"
+    set_cellanim 5, u"rom:/cellanim/ctrStep_short.zlib", -1
+    game_cellanim 0x3B, 5
+    0xB3 1, 1
+endif
+stop
+
+loadGleeClub:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts11
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_CHORUS"
+    set_cellanim 4, u"rom:/cellanim/ntrChorus_short.zlib", -1
+    game_cellanim 0x13, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_CHORUS"
+    set_cellanim 5, u"rom:/cellanim/ntrChorus_short.zlib", -1
+    game_cellanim 0x13, 5
+    0xB3 1, 1
+endif
+stop
+
+loadCheerReaders:
+0xB2 1
+if 1
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    remove_sfx 4
+else
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    remove_sfx 5
+endif
+async_call loadShorts11
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_BOOKS"
+    set_cellanim 4, u"rom:/cellanim/rvlBook_long.zlib", -1
+    game_cellanim 0x20, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_BOOKS"
+    set_cellanim 5, u"rom:/cellanim/rvlBook_long.zlib", -1
+    game_cellanim 0x20, 5
+    0xB3 1, 1
+endif
+stop
+
 loadSeeSaw:
 0xB2 1
 if 1
@@ -236,17 +427,17 @@ else
     endif
     remove_sfx 5
 endif
-// async_call loadShorts4
+async_call loadShorts4
 rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_SEE_SAW"
-    set_cellanim 4, u"rom:/cellanim/rvlSeeSaw_v0.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/rvlSeesaw_v0.zlib", -1
     game_cellanim 0x31, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_SEE_SAW"
-    set_cellanim 5, u"rom:/cellanim/rvlSeeSaw_v0.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/rvlSeesaw_v0.zlib", -1
     game_cellanim 0x31, 5
     0xB3 1, 1
 endif
