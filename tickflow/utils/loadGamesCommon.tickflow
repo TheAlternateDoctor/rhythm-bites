@@ -2,17 +2,9 @@
 loadBRF:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts4
 rest 0x60
@@ -33,33 +25,9 @@ stop
 loadTap:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    0x3E<2> 4
-    if 1
-        remove_layout 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    0x3E<2> 5
-    if 1
-        remove_layout 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts4
 rest 0x60

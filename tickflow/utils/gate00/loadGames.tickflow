@@ -2,25 +2,9 @@
 loadKarateGBA:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts1
 rest 0x60
@@ -45,25 +29,9 @@ stop
 loadLumbearjack:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts2
 rest 0x60
@@ -88,17 +56,9 @@ stop
 loadTweezers:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts2
 rest 0x60
@@ -119,17 +79,9 @@ stop
 loadNightWalk:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts2
 rest 0x60
@@ -150,17 +102,9 @@ stop
 loadGolf:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts2
 rest 0x60
@@ -181,17 +125,9 @@ stop
 loadBtSWii:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts2
 rest 0x60
@@ -212,17 +148,9 @@ stop
 loadHopping:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts3
 rest 0x60
@@ -243,25 +171,9 @@ stop
 loadAirboarders:
 0xB2 1
 if 1
-    0x31<2> 0
-    if 1
-        remove_model 0
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x31<2> 1
-    if 1
-        remove_model 1
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadPMDCharm //Special case
 rest 0x60
@@ -286,25 +198,9 @@ stop
 loadFruitBasket:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts3
 rest 0x60
@@ -329,25 +225,9 @@ stop
 loadDazzles:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadKirbyVictory
 rest 0x60
@@ -372,17 +252,9 @@ stop
 loadSSWii:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts3
 rest 0x60
@@ -403,17 +275,9 @@ stop
 loadSpaceDance:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts4
 rest 0x60

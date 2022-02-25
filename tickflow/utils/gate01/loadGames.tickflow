@@ -2,25 +2,9 @@
 loadKarateWii:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts1
 rest 0x60
@@ -45,33 +29,9 @@ stop
 loadTangotronic:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x31<2> 0
-    if 1
-        remove_model 0
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x31<2> 1
-    if 1
-        remove_model 1
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts6
 rest 0x60
@@ -102,25 +62,9 @@ stop
 loadShootEmUp:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadDuckHunt
 rest 0x60
@@ -145,25 +89,9 @@ stop
 loadMicroRow:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts6
 rest 0x60
@@ -188,25 +116,9 @@ stop
 loadSuperSamuraiSlice:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts6
 rest 0x60
@@ -231,25 +143,9 @@ stop
 loadSumoBros:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts6
 rest 0x60
@@ -274,17 +170,9 @@ stop
 loadSneakySpirits:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts7
 rest 0x60
@@ -305,33 +193,9 @@ stop
 loadFillbots:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    0x3E<2> 4
-    if 1
-        remove_layout 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    0x3E<2> 5
-    if 1
-        remove_layout 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadMegaman
 rest 0x60
@@ -360,25 +224,9 @@ stop
 loadTongueLashing:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    0x39<2> 4
-    if 1
-        remove_effect 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    0x39<2> 5
-    if 1
-        remove_effect 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts7
 rest 0x60
@@ -403,17 +251,9 @@ stop
 loadRatRace:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts7
 rest 0x60
@@ -434,17 +274,9 @@ stop
 loadMunchyMonk:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts7
 rest 0x60
@@ -465,17 +297,9 @@ stop
 loadPajama:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
 async_call loadShorts4
 rest 0x60

@@ -1,6 +1,7 @@
 
 fade:
 	rest 0x60
+	async_call unloadSuperfluous
 	fade 1, 1, 0x20
 	rest 0x30
 return
@@ -119,4 +120,61 @@ unloadTutorial:
 	remove_layout 0xB
 	rest 0xC
 	rest 0x60
+stop
+
+unloadGameSlot4:
+    0x35<2> 4
+    if 1
+        remove_cellanim 4
+    endif
+    0x39<2> 4
+    if 1
+        remove_effect 4
+    endif
+    0x31<2> 0
+    if 1
+        remove_model 0
+    endif
+    0x3E<2> 4
+    if 1
+        remove_layout 4
+    endif
+    remove_sfx 4
+stop
+
+unloadGameSlot5:
+    0x35<2> 5
+    if 1
+        remove_cellanim 5
+    endif
+    0x39<2> 5
+    if 1
+        remove_effect 5
+    endif
+    0x31<2> 1
+    if 1
+        remove_model 1
+    endif
+    0x3E<2> 5
+    if 1
+        remove_layout 5
+    endif
+    remove_sfx 5
+stop
+
+unloadSuperfluous:
+	0xB2 2
+	if 1
+		0xB2 3
+		if_neq -1
+			remove_sfx 0xA
+			0xB3 3, -1
+		endif
+	else
+		0xB2 4
+		if_neq -1
+			remove_sfx 0xB
+			0xB3 4, -1
+		endif
+	endif
 stop
