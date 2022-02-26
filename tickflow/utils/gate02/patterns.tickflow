@@ -521,6 +521,7 @@ sequenceDukeNukem:
     engine 0x20
     sub 4
     0x21 170
+    0xB0<1>
     rest 0x30
 	0xB3 9, 0x20
 
