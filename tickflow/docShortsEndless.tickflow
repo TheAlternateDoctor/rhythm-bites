@@ -13,8 +13,18 @@
 #include utils/gate00/audio.tickflow
 #include utils/gate00/loadGames.tickflow
 
+#include utils/gate02/patterns.tickflow
+#include utils/gate02/loadAudio.tickflow
+#include utils/gate02/audio.tickflow
+#include utils/gate02/loadGames.tickflow
+
+#include utils/endless/patterns.tickflow
+#include utils/endless/loadAudio.tickflow
+#include utils/endless/audio.tickflow
 #include utils/endless/loadGames.tickflow
+
 #include utils/endless/utils.tickflow
+#include utils/endless/ports/djschool.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow
@@ -31,8 +41,7 @@ play_sfx 0x100029B
 0x8C 1
 
 0xA6 0
-//Chooses the prologue at random
-call choosePrologue
+0xA4<1> 0xF
 
 0x75<1> 
 if 0
@@ -45,7 +54,6 @@ else
 endif 
 set_cat 0
 0x21 0x78
-speed 0x100
 input 0
 0x7C<3> 1
 if 0
@@ -116,9 +124,32 @@ endif
 0x2B 0x3A, 10
 0x2B 0x1A, 10
 0x2B 0xC, 10
+0x2B 0x41, 10
+0x2B 0x28, 10
+0x2B 0x3F, 10
+0x2B 0x03, 10
+0x2B 0x06, 10
+0x2B 0x25, 2
+0x2B 0xC, 2
+0x2B 0x40, 10
+0x2B 0x28, 10
+0x2B 0x16, 10
+0x2B 0x8, 10
+0x2B 0x23, 10
+0x2B 0x37, 10
+0x2B 0x3C, 10
+0x2B 0x2, 10
+0x2B 0x18, 10
+0x2B 0x36, 10
+0x2B 0x9, 10
+0x2B 0x1B, 10
+0x2B 0x3A, 10
+0x2B 0x1A, 10
+0x2B 0xC, 10
+0x2B 0x20, 3
+0x2B 0x31, 3
 
 0x21 0x78
-speed 0x100
 0xB1 
 engine<4> 1
 async_call assets
@@ -131,10 +162,11 @@ fade 2, 1, 0
 0x8F 3
 input 0
 
+
 call changeEngine
-engine 0x40
-0xB3 9,0x40
-0x109 1
+engine 0x28
+0xB3 9,0x28
+// 0x109 1
 sub 4
 0x29<2> 
 0xAF<6> 0
@@ -143,15 +175,18 @@ set_cat 0
 async_call startingGame
 rest 0x60	// 2.0 beats
 label 0x54D
+0xA2
+
+0xB3 0,0
 
 0x21 115
-async_call sequenceBannerSickBeats
+async_call sequenceNTR
 rest 0x30
-async_call loadKarateGBA
+async_call loadNextGame
 getrest 7
 rest 0x30
 call fade
-call lifeCheck
+call lifeCheckEndless
 
 0xA2
 
@@ -185,16 +220,17 @@ rest 0x60	// 2.0 beats
 stop 
 
 
-unloadTutorial:
-	//remove extra stuff like tutorial stuff
-	remove_cellanim 8
-	rest 0xC
-	remove_cellanim 9
-	rest 0xC
-	remove_layout 0xB
-	rest 0xC
-	rest 0x60
-stop
+// unloadTutorial:
+// 	//remove extra stuff like tutorial stuff
+// 	remove_cellanim 8
+// 	rest 0xC
+// 	remove_cellanim 9
+// 	rest 0xC
+// 	remove_layout 0xB
+// 	rest 0xC
+// 	rest 0x60
+// stop
+
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -254,7 +290,7 @@ stop
 
 
 loadInitialGames:
-set_cellanim 4, u"rom:/cellanim/agbVirus_v0.zlib", -1
+set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
 label 0x4D2
 cellanim_busy 4
 if 0
@@ -284,6 +320,16 @@ rest 1	// 0.020833334 beats
 goto 0x4D4
 label 0x10E3
 
+set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+label 0x4D5
+effect_busy 2
+if 0
+	goto 0x10E7
+endif 
+rest 1	// 0.020833334 beats
+goto 0x4D5
+label 0x10E7
+
 set_layout 0x1E, u"rom:/layout/gate.zlib", -1
 set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
 set_cellanim 9, u"rom:/cellanim/common.zlib", -1
@@ -301,18 +347,21 @@ set_sfx 1, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_CHIKEN"
 rest 0x18	// 0.5 beats
-set_sfx 9, u"GROUP_AGB_VIRUS"
+set_sfx 9, u"GROUP_KARATE"
 rest 0x18	// 0.5 beats
 set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
 set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
+rest 0xC	// 0.25 beats
+set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
 rest 0xC	// 0.25 beats
 sub 3
 0x83 0
 
 game_cellanim 0x43, 2
 game_effect 0x43, 2
-game_cellanim 0x40, 4
+game_cellanim 0x28, 4
+game_effect 0x28, 4
 
 0xB3 1, 0
 
@@ -324,7 +373,7 @@ return
 
 startingGame:
 0x8F 3
-fade<1> 7, 1, 0x30
+fade<1> 2, 1, 0x30
 rest 0x60	// 2.0 beats
 // input 1
 async_sub 0x53

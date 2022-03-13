@@ -40,6 +40,8 @@ sequenceAGB:
 	setrest 7, 0x150
 	call changeEngine
 	engine 0x28
+	rest 0xC
+	async_call loadShorts1
 	rest 0x30
 	0xB3 9, 0x28
 
@@ -126,9 +128,9 @@ sequenceZeldaWoodCat:
 	setrest 7, 0x2B8
 	call changeEngine
 	engine 0x3F
-	sub 4
-	0x29<2> 
-	rest 0x30
+	rest 0xC
+	async_call loadShorts2
+	rest 0x48
 	0xB3 9, 0x3F
 	fade<1> 1,1,0x30
 
@@ -151,7 +153,10 @@ sequenceZeldaHair:
 	engine 0x3
 	sub 4
 	0x29<2> 
+	rest 0xC
+	async_call loadShorts2
 	rest 0x30
+	rest 0x18
 	0xB3 9, 0x3
 	fade<1> 1,1,0x30
 
@@ -202,6 +207,8 @@ sequenceSonic:
 	0x103
 	0x103<1> 0
 	0x103<1> 1
+	rest 0xC
+	async_call loadShorts2
 	rest 0x30
 	0xB3 9, 0x6
 	fade<1> 1,1,0x30
@@ -292,12 +299,16 @@ sequenceRhythmDr:
 	0x102<2> 0
 	0x104<1> 0
 	0x8B 0, 0
+	rest 0xC
+	async_call loadShorts2
 	rest 0x30
+	rest 0x18
 	0xB3 9, 0x25
 	fade<1> 1,1,0x30
 
 	async_call playRhythmDr
 	async_call beatRhythmDr
+	input 1
 	0x9F<5> 2
 	0xA2<0>
 
@@ -326,6 +337,8 @@ sequenceValve:
 	engine 0x1C
 	sub 4
 	0x29<2> 
+	rest 0xC
+	async_call loadShorts2
 	rest 0x30
 	0xB3 9, 0x1C
 
@@ -365,6 +378,8 @@ sequenceWariowareDIY:
 	engine 0x04
 	sub 4
 	0x29<2> 
+	rest 0xC
+	async_call loadShorts3
 	rest 0x30
 	0xB3 9, 0x4
 
@@ -432,6 +447,8 @@ sequenceDodo:
 	engine 0x38
 	sub 4
 	0x29<2> 
+	rest 0xC
+	async_call loadShorts3
 	rest 0x30
 	0xB3 9, 0x38
 
@@ -452,6 +469,8 @@ sequenceKirby:
 	engine 0x11
 	sub 4
 	0x29<2> 
+	rest 0xC
+	async_call loadKirbyLate
 	rest 0x30
 	0xB3 9, 0x11
 
@@ -493,7 +512,10 @@ sequenceIaiGiri:
 	0x105<3> -1
 	0x105<4> 20
 	0x10F
+	rest 0xC
+	async_call loadShorts3
 	rest 0x30
+	rest 0x18
 	0xB3 9, 0x30
 
 	async_call playIaiGiri
@@ -530,6 +552,8 @@ sequenceSmash:
 	0x29<2> 
 	setrest 0, 0x20
 	setrest 1, 0x10
+	rest 0xC
+	async_call loadShorts4
 	rest 0x30
 	0xB3 9, 0xB
 	fade<1> 1,1,0x30

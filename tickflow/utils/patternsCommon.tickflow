@@ -80,6 +80,8 @@ sequenceTomodachi:
 	engine 0x4F
 	sub 4
 	0x29<2> 
+	rest 0xC
+	async_call loadShorts1
 	rest 0x30
 	0xB3 7, 0
 	0xB3 9, 0x4F

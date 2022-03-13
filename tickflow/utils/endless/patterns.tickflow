@@ -1,0 +1,307 @@
+sequenceMiitopia:
+	set_cat 0
+	setrest 7, 0x270
+	call changeEngine
+	engine 0x2F
+	rest 0xC
+    async_call loadShorts3
+	rest 0x30
+	0xB3 9, 0x2F
+
+	fade<1> 1,1,0x30
+    async_sub 0x5D
+    input 1
+    rest 0x60
+    async_call playMiitopia
+    async_sub 0x5F
+    rest 0xF0
+    0x102<1>
+    rest 0x30
+    async_sub 0x5D
+    rest 0x18
+    async_sub 0x63
+stop
+
+beatFighter:
+0x106
+rest 0x30
+goto beatFighter
+
+sequenceStreetFighter:
+	set_cat 0
+	setrest 7, 0x1E0
+	call changeEngine
+	engine 0x27
+	rest 0xC
+    0x101 0
+    0x21 147
+    async_call loadShorts3
+	rest 0x30
+    rest 0x18
+	0xB3 9, 0x27
+
+	fade<1> 1,1,0x30
+    async_call beatFighter
+    async_call playStreetFighter
+    input 1
+    async_sub 0x56
+    rest 0xFC
+    async_sub 0x5D
+stop
+
+sequenceSplatoon:
+	set_cat 0
+	setrest 7, 0x1E0
+	call changeEngine
+	engine 0x22
+	rest 0xC
+    async_call loadShorts6
+	rest 0x60
+    setrest 2, 0xD
+    setrest 3, 0xB
+	0xB3 9, 0x22
+    0x101 0
+
+	fade<1> 1,1,0x30
+    async_call playSplatoon
+    rest 0x1E
+    input 1
+    async_sub 0x56
+    rest 0x12
+    rest 0x90
+    0x102 -1
+    0x101 1
+    rest 0x30
+    async_sub 0x57
+
+stop
+
+smallStartSeal:
+    play_sfx 0x1000884
+    rest 0x18	// 0.5 beats
+    0x40<1> 0x1000291, 0x100
+    0x101 
+    0x105<1> 
+    0x105<2> 0
+    rest 0x30	// 1.0 beats
+    0x40<1> 0x1000291, 0x100
+    0x101 
+    0x105<1> 
+    rest 0x30	// 1.0 beats
+    0x40<1> 0x1000291, 0x100
+    0x101 
+    0x105<1> 
+    rest 0x30	// 1.0 beats
+    play_sfx 0x10008B1
+    0x40<1> 0x1000291, 0x100
+    0x102 0, 0
+    0x105<1> 
+    rest 0x30	// 1.0 beats
+stop 
+
+sequenceCaveStory:
+	set_cat 0
+	setrest 7, 0x1E0
+	call changeEngine
+	engine 0x26
+	rest 0xC
+    async_call loadShorts7
+    0x21 135
+	rest 0x30
+    0x65<4> 0x12C, 0x3C
+    0x65<3> 0, -0x50
+    0x65<5> 2
+    setrest 2, 0xD
+    setrest 3, 0xB
+	0xB3 9, 0x26
+
+	fade<1> 1,1,0x30
+    async_call smallStartSeal
+    input 1
+    rest 0x18
+    async_sub 0x63
+    async_sub 0x63, 0x30
+    async_sub 0x64, 0x60
+    async_sub 0x62, 0x90
+    rest 0xC0
+    async_sub 0x6E
+    async_call playCaveStory
+stop
+
+sequenceRayman:
+	set_cat 0
+	setrest 7, 0x1B0
+    call changeEngine
+    engine 0x32
+	rest 0xC
+    0x106
+    0x21 160
+    async_call loadShorts8
+	rest 0x30
+	0xB3 9, 0x32
+
+    fade<1> 1,1,0x30
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+    rest 0x30
+
+    async_call playRayman
+
+    input 1
+    async_sub 0x5B
+    rest 0xC0
+    async_sub 0x5E
+
+
+    rest 0x120
+stop
+
+sequenceTF2:
+	set_cat 0
+	setrest 7, 0x150
+    call changeEngine
+    engine 0x1
+	rest 0xC
+    async_call loadShorts8
+	rest 0x30
+	rest 0x30
+	0xB3 9, 0x1
+
+    async_call playTF2
+    // 0x105<2> "Clap_ver_arrange_T_board_00"
+
+    fade<1> 1,1,0x30
+    input 1
+    rest 0x1A
+    0x102<0>
+    rest 0x24
+    async_sub 0x57
+    rest 0xA0
+    0x102<1>
+    rest 0x10
+    0x100 0x10
+    0x103<0> 0
+    rest 0x10
+    0x104 1
+    0x103<0> 1
+    rest 0x30
+    rest 0x18
+    0x101 0
+
+stop
+
+battement:
+    0x102
+    rest 0x60
+    0x102
+    rest 0x60
+    0x102
+    rest 0x60
+    0x102
+    rest 0x30
+    0x102
+    rest 0x60
+    0x102
+    rest 0x60
+    0x102
+    rest 0x30
+    0x102
+    rest 0x60
+    0x102
+    rest 0x60
+    0x102
+    rest 0x60
+    0x102
+    rest 0x60
+    0x102
+stop
+
+sequenceDaftPunk:
+	set_cat 0
+	setrest 7, 0x420
+	// setrest 7, 0x4C0
+    call changeEngine
+    engine 0x11
+	rest 0xC
+    pan 3, -0x39, -0x35 
+    async_call loadDJSchoolLate
+    async_call loadShorts8
+	rest 0x30
+	0xB3 9, 0x11
+
+    async_call playDaftPunk
+    fade<1> 1, 3, 0x30
+    async_call permadark
+    async_call battement
+    rest 0xC0
+    input 1
+    async_call breakcomeonooh
+    rest 0xF0
+    async_call scratcho
+    rest 0x138
+    async_call andstopooh
+    rest 0x78
+    async_call scratchofinal
+stop
+
+sequencePacMan:
+	set_cat 0
+	setrest 7, 0x1B0
+    call changeEngine
+    engine 0x24
+	rest 0xC
+    async_call loadShorts8
+	rest 0x30
+    rest 0x18
+	0xB3 9, 0x24
+
+    async_call playPacMan
+    fade<1> 1,1,0x30
+    input 1
+    rest 0x30
+    0x100 0
+    rest 0x18
+    0x100 0
+    rest 0x18
+    rest 0x30
+    0x101 0
+    0x103 4
+    rest 0x18
+    rest 0x18
+    0x102
+    0x100 0
+    rest 0x18
+    0x100 0
+    rest 0x18
+    0x100 0
+    rest 0x18
+    0x100 0
+    rest 0x78
+    0x102
+    rest 0x30
+    rest 0x30
+stop
+
+sequenceNTR:
+	set_cat 0
+	setrest 7, 0x1B0
+    call changeEngine
+    engine 0x28
+	rest 0xC
+    async_call loadShorts8
+	rest 0x30
+	0xB3 9, 0x28
+
+    
+    async_call playNTR
+    fade<1> 1,1,0x30
+    input 1
+    0x100 0
+    rest 0x30
+    async_sub 0x67
+    rest 0x54
+    async_sub 0x75
+    rest 0x60
+    async_sub 0x84
+stop

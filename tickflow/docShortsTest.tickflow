@@ -3,10 +3,14 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include utils/gate02/patterns.tickflow
-#include utils/gate02/audio.tickflow
-#include utils/gate02/loadGames.tickflow
-#include utils/gate02/loadAudio.tickflow
+// #include utils/gate00/loadAudio.tickflow
+#include utils/gate01/loadAudio.tickflow
+
+
+#include utils/gate00/patterns.tickflow
+#include utils/gate00/loadAudio.tickflow
+#include utils/gate00/audio.tickflow
+#include utils/gate00/loadGames.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow
@@ -14,7 +18,14 @@
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
-#index 0x10E
+#include utils/endless/patterns.tickflow
+#include utils/endless/audio.tickflow
+#include utils/endless/loadGames.tickflow
+#include utils/endless/loadAudio.tickflow
+
+#include utils/endless/ports/djschool.tickflow
+
+#index 0x19
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -23,7 +34,8 @@ play_sfx 0x100029B
 0x8C 1
 
 0xA6 0
-0xA4<1> 0xE
+// 0xA4<1> 0xF
+0xA4 0x16
 
 0x75<1> 
 if 0
@@ -36,6 +48,7 @@ else
 endif 
 set_cat 0
 0x21 0x78
+speed 0x100
 input 0
 0x7C<3> 1
 if 0
@@ -91,186 +104,131 @@ if 1
 endif 
 0x2D 1
 
-0x2B 0x40, 10
+0x2B 0x41, 10
 0x2B 0x28, 10
-0x2B 0x16, 10
-0x2B 0x8, 10
-0x2B 0x23, 10
-0x2B 0x37, 10
-0x2B 0x3C, 10
-0x2B 0x2, 10
-0x2B 0x18, 10
-0x2B 0x36, 10
-0x2B 0x9, 10
-0x2B 0x1B, 10
-0x2B 0x3A, 10
-0x2B 0x1A, 10
-0x2B 0xC, 10
-0x2B 0x20, 3
-0x2B 0x31, 3
+0x2B 0x3F, 10
+0x2B 0x03, 10
+0x2B 0x06, 10
+0x2B 0x25, 2
+0x2B 0xC, 2
 
 0x21 0x78
+speed 0x100
 0xB1 
 engine<4> 1
 async_call assets
 0x7C<1> 7, 1, 1
 fade 2, 1, 0
-
 0xAD 1
+
 0x8C 0
 0x8E 0
 0x8F 3
 input 0
 
-0xB3 3, -1
-0xB3 4, -1
-
 call changeEngine
-engine 0x42
-0xB3 9,0x42
+engine 0x41
+0xB3 9,0x41
 sub 4
 0x29<2> 
+		0x103 1
+		0x102 0
+		0x108<1> 3
 0xAF<6> 0
+0x102 1
 // call tempoAndMusic
 set_cat 0
 0x9C<2>	// These two lines enable then unload the practice assets, for Air Rally performance checking
 0x9C<3>
 async_call startingGame
-0x53 0x1000251
-0x23 0x1000251
-rest 0x60	// 2.0 beats
-sub 2
-0x55 1
-0xAF<2> 0, 0, "gate_explain_short"
-play_sfx 0x10002DC
-rest 0xC0	// 4.0 beats
-rest 0xC0	// 4.0 beats
-rest 0x46	// 1.4583334 beats
-play_sfx 0x10002DD
-rest 0x60	// 2.0 beats
-label 0x54D
-0xAF<3> 0
-if 0
-	rest 0xC	// 0.25 beats
-	goto 0x54D
-endif 
+0xB3 3, 1
+0xB3 4, 2
+0xB3 2, 0
 
-0x21 115
-async_call sequenceBannerClapTrap
+async_call loadBoardMeeting
 rest 0x30
-async_call loadKarate3DS
 getrest 7
 rest 0x30
 call fade
 call lifeCheck
+
 
 0xA2
-async_call sequence3DS
+async_call sequenceMiitopia
 rest 0x30
+async_call loadHopping
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceTomodachi
+async_call sequenceWariowareDIY
 rest 0x30
-async_call loadKitties
+async_call loadKarateNDS
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceFinned
+async_call sequenceNTR
 rest 0x30
-async_call loadQuiz
-async_call unloadTutorial
+async_call loadDJSchool
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceKahoot
+async_call sequenceDaftPunk
 rest 0x30
-async_call loadBunnyHop
+async_call loadRingSide
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceMarioHurryUp
+async_call sequenceStreetFighter
 rest 0x30
-async_call loadDogNinja
+async_call loadCatchOfTheDay
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceTMPokemon
+async_call sequenceSplatoon
 rest 0x30
-async_call loadMarcher
+async_call loadFlipperFlop
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceCoH
+async_call sequenceCaveStory
 rest 0x30
-async_call loadExhibitionMatch
+async_call loadPackingPests
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceTetris
+async_call sequenceRayman
 rest 0x30
-async_call loadAnimalAcrobat
+async_call loadSnappyTrio
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceRivalsAether
+async_call sequenceTF2
 rest 0x30
-async_call loadCatchyTune
+async_call loadForkLifter
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceCSD
+
+async_call sequencePacMan
 rest 0x30
-async_call loadGleeClub
+async_call loadKarateNDS
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceWiiMusic
-rest 0x30
-async_call loadCheerReaders
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceDukeNukem
-rest 0x30
-async_call loadSeeSaw
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceBanjoKazooie
-rest 0x30
-async_call loadBRF
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceSims
-rest 0x30
-async_call loadTap
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceRhythmMasters
-rest 0x30
-getrest 7
-call lifeCheck
 
 
 input 0
-fade 1, 1, 0x18
+// fade 1, 1, 0x18
 set_cat 0
 rest 0x30
 0x76 1, 1	// Which screen to affect
@@ -351,25 +309,15 @@ stop
 
 
 loadInitialGames:
-set_cellanim 4, u"rom:/cellanim/rvlSword_v0.zlib", -1
+set_cellanim 2, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
 label 0x4D2
-cellanim_busy 4
+cellanim_busy 2
 if 0
 	goto 0x10E1
 endif 
 rest 1	// 0.020833334 beats
 goto 0x4D2
 label 0x10E1
-
-set_cellanim 2, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
-label 0x4D3
-cellanim_busy 2
-if 0
-	goto 0x10E2
-endif 
-rest 1	// 0.020833334 beats
-goto 0x4D3
-label 0x10E2
 
 set_layout 0x1E, u"rom:/layout/gate.zlib", -1
 set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
@@ -386,25 +334,20 @@ sub 7
 0x8C<2> 5
 set_sfx 1, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
-set_sfx 4, u"GROUP_SIRAHA"
+set_sfx 2, u"GROUP_NTR_COIN_TOSS"
 rest 0x18	// 0.5 beats
 set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
+set_sfx 6, u"GROUP_WSD_TUTORIAL_AGB_KARATE" //Can't be arsed to check if there's anything in here
+rest 0x18	// 0.5 beats
 set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
 rest 0xC	// 0.25 beats
-set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_10"
+set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
 sub 3
 0x83 0
 
 game_cellanim 0x41, 2
-game_cellanim 0x42, 4
-
-0xB3 1, 1
-0xB3 3, 1
-0xB3 4, 10
-
 return 
-
 
 //-----------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -503,9 +446,6 @@ endif
 fade<1> 7, 1, 0
 0x76 7, 0
 0x100 
-// 0x67<3> 0x64
-// 0x67<4> 0x64
-// 0x65<1> 0, "multi_game"
 rest 0x18	// 0.5 beats
 0x88 
 if 0
@@ -986,5 +926,6 @@ if 1
 	remove_model 5
 endif
 return 
+
 
 // Hello there. General Kenobi!

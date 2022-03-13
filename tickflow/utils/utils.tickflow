@@ -1,9 +1,9 @@
 
 fade:
 	rest 0x60
-	async_call unloadSuperfluous
 	fade 1, 1, 0x20
 	rest 0x30
+	// async_call unloadSuperfluous
 return
 
 deadSub:
@@ -61,7 +61,6 @@ deadSubEndless:
 stop 
 
 lifeCheck:
-return
 	0xB2 9
 	switch
 	case 0x41
@@ -89,6 +88,8 @@ return
 		endif
 		break
 	case 0x40
+		0x21 600
+		rest 0x90
 		0x108
 		if 1
 			call deadSub
@@ -102,6 +103,54 @@ return
 	break
 	endswitch
 	0xA2
+	0x21 120
+return
+
+lifeCheckEndless:
+	0xB2 9
+	switch
+	case 0x41
+		0xB2 7
+		if 10
+			call deadSubEndless
+		endif
+		break
+	case 0x3
+		0x106 0
+		if_neq 1
+			call deadSubEndless
+		endif
+		break
+	case 0x4F
+		0xB2 7
+		if 0
+			call deadSubEndless
+		endif
+		break
+	case 0x6
+		0x105
+		if 1
+			call deadSubEndless
+		endif
+		break
+	case 0x40
+		0x21 600
+		rest 0x90
+		0x108
+		if 1
+			call deadSubEndless
+		endif
+		break
+	default
+		0xA2<2>
+		if 1
+			call deadSubEndless
+		endif
+	break
+	endswitch
+	0xA2
+	0x21 120
+	0xB4 0, 1
 return
 
 beatLoop:
@@ -162,19 +211,15 @@ unloadGameSlot5:
     remove_sfx 5
 stop
 
-unloadSuperfluous:
-	0xB2 2
-	if 1
-		0xB2 3
-		if_neq -1
-			remove_sfx 0xA
-			0xB3 3, -1
-		endif
-	else
-		0xB2 4
-		if_neq -1
-			remove_sfx 0xB
-			0xB3 4, -1
-		endif
+unloadAudio:
+	0xB2 3
+	if_neq -1
+		remove_sfx 0xA
+		0xB3 3, -1
+	endif
+	0xB2 4
+	if_neq -1
+		remove_sfx 0xB
+		0xB3 4, -1
 	endif
 stop

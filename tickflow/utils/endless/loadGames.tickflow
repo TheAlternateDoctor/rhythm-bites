@@ -8,19 +8,10 @@ stop
 loadSickBeats:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
-async_call loadShorts1
 rest 0x60
 0xB2 1
 if 1
@@ -39,19 +30,10 @@ stop
 loadCoinToss:
 0xB2 1
 if 1
-    0x35<2> 4
-    if 1
-        remove_cellanim 4
-    endif
-    remove_sfx 4
+    async_call unloadGameSlot4
 else
-    0x35<2> 5
-    if 1
-        remove_cellanim 5
-    endif
-    remove_sfx 5
+    async_call unloadGameSlot5
 endif
-async_call loadShorts1
 rest 0x60
 0xB2 1
 if 1
@@ -63,6 +45,249 @@ else
     set_sfx 5, u"GROUP_NTR_COIN_TOSS"
     set_cellanim 5, u"rom:/cellanim/ntrCoinToss_long.zlib", -1
     game_cellanim 0x41, 5
+    0xB3 1, 1
+endif
+stop
+
+loadClapTrap:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_SIRAHA"
+    set_cellanim 4, u"rom:/cellanim/rvlSword_v0.zlib", -1
+    game_cellanim 0x42, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_SIRAHA"
+    set_cellanim 5, u"rom:/cellanim/rvlSword_v0.zlib", -1
+    game_cellanim 0x42, 5
+    0xB3 1, 1
+endif
+stop
+
+loadBoardMeeting:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_KURU_SHOW"
+    set_cellanim 4, u"rom:/cellanim/rvlRotation_long.zlib", -1
+    game_cellanim 0x2F, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_KURU_SHOW"
+    set_cellanim 5, u"rom:/cellanim/rvlRotation_long.zlib", -1
+    game_cellanim 0x2F, 5
+    0xB3 1, 1
+endif
+stop
+
+loadRingSide:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_WRESTLER"
+    set_cellanim 4, u"rom:/cellanim/rvlInterview_long.zlib", -1
+    game_cellanim 0x27, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_WRESTLER"
+    set_cellanim 5, u"rom:/cellanim/rvlInterview_long.zlib", -1
+    game_cellanim 0x27, 5
+    0xB3 1, 1
+endif
+stop
+
+loadCatchOfTheDay:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_FISHING"
+    set_cellanim 4, u"rom:/cellanim/rvlFishing_v0.zlib", -1
+    game_cellanim 0x22, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_FISHING"
+    set_cellanim 5, u"rom:/cellanim/rvlFishing_v0.zlib", -1
+    game_cellanim 0x22, 5
+    0xB3 1, 1
+endif
+stop
+
+loadFlipperFlop:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_GOMA"
+    set_cellanim 4, u"rom:/cellanim/rvlGoma_short.zlib", -1
+    game_cellanim 0x26, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_GOMA"
+    set_cellanim 5, u"rom:/cellanim/rvlGoma_short.zlib", -1
+    game_cellanim 0x26, 5
+    0xB3 1, 1
+endif
+stop
+
+loadPackingPests:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_SHIWAKE"
+    set_cellanim 4, u"rom:/cellanim/rvlSort_long.zlib", -1
+    game_cellanim 0x32, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_SHIWAKE"
+    set_cellanim 5, u"rom:/cellanim/rvlSort_long.zlib", -1
+    game_cellanim 0x32, 5
+    0xB3 1, 1
+endif
+stop
+
+loadSnappyTrio:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_AGB_PATI"
+    set_cellanim 4, u"rom:/cellanim/agbClap_arrange.zlib", -1
+    set_layout 4, u"rom:/layout/agbClap_arrange.zlib", -1
+    game_cellanim 0x1, 4
+    game_layout 0x1, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_AGB_PATI"
+    set_cellanim 5, u"rom:/cellanim/agbClap_arrange.zlib", -1
+    set_layout 5, u"rom:/layout/agbClap_arrange.zlib", -1
+    game_cellanim 0x1, 5
+    game_layout 0x1, 5
+    0xB3 1, 1
+endif
+stop
+
+loadDJSchool:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_cellanim 4, u"rom:/cellanim/ntrDJSchool_v0.zlib", -1
+    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x11, 4
+    game_effect 0x11, 4
+    0xB3 1, 0
+else
+    set_cellanim 5, u"rom:/cellanim/ntrDJSchool_v0.zlib", -1
+    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x11, 5
+    game_effect 0x11, 5
+    0xB3 1, 1
+endif
+stop
+
+loadDJSchoolLate:
+remove_sfx 6
+rest 0xC
+0xB2 1
+if 1
+    set_sfx 5, u"GROUP_NTR_DJ_SCHOOL_EN"
+    set_sfx 6, u"GROUP_NTR_DJ_SCHOOL_JP"
+else
+    set_sfx 4, u"GROUP_NTR_DJ_SCHOOL_EN"
+    set_sfx 6, u"GROUP_NTR_DJ_SCHOOL_JP"
+endif
+stop
+
+loadForkLifter:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_KUSI"
+    set_cellanim 4, u"rom:/cellanim/rvlFork_v0.zlib", -1
+    game_cellanim 0x24, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_KUSI"
+    set_cellanim 5, u"rom:/cellanim/rvlFork_v0.zlib", -1
+    game_cellanim 0x24, 5
+    0xB3 1, 1
+endif
+stop
+
+loadKarateNDS:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_KARATE"
+    set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
+    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x28, 4
+    game_effect 0x28, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_KARATE"
+    set_cellanim 5, u"rom:/cellanim/rvlKarate_2.zlib", -1
+    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
+    game_cellanim 0x28, 5
+    game_effect 0x28, 5
     0xB3 1, 1
 endif
 stop

@@ -14,13 +14,15 @@ if_neq 1
     0xB2 2
     if 1
         remove_sfx 0xA
-        rest 0x60
+        remove_sfx 0xB
+        rest 0xC
         set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
         0xB3 3,1
         0xB3 2,0
     else 
+        remove_sfx 0xA
         remove_sfx 0xB
-        rest 0x60
+        rest 0xC
         set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_1"
         0xB3 4,1
         0xB3 2,1
@@ -43,13 +45,15 @@ if_neq 1
     0xB2 2
     if 1
         remove_sfx 0xA
-        rest 0x60
+        remove_sfx 0xB
+        rest 0xC
         set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_4"
         0xB3 3,4
         0xB3 2,0
     else 
+        remove_sfx 0xA
         remove_sfx 0xB
-        rest 0x60
+        rest 0xC
         set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_4"
         0xB3 4,4
         0xB3 2,1

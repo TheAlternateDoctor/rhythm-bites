@@ -1,12 +1,16 @@
 loadNextGame:
     0xB2 10
-    if 0x4F
-        async_call unloadTutorial
-    endif
+    // if 0x4F
+    //     async_call unloadTutorial
+    // endif
     0xB3 10,0
     0xB3 11,0
-    random 0x63
+    random 0x65
     switch
+        case 0x1 //TF2
+            0xB3 10,0x1
+            async_call loadSnappyTrio
+        break
         case 0x2 //Phantom Thief
             0xB3 10,0x2
             async_call loadSneakySpirits
@@ -15,13 +19,25 @@ loadNextGame:
             0xB3 10,0x3
             async_call loadTweezers
         break
-        case 0x4 //Warioware?
+        case 0x4 //Warioware
             0xB3 10,0x4
             async_call loadHopping
+        break
+        case 0x5 //Cadence of Hyrule
+            0xB3 10,0x5
+            async_call loadMarcher
         break
         case 0x6 //Sonic
             0xB3 10,0x6
             async_call loadNightWalk
+        break
+        case 0x7 //Kahoot
+            0xB3 10,0x7
+            async_call loadQuiz
+        break
+        case 0x8 //Hurry Up Mario
+            0xB3 10,0x8
+            async_call loadBunnyHop
         break
         case 0x9 //VVVVVV Rescue
             0xB3 10,0x9
@@ -41,7 +57,16 @@ loadNextGame:
         break
         case 0x11 //Kirby Victory
             0xB3 10,0x11
+            0xB3 11,0
             async_call loadDazzles
+        break
+        case 0x13 //Wii Music
+            0xB3 10,0x13
+            async_call loadGleeClub
+        break
+        case 0x16 //Pokémon TM
+            0xB3 10,0x16
+            async_call loadDogNinja
         break
         case 0x18 //Megaman
             0xB3 10,0x18
@@ -63,17 +88,62 @@ loadNextGame:
             0xB3 10,0x1C
             async_call loadBtSWii
         break
+        case 0x1E //Tetris
+            0xB3 10,0x1E
+            async_call loadExhibitionMatch
+        break
+        case 0x20 //Duke Nukem
+            0xB3 10,0x20
+            async_call loadCheerReaders
+        break
+        case 0x22 //Splatoon
+            0xB3 10,0x22
+            async_call loadCatchOfTheDay
+        break
         case 0x23 //Galaga
             0xB3 10,0x23
             async_call loadMicroRow
+        break
+        case 0x24 //Pac Man
+            0xB3 10,0x24
+            async_call loadForkLifter
         break
         case 0x25 //Rhythm Dr
             0xB3 10,0x25
             async_call loadGolf
         break
+        case 0x26 //Cave Story
+            0xB3 10,0x26
+            async_call loadFlipperFlop
+        break
+        case 0x27 //Street Fighter
+            0xB3 10,0x27
+            async_call loadRingSide
+        break
+        case 0x28 //Remix GBA
+            0xB3 10,0x28
+            0xB3 11,0x1
+            async_call loadKarateGBA
+        break
+        case 0x2F //Miitopia
+            0xB3 10,0x2F
+            async_call loadBoardMeeting
+        break
         case 0x30 //Iai Giri
             0xB3 10,0x30
             async_call loadSSWii
+        break
+        case 0x31 //Banjo Kazooie
+            0xB3 10,0x31
+            async_call loadSeeSaw
+        break
+        case 0x32 //Rayman
+            0xB3 10,0x32
+            async_call loadPackingPests
+        break
+        case 0x35 //Rivals of Aether
+            0xB3 10,0x35
+            async_call loadAnimalAcrobat
         break
         case 0x36 //Badge Pokémon
             0xB3 10,0x36
@@ -91,6 +161,10 @@ loadNextGame:
             0xB3 10,0x3A
             async_call loadPajama
         break
+        case 0x3B //CSD
+            0xB3 10,0x3B
+            async_call loadCatchyTune
+        break
         case 0x3C //Wii Fit
             0xB3 10,0x3C
             async_call loadSumoBros
@@ -98,6 +172,10 @@ loadNextGame:
         case 0x3D //Michael Jackson
             0xB3 10,0x3D
             async_call loadTangotronic
+        break
+        case 0x3E //Finned Frontier
+            0xB3 10,0x3E
+            async_call loadKitties
         break
         case 0x3F //Zelda Mastersword
             0xB3 10,0x3F
@@ -108,22 +186,39 @@ loadNextGame:
             async_call loadSickBeats
         break
         case 0x41 //Coin Toss
-            0xB3 10,0x40
+            0xB3 10,0x41
             async_call loadCoinToss
         break
-        // case 0x4F //Tutorial
-        //     0xB3 10,0x4F
-        //     async_call loadTutorial
-        // break
+        case 0x42 //Clap Trap
+            0xB3 10,0x42
+            async_call loadClapTrap
+        break
+        case 0x4F //Tutorial
+            0xB3 10,0x4F
+            async_call loadTutorial
+        break
         case 0x61 //Remix Wii
             0xB3 10,0x28
             0xB3 11,0x3
             async_call loadKarateWii
         break
-        default //Use Karateman GBA as default? idk
+        case 0x62 //Remix 3DS
             0xB3 10,0x28
+            0xB3 11,0x4
+            async_call loadKarate3DS
+        break
+        case 0x63 //Remix DS
+            0xB3 10,0x28
+            0xB3 11,0x2
+            async_call loadKarateNDS
+        break
+        case 0x64 //Daft Punk
+            0xB3 10,0x11
             0xB3 11,0x1
-            async_call loadKarateGBA
+            async_call loadDJSchool
+        break
+        default //Restart until we get something damnit
+            goto loadNextGame
         break
     endswitch
 stop
@@ -131,17 +226,29 @@ stop
 playNextGame:
     0xB2 10
     switch
+        case 0x1 //TF2
+            async_call sequenceTF2
+        break
         case 0x2 //Phantom Thief
             async_call sequencePhantomThief
         break
         case 0x3 //Zelda Cooking
             async_call sequenceZeldaHair
         break
-        case 0x4 //Warioware?
+        case 0x4 //Warioware
             async_call sequenceWariowareDIY
+        break
+        case 0x5 //Cadence of Hyrule
+            async_call sequenceCoH
         break
         case 0x6 //Sonic
             async_call sequenceSonic
+        break
+        case 0x7 //Kahoot
+            async_call sequenceKahoot
+        break
+        case 0x8 //Hurry Up Mario
+            async_call sequenceMarioHurryUp
         break
         case 0x9 //VVVVVV Rescue
             async_call sequenceRescueVvvvvv
@@ -156,7 +263,21 @@ playNextGame:
             async_call sequencePMD
         break
         case 0x11 //Kirby Victory
-            async_call sequenceKirby
+            0xB2 11
+            switch
+                case 0
+                    async_call sequenceKirby
+                    break
+                case 1
+                    async_call sequenceDaftPunk
+                    break
+            endswitch
+        break
+        case 0x13 //Wii Music
+            async_call sequenceWiiMusic
+        break
+        case 0x16 //TM Pokémon
+            async_call sequenceTMPokemon
         break
         case 0x18 //Megaman
             async_call sequenceMegaman
@@ -173,11 +294,29 @@ playNextGame:
         case 0x1C //Valve
             async_call sequenceValve
         break
+        case 0x1E //Tetris
+            async_call sequenceTetris
+        break
+        case 0x20 //Duke Nukem
+            async_call sequenceDukeNukem
+        break
+        case 0x22 //Splatoon
+            async_call sequenceSplatoon
+        break
         case 0x23 //Galaga
             async_call sequenceGalaga
         break
+        case 0x24 //Pac Man
+            async_call sequencePacMan
+        break
         case 0x25 //Rhythm Dr
             async_call sequenceRhythmDr
+        break
+        case 0x26 //Cave Story
+            async_call sequenceCaveStory
+        break
+        case 0x27 //Street Fighter
+            async_call sequenceStreetFighter
         break
         case 0x28 //Karate Man
             0xB2 11
@@ -185,13 +324,31 @@ playNextGame:
                 case 0x1
                     async_call sequenceAGB
                     break
+                case 0x2
+                    async_call sequenceNTR
+                    break
                 case 0x3
                     async_call sequenceWii
                     break
+                case 0x4
+                    async_call sequence3DS
+                    break
             endswitch
+        break
+        case 0x2F //Miitopia
+            async_call sequenceMiitopia
         break
         case 0x30 //Iai Giri
             async_call sequenceIaiGiri
+        break
+        case 0x31 //Banjo Kazooie
+            async_call sequenceBanjoKazooie
+        break
+        case 0x32 //Rayman
+            async_call sequenceRayman
+        break
+        case 0x35 //Rivals of Aether
+            async_call sequenceRivalsAether
         break
         case 0x36 //Badge Pokémon
             async_call sequencePokemonBadge
@@ -205,20 +362,32 @@ playNextGame:
         case 0x3A //Klonoa
             async_call sequenceKlonoa
         break
+        case 0x3B //CSD
+            async_call sequenceCSD
+        break
         case 0x3C //Wii Fit
             async_call sequenceWiiFit
         break
         case 0x3D //Michael Jackson
             async_call sequenceJackson
         break
+        case 0x3E //Finned Frontier
+            async_call sequenceFinned
+        break
         case 0x3F //Zelda Mastersword
             async_call sequenceZeldaWoodCat
         break
         case 0x40 //Sick Beats
+            call switchSickBeats
             async_call sequenceBannerSickBeats
         break
         case 0x41 //Coin Toss
+            call switchCoinToss
             async_call sequenceBannerCoin
+        break
+        case 0x42 //Clap Trap
+            call switchClapTrap
+            async_call sequenceBannerClapTrap
         break
         case 0x4F //Tutorial
             async_call sequenceTomodachi
@@ -233,11 +402,45 @@ playNextGame:
                 rest 0x30
                 goto 0x4E16
             rest 0x30
-            // call deadSubEndless
+            call deadSubEndless
         break
     endswitch
 	rest 0x30
 	async_call loadNextGame
 	getrest 7
 	call fade
+    call lifeCheckEndless
+return
+
+switchSickBeats:
+	set_cat 0
+    call changeEngine
+    engine 0x40
+    rest 0xC
+    async_call loadShorts1
+    rest 0x30
+    0xAF<6> 0
+	fade<1> 1,1,0x30
+return
+
+switchCoinToss:
+	set_cat 0
+    call changeEngine
+    engine 0x41
+    rest 0xC
+    async_call loadShorts1
+    rest 0x30
+    0xAF<6> 0
+	fade<1> 1,1,0x30
+return
+
+switchClapTrap:
+	set_cat 0
+    call changeEngine
+    engine 0x42
+    rest 0xC
+    async_call loadShorts1
+    rest 0x30
+    0xAF<6> 0
+	fade<1> 1,1,0x30
 return

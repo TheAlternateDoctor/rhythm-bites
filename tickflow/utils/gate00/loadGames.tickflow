@@ -6,7 +6,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts1
 rest 0x60
 0xB2 1
 if 1
@@ -33,7 +32,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts2
 rest 0x60
 0xB2 1
 if 1
@@ -60,7 +58,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts2
 rest 0x60
 0xB2 1
 if 1
@@ -83,7 +80,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts2
 rest 0x60
 0xB2 1
 if 1
@@ -106,7 +102,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts2
 rest 0x60
 0xB2 1
 if 1
@@ -129,7 +124,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts2
 rest 0x60
 0xB2 1
 if 1
@@ -152,7 +146,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts3
 rest 0x60
 0xB2 1
 if 1
@@ -202,7 +195,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts3
 rest 0x60
 0xB2 1
 if 1
@@ -233,7 +225,6 @@ async_call loadKirbyVictory
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_NTR_BOX_SHOW"
     set_cellanim 4, u"rom:/cellanim/ntrBoxShow_v0.zlib", -1
     set_effect 4, u"rom:/effect/ntrBoxShow.zlib", -1
     game_cellanim 0x11, 4
@@ -249,6 +240,15 @@ else
 endif
 stop
 
+loadKirbyLate:
+0xB2 1
+if 1
+    set_sfx 5, u"GROUP_NTR_BOX_SHOW"
+else
+    set_sfx 4, u"GROUP_NTR_BOX_SHOW"
+endif
+stop
+
 loadSSWii:
 0xB2 1
 if 1
@@ -256,7 +256,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts3
 rest 0x60
 0xB2 1
 if 1
@@ -279,7 +278,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadShorts4
 rest 0x60
 0xB2 1
 if 1
