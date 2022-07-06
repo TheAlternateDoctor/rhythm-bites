@@ -3,10 +3,10 @@ fade:
 	rest 0x60
 	fade 1, 1, 0x20
 	rest 0x30
-	// async_call unloadSuperfluous
 return
 
 deadSub:
+	0x21 120
 	input 0
 	set_cat 0
 	0x76 1, 1	// Which screen to affect
@@ -32,6 +32,8 @@ deadSub:
 stop 
 
 deadSubEndless:
+return
+	0x21 120
 	input 0
 	set_cat 0
 	0x76 1, 1	// Which screen to affect
@@ -66,25 +68,25 @@ lifeCheck:
 	case 0x41
 		0xB2 7
 		if 10
-			call deadSub
+    		get_sync 4
 		endif
 		break
 	case 0x3
 		0x106 0
 		if_neq 1
-			call deadSub
+    		get_sync 4
 		endif
 		break
 	case 0x4F
 		0xB2 7
 		if 0
-			call deadSub
+    		get_sync 4
 		endif
 		break
 	case 0x6
 		0x105
 		if 1
-			call deadSub
+    		get_sync 4
 		endif
 		break
 	case 0x40
@@ -92,13 +94,13 @@ lifeCheck:
 		rest 0x90
 		0x108
 		if 1
-			call deadSub
+    		get_sync 4
 		endif
 		break
 	default
 		0xA2<2>
 		if 1
-			call deadSub
+    		get_sync 4
 		endif
 	break
 	endswitch
@@ -160,13 +162,51 @@ beatLoop:
 	goto 0xBEA7
 stop
 
+cowbells:
+	random 4
+	switch
+		case 0
+			play_sfx 0x10002E1
+			rest 0x30
+			play_sfx 0x10002E7
+			break
+		case 1
+			play_sfx 0x10002E1
+			rest 0x30
+			play_sfx 0x10002E2
+			break
+		case 2
+			play_sfx 0x10002E5
+			rest 0x30
+			play_sfx 0x10002E6
+			break
+		case 3
+			play_sfx 0x10002E5
+			rest 0x30
+			play_sfx 0x10002E7
+			break
+	endswitch
+	rest 0x48
+return
+
 unloadTutorial:
-	//remove extra stuff like tutorial stuff
+	play_sfx 0x1000291
+	//remove extra tutorial stuff
 	remove_cellanim 8
 	rest 0xC
 	remove_cellanim 9
 	rest 0xC
 	remove_layout 0xB
+	rest 0xC
+	rest 0x60
+stop
+
+unloadTango:
+	play_sfx 0x1000291
+	//remove extra Tangotronic stuff
+	remove_model 4
+	rest 0xC
+	remove_model 5
 	rest 0xC
 	rest 0x60
 stop
@@ -211,14 +251,21 @@ unloadGameSlot5:
     remove_sfx 5
 stop
 
+unloadAudioSpecial:
+	0xB2 5
+	if 1
+		remove_sfx 0xC
+	else
+		remove_sfx 0xD
+	endif
+stop
+
 unloadAudio:
-	0xB2 3
-	if_neq -1
+	0xB2 2
+	if 1
 		remove_sfx 0xA
 		0xB3 3, -1
-	endif
-	0xB2 4
-	if_neq -1
+	else
 		remove_sfx 0xB
 		0xB3 4, -1
 	endif

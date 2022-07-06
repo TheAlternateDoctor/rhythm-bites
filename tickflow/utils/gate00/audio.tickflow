@@ -1,17 +1,14 @@
 
 playGBA:
 play_sfx 0x1000FDD
-0x21 135
 stop
 
 playZeldaWoodCat:
 play_sfx 0x1000FDF
-0x21 100
 stop
 
 playZeldaHair:
 play_sfx 0x1000FE4
-0x21 105
 stop
 
 playSonic:
@@ -21,18 +18,15 @@ play_sfx 0x1000FE0
 stop
 
 playRhythmDr:
-0x21 88
 0x40<1> 0x1000FE1, 0x133
 stop
 
 playValve:
-0x21 85
 rest 0x30
 0x40<1> 0x1000FE2, 0x144
 stop
 
 playWariowareDIY:
-0x21 120
 0x40<1> 0x1000FE6, 0xAA
 stop
 
@@ -45,7 +39,6 @@ rest 0x30
 stop
 
 playDodo:
-0x21 125
 rest 0x30
 play_sfx 0x1000FE7
 stop
@@ -60,11 +53,9 @@ rest 0xC0
 stop
 
 playIaiGiri:
-0x21 119
 play_sfx 0x1000FE9
 stop
 
 playSmash:
-0x21 125
 0x40<1> 0x1000FED, 0x55
 stop

@@ -81,7 +81,6 @@ sequenceTomodachi:
 	sub 4
 	0x29<2> 
 	rest 0xC
-	async_call loadShorts1
 	rest 0x30
 	0xB3 7, 0
 	0xB3 9, 0x4F
@@ -89,6 +88,9 @@ sequenceTomodachi:
 	input 1
 	0x103 2
 	0x103 0
+
+	0x21 134
+	call cowbells
 
 	0x102 	
 	async_call playTomodachi
@@ -218,6 +220,9 @@ sequenceSims:
 	rest 0x30
 	0xB3 9, 0x1A
 
+	0x21 240
+	call cowbells
+
 	async_call playSims
 	rest 0x30
 
@@ -260,6 +265,9 @@ sequenceRhythmMasters:
 	0x29<2> 
 	rest 0x30
 	0xB3 9, 0xC
+
+	0x21 111
+	call cowbells
 
 	async_call playRhythmMasters
 	fade<1> 1,1,0x30

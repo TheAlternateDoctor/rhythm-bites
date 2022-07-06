@@ -162,6 +162,11 @@ fade 2, 1, 0
 0x8F 3
 input 0
 
+0xB3 3, 8
+0xB3 4, -1
+0xB3 1,0
+0xB3 2,1
+set_func 4, deadSubEndless
 
 call changeEngine
 engine 0x28
@@ -186,9 +191,10 @@ async_call loadNextGame
 getrest 7
 rest 0x30
 call fade
-call lifeCheckEndless
+call lifeCheck
+async_call unloadAudio
 
-0xA2
+// 0xA2
 
 //main loop
 label 0x1009
@@ -219,17 +225,6 @@ rest 0x60	// 2.0 beats
 0x28<2> 
 stop 
 
-
-// unloadTutorial:
-// 	//remove extra stuff like tutorial stuff
-// 	remove_cellanim 8
-// 	rest 0xC
-// 	remove_cellanim 9
-// 	rest 0xC
-// 	remove_layout 0xB
-// 	rest 0xC
-// 	rest 0x60
-// stop
 
 
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -331,9 +326,6 @@ goto 0x4D5
 label 0x10E7
 
 set_layout 0x1E, u"rom:/layout/gate.zlib", -1
-set_cellanim 8, u"rom:/cellanim/lesson_v0.zlib", -1
-set_cellanim 9, u"rom:/cellanim/common.zlib", -1
-set_layout 0xB, u"rom:/layout/lesson.zlib", -1
 
 0x83<1> 
 0xBB 
@@ -347,16 +339,20 @@ set_sfx 1, u"GROUP_EPILOGUE_HI_LEVEL"
 rest 0x18	// 0.5 beats
 set_sfx 2, u"GROUP_CHIKEN"
 rest 0x18	// 0.5 beats
-set_sfx 9, u"GROUP_KARATE"
+set_sfx 4, u"GROUP_KARATE"
+rest 0x18	// 0.5 beats
+set_sfx 5, u"GROUP_SHIWAKE"
 rest 0x18	// 0.5 beats
 set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
-set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
+set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_8"
 rest 0xC	// 0.25 beats
-set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
+set_sfx 0xB, u"GROUP_SUMOU"
 rest 0xC	// 0.25 beats
 sub 3
 0x83 0
+
+0xB3 3,8
 
 game_cellanim 0x43, 2
 game_effect 0x43, 2
@@ -376,7 +372,6 @@ startingGame:
 fade<1> 2, 1, 0x30
 rest 0x60	// 2.0 beats
 // input 1
-async_sub 0x53
 stop
 
 

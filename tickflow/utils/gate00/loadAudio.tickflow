@@ -9,7 +9,7 @@ loadPMDCharm:
         else
             0xB3 8,2
         endif
-        rest 0x60
+        rest 0xC
         set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_PMD_CHARM"
         0xB3 5,0
     else 
@@ -19,7 +19,7 @@ loadPMDCharm:
         else
             0xB3 8,1
         endif
-        rest 0x60
+        rest 0xC
         set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_PMD_CHARM"
         0xB3 5,1
     endif
@@ -34,7 +34,7 @@ loadKirbyVictory:
         else
             0xB3 8,2
         endif
-        rest 0x60
+        rest 0xC
         set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_KIRBY_VICTORY"
         0xB3 5,0
     else 
@@ -44,7 +44,7 @@ loadKirbyVictory:
         else
             0xB3 8,1
         endif
-        rest 0x60
+        rest 0xC
         set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_KIRBY_VICTORY"
         0xB3 5,1
     endif
@@ -65,13 +65,11 @@ endif
 if_neq 1
     0xB2 2
     if 1
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_2"
         0xB3 3,2
         0xB3 2,0
     else 
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
         0xB3 4,2
@@ -94,13 +92,11 @@ endif
 if_neq 1
     0xB2 2
     if 1
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_3"
         0xB3 3,3
         0xB3 2,0
     else 
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_3"
         0xB3 4,3

@@ -41,13 +41,14 @@ sequenceAGB:
 	call changeEngine
 	engine 0x28
 	rest 0xC
-	async_call loadShorts1
 	rest 0x30
 	0xB3 9, 0x28
 
 	fade<1> 1,1,0x30
 	0x111<0>
 	rest 0x30
+	0x21 135
+	call cowbells
 	async_call playGBA
 	0xA2<0>
 
@@ -129,11 +130,12 @@ sequenceZeldaWoodCat:
 	call changeEngine
 	engine 0x3F
 	rest 0xC
-	async_call loadShorts2
-	rest 0x48
+	rest 0x30
 	0xB3 9, 0x3F
 	fade<1> 1,1,0x30
 
+	0x21 100
+	call cowbells
 	async_call playZeldaWoodCat
 
 	input 1
@@ -148,18 +150,18 @@ stop
 
 sequenceZeldaHair:
 	set_cat 0
-	setrest 7,0xF0
+	setrest 7,0x1E0+0x60
 	call changeEngine
 	engine 0x3
 	sub 4
 	0x29<2> 
 	rest 0xC
-	async_call loadShorts2
 	rest 0x30
-	rest 0x18
 	0xB3 9, 0x3
 	fade<1> 1,1,0x30
 
+	0x21 105
+	call cowbells
 	async_call playZeldaHair
 	0xA2<0>
 	0x9F 1
@@ -208,7 +210,6 @@ sequenceSonic:
 	0x103<1> 0
 	0x103<1> 1
 	rest 0xC
-	async_call loadShorts2
 	rest 0x30
 	0xB3 9, 0x6
 	fade<1> 1,1,0x30
@@ -300,11 +301,12 @@ sequenceRhythmDr:
 	0x104<1> 0
 	0x8B 0, 0
 	rest 0xC
-	async_call loadShorts2
 	rest 0x30
-	rest 0x18
 	0xB3 9, 0x25
 	fade<1> 1,1,0x30
+
+	0x21 88
+	call cowbells
 
 	async_call playRhythmDr
 	async_call beatRhythmDr
@@ -338,9 +340,11 @@ sequenceValve:
 	sub 4
 	0x29<2> 
 	rest 0xC
-	async_call loadShorts2
 	rest 0x30
 	0xB3 9, 0x1C
+
+	0x21 85
+	call cowbells
 
 	async_call playValve
 	fade<1> 1,1,0x30
@@ -379,9 +383,11 @@ sequenceWariowareDIY:
 	sub 4
 	0x29<2> 
 	rest 0xC
-	async_call loadShorts3
 	rest 0x30
 	0xB3 9, 0x4
+
+	0x21 120
+	call cowbells
 
 	async_call playWariowareDIY
 	fade<1> 1,1,0x30
@@ -400,6 +406,10 @@ sequencePMD:
 	0x29<2> 
 	0x102 0,4,1
 	0x102<1> 0,3,1
+	
+	0x21 142
+	call cowbells
+
 	async_call playPMD
 	rest 0x30
 	0xB3 9, 0xE
@@ -448,9 +458,11 @@ sequenceDodo:
 	sub 4
 	0x29<2> 
 	rest 0xC
-	async_call loadShorts3
 	rest 0x30
 	0xB3 9, 0x38
+	
+	0x21 125
+	call cowbells
 
 	async_call playDodo
 	fade<1> 1,1,0x30
@@ -473,6 +485,9 @@ sequenceKirby:
 	async_call loadKirbyLate
 	rest 0x30
 	0xB3 9, 0x11
+
+	0x21 170
+	call cowbells
 
 	async_call playKirby
 	fade<1> 1,1,0x30
@@ -513,10 +528,11 @@ sequenceIaiGiri:
 	0x105<4> 20
 	0x10F
 	rest 0xC
-	async_call loadShorts3
 	rest 0x30
-	rest 0x18
 	0xB3 9, 0x30
+
+	0x21 119
+	call cowbells
 
 	async_call playIaiGiri
 	async_call beatLoop
@@ -553,7 +569,6 @@ sequenceSmash:
 	setrest 0, 0x20
 	setrest 1, 0x10
 	rest 0xC
-	async_call loadShorts4
 	rest 0x30
 	0xB3 9, 0xB
 	fade<1> 1,1,0x30
@@ -563,6 +578,9 @@ sequenceSmash:
 	rest 0x30
 	play_sfx 0x1000291
 	rest 0x30
+
+	0x21 125
+	call cowbells
 
 	async_call playSmash
 	input 1

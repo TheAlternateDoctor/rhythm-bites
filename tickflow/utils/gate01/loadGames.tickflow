@@ -64,7 +64,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadDuckHunt
 rest 0x60
 0xB2 1
 if 1
@@ -191,7 +190,6 @@ if 1
 else
     async_call unloadGameSlot5
 endif
-async_call loadMegaman
 rest 0x60
 0xB2 1
 if 1

@@ -120,6 +120,10 @@ fade 2, 1, 0
 0x8F 3
 input 0
 
+0xB3 3, -1
+0xB3 4, -1
+set_func 4, deadSub
+
 call changeEngine
 engine 0x40
 0xB3 9,0x40
@@ -127,7 +131,6 @@ engine 0x40
 sub 4
 0x29<2> 
 0xAF<6> 0
-// call tempoAndMusic
 set_cat 0
 0x9C<2>	// These two lines enable then unload the practice assets, for Air Rally performance checking
 0x9C<3>
@@ -162,12 +165,18 @@ call fade
 call lifeCheck
 
 0xA2
+async_call loadShorts1
+rest 0x18
+sub 3
 async_call sequenceWii
 rest 0x30
 getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts1
+rest 0x18
+sub 3
 async_call sequenceTomodachi
 rest 0x30
 async_call loadTangotronic
@@ -175,6 +184,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts6
+rest 0x18
+sub 3
 async_call sequenceJackson
 rest 0x30
 async_call loadShootEmUp
@@ -182,6 +194,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadDuckHunt
+rest 0x18
+sub 3
 async_call sequenceDuckHunt
 rest 0x30
 async_call loadMicroRow
@@ -189,6 +204,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts6
+rest 0x18
+sub 3
 async_call sequenceGalaga
 rest 0x30
 async_call loadSuperSamuraiSlice
@@ -196,6 +214,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts6
+rest 0x18
+sub 3
 async_call sequenceMetroid
 rest 0x30
 async_call loadSumoBros
@@ -203,6 +224,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts6
+rest 0x18
+sub 3
 async_call sequenceWiiFit
 rest 0x30
 async_call loadSneakySpirits
@@ -210,6 +234,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts7
+rest 0x18
+sub 3
 async_call sequencePhantomThief
 rest 0x30
 async_call loadFillbots
@@ -217,6 +244,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadMegaman
+rest 0x18
+sub 3
 async_call sequenceMegaman
 rest 0x30
 async_call loadTongueLashing
@@ -224,6 +254,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadShorts7
+rest 0x18
+sub 3
 async_call sequencePokemonBadge
 rest 0x30
 async_call loadRatRace
@@ -231,6 +264,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadShorts7
+rest 0x18
+sub 3
 async_call sequenceRescueVvvvvv
 rest 0x30
 async_call loadMunchyMonk
@@ -238,6 +274,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadShorts7
+rest 0x18
+sub 3
 async_call sequenceHatInTime
 rest 0x30
 async_call loadPajama
@@ -245,6 +284,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadShorts4
+rest 0x18
+sub 3
 async_call sequenceKlonoa
 rest 0x30
 async_call loadBRF
@@ -252,6 +294,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadShorts4
+rest 0x18
+sub 3
 async_call sequenceSims
 rest 0x30
 async_call loadTap
@@ -259,6 +304,9 @@ getrest 7
 call fade
 // call lifeCheck
 
+async_call loadShorts4
+rest 0x18
+sub 3
 async_call sequenceRhythmMasters
 rest 0x30
 getrest 7

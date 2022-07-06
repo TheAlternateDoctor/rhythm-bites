@@ -13,13 +13,11 @@ endif
 if_neq 1
     0xB2 2
     if 1
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_10"
         0xB3 3,10
         0xB3 2,0
     else 
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_10"
         0xB3 4,10
@@ -42,13 +40,11 @@ endif
 if_neq 1
     0xB2 2
     if 1
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_11"
         0xB3 3,11
         0xB3 2,0
     else 
-        async_call unloadAudio
         rest 0xC
         set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_11"
         0xB3 4,11

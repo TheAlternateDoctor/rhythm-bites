@@ -1,12 +1,21 @@
+Condvar
 0 - Score
-1 - Used Cellanim (1 if 4)
+1 - Used Cellanim (1 if 5)
 2 - Used audio slot (1 if 0xA)
 3 - Used audio pack (0xA)
 4 - Used audio pack (0xB)
 5 - Used audio slot (special cases) (1 if 0xC)
-6 - Audio pack is loaded
+6 - Audio pack was loaded previously
 7 - Game specific (Coin Toss)
 8 - Audio Special case has already loaded
 9 - Engine loaded
 10 - next game?
 11 - Variants...?
+
+Subs
+0 - Pattern
+1 - Load Music group
+2 - Switch endless engines
+3 - Unload specifics
+4 - deadSub(Endless)
+5 - Unload Audio

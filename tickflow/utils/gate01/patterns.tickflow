@@ -26,8 +26,6 @@ sequenceWii:
 	setrest 7, 0x210
 	call changeEngine
 	engine 0x28
-	rest 0xC
-    async_call loadShorts1
 	rest 0x30
 	0xB3 9, 0x28
 
@@ -77,8 +75,6 @@ sequenceJackson:
 	setrest 7, 0x300
 	call changeEngine
 	engine 0x3D
-	rest 0xC
-    async_call loadShorts6
 	rest 0x30
     0x10D<1>
     0x10E 1
@@ -144,8 +140,6 @@ sequenceGalaga:
 	setrest 7, 0x300
 	call changeEngine
 	engine 0x23
-	rest 0xC
-    async_call loadShorts6
 	rest 0x30
     0x101 0x530C98, 0x20, 1
     0x102 0x530C50, 3
@@ -182,8 +176,6 @@ sequenceMetroid:
     engine 0x37
     sub 4
     0x29<2> 
-	rest 0xC
-    async_call loadShorts6
 	rest 0x30
 	0xB3 9, 0x37
 
@@ -205,8 +197,6 @@ sequenceWiiFit:
     engine 0x3C
     sub 4
     0x29<2> 
-	rest 0xC
-    async_call loadShorts6
 	rest 0x30
 	0xB3 9, 0x3C
     0x107 1
@@ -251,8 +241,6 @@ sequencePhantomThief:
     0x29<2> 
     0x107<1> 0
     0x101<1> 0xFA, 0
-	rest 0xC
-    async_call loadShorts7
 	rest 0x30
 	0xB3 9, 0x2
 
@@ -304,8 +292,6 @@ sequencePokemonBadge:
     0x105 0x82, -0xBE, 0x1E, 0, 0x1E, 1
     0x104 -0xC8, 0, 0x90
     0x107 0
-	rest 0xC
-    async_call loadShorts7
 	rest 0x30
 	0xB3 9, 0x36
 
@@ -342,8 +328,6 @@ sequenceRescueVvvvvv:
     sub 4
     0x29<2> 
     0x101 1
-	rest 0xC
-    async_call loadShorts7
 	rest 0x30
 	0xB3 9, 0x9
 
@@ -368,8 +352,6 @@ sequenceHatInTime:
     engine 0x1B
     sub 4
     0x29<2> 
-	rest 0xC
-    async_call loadShorts7
 	rest 0x30
 	0xB3 9, 0x1B
 
@@ -398,8 +380,6 @@ sequenceKlonoa:
     engine 0x3A
     sub 4
     0x29<2> 
-	rest 0xC
-    async_call loadShorts4
 	rest 0x48
 	0xB3 9, 0x3A
 

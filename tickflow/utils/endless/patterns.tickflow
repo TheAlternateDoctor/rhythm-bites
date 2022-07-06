@@ -3,8 +3,6 @@ sequenceMiitopia:
 	setrest 7, 0x270
 	call changeEngine
 	engine 0x2F
-	rest 0xC
-    async_call loadShorts3
 	rest 0x30
 	0xB3 9, 0x2F
 
@@ -32,10 +30,8 @@ sequenceStreetFighter:
 	setrest 7, 0x1E0
 	call changeEngine
 	engine 0x27
-	rest 0xC
     0x101 0
     0x21 147
-    async_call loadShorts3
 	rest 0x30
     rest 0x18
 	0xB3 9, 0x27
@@ -54,8 +50,6 @@ sequenceSplatoon:
 	setrest 7, 0x1E0
 	call changeEngine
 	engine 0x22
-	rest 0xC
-    async_call loadShorts6
 	rest 0x60
     setrest 2, 0xD
     setrest 3, 0xB
@@ -104,8 +98,6 @@ sequenceCaveStory:
 	setrest 7, 0x1E0
 	call changeEngine
 	engine 0x26
-	rest 0xC
-    async_call loadShorts7
     0x21 135
 	rest 0x30
     0x65<4> 0x12C, 0x3C
@@ -133,10 +125,8 @@ sequenceRayman:
 	setrest 7, 0x1B0
     call changeEngine
     engine 0x32
-	rest 0xC
     0x106
     0x21 160
-    async_call loadShorts8
 	rest 0x30
 	0xB3 9, 0x32
 
@@ -162,8 +152,6 @@ sequenceTF2:
 	setrest 7, 0x150
     call changeEngine
     engine 0x1
-	rest 0xC
-    async_call loadShorts8
 	rest 0x30
 	rest 0x30
 	0xB3 9, 0x1
@@ -223,12 +211,10 @@ sequenceDaftPunk:
 	// setrest 7, 0x4C0
     call changeEngine
     engine 0x11
-	rest 0xC
-    pan 3, -0x39, -0x35 
-    async_call loadDJSchoolLate
-    async_call loadShorts8
 	rest 0x30
 	0xB3 9, 0x11
+    pan 3, -0x39, -0x35 
+    async_call loadDJSchoolLate
 
     async_call playDaftPunk
     fade<1> 1, 3, 0x30
@@ -250,8 +236,6 @@ sequencePacMan:
 	setrest 7, 0x1B0
     call changeEngine
     engine 0x24
-	rest 0xC
-    async_call loadShorts8
 	rest 0x30
     rest 0x18
 	0xB3 9, 0x24
@@ -288,8 +272,6 @@ sequenceNTR:
 	setrest 7, 0x1B0
     call changeEngine
     engine 0x28
-	rest 0xC
-    async_call loadShorts8
 	rest 0x30
 	0xB3 9, 0x28
 

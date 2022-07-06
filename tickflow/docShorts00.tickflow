@@ -112,8 +112,11 @@ fade 2, 1, 0
 0x8F 3
 input 0
 
-0xB3 3, -1
-0xB3 4, -1
+0xB3 3, 1
+0xB3 4, 2
+0xB3 1,0
+0xB3 2,1
+set_func 4, deadSub
 
 call changeEngine
 engine 0x41
@@ -149,17 +152,22 @@ if 0
 	goto 0x54D
 endif 
 
+0x6C<1> 0x140
+
+0x6C 1
+
 async_call loadKarateGBA
 async_call sequenceBannerCoin
 rest 0x30
 getrest 7
-rest 0x30
+rest 0x60
 call fade
 call lifeCheck
 
 0xA2
 async_call sequenceAGB
 rest 0x30
+rest 0xC0
 getrest 7
 rest 0x60
 call lifeCheck
@@ -167,14 +175,20 @@ call lifeCheck
 async_call sequenceTomodachi
 rest 0x30
 async_call loadLumbearjack
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
+async_call unloadAudio
+async_call loadShorts2
+rest 0x18
+sub 3
 async_call sequenceZeldaWoodCat
 rest 0x30
 async_call unloadTutorial
 async_call loadTweezers
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -182,6 +196,7 @@ call lifeCheck
 async_call sequenceZeldaHair
 rest 0x30
 async_call loadNightWalk
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -189,6 +204,7 @@ call lifeCheck
 async_call sequenceSonic
 rest 0x30
 async_call loadGolf
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -196,6 +212,7 @@ call lifeCheck
 async_call sequenceRhythmDr
 rest 0x30
 async_call loadBtSWii
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -203,20 +220,30 @@ call lifeCheck
 async_call sequenceValve
 rest 0x30
 async_call loadHopping
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
+async_call unloadAudio
+async_call loadShorts3
+rest 0x18
+sub 3
 async_call sequenceWariowareDIY
 rest 0x30
 async_call loadAirboarders
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
+async_call loadPMDCharm
+rest 0x18
+sub 3
 async_call sequencePMD
 rest 0x30
 async_call loadFruitBasket
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -224,13 +251,19 @@ call lifeCheck
 async_call sequenceDodo
 rest 0x30
 async_call loadDazzles
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
+async_call unloadAudioSpecial
+async_call loadKirbyVictory
+rest 0x18
+sub 3
 async_call sequenceKirby
 rest 0x30
 async_call loadSSWii
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -238,13 +271,19 @@ call lifeCheck
 async_call sequenceIaiGiri
 rest 0x30
 async_call loadSpaceDance
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
+async_call unloadAudio
+async_call loadShorts4
+rest 0x18
+sub 3
 async_call sequenceSmash
 rest 0x30
 async_call loadBRF
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -252,12 +291,14 @@ call lifeCheck
 async_call sequenceSims
 rest 0x30
 async_call loadTap
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
 async_call sequenceRhythmMasters
 rest 0x30
+rest 0xC0
 getrest 7
 call lifeCheck
 

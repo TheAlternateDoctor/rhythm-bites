@@ -124,6 +124,7 @@ input 0
 
 0xB3 3, -1
 0xB3 4, -1
+set_func 4, deadSub
 
 call changeEngine
 engine 0x42
@@ -165,12 +166,17 @@ call fade
 call lifeCheck
 
 0xA2
+
+async_call loadShorts1
+sub 3
 async_call sequence3DS
 rest 0x30
 getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts1
+sub 3
 async_call sequenceTomodachi
 rest 0x30
 async_call loadKitties
@@ -178,6 +184,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts10
+sub 3
 async_call sequenceFinned
 rest 0x30
 async_call loadQuiz
@@ -186,6 +194,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts10
+sub 3
 async_call sequenceKahoot
 rest 0x30
 async_call loadBunnyHop
@@ -193,6 +203,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts10
+sub 3
 async_call sequenceMarioHurryUp
 rest 0x30
 async_call loadDogNinja
@@ -200,6 +212,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts10
+sub 3
 async_call sequenceTMPokemon
 rest 0x30
 async_call loadMarcher
@@ -207,6 +221,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts10
+sub 3
 async_call sequenceCoH
 rest 0x30
 async_call loadExhibitionMatch
@@ -214,6 +230,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts11
+sub 3
 async_call sequenceTetris
 rest 0x30
 async_call loadAnimalAcrobat
@@ -221,6 +239,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts11
+sub 3
 async_call sequenceRivalsAether
 rest 0x30
 async_call loadCatchyTune
@@ -228,6 +248,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts11
+sub 3
 async_call sequenceCSD
 rest 0x30
 async_call loadGleeClub
@@ -235,6 +257,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts11
+sub 3
 async_call sequenceWiiMusic
 rest 0x30
 async_call loadCheerReaders
@@ -242,6 +266,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts11
+sub 3
 async_call sequenceDukeNukem
 rest 0x30
 async_call loadSeeSaw
@@ -249,6 +275,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts4
+sub 3
 async_call sequenceBanjoKazooie
 rest 0x30
 async_call loadBRF
@@ -256,6 +284,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts4
+sub 3
 async_call sequenceSims
 rest 0x30
 async_call loadTap
@@ -263,6 +293,8 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadShorts4
+sub 3
 async_call sequenceRhythmMasters
 rest 0x30
 getrest 7
