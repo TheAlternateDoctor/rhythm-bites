@@ -252,21 +252,21 @@ unloadGameSlot5:
 stop
 
 unloadAudioSpecial:
-	0xB2 5
-	if 1
-		remove_sfx 0xC
-	else
-		remove_sfx 0xD
-	endif
+	// 0xB2 5
+	// if 1
+	// 	remove_sfx 0xC
+	// else
+	// 	remove_sfx 0xD
+	// endif
 stop
 
 unloadAudio:
-	0xB2 2
-	if 1
-		remove_sfx 0xA
-		0xB3 3, -1
-	else
-		remove_sfx 0xB
-		0xB3 4, -1
-	endif
+// 	0xB2 2
+// 	if 1
+// 		remove_sfx 0xA
+// 		0xB3 3, -1
+// 	else
+// 		remove_sfx 0xB
+// 		0xB3 4, -1
+// 	endif
 stop

@@ -579,9 +579,6 @@ sequenceSmash:
 	play_sfx 0x1000291
 	rest 0x30
 
-	0x21 125
-	call cowbells
-
 	async_call playSmash
 	input 1
 	async_sub 0x59

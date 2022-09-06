@@ -14,6 +14,7 @@
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
+// #index 0x1A
 #index 0x10C
 start:
 play_sfx 0x1000294
@@ -165,6 +166,9 @@ call fade
 call lifeCheck
 
 0xA2
+async_call loadGBA
+rest 0x18
+sub 3
 async_call sequenceAGB
 rest 0x30
 rest 0xC0
@@ -172,6 +176,9 @@ getrest 7
 rest 0x60
 call lifeCheck
 
+async_call loadTomodachi
+rest 0x18
+sub 3
 async_call sequenceTomodachi
 rest 0x30
 async_call loadLumbearjack
@@ -180,8 +187,7 @@ getrest 7
 call fade
 call lifeCheck
 
-async_call unloadAudio
-async_call loadShorts2
+async_call loadMasterSword
 rest 0x18
 sub 3
 async_call sequenceZeldaWoodCat
@@ -193,6 +199,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadZeldaCook
+rest 0x18
+sub 3
 async_call sequenceZeldaHair
 rest 0x30
 async_call loadNightWalk
@@ -201,6 +210,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadSonic
+rest 0x18
+sub 3
 async_call sequenceSonic
 rest 0x30
 async_call loadGolf
@@ -209,6 +221,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadRhythmDr
+rest 0x18
+sub 3
 async_call sequenceRhythmDr
 rest 0x30
 async_call loadBtSWii
@@ -217,6 +232,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadValve
+rest 0x18
+sub 3
 async_call sequenceValve
 rest 0x30
 async_call loadHopping
@@ -225,8 +243,7 @@ getrest 7
 call fade
 call lifeCheck
 
-async_call unloadAudio
-async_call loadShorts3
+async_call loadHurryUpWW
 rest 0x18
 sub 3
 async_call sequenceWariowareDIY
@@ -242,13 +259,16 @@ rest 0x18
 sub 3
 async_call sequencePMD
 rest 0x30
-async_call loadFruitBasket
+async_call loadSpaceDance
 rest 0xC0
 getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceDodo
+async_call loadStageClearMelee
+rest 0x18
+sub 3
+async_call sequenceSmash
 rest 0x30
 async_call loadDazzles
 rest 0xC0
@@ -256,7 +276,6 @@ getrest 7
 call fade
 call lifeCheck
 
-async_call unloadAudioSpecial
 async_call loadKirbyVictory
 rest 0x18
 sub 3
@@ -268,27 +287,10 @@ getrest 7
 call fade
 call lifeCheck
 
-async_call sequenceIaiGiri
-rest 0x30
-async_call loadSpaceDance
-rest 0xC0
-getrest 7
-call fade
-call lifeCheck
-
-async_call unloadAudio
-async_call loadShorts4
+async_call loadIaiGiri
 rest 0x18
 sub 3
-async_call sequenceSmash
-rest 0x30
-async_call loadBRF
-rest 0xC0
-getrest 7
-call fade
-call lifeCheck
-
-async_call sequenceSims
+async_call sequenceIaiGiri
 rest 0x30
 async_call loadTap
 rest 0xC0
@@ -296,6 +298,9 @@ getrest 7
 call fade
 call lifeCheck
 
+async_call loadRhythmMasters
+rest 0x18
+sub 3
 async_call sequenceRhythmMasters
 rest 0x30
 rest 0xC0
@@ -417,9 +422,9 @@ set_sfx 4, u"GROUP_WSD_TUTORIAL_AGB_PACHI_PACHI"
 rest 0x18	// 0.5 beats
 set_sfx 5, u"GROUP_WSD_TUTORIAL_AGB_KARATE"
 rest 0x18	// 0.5 beats
-set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_1"
+call randomBannerA
 rest 0xC	// 0.25 beats
-set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_2"
+call randomBannerB
 sub 3
 0x83 0
 

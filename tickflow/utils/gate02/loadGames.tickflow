@@ -47,7 +47,7 @@ else
 endif
 stop
 
-loadQuiz:
+loadShootEmUp:
 0xB2 1
 if 1
     async_call unloadGameSlot4
@@ -57,18 +57,18 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_AGB_QUIZ"
-    set_cellanim 4, u"rom:/cellanim/agbQuiz_v0.zlib", -1
-    set_effect 4, u"rom:/effect/agbQuiz.zlib", -1
-    game_cellanim 0x7, 4
-    game_effect 0x7, 4
+    set_sfx 4, u"GROUP_NTR_SHOOTING"
+    set_cellanim 4, u"rom:/cellanim/ntrShooting_short.zlib", -1
+    set_effect 4, u"rom:/effect/ntrShooting.zlib", -1
+    game_cellanim 0x19, 4
+    game_effect 0x19, 4
     0xB3 1, 0
 else
-    set_sfx 5, u"GROUP_AGB_QUIZ"
-    set_cellanim 5, u"rom:/cellanim/agbQuiz_v0.zlib", -1
-    set_effect 5, u"rom:/effect/agbQuiz.zlib", -1
-    game_cellanim 0x7, 5
-    game_effect 0x7, 5
+    set_sfx 5, u"GROUP_NTR_SHOOTING"
+    set_cellanim 5, u"rom:/cellanim/ntrShooting_short.zlib", -1
+    set_effect 5, u"rom:/effect/ntrShooting.zlib", -1
+    game_cellanim 0x19, 5
+    game_effect 0x19, 5
     0xB3 1, 1
 endif
 stop

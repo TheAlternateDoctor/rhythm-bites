@@ -11,10 +11,14 @@ playFinned:
 speed 0x100
 stop
 
-playKahoot:
-0x21 149
-play_sfx 0x1000FE4
+playDuckHunt:
+0x53 0x10001F7
+0x21 225
+rest 1
+sub 2
 speed 0x100
+rest 0x18
+0x55 1
 stop
 
 playMarioHurryUp:

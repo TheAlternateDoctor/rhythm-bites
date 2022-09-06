@@ -1,104 +1,231 @@
 
-loadDuckHunt:
-    0xB2 5
-    if 1
-        0xB2 8
-        if 2
-            remove_sfx 0xC
-        else
-            0xB3 8,2
-        endif
-        rest 0xC
-        set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_DUCK_HUNT"
-        0xB3 5,0
-    else 
-        0xB2 8
-        if_gt 0
-            remove_sfx 0xD
-        else
-            0xB3 8,1
-        endif
-        rest 0xC
-        set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_DUCK_HUNT"
-        0xB3 5,1
-    endif
-stop
-
-loadMegaman:
-    0xB2 5
-    if 1
-        0xB2 8
-        if 2
-            remove_sfx 0xC
-        else
-            0xB3 8,2
-        endif
-        rest 0xC
-        set_sfx 0xC, u"shorts/GROUP_WSD_SHORTS_MEGAMAN"
-        0xB3 5,0
-    else 
-        0xB2 8
-        if_gt 0
-            remove_sfx 0xD
-        else
-            0xB3 8,1
-        endif
-        rest 0xC
-        set_sfx 0xD, u"shorts/GROUP_WSD_SHORTS_MEGAMAN"
-        0xB3 5,1
-    endif
-stop
-
-loadShorts6:
-0xB3 6,0
-0xB2 3
-if 6
-    0xB3 6,1
-endif
-0xB2 4
-if 6
-    0xB3 6,1
-endif
-0xB2 6
-if_neq 1
-    0xB2 2
-    if 1
-        rest 0xC
-        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_6"
-        0xB3 3,6
-        0xB3 2,0
-    else 
-        rest 0xC
-        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_6"
-        0xB3 4,6
-        0xB3 2,1
-    endif
+loadWii:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_WII"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_WII"
+    0xB3 4,1
+    0xB3 2,1
 endif
 stop
 
-loadShorts7:
-0xB3 6,0
-0xB2 3
-if 7
-    0xB3 6,1
+loadJackson:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_MOONWALKER"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_MOONWALKER"
+    0xB3 4,1
+    0xB3 2,1
 endif
-0xB2 4
-if 7
-    0xB3 6,1
+stop
+
+loadKahoot:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_KAHOOT"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_KAHOOT"
+    0xB3 4,1
+    0xB3 2,1
 endif
-0xB2 6
-if_neq 1
-    0xB2 2
-    if 1
-        rest 0xC
-        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_7"
-        0xB3 3,7
-        0xB3 2,0
-    else 
-        rest 0xC
-        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_7"
-        0xB3 4,7
-        0xB3 2,1
-    endif
+stop
+
+loadGalaga:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/F/GROUP_SHORTS_GALAGA"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/F/GROUP_SHORTS_GALAGA"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadMetroid:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_METROID"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_METROID"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadWiiFit:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_WII_FIT"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_WII_FIT"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadPhantomThief:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_PHANTOM_THIEF"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_PHANTOM_THIEF"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadKlonoaTitle:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    call randomKlonoaTitleA
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    call randomKlonoaTitleB
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+randomKlonoaTitleA:
+random 2
+switch
+case 0
+    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE"
+    break
+case 1
+    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE_ALT"
+    break
+endswitch
+return
+randomKlonoaTitleB:
+random 2
+switch
+case 0
+    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE"
+    break
+case 1
+    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE_ALT"
+    break
+endswitch
+return
+
+loadBadgePokemon:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/F/GROUP_SHORTS_POKEMON_BADGE"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/F/GROUP_SHORTS_POKEMON_BADGE"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadRescueVVVVVV:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_VVVVVV_RESCUE"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_VVVVVV_RESCUE"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadHatInTime:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_HAT_IN_TIME"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_HAT_IN_TIME"
+    0xB3 4,1
+    0xB3 2,1
 endif
 stop
