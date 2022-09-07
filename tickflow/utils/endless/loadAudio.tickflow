@@ -1,29 +1,171 @@
 
-loadShorts8:
-0xB3 6,0
-0xB2 3
-if 8
-    0xB3 6,1
+loadNDS:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_NDS"
+    0xB3 4,1
+    0xB3 2,1
 endif
-0xB2 4
-if 8
-    0xB3 6,1
+stop
+
+loadSplatoon:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_SPLATOON"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_SPLATOON"
+    0xB3 4,1
+    0xB3 2,1
 endif
-0xB2 6
-if_neq 1
-    0xB2 2
-    if 1
-        async_call unloadAudio
-        rest 0xC
-        set_sfx 0xA, u"shorts/GROUP_WSD_SHORTS_8"
-        0xB3 3,8
-        0xB3 2,0
-    else 
-        async_call unloadAudio
-        rest 0xC
-        set_sfx 0xB, u"shorts/GROUP_WSD_SHORTS_8"
-        0xB3 4,8
-        0xB3 2,1
-    endif
+stop
+
+loadMiitopia:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_MIITOPIA"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_MIITOPIA"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadStreetFighter:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_STREET_FIGHTER"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_STREET_FIGHTER"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadCaveStory:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_CAVE_STORY"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_CAVE_STORY"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadRayman:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_RAYMAN"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_RAYMAN"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadTF2:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_TF2"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_TF2"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadDaftPunk:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
+    0xB3 4,1
+    0xB3 2,1
+endif
+stop
+
+loadPacMan:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_PAC_MAN"
+    0xB3 3,1
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_PAC_MAN"
+    0xB3 4,1
+    0xB3 2,1
 endif
 stop

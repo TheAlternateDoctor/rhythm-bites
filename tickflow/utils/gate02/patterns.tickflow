@@ -308,6 +308,30 @@ sequenceCoH:
     0x65<2>
 stop
 
+sequenceDodo:
+	set_cat 0
+	setrest 7,0x138
+	call changeEngine
+	engine 0x38
+	sub 4
+	0x29<2> 
+	rest 0xC
+	rest 0x30
+	0xB3 9, 0x38
+	
+	0x21 125
+	call cowbells
+
+	async_call playDodo
+	fade<1> 1,1,0x30
+	input 1
+	async_sub 0x58
+	async_sub 0x5C
+	rest 0x120
+	rest 0x18
+	async_sub 0x67
+stop
+
 sequenceTetris:
 	set_cat 0
 	setrest 7, 0x1E0

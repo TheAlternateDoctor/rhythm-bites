@@ -270,3 +270,6 @@ unloadAudio:
 // 		0xB3 4, -1
 // 	endif
 stop
+
+nullSub:
+return
