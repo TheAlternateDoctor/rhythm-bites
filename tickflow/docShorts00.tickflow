@@ -165,7 +165,12 @@ rest 0x60
 call fade
 call lifeCheck
 
+0x9C<2>
+0x9F 1
+0x9F<5> 2
+
 0xA2
+0xA1
 async_call loadGBA
 rest 0x18
 sub 3

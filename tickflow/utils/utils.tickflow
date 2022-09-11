@@ -1,7 +1,10 @@
 
 fade:
 	rest 0x60
-	fade 1, 1, 0x20
+	0x7C<3> 1
+	if_neq 1
+		fade 1, 1, 0x20
+	endif
 	rest 0x30
 return
 
@@ -32,7 +35,6 @@ deadSub:
 stop 
 
 deadSubEndless:
-return
 	0x21 120
 	input 0
 	set_cat 0
@@ -65,31 +67,31 @@ stop
 lifeCheck:
 	0xB2 9
 	switch
-	case 0x41
+	case 0x41 //Coin Toss
 		0xB2 7
 		if 10
     		get_sync 4
 		endif
 		break
-	case 0x3
+	case 0x3 //Rhythm Tweezers
 		0x106 0
 		if_neq 1
     		get_sync 4
 		endif
 		break
-	case 0x4F
+	case 0x4F //Tutorial
 		0xB2 7
 		if 0
     		get_sync 4
 		endif
 		break
-	case 0x6
+	case 0x6 //Night Walk
 		0x105
 		if 1
     		get_sync 4
 		endif
 		break
-	case 0x40
+	case 0x40 //Sick Beats
 		0x21 600
 		rest 0x90
 		0x108
@@ -97,62 +99,33 @@ lifeCheck:
     		get_sync 4
 		endif
 		break
-	default
+	case 0x42 //Clap-Trap
+		0xB2 1
+		if 1
+			remove_sfx 4
+		else
+			remove_sfx 5
+		endif
+		0x21 156
+		0x100 0x30
+		rest 0x90
+		0x100 0x30
+		rest 0x90
+		0x107
+		if 1
+    		get_sync 4
+		endif
+		break
+	default //Everything else
 		0xA2<2>
 		if 1
     		get_sync 4
 		endif
 	break
 	endswitch
+	0x9F 1
 	0xA2
 	0x21 120
-return
-
-lifeCheckEndless:
-	0xB2 9
-	switch
-	case 0x41
-		0xB2 7
-		if 10
-			call deadSubEndless
-		endif
-		break
-	case 0x3
-		0x106 0
-		if_neq 1
-			call deadSubEndless
-		endif
-		break
-	case 0x4F
-		0xB2 7
-		if 0
-			call deadSubEndless
-		endif
-		break
-	case 0x6
-		0x105
-		if 1
-			call deadSubEndless
-		endif
-		break
-	case 0x40
-		0x21 600
-		rest 0x90
-		0x108
-		if 1
-			call deadSubEndless
-		endif
-		break
-	default
-		0xA2<2>
-		if 1
-			call deadSubEndless
-		endif
-	break
-	endswitch
-	0xA2
-	0x21 120
-	0xB4 0, 1
 return
 
 beatLoop:
@@ -161,33 +134,6 @@ beatLoop:
 	rest 0x30
 	goto 0xBEA7
 stop
-
-cowbells:
-	random 4
-	switch
-		case 0
-			play_sfx 0x10002E1
-			rest 0x30
-			play_sfx 0x10002E7
-			break
-		case 1
-			play_sfx 0x10002E1
-			rest 0x30
-			play_sfx 0x10002E2
-			break
-		case 2
-			play_sfx 0x10002E5
-			rest 0x30
-			play_sfx 0x10002E6
-			break
-		case 3
-			play_sfx 0x10002E5
-			rest 0x30
-			play_sfx 0x10002E7
-			break
-	endswitch
-	rest 0x48
-return
 
 unloadTutorial:
 	play_sfx 0x1000291

@@ -125,7 +125,7 @@ input 0
 
 0xB3 3, -1
 0xB3 4, -1
-set_func 4, nullSub
+set_func 4, deadSub
 
 call changeEngine
 engine 0x42
@@ -163,10 +163,15 @@ rest 0x30
 async_call loadKarate3DS
 getrest 7
 rest 0x30
-call fade
+// call fade
 call lifeCheck
 
+0x9C<2>
+0x9F 1
+0x9F<5> 2
+
 0xA2
+0xA1
 
 async_call load3DS
 rest 0x18

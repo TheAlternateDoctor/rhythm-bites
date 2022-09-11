@@ -5,14 +5,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/B/GROUP_SHORTS_GBA"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/B/GROUP_SHORTS_GBA"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -24,14 +22,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/D/GROUP_SHORTS_MASTER_SWORD"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/D/GROUP_SHORTS_MASTER_SWORD"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -43,14 +39,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/E/GROUP_SHORTS_ZELDA_COOK"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/E/GROUP_SHORTS_ZELDA_COOK"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -62,14 +56,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/F/GROUP_SHORTS_SONIC"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/F/GROUP_SHORTS_SONIC"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -81,14 +73,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/G/GROUP_SHORTS_RHYTHM_DR"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/G/GROUP_SHORTS_RHYTHM_DR"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -100,14 +90,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/H/GROUP_SHORTS_VALVE"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/H/GROUP_SHORTS_VALVE"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -119,14 +107,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/D/GROUP_SHORTS_HURRY_UP_WW"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/D/GROUP_SHORTS_HURRY_UP_WW"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -138,14 +124,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/E/GROUP_SHORTS_TEAM_CHARM"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/E/GROUP_SHORTS_TEAM_CHARM"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -157,14 +141,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/F/GROUP_SHORTS_MELEE"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/F/GROUP_SHORTS_MELEE"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -176,14 +158,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/G/GROUP_SHORTS_KIRBY_CLEAR"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/G/GROUP_SHORTS_KIRBY_CLEAR"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -195,14 +175,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/H/GROUP_SHORTS_IAI_GIRI"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/H/GROUP_SHORTS_IAI_GIRI"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop

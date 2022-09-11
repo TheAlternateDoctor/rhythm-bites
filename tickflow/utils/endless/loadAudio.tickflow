@@ -6,14 +6,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/B/GROUP_SHORTS_NDS"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -25,14 +23,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/B/GROUP_SHORTS_SPLATOON"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/B/GROUP_SHORTS_SPLATOON"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -44,14 +40,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/C/GROUP_SHORTS_MIITOPIA"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/C/GROUP_SHORTS_MIITOPIA"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -63,14 +57,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/A/GROUP_SHORTS_STREET_FIGHTER"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_STREET_FIGHTER"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -82,14 +74,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/C/GROUP_SHORTS_CAVE_STORY"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/C/GROUP_SHORTS_CAVE_STORY"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -101,14 +91,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/B/GROUP_SHORTS_RAYMAN"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/B/GROUP_SHORTS_RAYMAN"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -120,14 +108,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/C/GROUP_SHORTS_TF2"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/C/GROUP_SHORTS_TF2"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -139,14 +125,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -158,14 +142,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/C/GROUP_SHORTS_PAC_MAN"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/C/GROUP_SHORTS_PAC_MAN"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop

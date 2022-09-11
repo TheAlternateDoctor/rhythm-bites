@@ -38,28 +38,33 @@ stop
 sequenceAGB:
 	set_cat 0
 	setrest 7, 0x150
+	0xB3 9, 0x28
 	call changeEngine
 	engine 0x28
 	rest 0xC
 	rest 0x30
-	0xB3 9, 0x28
 
 	fade<1> 1,1,0x30
-	0x111<0>
+	// 0x111<0>
 	rest 0x30
 	0x21 135
-	call cowbells
+	play_sfx 0x10002E1
+	rest 0x30
+	play_sfx 0x10002E7
+	rest 0x48
 	async_call playGBA
 	0xA2<0>
 
 	input 1
 	0x100 0
+	0x104 0
 	rest 0x30
 	0x111<0>
 	rest 0x30
 	0x111<0>
 	0x105<2>
 	0x100 0
+	0x104 0
 	rest 0x30
 	0x111<0>
 	0x100 7
@@ -135,7 +140,10 @@ sequenceZeldaWoodCat:
 	fade<1> 1,1,0x30
 
 	0x21 100
-	call cowbells
+	play_sfx 0x10002E5
+	rest 0x30
+	play_sfx 0x10002E7
+	rest 0x48
 	async_call playZeldaWoodCat
 
 	input 1
@@ -150,7 +158,7 @@ stop
 
 sequenceZeldaHair:
 	set_cat 0
-	setrest 7,0x1E0+0x60
+	setrest 7,0x120
 	call changeEngine
 	engine 0x3
 	sub 4
@@ -161,7 +169,6 @@ sequenceZeldaHair:
 	fade<1> 1,1,0x30
 
 	0x21 105
-	call cowbells
 	async_call playZeldaHair
 	0xA2<0>
 	0x9F 1
@@ -201,7 +208,7 @@ stop
 
 sequenceSonic:
 	set_cat 0
-	setrest 7,0x330
+	setrest 7,0x2D0
 	call changeEngine
 	engine 0x06
 	sub 4
@@ -291,14 +298,12 @@ stop
 
 sequenceRhythmDr:
 	set_cat 0
-	setrest 7,0x300
+	setrest 7,0x330
 	call changeEngine
 	engine 0x25
 	sub 4
 	0x29<2> 
 	0x101<1> 0
-	0x102<2> 0
-	0x104<1> 0
 	0x8B 0, 0
 	rest 0xC
 	rest 0x30
@@ -306,14 +311,24 @@ sequenceRhythmDr:
 	fade<1> 1,1,0x30
 
 	0x21 88
-	call cowbells
 
-	async_call playRhythmDr
-	async_call beatRhythmDr
 	input 1
 	0x9F<5> 2
 	0xA2<0>
+	play_sfx 0x10002E1
+	rest 0x18
+	0x103<4>
+	0x102<1>
+	0x104<2>
+	rest 0x18
+	play_sfx 0x10002E7
+	rest 0x18
+	0x103<4>
+	0x102<1>
+	0x104<2>
 
+	async_call playRhythmDr
+	async_call beatRhythmDr
 	rest 0x30
 	async_sub 0x56
 	rest 0x60
@@ -334,7 +349,7 @@ stop
 
 sequenceValve:
 	set_cat 0
-	setrest 7,0x210
+	setrest 7,0x1B0
 	call changeEngine
 	engine 0x1C
 	sub 4
@@ -344,7 +359,6 @@ sequenceValve:
 	0xB3 9, 0x1C
 
 	0x21 85
-	call cowbells
 
 	async_call playValve
 	fade<1> 1,1,0x30
@@ -371,13 +385,11 @@ sequenceValve:
 	0x101<1> 
 	rest 0x30
 	async_sub 0x5F
-
-	rest 0x60
 stop
 
 sequenceWariowareDIY:
 	set_cat 0
-	setrest 7,0x120
+	setrest 7,0x150
 	call changeEngine
 	engine 0x04
 	sub 4
@@ -387,10 +399,13 @@ sequenceWariowareDIY:
 	0xB3 9, 0x4
 
 	0x21 120
-	call cowbells
 
-	async_call playWariowareDIY
 	fade<1> 1,1,0x30
+	play_sfx 0x10002E1
+	rest 0x30
+	play_sfx 0x10002E7
+	rest 0x48
+	async_call playWariowareDIY
 
 	input 1
 	async_sub 0x56
@@ -406,9 +421,6 @@ sequencePMD:
 	0x29<2> 
 	0x102 0,4,1
 	0x102<1> 0,3,1
-	
-	0x21 142
-	call cowbells
 
 	async_call playPMD
 	rest 0x30
@@ -462,9 +474,6 @@ sequenceKirby:
 	rest 0x30
 	0xB3 9, 0x11
 
-	0x21 170
-	call cowbells
-
 	async_call playKirby
 	fade<1> 1,1,0x30
 	0x101 1
@@ -508,11 +517,14 @@ sequenceIaiGiri:
 	0xB3 9, 0x30
 
 	0x21 119
-	call cowbells
 
-	async_call playIaiGiri
-	async_call beatLoop
+	async_call beatLoop,0x18
 	fade<1> 1,1,0x30
+	play_sfx 0x10002E1
+	rest 0x30
+	play_sfx 0x10002E7
+	rest 0x48
+	async_call playIaiGiri
 	input 1
 	rest 0x60
 	0x109<0>

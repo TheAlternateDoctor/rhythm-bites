@@ -163,10 +163,10 @@ fade 2, 1, 0
 0x8F 3
 input 0
 
-0xB3 3, 8
 0xB3 4, -1
 0xB3 1,0
 0xB3 2,1
+0xB3 3,0
 set_func 4, deadSubEndless
 
 call changeEngine
@@ -181,7 +181,12 @@ set_cat 0
 async_call startingGame
 rest 0x60	// 2.0 beats
 label 0x54D
+0x9C<2>
+0x9F 1
+0x9F<5> 2
+
 0xA2
+0xA1
 
 0xB3 0,0
 
@@ -193,9 +198,8 @@ getrest 7
 rest 0x30
 call fade
 call lifeCheck
-async_call unloadAudio
 
-// 0xA2
+0xA2
 
 //main loop
 label 0x1009
@@ -256,32 +260,6 @@ set_cat 0
 0x95 0x10, "remix_caption"
 0x95 0x10, "remix_LED_caption"
 0x98 1, 1
-rest 0x60	// 2.0 beats
-0x88 
-if 1
-	0x88<1> 
-	if 1
-		0x88<2> 
-		switch 
-			case 1
-				0x8A<4> 1, 1
-				break 
-			case 2
-				0x8A<4> 1, 2
-				break 
-			case 3
-				0x8A<4> 1, 3
-				break 
-		endswitch 
-	endif 
-else 
-	0xAB<3> 1
-	if 1
-		0xAC 0
-	else 
-		0xAD 0
-	endif 
-endif 
 stop 
 
 
@@ -352,8 +330,6 @@ set_sfx 0xB, u"GROUP_SUMOU"
 rest 0xC	// 0.25 beats
 sub 3
 0x83 0
-
-0xB3 3,8
 
 game_cellanim 0x43, 2
 game_effect 0x43, 2

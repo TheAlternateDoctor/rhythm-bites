@@ -30,12 +30,12 @@ sequenceStreetFighter:
 	setrest 7, 0x1E0
 	call changeEngine
 	engine 0x27
-    0x101 0
     0x21 147
 	rest 0x30
     rest 0x18
 	0xB3 9, 0x27
 
+    0x101 0
 	fade<1> 1,1,0x30
     async_call beatFighter
     async_call playStreetFighter
@@ -47,7 +47,7 @@ stop
 
 sequenceSplatoon:
 	set_cat 0
-	setrest 7, 0x1E0
+	setrest 7, 0x1B0
 	call changeEngine
 	engine 0x22
 	rest 0x60
@@ -125,11 +125,11 @@ sequenceRayman:
 	setrest 7, 0x1B0
     call changeEngine
     engine 0x32
-    0x106
     0x21 160
 	rest 0x30
 	0xB3 9, 0x32
 
+    0x106
     fade<1> 1,1,0x30
     play_sfx 0x1000291
     rest 0x30
@@ -212,7 +212,7 @@ sequenceDaftPunk:
     call changeEngine
     engine 0x11
 	rest 0x30
-	0xB3 9, 0x11
+	0xB3 9, 0x64
     pan 3, -0x39, -0x35 
     async_call loadDJSchoolLate
 
@@ -233,7 +233,7 @@ stop
 
 sequencePacMan:
 	set_cat 0
-	setrest 7, 0x1B0
+	setrest 7, 0x180
     call changeEngine
     engine 0x24
 	rest 0x30
@@ -263,21 +263,26 @@ sequencePacMan:
     0x100 0
     rest 0x78
     0x102
-    rest 0x30
-    rest 0x30
 stop
 
 sequenceNTR:
 	set_cat 0
 	setrest 7, 0x1B0
+	0xB3 9, 0x28
     call changeEngine
     engine 0x28
 	rest 0x30
-	0xB3 9, 0x28
+    0x21 135
 
     
-    async_call playNTR
     fade<1> 1,1,0x30
+    play_sfx 0x1000291
+    0x104 0
+    rest 0x30
+    play_sfx 0x1000291
+    0x104 0
+    rest 0x30
+    async_call playNTR
     input 1
     0x100 0
     rest 0x30

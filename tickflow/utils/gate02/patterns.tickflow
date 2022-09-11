@@ -1,8 +1,8 @@
 
 sequenceBannerClapTrap:
     setrest 7, 0x90
-	0xB3 9, 0x40
-    // 0x101 0
+	0xB3 9, 0x42
+    0x101 0
 
     input 1
     async_call playBanner
@@ -16,12 +16,19 @@ stop
 sequence3DS:
 	set_cat 0
 	setrest 7, 0x1D0
+	0xB3 9, 0x28
     call changeEngine
     engine 0x28
     rest 0x30
-	0xB3 9, 0x28
+    0x21 138
 
 	fade<1> 1,1,0x30
+    play_sfx 0x1000291
+    0x104 0
+    rest 0x30
+    play_sfx 0x1000291
+    0x104 0
+    rest 0x30
     async_call play3DS
 
     input 1
@@ -79,6 +86,8 @@ sequenceDuckHunt:
 
 	fade<1> 1,1,0x30
     rest 0x30
+    0x21 225
+    rest 0x60
     async_call playDuckHunt
     input 1
 
@@ -258,13 +267,13 @@ sequenceCoH:
     call cadetMarch
     0x100 0x30, 0
     rest 0x30
-    0x65<1> 0xA, "docShorts_marcher"
     call cadetMarch
     0x100 0x30, 0
     rest 0x30
     call cadetMarch
     0x100 0x30, 0
     rest 0x30
+    0x21 127
     play_sfx 0x1000B95  
     0x108
     call cadetMarch
@@ -310,7 +319,7 @@ stop
 
 sequenceDodo:
 	set_cat 0
-	setrest 7,0x138
+	setrest 7,0x198
 	call changeEngine
 	engine 0x38
 	sub 4
@@ -320,10 +329,12 @@ sequenceDodo:
 	0xB3 9, 0x38
 	
 	0x21 125
-	call cowbells
 
-	async_call playDodo
 	fade<1> 1,1,0x30
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+	async_call playDodo
 	input 1
 	async_sub 0x58
 	async_sub 0x5C
@@ -353,6 +364,16 @@ patternMaypul:
 bytes 1, 3, 4
 return
 
+maypulVoice:
+play_sfx 0x10002E1
+rest 0x18
+0x101
+rest 0x18
+play_sfx 0x10002E7
+rest 0x18
+0x101
+stop
+
 sequenceRivalsAether:
 	set_cat 0
 	setrest 7, 0x400
@@ -361,30 +382,29 @@ sequenceRivalsAether:
     rest 0x30
 	0xB3 9, 0x35
 
-	fade<1> 1,1,0x30
+    0x21 150
+    rest 0x30
     0x105 0
     0x102<1> patternMaypul, 3
-    rest 0xC	// 0.25 beats
+    async_call maypulVoice
+    rest 0x18
+	fade<1> 1,1,0x30
     0x103 0
     0x102 0x60
     0x109 
     input 1
-    fade<1> 1, 1, 0x30
     0x109<1>
     0x101 
     async_call playRivalsAether
     0x107 0x320
     rest 0x30	// 1.0 beats
     0x101<1> 0x30
-    rest 0x30	// 1.0 beats
-    rest 0x60	// 2.0 beats
-    rest 0x60	// 2.0 beats
-    rest 0x60	// 2.0 beats
-    rest 0x30	// 2.0 beats
-    rest 0x30	// 2.0 beats
+    rest 0x1B0
+
+    rest 0x18	// 2.0 beats
     0x106 0x2D0
-    rest 0x60	// 2.0 beats
-    rest 0x60
+    rest 0x18
+    rest 0x90
     0x104<1>
 stop
 
@@ -491,6 +511,7 @@ sequenceWiiMusic:
     0x104<1> 0, 2, 0x3C
     0x104<1> 1, 2, 0x3C
     rest 0x30
+    input 0
     0x105<0>
     0x106
 stop
@@ -506,8 +527,15 @@ sequenceDukeNukem:
     rest 0x60
 	0xB3 9, 0x20
     0x8B 0,0
+    0x21 170
 
 	fade<1> 1,1,0x30
+    play_sfx 0x1000291
+    0x107 1
+    rest 0x30
+    play_sfx 0x1000291
+    0x107 1
+    rest 0x18
     async_call playDukeNukem
     input 1
     // rest 0xC

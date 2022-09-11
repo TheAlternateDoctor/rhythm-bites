@@ -15,21 +15,35 @@ sequenceBannerSickBeats:
     async_call sickBeat
     async_sub 0x56
     async_sub 0x59
+    play_sfx 0x1000291
     rest 0x30
+    play_sfx 0x1000291
     rest 0x30
     async_call playBanner
 
 stop
 
+WiiCowbell:
+rest 0xC
+play_sfx 0x1000291
+0x104 0
+rest 0x30
+play_sfx 0x1000291
+0x104 0
+stop
+
 sequenceWii:
 	set_cat 0
 	setrest 7, 0x210
+	0xB3 9, 0x28
 	call changeEngine
 	engine 0x28
 	rest 0x30
-	0xB3 9, 0x28
+    0x21 150
 
 	fade<1> 1,1,0x30
+    async_call WiiCowbell
+    rest 0x60
     async_call playWii
 
     input 1
@@ -82,6 +96,12 @@ sequenceJackson:
 	0xB3 9, 0x3D
 
 	fade<1> 1,1,0x30
+    play_sfx 0x1000291
+    0x101
+    rest 0x30
+    play_sfx 0x1000291
+    0x101
+    rest 0x18
     async_call playJackson
     async_call moonWalk
     input 1
@@ -97,7 +117,7 @@ stop
 
 sequenceKahoot:
 	set_cat 0
-	setrest 7, 0x360
+	setrest 7, 0x390
     call changeEngine
     engine 0x7
     0x65<4> 0x12C, 0x3C
@@ -111,9 +131,11 @@ sequenceKahoot:
 	0xB3 9, 0x7
 
 	fade<1> 1,1,0x30
+    rest 0x30
     async_call playKahoot
     0x105<1>
     0x101<2>
+    0x102<1>
     rest 0x18
     0x101<3>
     rest 0x18
@@ -180,12 +202,14 @@ sequenceGalaga:
     0x10A 1
     0x8B 0,0
 	0xB3 9, 0x23
+    rest 0x18
     0x21 152
 
 	fade<1> 1,1,0x30
     play_sfx 0x10002E1
     rest 0x30
     play_sfx 0x10002E7
+    rest 0x18
     async_call playGalaga
     input 1
     async_sub 0x58
@@ -210,11 +234,16 @@ sequenceMetroid:
     0x29<2> 
 	rest 0x30
 	0xB3 9, 0x37
+    0x21 107
 
-    async_call playMetroid
     fade<1> 1,1,0x30
-    input 1
     async_call beatLoop
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+    rest 0x30
+    async_call playMetroid
+    input 1
     async_sub 0x5A
     async_sub 0x5B
     async_sub 0x77
@@ -327,9 +356,12 @@ sequencePokemonBadge:
 	rest 0x30
 	0xB3 9, 0x36
 
-    async_call kecleonBeat
-    async_call playPokemonBadge
     fade<1> 1,1,0x30
+    async_call kecleonBeat
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+    async_call playPokemonBadge
     input 1
     async_sub 0x56
     rest 0x90
@@ -379,7 +411,7 @@ stop
 
 sequenceHatInTime:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, 0x2A0
     call changeEngine
     engine 0x1B
     sub 4
@@ -401,8 +433,6 @@ sequenceHatInTime:
     async_sub 0x56
     rest 0x60
     async_sub 0x58
-    rest 0xC0
-    rest 0xC0
 stop
 
 sequenceKlonoa:
@@ -415,8 +445,12 @@ sequenceKlonoa:
 	rest 0x48
 	0xB3 9, 0x3A
 
-    async_call playKlonoa
     fade<1> 1,1,0x30
+    play_sfx 0x1000921
+    rest 0x30
+    play_sfx 0x1000921
+    rest 0x30
+    async_call playKlonoa
 
     input 1
     async_sub 0x56
@@ -425,6 +459,4 @@ sequenceKlonoa:
     rest 0x90
     async_sub 0x59
     rest 0x150
-    fade 1, 1, 0x20
-    rest 0x30
 stop

@@ -6,14 +6,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     call randomBannerA
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     call randomBannerB
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -47,14 +45,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/C/GROUP_SHORTS_TOMODACHI"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/C/GROUP_SHORTS_TOMODACHI"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
@@ -66,14 +62,12 @@ if 1
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xA, u"shorts/B/GROUP_SHORTS_RHYTHM_MASTERS"
-    0xB3 3,1
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
     set_sfx 0xB, u"shorts/B/GROUP_SHORTS_RHYTHM_MASTERS"
-    0xB3 4,1
     0xB3 2,1
 endif
 stop
