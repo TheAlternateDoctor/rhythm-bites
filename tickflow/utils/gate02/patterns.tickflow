@@ -267,13 +267,13 @@ sequenceCoH:
     call cadetMarch
     0x100 0x30, 0
     rest 0x30
+    0x65<1> 0xA, "docShorts_marcher"
     call cadetMarch
     0x100 0x30, 0
     rest 0x30
     call cadetMarch
     0x100 0x30, 0
     rest 0x30
-    0x21 127
     play_sfx 0x1000B95  
     0x108
     call cadetMarch
