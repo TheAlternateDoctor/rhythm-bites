@@ -157,13 +157,14 @@ if 0
 	goto 0x54D
 endif 
 
+0xA2
 0x21 115
 async_call sequenceBannerClapTrap
 rest 0x30
 async_call loadKarate3DS
 getrest 7
 rest 0x30
-// call fade
+call fade
 call lifeCheck
 
 0x9C<2>
