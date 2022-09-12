@@ -99,23 +99,6 @@ lifeCheck:
     		get_sync 4
 		endif
 		break
-	// case 0x42 //Clap-Trap
-	// 	0xB2 1
-	// 	if 1
-	// 		remove_sfx 4
-	// 	else
-	// 		remove_sfx 5
-	// 	endif
-	// 	0x21 156
-	// 	0x100 0x30
-	// 	rest 0x90
-	// 	0x100 0x30
-	// 	rest 0x90
-	// 	0x107
-	// 	if 1
-    // 		get_sync 4
-	// 	endif
-	// 	break
 	default //Everything else
 		0xA2<2>
 		if 1

@@ -343,22 +343,22 @@ sequenceDodo:
 	async_sub 0x67
 stop
 
-sequenceTetris:
-	set_cat 0
-	setrest 7, 0x1E0
-    call changeEngine
-    engine 0x1E
-    rest 0x30
-    rest 0x18
-	0xB3 9, 0x1E
+// sequenceTetris:
+// 	set_cat 0
+// 	setrest 7, 0x1E0
+//     call changeEngine
+//     engine 0x1E
+//     rest 0x30
+//     rest 0x18
+// 	0xB3 9, 0x1E
 
-	fade<1> 1,1,0x30
-    async_call playTetris
-    async_sub 0x57
-    rest 0xC0
-    input 1
-    async_sub 0x59
-stop
+// 	fade<1> 1,1,0x30
+//     async_call playTetris
+//     async_sub 0x57
+//     rest 0xC0
+//     input 1
+//     async_sub 0x59
+// stop
 
 patternMaypul:
 bytes 1, 3, 4

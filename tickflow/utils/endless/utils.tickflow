@@ -5,6 +5,8 @@ loadNextGame:
     0x67<3> 0x64
     0x67<5> 2
     random 0x65
+    // 0xB2 3
+    // 0xB4 3,1
     switch
         case 0x1 //TF2
             0xB2 9
@@ -615,6 +617,7 @@ loadNextGame:
                 async_call loadDJSchool
                 set_func 3, nop
                 set_func 2, nopR
+                0xB3 3, 0
             endif
         break
         default //Restart until we get something damnit

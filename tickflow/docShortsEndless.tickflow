@@ -166,8 +166,9 @@ input 0
 0xB3 4, -1
 0xB3 1,0
 0xB3 2,1
-0xB3 3,0
+// 0xB3 3,0x64
 set_func 4, deadSubEndless
+// set_func 4, nopR
 
 call changeEngine
 engine 0x28
