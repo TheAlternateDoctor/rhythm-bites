@@ -296,3 +296,25 @@ else
     0xB3 1, 1
 endif
 stop
+
+loadBtSDS:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_ASSEMBLE"
+    set_cellanim 4, u"rom:/cellanim/ntrAssemble_v0.zlib", -1
+    game_cellanim 0x1C, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_ASSEMBLE"
+    set_cellanim 5, u"rom:/cellanim/ntrAssemble_v0.zlib", -1
+    game_cellanim 0x1C, 5
+    0xB3 1, 1
+endif
+stop
