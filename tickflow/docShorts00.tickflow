@@ -14,6 +14,8 @@
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
+#include utils/ports/builtToScaleDS.tickflow
+
 // #index 0x1A
 #index 0x10C
 start:
@@ -296,6 +298,17 @@ async_call loadIaiGiri
 rest 0x18
 sub 3
 async_call sequenceIaiGiri
+rest 0x30
+async_call loadBtSDS
+rest 0xC0
+getrest 7
+call fade
+call lifeCheck
+
+async_call loadHereIs
+rest 0x18
+sub 3
+async_call sequenceHereIs
 rest 0x30
 async_call loadTap
 rest 0xC0

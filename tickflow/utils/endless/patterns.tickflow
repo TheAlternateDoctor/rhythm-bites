@@ -292,28 +292,3 @@ sequenceNTR:
     rest 0x60
     async_sub 0x84
 stop
-
-sequenceHereIs:
-	set_cat 0
-	setrest 7, 0x30*24
-    call changeEngine
-    engine 0x1C
-	rest 0x30
-	0xB3 9, 0x65
-
-    fade<1> 1, 3, 0x30
-    rest 0x30
-    async_call playHereIs
-    rest 0x90
-    async_call widget50
-    rest 0xC0
-    async_call widget75
-    rest 0xC0
-    async_call widget75
-    rest 0xC0
-    async_call widget50
-    rest 0x90
-    async_call widget25
-    rest 0x60
-    async_call widget25
-stop

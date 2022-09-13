@@ -24,8 +24,8 @@
 #include utils/endless/loadGames.tickflow
 
 #include utils/endless/utils.tickflow
-#include utils/endless/ports/djschool.tickflow
-#include utils/endless/ports/builtToScaleDS.tickflow
+#include utils/ports/djschool.tickflow
+#include utils/ports/builtToScaleDS.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow

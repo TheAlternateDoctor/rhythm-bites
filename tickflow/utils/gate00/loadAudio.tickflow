@@ -184,3 +184,20 @@ else
     0xB3 2,1
 endif
 stop
+
+loadHereIs:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_HERE_IS"
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_HERE_IS"
+    0xB3 2,1
+endif
+stop
