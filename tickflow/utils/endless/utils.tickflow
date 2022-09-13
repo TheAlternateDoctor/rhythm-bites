@@ -4,7 +4,7 @@ loadNextGame:
     0x67<4> 0x3C
     0x67<3> 0x64
     0x67<5> 2
-    // random 0x66
+    // random 0x67
     0xB2 3
     0xB4 3,1
     switch
@@ -617,7 +617,6 @@ loadNextGame:
                 async_call loadDJSchool
                 set_func 3, nop
                 set_func 2, nopR
-                0xB3 3, 0
             endif
         break
         case 0x65 //Here Is
@@ -630,6 +629,19 @@ loadNextGame:
                 set_func 1, loadHereIs
                 async_call loadBtSDS
                 set_func 3, nop
+                set_func 2, nopR
+            endif
+        break
+        case 0x66 //Konga Conga Kappa
+            0xB2 9
+            if 0x66 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0x67<1> 1, "bonus_RVL"
+                set_func 0, sequenceKonga
+                set_func 1, loadKonga
+                async_call loadManzai //help
+                set_func 3, unloadManzai
                 set_func 2, nopR
                 0xB3 3, 0
             endif
@@ -653,6 +665,7 @@ playNextGame:
     rest 0x60
 	call fade
     call lifeCheck
+    get_async 3, 0
 return
 
 switchSickBeats:

@@ -26,6 +26,7 @@
 #include utils/endless/utils.tickflow
 #include utils/ports/djschool.tickflow
 #include utils/ports/builtToScaleDS.tickflow
+#include utils/ports/manzai.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow
@@ -167,7 +168,7 @@ input 0
 0xB3 4, -1
 0xB3 1,0
 0xB3 2,1
-0xB3 3,0x65
+0xB3 3,0x66
 set_func 4, deadSubEndless
 // set_func 4, nopR
 

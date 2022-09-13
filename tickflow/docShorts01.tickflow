@@ -14,6 +14,8 @@
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
+#include utils/ports/manzai.tickflow
+
 // #index 0x1A
 #index 0x10D
 start:
@@ -248,7 +250,7 @@ rest 0x30
 async_call loadPajama
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call loadKlonoaTitle
 rest 0x18
@@ -258,7 +260,7 @@ rest 0x30
 async_call loadTongueLashing
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call loadBadgePokemon
 rest 0x18
@@ -268,7 +270,7 @@ rest 0x30
 async_call loadRatRace
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call loadRescueVVVVVV
 rest 0x18
@@ -278,17 +280,27 @@ rest 0x30
 async_call loadMunchyMonk
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call loadHatInTime
 rest 0x18
 sub 3
 async_call sequenceHatInTime
 rest 0x30
+async_call loadManzai
+getrest 7
+call fade
+call lifeCheck
+
+async_call loadKonga
+rest 0x18
+sub 3
+async_call sequenceKonga
+rest 0x30
 async_call loadTap
 getrest 7
 call fade
-// call lifeCheck
+call lifeCheck
 
 async_call loadRhythmMasters
 rest 0x18
@@ -296,7 +308,7 @@ sub 3
 async_call sequenceRhythmMasters
 rest 0x30
 getrest 7
-// call lifeCheck
+call lifeCheck
 
 
 input 0
