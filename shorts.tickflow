@@ -968,7 +968,7 @@ rest 0x30
 play_sfx 0x1000FF6
 stop
 
-sequenceCTR:
+sequenceCTR: //Fait
 speed 0x100
 rest 0x30
 0x55 1
@@ -989,7 +989,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceNTR:
+sequenceNTR: //Fait
 speed 0x100
 rest 0x30
 0x55 1
@@ -1007,7 +1007,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceAGB:
+sequenceAGB: //Fait
 speed 0x100
 rest 0x30
 0x55 1
@@ -1026,7 +1026,7 @@ rest 0x30
 return
 
 
-sequenceValve:
+sequenceValve: //Fait
 call changeEngine
 engine 0x1C
 sub 4
@@ -1066,7 +1066,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceKlonoa:
+sequenceKlonoa: //Fait
 call changeEngine
 engine 0x3A
 sub 4
@@ -1089,7 +1089,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceRayman:
+sequenceRayman: //Fait
 call changeEngine
 engine 0x32
 sub 4
@@ -1113,7 +1113,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceJimmyT:
+sequenceJimmyT: //fait
 call changeEngine
 engine 0
 sub 4
@@ -1144,7 +1144,7 @@ rest 0x30
 return
 
 
-sequenceMetroid:
+sequenceMetroid: //Fait
 call changeEngine
 engine 0x37
 sub 4
@@ -1169,7 +1169,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequencePokemon:
+sequencePokemon: //Fait
 call changeEngine
 engine 0x16
 sub 4
@@ -1208,7 +1208,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceMGS:
+sequenceMGS: //fait
 call changeEngine
 engine 0x2E
 sub 4
@@ -1238,7 +1238,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceMario:
+sequenceMario: //scrapped
 call changeEngine
 engine 0x08
 sub 4
@@ -1280,7 +1280,7 @@ fade 1, 1, 0x20
 rest 0x48
 return
 
-sequenceTomodachi:
+sequenceTomodachi: //Fait
 call changeEngine
 engine 0x4F
 sub 4
@@ -1311,7 +1311,7 @@ fade 1, 1, 0x20
 rest 0x48
 return
 
-sequenceKirby:
+sequenceKirby: //Fait
 call changeEngine
 engine 0x11
 sub 4
@@ -1361,8 +1361,8 @@ label 0x1764
 rest 0x30
 goto 0x1764
 stop
-
-sequenceJiggy:
+ 
+sequenceJiggy: //Fait
 call changeEngine
 engine 0x25
 sub 4
@@ -1430,7 +1430,7 @@ rest 0x30	// 1.0 beats
 rest 0x30	// 1.0 beats
 stop
 
-sequenceGameWatch:
+sequenceGameWatch: //TODO
 call changeEngine
 engine 0x12
 sub 4
@@ -1612,7 +1612,7 @@ rest 0x60
 0x102
 stop
 
-sequenceDaftPunk:
+sequenceDaftPunk: //Fait
 call changeEngine
 engine 0x11
 sub 4
@@ -1648,7 +1648,7 @@ patternMaypul:
 bytes 1, 3, 4
 return
 
-sequenceMaypul:
+sequenceMaypul: //Fait
 call changeEngine
 engine 0x35
 sub 4
@@ -1683,7 +1683,7 @@ rest 0x48
 return
 
 
-sequenceHatTime:
+sequenceHatTime: //Fait
 call changeEngine
 engine 0x1B
 sub 4
@@ -1744,7 +1744,7 @@ rest 0x18
 0x102 0
 stop
 
-sequenceCSD:
+sequenceCSD: //Fait
 call changeEngine
 engine 0x3B
 sub 4
@@ -1771,8 +1771,8 @@ rest 0x60
 fade 1, 1, 0x20
 rest 0x48
 return
-
-sequenceTF2:
+ 
+sequenceTF2: //Fait
 call changeEngine
 engine 0x01
 sub 4
@@ -1902,7 +1902,7 @@ rest 0x30	// 1.0 beats
 0x105<4> 
 stop
 
-sequenceSims:
+sequenceSims: //scrapped
 call changeEngine
 engine 0x1A
 sub 4
@@ -1934,7 +1934,7 @@ fade 1, 1, 0x20
 rest 0x30
 return
 
-sequenceZelda:
+sequenceZelda: //scrapped
 call changeEngine
 engine 0x30
 sub 4
@@ -1974,7 +1974,7 @@ rest 0x30
 
 return
 
-sequencePacMan:
+sequencePacMan: //Fait
 call changeEngine
 engine 0x24
 sub 4
