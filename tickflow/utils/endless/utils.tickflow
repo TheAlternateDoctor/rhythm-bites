@@ -4,7 +4,6 @@ loadNextGame:
     random 0x68
     // 0xB2 3
     // 0xB4 3,1
-    set_condvar 0x67
     switch
         case 0x0 //Jimmy T.
             0xB2 9
