@@ -14,6 +14,8 @@
 #include utils/loadAudioCommon.tickflow
 #include utils/utils.tickflow
 
+#include utils/ports/finnedFrontier.tickflow
+
 // #index 0x1A
 #index 0x10E
 start:
@@ -288,6 +290,16 @@ async_call loadDukeNukem
 rest 0x18
 sub 3
 async_call sequenceDukeNukem
+rest 0x30
+async_call loadFinned
+getrest 7
+call fade
+call lifeCheck
+
+async_call loadAccumula
+rest 0x18
+sub 3
+async_call sequenceAccumula
 rest 0x30
 async_call loadTap
 getrest 7

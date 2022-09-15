@@ -1,9 +1,10 @@
 loadNextGame:
     0xB3 10,0
     0xB3 11,0
-    // random 0x68
+    random 0x68
     // 0xB2 3
     // 0xB4 3,1
+    set_condvar 0x67
     switch
         case 0x0 //Jimmy T.
             0xB2 9
@@ -629,18 +630,18 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        // case 0x67 //Accumula Town
-        //     0xB2 9
-        //     if 0x67 //Stop games from being played next to each other
-        //         goto loadNextGame
-        //     else
-        //         set_func 0, sequenceKonga
-        //         set_func 1, loadKonga
-        //         async_call loadManzai //help
-        //         set_func 3, nop
-        //         set_func 2, nopR
-        //     endif
-        // break
+        case 0x67 //Accumula Town
+            0xB2 9
+            if 0x67 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                set_func 0, sequenceAccumula
+                set_func 1, loadAccumula
+                async_call loadFinned
+                set_func 3, unloadFinned
+                set_func 2, nopR
+            endif
+        break
         default //Restart until we get something damnit
             goto loadNextGame
         break

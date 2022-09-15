@@ -605,3 +605,43 @@ sequenceBanjoKazooie:
     0x100<3> 0, 0
     0x100 1
 stop
+
+sequenceAccumula:
+	set_cat 0
+	setrest 7, 0x30*15
+    call changeEngine
+    engine 0x23
+    rest 0x30
+	0xB3 9, 0x67
+
+    
+    zoom 3, 0x300, 0x300
+    0x101 path, 0x10, 0
+    0x102 startingplacement, 4
+    0x103 3
+    0x102<2>
+    0x10A 1
+    0x8B 0,0
+	0xB3 9, 0x23
+    rest 0x18
+
+
+    0x21 112
+    fade<1> 1,1,0x30
+    async_call transitionfromdashnopan
+    rest 0x18
+    rest 0x60
+    async_call playAccumula
+    async_call fourbeatswim
+    rest 0xC0
+    async_call fourbeatswim
+    async_call transitiontodash, 0x48
+    rest 0xC0
+    async_call twobeatdash
+    rest 0x60
+    async_call twobeatdash
+    rest 0x60
+    async_call twobeatdash
+    rest 0x60
+    input 0
+stop

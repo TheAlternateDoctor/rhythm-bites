@@ -22,11 +22,12 @@
 #include utils/endless/loadAudio.tickflow
 #include utils/endless/audio.tickflow
 #include utils/endless/loadGames.tickflow
-
 #include utils/endless/utils.tickflow
+
 #include utils/ports/djschool.tickflow
 #include utils/ports/builtToScaleDS.tickflow
 #include utils/ports/manzai.tickflow
+#include utils/ports/finnedFrontier.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/audioCommon.tickflow
@@ -168,7 +169,7 @@ input 0
 0xB3 4, -1
 0xB3 1,0
 0xB3 2,1
-0xB3 3,0x2E
+// 0xB3 3,0x2E
 set_func 4, deadSubEndless
 // set_func 4, nopR
 
