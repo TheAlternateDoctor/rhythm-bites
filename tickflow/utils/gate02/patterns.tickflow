@@ -631,6 +631,7 @@ sequenceAccumula:
     async_call transitionfromdashnopan
     rest 0x18
     rest 0x60
+    input 1
     async_call playAccumula
     async_call fourbeatswim
     rest 0xC0

@@ -591,6 +591,7 @@ sequenceHereIs:
     rest 0x30
     async_call playHereIs
     rest 0x90
+	input 1
     async_call widget50
     rest 0xC0
     async_call widget75

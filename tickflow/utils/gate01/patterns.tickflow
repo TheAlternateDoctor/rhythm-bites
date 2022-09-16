@@ -486,6 +486,7 @@ sequenceKonga:
     play_sfx 0x1000921
     0x103 0
     0x103 1
+    input 1
     async_call phrase
     async_call mzvoice_aichini
     async_call playKonga, 0x18
