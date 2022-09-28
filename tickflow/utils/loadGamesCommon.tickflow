@@ -34,19 +34,19 @@ if 1
     set_sfx 4, u"GROUP_AGB_TAP"
     set_cellanim 4, u"rom:/cellanim/agbTap_long.zlib", -1
     set_effect 4, u"rom:/effect/agbTap.zlib", -1
-    set_layout 4, u"rom:/layout/agbTap.zlib", -1
+    set_layout 6, u"rom:/layout/agbTap.zlib", -1
     game_cellanim 0xC, 4
     game_effect 0xC, 4
-    game_layout 0xC, 4
+    game_layout 0xC, 6
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_TAP"
     set_cellanim 5, u"rom:/cellanim/agbTap_long.zlib", -1
     set_effect 5, u"rom:/effect/agbTap.zlib", -1
-    set_layout 5, u"rom:/layout/agbTap.zlib", -1
+    set_layout 7, u"rom:/layout/agbTap.zlib", -1
     game_cellanim 0xC, 5
     game_effect 0xC, 5
-    game_layout 0xC, 5
+    game_layout 0xC, 7
     0xB3 1, 1
 endif
 stop

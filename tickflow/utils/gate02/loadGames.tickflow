@@ -115,16 +115,16 @@ rest 0x60
 if 1
     set_sfx 4, u"GROUP_NTR_NINJA"
     set_cellanim 4, u"rom:/cellanim/ntrNinja_long.zlib", -1
-    set_layout 4, u"rom:/layout/ntrNinja.zlib", -1
+    set_layout 6, u"rom:/layout/ntrNinja.zlib", -1
     game_cellanim 0x16, 4
-    game_layout 0x16, 4
+    game_layout 0x16, 6
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_NINJA"
     set_cellanim 5, u"rom:/cellanim/ntrNinja_long.zlib", -1
-    set_layout 5, u"rom:/layout/ntrNinja.zlib", -1
+    set_layout 7, u"rom:/layout/ntrNinja.zlib", -1
     game_cellanim 0x16, 5
-    game_layout 0x16, 5
+    game_layout 0x16, 7
     0xB3 1, 1
 endif
 stop
@@ -330,7 +330,6 @@ rest 0x60
 if 1
     set_sfx 4, u"GROUP_FRONTIER"
     rest 0xC	// 0.25 beats
-    set_sfx 6, u"GROUP_FRONTIER2"
     set_cellanim 4, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
@@ -339,7 +338,6 @@ if 1
 else
     set_sfx 5, u"GROUP_FRONTIER"
     rest 0xC	// 0.25 beats
-    set_sfx 6, u"GROUP_FRONTIER2"
     set_cellanim 5, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
@@ -348,6 +346,12 @@ else
 endif
 stop
 
-unloadFinned:
-    remove_sfx 6
+loadFinnedLate:
+    0xB2 5
+    if 1
+        remove_sfx 6
+    endif
+    rest 0xC
+    set_sfx 6, u"GROUP_FRONTIER2"
+    0xB3 5, 1
 stop

@@ -4,6 +4,7 @@ loadNextGame:
     random 0x68
     // 0xB2 3
     // 0xB4 3,1
+    // set_condvar 0x1
     switch
         case 0x0 //Jimmy T.
             0xB2 9
@@ -595,7 +596,7 @@ loadNextGame:
         break
         case 0x64 //Daft Punk
             0xB2 9
-            if 0x64 //Stop games from being played next to each other
+            if 0x11 //Stop games from being played next to each other
                 goto loadNextGame
             else
                 set_func 0, sequenceDaftPunk
@@ -607,7 +608,7 @@ loadNextGame:
         break
         case 0x65 //Here Is
             0xB2 9
-            if 0x65 //Stop games from being played next to each other
+            if 0x1C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 set_func 0, sequenceHereIs
@@ -619,7 +620,7 @@ loadNextGame:
         break
         case 0x66 //Konga Conga Kappa
             0xB2 9
-            if 0x66 //Stop games from being played next to each other
+            if 0x3C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 set_func 0, sequenceKonga
@@ -631,13 +632,13 @@ loadNextGame:
         break
         case 0x67 //Accumula Town
             0xB2 9
-            if 0x67 //Stop games from being played next to each other
+            if 0x23 //Stop games from being played next to each other
                 goto loadNextGame
             else
                 set_func 0, sequenceAccumula
                 set_func 1, loadAccumula
                 async_call loadFinned
-                set_func 3, unloadFinned
+                set_func 3, nop
                 set_func 2, nopR
             endif
         break
@@ -650,7 +651,7 @@ stop
 playNextGame:
     0x21 120
     get_async 1, 0
-    rest 0x18
+    rest 0x30
     sub 3
     get_sync 2
     get_async 0, 0
@@ -660,7 +661,7 @@ playNextGame:
     rest 0x60
 	call fade
     call lifeCheck
-    get_async 3, 0
+    // get_async 3, 0
 return
 
 switchSickBeats:

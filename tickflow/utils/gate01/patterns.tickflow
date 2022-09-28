@@ -10,6 +10,7 @@ sequenceBannerSickBeats:
 	0xB3 9, 0x40
     0x109 1
     0x10A 0
+    set_cat 0x7D0
 
     input 1
     async_call sickBeat
@@ -39,6 +40,7 @@ sequenceWii:
 	call changeEngine
 	engine 0x28
 	rest 0x30
+    set_cat 0x7D0
     0x21 150
 
 	fade<1> 1,1,0x30
@@ -90,6 +92,7 @@ sequenceJackson:
 	call changeEngine
 	engine 0x3D
 	rest 0x30
+    set_cat 0x7D0
     0x10D<1>
     0x10E 1
     0x10C 0, -0x320, 0x5DC
@@ -120,13 +123,14 @@ sequenceKahoot:
 	setrest 7, 0x390
     call changeEngine
     engine 0x7
+    rest 0x30
+    set_cat 0x7D0
     0x65<4> 0x12C, 0x3C
     0x65<3> 0, -0x50
     0x65<5> 2
     0x101<1>
     0x102<1>
     0x102<0>
-    rest 0x30
     rest 0x18
 	0xB3 9, 0x7
 
@@ -195,6 +199,7 @@ sequenceGalaga:
 	call changeEngine
 	engine 0x23
 	rest 0x30
+    set_cat 0x7D0
     0x101 0x530C98, 0x20, 1
     0x102 0x530C50, 3
     0x103 3
@@ -230,9 +235,8 @@ sequenceMetroid:
 	setrest 7, 0x150
     call changeEngine
     engine 0x37
-    sub 4
-    0x29<2> 
 	rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x37
     0x21 107
 
@@ -256,9 +260,8 @@ sequenceWiiFit:
 	setrest 7, 0x300
     call changeEngine
     engine 0x3C
-    sub 4
-    0x29<2> 
 	rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x3C
     0x107 1
 
@@ -298,11 +301,10 @@ sequencePhantomThief:
 	setrest 7, 0x300
     call changeEngine
     engine 0x2
-    sub 4
-    0x29<2> 
+	rest 0x30
+    set_cat 0x7D0
     0x107<1> 0
     0x101<1> 0xFA, 0
-	rest 0x30
 	0xB3 9, 0x2
 
     async_call playPhantomThief
@@ -310,28 +312,6 @@ sequencePhantomThief:
     input 1
     sub 0x56
     sub 0x5A
-stop
-
-sequenceMegaman:
-	set_cat 0
-	setrest 7, 0x3C0
-    call changeEngine
-    engine 0x18
-    sub 4
-    0x29<2> 
-    rest 0x30
-	0xB3 9, 0x18
-
-    async_call playMegaman
-    fade<1> 1,1,0x30
-    input 1
-    async_sub 0x70
-    rest 0x90
-    async_sub 0x5E
-    rest 0xF0
-    async_sub 0x64
-    rest 0x90
-    async_sub 0x5E
 stop
 
 kecleonBeat:
@@ -346,14 +326,13 @@ sequencePokemonBadge:
 	setrest 7, 0x270
     call changeEngine
     engine 0x36
-    sub 4
-    0x29<2> 
+	rest 0x30
+    set_cat 0x7D0
     0x101<1> 0x78, -0x2C6, 0x78, -0x190, -0x190, 0, 0x1001134
     0x100<1> -0x1C2, -0xB4, -0xB4, 0x1001134
     0x105 0x82, -0xBE, 0x1E, 0, 0x1E, 1
     0x104 -0xC8, 0, 0x90
     0x107 0
-	rest 0x30
 	0xB3 9, 0x36
 
     fade<1> 1,1,0x30
@@ -390,10 +369,9 @@ sequenceRescueVvvvvv:
 	setrest 7, 0x1E0
     call changeEngine
     engine 0x9
-    sub 4
-    0x29<2> 
-    0x101 1
 	rest 0x30
+    set_cat 0x7D0
+    0x101 1
 	0xB3 9, 0x9
 
     async_call playRescueVvvvvv
@@ -415,9 +393,8 @@ sequenceHatInTime:
 	setrest 7, 0x2A0
     call changeEngine
     engine 0x1B
-    sub 4
-    0x29<2> 
 	rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x1B
 
     async_call playHatInTime
@@ -441,9 +418,8 @@ sequenceKlonoa:
 	setrest 7, 0x240
     call changeEngine
     engine 0x3A
-    sub 4
-    0x29<2> 
 	rest 0x48
+    set_cat 0x7D0
 	0xB3 9, 0x3A
 
     fade<1> 1,1,0x30
@@ -467,9 +443,8 @@ sequenceKonga:
 	setrest 7, 0x30*20
     call changeEngine
     engine 0x3C
-    sub 4
-    0x29<2> 
 	rest 0x48
+    set_cat 0x7D0
 	0xB3 9, 0x3C
     0x108 0
     0x106<3> 1

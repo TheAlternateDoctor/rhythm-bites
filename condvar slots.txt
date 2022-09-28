@@ -4,7 +4,7 @@ Condvar
 2 - Used audio slot (1 if 0xA)
 3 - 
 4 - 
-5 - 
+5 - sfx in slot 6 (for recreations)
 6 - Audio pack was loaded previously
 7 - Game specific (Coin Toss)
 8 - Audio Special case has already loaded

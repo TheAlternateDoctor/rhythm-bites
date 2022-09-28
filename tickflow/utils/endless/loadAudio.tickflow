@@ -133,6 +133,7 @@ else
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
     0xB3 2,1
 endif
+async_call loadDJSchoolLate
 stop
 
 loadPacMan:

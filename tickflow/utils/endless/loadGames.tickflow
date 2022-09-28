@@ -192,16 +192,16 @@ rest 0x60
 if 1
     set_sfx 4, u"GROUP_AGB_PATI"
     set_cellanim 4, u"rom:/cellanim/agbClap_arrange.zlib", -1
-    set_layout 4, u"rom:/layout/agbClap_arrange.zlib", -1
-    game_cellanim 0x1, 4
-    game_layout 0x1, 4
+    set_layout 6, u"rom:/layout/agbClap_arrange.zlib", -1
+    game_cellanim 1, 4
+    game_layout 1, 6
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_AGB_PATI"
     set_cellanim 5, u"rom:/cellanim/agbClap_arrange.zlib", -1
-    set_layout 5, u"rom:/layout/agbClap_arrange.zlib", -1
-    game_cellanim 0x1, 5
-    game_layout 0x1, 5
+    set_layout 7, u"rom:/layout/agbClap_arrange.zlib", -1
+    game_cellanim 1, 5
+    game_layout 1, 7
     0xB3 1, 1
 endif
 stop
@@ -231,7 +231,11 @@ endif
 stop
 
 loadDJSchoolLate:
-remove_sfx 6
+0xB2 5
+if 1
+    remove_sfx 6
+endif
+rest 0xC
 rest 0xC
 0xB2 1
 if 1
@@ -241,6 +245,7 @@ else
     set_sfx 4, u"GROUP_NTR_DJ_SCHOOL_EN"
     set_sfx 6, u"GROUP_NTR_DJ_SCHOOL_JP"
 endif
+0xB3 5,1
 stop
 
 loadForkLifter:

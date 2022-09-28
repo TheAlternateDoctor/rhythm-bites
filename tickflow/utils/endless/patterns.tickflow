@@ -4,6 +4,7 @@ sequenceMiitopia:
 	call changeEngine
 	engine 0x2F
 	rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x2F
 
 	fade<1> 1,1,0x30
@@ -32,6 +33,7 @@ sequenceStreetFighter:
 	engine 0x27
     0x21 147
 	rest 0x30
+    set_cat 0x7D0
     rest 0x18
 	0xB3 9, 0x27
 
@@ -51,6 +53,7 @@ sequenceSplatoon:
 	call changeEngine
 	engine 0x22
 	rest 0x60
+    set_cat 0x7D0
     setrest 2, 0xD
     setrest 3, 0xB
 	0xB3 9, 0x22
@@ -100,6 +103,7 @@ sequenceCaveStory:
 	engine 0x26
     0x21 135
 	rest 0x30
+    set_cat 0x7D0
     0x65<4> 0x12C, 0x3C
     0x65<3> 0, -0x50
     0x65<5> 2
@@ -127,6 +131,7 @@ sequenceRayman:
     engine 0x32
     0x21 160
 	rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x32
 
     0x106
@@ -153,11 +158,12 @@ sequenceTF2:
     call changeEngine
     engine 0x1
 	rest 0x30
+    set_cat 0x7D0
 	rest 0x30
 	0xB3 9, 0x1
 
+    0x105<2> 0x503074
     async_call playTF2
-    // 0x105<2> "Clap_ver_arrange_T_board_00"
 
     fade<1> 1,1,0x30
     input 1
@@ -212,9 +218,10 @@ sequenceDaftPunk:
     call changeEngine
     engine 0x11
 	rest 0x30
-	0xB3 9, 0x64
+    set_cat 0x7D0
+	0xB3 9, 0x11
     pan 3, -0x39, -0x35 
-    async_call loadDJSchoolLate
+    // async_call loadDJSchoolLate
 
     async_call playDaftPunk
     fade<1> 1, 3, 0x30
@@ -237,6 +244,7 @@ sequencePacMan:
     call changeEngine
     engine 0x24
 	rest 0x30
+    set_cat 0x7D0
     rest 0x18
 	0xB3 9, 0x24
 
@@ -272,10 +280,13 @@ sequenceNTR:
     call changeEngine
     engine 0x28
 	rest 0x30
+    set_cat 0x7D0
     0x21 135
+    set_cat 0x7D0
 
     
     fade<1> 1,1,0x30
+    0x68<1> 0xA, "docShorts_song_remix_ds"
     play_sfx 0x1000291
     0x104 0
     rest 0x30
@@ -299,6 +310,7 @@ sequenceJimmyT:
     call changeEngine
     engine 0
 	rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0
     0x102<0> 0x8, 0x18
 
@@ -326,20 +338,21 @@ sequenceMGS:
     call changeEngine
     engine 0x2E
     rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x2E
     0x105<1>
 
     async_call playMGS, 0x30
     fade<1> 1,1,0x30
     input 1
-    rest 0x24
+    rest 0x26
     rest 0xC0
     0x102 1
     0x102<1> 0
     0x103
     rest 0x60
     0x100 1
-    rest 0xC0
+    rest 0xB9
     0x102<1> 5
     0x100 0
 stop
@@ -391,6 +404,7 @@ sequenceGameWatch: //TODO
     call changeEngine
     engine 0x12
     rest 0x30
+    set_cat 0x7D0
 	0xB3 9, 0x12
 
     async_call beatLoop

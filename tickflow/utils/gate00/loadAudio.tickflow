@@ -166,6 +166,7 @@ else
     set_sfx 0xB, u"shorts/G/GROUP_SHORTS_KIRBY_CLEAR"
     0xB3 2,1
 endif
+async_call loadKirbyLate
 stop
 
 loadIaiGiri:

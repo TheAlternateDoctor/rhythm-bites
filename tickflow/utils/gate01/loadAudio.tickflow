@@ -223,4 +223,5 @@ else
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_KONGA"
     0xB3 2,1
 endif
+async_call loadManzaiLate
 stop
