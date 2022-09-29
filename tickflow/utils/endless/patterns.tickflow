@@ -124,34 +124,6 @@ sequenceCaveStory:
     async_call playCaveStory
 stop
 
-sequenceRayman:
-	set_cat 0
-	setrest 7, 0x1B0
-    call changeEngine
-    engine 0x32
-    0x21 160
-	rest 0x30
-    set_cat 0x7D0
-	0xB3 9, 0x32
-
-    0x106
-    fade<1> 1,1,0x30
-    play_sfx 0x1000291
-    rest 0x30
-    play_sfx 0x1000291
-    rest 0x30
-
-    async_call playRayman
-
-    input 1
-    async_sub 0x5B
-    rest 0xC0
-    async_sub 0x5E
-
-
-    rest 0x120
-stop
-
 sequenceTF2:
 	set_cat 0
 	setrest 7, 0x150

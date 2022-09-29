@@ -50,3 +50,51 @@ else
     0xB3 1, 1
 endif
 stop
+
+loadLumbearjack:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_WOOD_CAT"
+    set_cellanim 4, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
+    set_effect 4, u"rom:/effect/ctrWoodCat.zlib", -1
+    game_cellanim 0x3F, 4
+    game_effect 0x3F, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_WOOD_CAT"
+    set_cellanim 5, u"rom:/cellanim/ctrWoodCat_short.zlib", -1
+    set_effect 5, u"rom:/effect/ctrWoodCat.zlib", -1
+    game_cellanim 0x3F, 5
+    game_effect 0x3F, 5
+    0xB3 1, 1
+endif
+stop
+
+loadPackingPests:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_SHIWAKE"
+    set_cellanim 4, u"rom:/cellanim/rvlSort_long.zlib", -1
+    game_cellanim 0x32, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_SHIWAKE"
+    set_cellanim 5, u"rom:/cellanim/rvlSort_long.zlib", -1
+    game_cellanim 0x32, 5
+    0xB3 1, 1
+endif
+stop

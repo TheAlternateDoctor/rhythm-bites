@@ -1,0 +1,240 @@
+assets:
+0x2D 0
+set_cat 0
+0x21 0x78
+speed 0x100
+input 0
+0x7C<3> 1
+if 0
+	0x7C 1, 0, 0x18
+endif 
+0x7C<3> 2
+if 0
+	0x7C 2, 0, 0x18
+endif 
+rest 0x18	// 0.5 beats
+sub 5
+call loadTutorial
+0xA8<2> 0
+0xA8<5> 0
+sub 8
+sub 6
+0x2B 0x40, 0
+play_sfx 0x1000294
+0x88<7> 
+if 1
+	play_sfx 0x1000292
+endif 
+engine 0x28
+sub 0xA
+async_call tutorial
+0x2D 1
+0x7C<1> 7, 0, 0x30
+stop 
+
+loadTutorial:
+    set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
+    label 0x4D2
+    cellanim_busy 4
+    if 0
+        goto 0x10E1
+    endif 
+    rest 1	// 0.020833334 beats
+    goto 0x4D2
+    label 0x10E1
+
+    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    label 0x4D5
+    effect_busy 2
+    if 0
+        goto 0x10E7
+    endif 
+    rest 1	// 0.020833334 beats
+    goto 0x4D5
+    label 0x10E7
+
+    set_layout 0x1E, u"rom:/layout/gate.zlib", -1
+
+    0x83<1> 
+    0xBB 
+    if 0
+        0xBC 
+    endif 
+    sub 7
+    0xBD 
+    0x8C<2> 5
+    set_sfx 1, u"GROUP_EPILOGUE_HI_LEVEL"
+    rest 0x18	// 0.5 beats
+    set_sfx 2, u"GROUP_CHIKEN"
+    rest 0x18	// 0.5 beats
+    set_sfx 4, u"GROUP_KARATE"
+    rest 0x18	// 0.5 beats
+    set_sfx 5, u"GROUP_SHIWAKE"
+    rest 0x18	// 0.5 beats
+    set_sfx 6, u"GROUP_SHIWAKE"
+    rest 0x18	// 0.5 beats
+    set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
+    rest 0x18	// 0.5 beats
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
+    rest 0xC	// 0.25 beats
+    set_sfx 0xB, u"GROUP_SUMOU"
+    rest 0xC	// 0.25 beats
+    sub 3
+    0x83 0
+
+    game_cellanim 0x28, 4
+    game_effect 0x28, 4
+
+
+
+    0xB3 4, -1
+    0xB3 1,0
+    0xB3 2,1
+    0xB3 3,0x1
+    0xB3 5, 1
+return 
+
+tutorial:
+engine 0x28
+sub 0xA
+
+rest 0x30
+
+input 0
+0x76 1, 1
+0x77 1, 0xFF
+0x78 1, 0, 0, 0
+0x79 1,0
+0x65<4> 0x12C, 0x3C
+0x65<3> 0, -0x50
+0x65<5> 2
+0xAF<6> 0
+0x7C<1> 7, 1, 0x30
+0x66 0xA, "docShorts_tutorial_a"
+0x66<1>
+label 0x314A
+0x6D 1, 0x10002BA, 0x10002BB
+sub 0
+0x65<2> 
+rest 0x30	// 1.0 beats
+0x66<3>
+if 0
+	0x66<2> 
+    goto 0x314A
+endif
+
+0x9C<2>
+0x9F 1
+0x9F<5> 2
+
+0xA2
+0xA1
+
+async_call loadPackingPests
+
+call tutorialKarateNDS
+
+rest 0xC0
+input 0
+
+0xA2<2>
+if 1
+    0x66 0xA, "docShorts_tutorial_b_ng"
+    async_call faceSad
+else
+    0x66 0xA, "docShorts_tutorial_b_hi"
+    async_call faceHappy
+endif
+0x66<1>
+label 0x314B
+0x6D 1, 0x10002BA, 0x10002BB
+sub 0
+0x65<2> 
+rest 0x30	// 1.0 beats
+0x66<3>
+if 0
+	0x66<2> 
+    goto 0x314B
+endif
+0x65 0xA, "docShorts_tutorial_b_02"
+label 0x314A
+0x6D 1, 0x10002BA, 0x10002BB
+sub 0
+0x65<2> 
+rest 0x30
+fade 1, 1, 0x30
+async_call loadRayman
+rest 0x30
+
+sub 3
+async_call sequenceRayman
+rest 0x30
+async_call loadLumbearjack
+getrest 7
+rest 0x30
+call fade
+
+async_call loadMasterSword
+rest 0x30
+sub 3
+async_call sequenceZeldaWoodCat
+rest 0x30
+async_call loadTap
+getrest 7
+rest 0x30
+call fade
+
+async_call loadRhythmMasters
+rest 0x30
+sub 3
+async_call sequenceRhythmMasters
+rest 0x30
+getrest 7
+rest 0x30
+input 0
+
+0x65 0xA, "docShorts_tutorial_d_00"
+label 0x314A
+0x6D 1, 0x10002BA, 0x10002BB
+sub 0
+0x65<2> 
+rest 0x30
+fade 1, 1, 0x30
+async_call loadManzai
+rest 0x30
+
+stop
+
+tutorialKarateNDS:
+    0x21 135
+    
+    0x77 1, 0x00
+    fade<1> 1,1,0x30
+    // 0x68<1> 0xA, "docShorts_song_remix_ds"
+    play_sfx 0x1000291
+    0x104 0
+    rest 0x30
+    play_sfx 0x1000291
+    0x104 0
+    rest 0x30
+    async_call playNTR
+    input 1
+    0x100 0
+    rest 0x30
+    async_sub 0x67
+    rest 0x54
+    async_sub 0x75
+    rest 0x60
+    async_sub 0x84
+    rest 0x90
+return
+
+faceSad:
+rest 0xC
+0x107 5, 0xC0
+stop
+
+faceHappy:
+rest 0xC
+0x107 2, 0xC0
+stop

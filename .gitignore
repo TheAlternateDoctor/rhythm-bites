@@ -1,8 +1,7 @@
-bin/docShorts*.bin
+bin/*.bin
 songs/vrac
 songs/wav
 songs/mp3
 songs/shady stuff
 songs/Groups/Unsorted
 Docs/
-*.msbt

@@ -72,3 +72,36 @@ else
 endif
 stop
 
+loadMasterSword:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_MASTER_SWORD"
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_MASTER_SWORD"
+    0xB3 2,1
+endif
+stop
+
+loadRayman:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_RAYMAN"
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_RAYMAN"
+    0xB3 2,1
+endif
+stop

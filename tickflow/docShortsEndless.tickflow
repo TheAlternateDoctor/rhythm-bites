@@ -24,19 +24,21 @@
 #include utils/endless/loadGames.tickflow
 #include utils/endless/utils.tickflow
 
-#include utils/ports/djschool.tickflow
 #include utils/ports/builtToScaleDS.tickflow
-#include utils/ports/manzai.tickflow
 #include utils/ports/finnedFrontier.tickflow
+#include utils/ports/djschool.tickflow
+#include utils/ports/manzai.tickflow
 
 #include utils/patternsCommon.tickflow
-#include utils/audioCommon.tickflow
 #include utils/loadGamesCommon.tickflow
 #include utils/loadAudioCommon.tickflow
+#include utils/audioCommon.tickflow
+// #include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
-// #index 0x10F
-#index 0x1A
+#assets 0
+#index 0x10F
+// #index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -46,6 +48,8 @@ play_sfx 0x100029B
 
 0xA6 0
 0xA4<1> 0xF
+0xA5 1
+0xA4<2> 1
 
 0x75<1> 
 if 0
@@ -156,7 +160,7 @@ endif
 0x21 0x78
 0xB1 
 engine<4> 1
-async_call assets
+// async_call assets
 0x7C<1> 7, 1, 1
 fade 2, 1, 0
 
