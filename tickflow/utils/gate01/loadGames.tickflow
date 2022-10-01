@@ -98,19 +98,26 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_MIJINKO"
     set_cellanim 4, u"rom:/cellanim/rvlFlea_long.zlib", -1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 4
     game_effect 0x23, 4
     0xB3 1, 0
 else
-    set_sfx 5, u"GROUP_MIJINKO"
     set_cellanim 5, u"rom:/cellanim/rvlFlea_long.zlib", -1
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
     game_cellanim 0x23, 5
     game_effect 0x23, 5
     0xB3 1, 1
+endif
+stop
+
+loadMicroRowLate:
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_MIJINKO"
+else
+    set_sfx 5, u"GROUP_MIJINKO"
 endif
 stop
 
@@ -150,19 +157,26 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_SUMOU"
     set_cellanim 4, u"rom:/cellanim/ctrSumou_long.zlib", -1
     set_effect 4, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
     0xB3 1, 0
 else
-    set_sfx 5, u"GROUP_SUMOU"
     set_cellanim 5, u"rom:/cellanim/ctrSumou_long.zlib", -1
     set_effect 5, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5
     0xB3 1, 1
+endif
+stop
+
+loadSumoLate:
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_SUMOU"
+else
+    set_sfx 5, u"GROUP_SUMOU"
 endif
 stop
 
@@ -308,45 +322,4 @@ else
     game_cellanim 0x3A, 5
     0xB3 1, 1
 endif
-stop
-
-loadManzai:
-0xB2 1
-if 1
-    async_call unloadGameSlot4
-else
-    async_call unloadGameSlot5
-endif
-rest 0x60
-0xB2 1
-if 1
-    set_sfx 4, u"GROUP_COMEDIANS"
-    set_cellanim 4, u"rom:/cellanim/rvlComedians_long.zlib", -1
-    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
-    game_cellanim 0x3C, 4
-    game_effect 0x3C, 4
-    0xB3 1, 0
-else
-    set_sfx 5, u"GROUP_COMEDIANS"
-    set_cellanim 5, u"rom:/cellanim/rvlComedians_long.zlib", -1
-    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
-    game_cellanim 0x3C, 5
-    game_effect 0x3C, 5
-    0xB3 1, 1
-endif
-stop
-
-unloadManzai: //Actually we REALLY need this
-remove_sfx 6
-0xB3 5, 0
-stop
-
-loadManzaiLate:
-    0xB2 5
-    if 1
-        remove_sfx 6
-    endif
-    rest 0xC
-    set_sfx 6, u"GROUP_COMEDIANS_VOICE_SHORTS"
-    0xB3 5, 1
 stop

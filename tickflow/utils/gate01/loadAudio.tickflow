@@ -65,6 +65,7 @@ else
     set_sfx 0xB, u"shorts/F/GROUP_SHORTS_GALAGA"
     0xB3 2,1
 endif
+async_call loadMicroRowLate
 stop
 
 loadMetroid:
@@ -99,6 +100,7 @@ else
     set_sfx 0xB, u"shorts/H/GROUP_SHORTS_WII_FIT"
     0xB3 2,1
 endif
+async_call loadSumoLate
 stop
 
 loadPhantomThief:
@@ -206,22 +208,4 @@ else
     set_sfx 0xB, u"shorts/H/GROUP_SHORTS_HAT_IN_TIME"
     0xB3 2,1
 endif
-stop
-
-loadKonga:
-0xB2 2
-if 1
-    remove_sfx 0xA
-    remove_sfx 0xB
-    rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_KONGA"
-    0xB3 2,0
-else 
-    remove_sfx 0xA
-    remove_sfx 0xB
-    rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_KONGA"
-    0xB3 2,1
-endif
-async_call loadManzaiLate
 stop

@@ -328,7 +328,6 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_sfx 4, u"GROUP_FRONTIER"
     rest 0xC	// 0.25 beats
     set_cellanim 4, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 4, u"rom:/effect/rvlFlea.zlib", -1
@@ -336,7 +335,6 @@ if 1
     game_effect 0x23, 4
     0xB3 1, 0
 else
-    set_sfx 5, u"GROUP_FRONTIER"
     rest 0xC	// 0.25 beats
     set_cellanim 5, u"rom:/cellanim/tpaFrontier_long.zlib", -1
     set_effect 5, u"rom:/effect/rvlFlea.zlib", -1
@@ -354,4 +352,10 @@ loadFinnedLate:
     rest 0xC
     set_sfx 6, u"GROUP_FRONTIER2"
     0xB3 5, 1
+    0xB2 1
+    if 0
+        set_sfx 4, u"GROUP_FRONTIER"
+    else
+        set_sfx 5, u"GROUP_FRONTIER"
+    endif
 stop

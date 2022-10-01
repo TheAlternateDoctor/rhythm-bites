@@ -12,9 +12,11 @@
 #include utils/audioCommon.tickflow
 #include utils/loadGamesCommon.tickflow
 #include utils/loadAudioCommon.tickflow
+#include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
 #include utils/ports/manzai.tickflow
+#include utils/ports/meatGrinderSubs.tickflow
 
 // #index 0x1A
 #index 0x10D
@@ -25,7 +27,7 @@ play_sfx 0x100029B
 0x2D 0
 0x8C 1
 
-0xA6 0
+0xA6 1
 0xA4<1> 0xE
 
 0x75<1> 
@@ -51,7 +53,6 @@ endif
 rest 0x18	// 0.5 beats
 sub 5
 
-call loadInitialGames
 rest 0xC	// 0.25 beats
 
 0xA8<1> 0x5E
@@ -110,10 +111,29 @@ endif
 0x2B 0x1A, 10
 0x2B 0xC, 10
 
+0xA7<2> 
+if 1
+	0x7C<2> 7
+	goto 0x5D0C
+	stop 
+else 
+	0xA7<3> 
+	if 1
+		0x2E 0x18
+	else 
+		0x9B 
+	endif 
+endif 
+call loadTutorial
+call tutorial
+
+label 0x5D0C
+call unload
+call loadInitialGames
 0x21 0x78
 0xB1 
 engine<4> 1
-async_call assets
+// async_call assets
 0x7C<1> 7, 1, 1
 fade 2, 1, 0
 
@@ -179,6 +199,7 @@ sub 3
 async_call sequenceWii
 rest 0x30
 getrest 7
+rest 0xC0
 call fade
 call lifeCheck
 
@@ -188,6 +209,7 @@ sub 3
 async_call sequenceTomodachi
 rest 0x30
 async_call loadTangotronic
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -198,6 +220,7 @@ sub 3
 async_call sequenceJackson
 rest 0x30
 async_call loadQuiz
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -208,6 +231,7 @@ sub 3
 async_call sequenceKahoot
 rest 0x30
 async_call loadMicroRow
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -218,6 +242,7 @@ sub 3
 async_call sequenceGalaga
 rest 0x30
 async_call loadSuperSamuraiSlice
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -228,6 +253,7 @@ sub 3
 async_call sequenceMetroid
 rest 0x30
 async_call loadSumoBros
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -238,6 +264,7 @@ sub 3
 async_call sequenceWiiFit
 rest 0x30
 async_call loadSneakySpirits
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -248,6 +275,7 @@ sub 3
 async_call sequencePhantomThief
 rest 0x30
 async_call loadPajama
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -258,6 +286,7 @@ sub 3
 async_call sequenceKlonoa
 rest 0x30
 async_call loadTongueLashing
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -268,6 +297,7 @@ sub 3
 async_call sequencePokemonBadge
 rest 0x30
 async_call loadRatRace
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -278,6 +308,7 @@ sub 3
 async_call sequenceRescueVvvvvv
 rest 0x30
 async_call loadMunchyMonk
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -288,6 +319,7 @@ sub 3
 async_call sequenceHatInTime
 rest 0x30
 async_call loadManzai
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -298,6 +330,7 @@ sub 3
 async_call sequenceKonga
 rest 0x30
 async_call loadTap
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck

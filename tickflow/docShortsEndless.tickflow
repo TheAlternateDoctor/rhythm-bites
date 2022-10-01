@@ -28,12 +28,12 @@
 #include utils/ports/finnedFrontier.tickflow
 #include utils/ports/djschool.tickflow
 #include utils/ports/manzai.tickflow
+#include utils/ports/meatGrinderSubs.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/loadGamesCommon.tickflow
 #include utils/loadAudioCommon.tickflow
 #include utils/audioCommon.tickflow
-// #include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
 #assets 0

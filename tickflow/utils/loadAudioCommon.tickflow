@@ -105,3 +105,60 @@ else
     0xB3 2,1
 endif
 stop
+
+loadKonga:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_KONGA"
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_KONGA"
+    0xB3 2,1
+endif
+async_call loadManzaiLate
+stop
+
+loadManzaiLate:
+    0xB2 5
+    if 1
+        remove_sfx 6
+    endif
+    rest 0xC
+    set_sfx 6, u"GROUP_COMEDIANS_VOICE_SHORTS"
+    0xB3 5, 1
+    0xB2 1
+    if 0
+        set_sfx 4, u"GROUP_COMEDIANS"
+    else
+        set_sfx 5, u"GROUP_COMEDIANS"
+    endif
+stop
+
+loadCrashRacing:
+    0xB2 2
+    if 1
+        remove_sfx 0xA
+        remove_sfx 0xB
+        rest 0xC
+        set_sfx 0xA, u"shorts/F/GROUP_SHORTS_CRASH_RACING"
+        0xB3 2,0
+    else 
+        remove_sfx 0xA
+        remove_sfx 0xB
+        rest 0xC
+        set_sfx 0xB, u"shorts/F/GROUP_SHORTS_CRASH_RACING"
+        0xB3 2,1
+    endif
+    0xB2 1
+    if 0
+        set_sfx 4, u"GROUP_MEAT"
+    else
+        set_sfx 5, u"GROUP_MEAT"
+    endif
+stop

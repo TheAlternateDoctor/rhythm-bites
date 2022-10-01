@@ -99,6 +99,7 @@ engine 0x28
 sub 0xA
 
 rest 0x30
+0x8C 0
 
 input 0
 0x76 1, 1
@@ -156,7 +157,7 @@ if 0
 	0x66<2> 
     goto 0x314B
 endif
-0x65 0xA, "docShorts_tutorial_b_02"
+0x65<1> 0xA, "docShorts_tutorial_b_02"
 label 0x314A
 0x6D 1, 0x10002BA, 0x10002BB
 sub 0
@@ -189,19 +190,59 @@ rest 0x30
 sub 3
 async_call sequenceRhythmMasters
 rest 0x30
+async_call loadManzai
+0xB3 5,1
 getrest 7
 rest 0x30
 input 0
 
-0x65 0xA, "docShorts_tutorial_d_00"
+rest 0x60
+0x65<1> 0xA, "docShorts_tutorial_d_00"
 label 0x314A
 0x6D 1, 0x10002BA, 0x10002BB
 sub 0
 0x65<2> 
 rest 0x30
 fade 1, 1, 0x30
-async_call loadManzai
 rest 0x30
+
+async_call loadKonga
+rest 0x30
+sub 3
+async_call sequenceKonga
+rest 0x30
+getrest 7
+async_call loadMeatGrinder
+rest 0x30
+call fade
+
+
+async_call loadCrashRacing
+rest 0x30
+sub 3
+async_call sequenceCrashRacing
+rest 0x30
+getrest 7
+rest 0x30
+input 0
+
+0x66 0xA, "docShorts_tutorial_e"
+0x66<1>
+label 0x314E
+0x6D 1, 0x10002BA, 0x10002BB
+sub 0
+0x65<2> 
+rest 0x30	// 1.0 beats
+0x66<3>
+if 0
+	0x66<2> 
+    goto 0x314E
+endif
+
+rest 0x30
+fade 1, 1, 0x20
+
+goto 0x5D0C
 
 stop
 
@@ -231,10 +272,12 @@ return
 
 faceSad:
 rest 0xC
+0x104 0
 0x107 5, 0xC0
 stop
 
 faceHappy:
 rest 0xC
+0x104 0
 0x107 2, 0xC0
 stop

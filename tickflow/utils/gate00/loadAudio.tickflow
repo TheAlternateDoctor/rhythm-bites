@@ -81,6 +81,12 @@ else
     set_sfx 0xB, u"shorts/H/GROUP_SHORTS_VALVE"
     0xB3 2,1
 endif
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_OTTOSEI"
+else
+    set_sfx 5, u"GROUP_OTTOSEI"
+endif
 stop
 
 loadHurryUpWW:
@@ -183,5 +189,11 @@ else
     rest 0xC
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_HERE_IS"
     0xB3 2,1
+endif
+0xB2 1
+if 0
+    set_sfx 4, u"GROUP_NTR_ASSEMBLE"
+else
+    set_sfx 5, u"GROUP_NTR_ASSEMBLE"
 endif
 stop

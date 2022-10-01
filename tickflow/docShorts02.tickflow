@@ -12,9 +12,12 @@
 #include utils/audioCommon.tickflow
 #include utils/loadGamesCommon.tickflow
 #include utils/loadAudioCommon.tickflow
+#include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
 #include utils/ports/finnedFrontier.tickflow
+#include utils/ports/manzai.tickflow
+#include utils/ports/meatGrinderSubs.tickflow
 
 // #index 0x1A
 #index 0x10E
@@ -25,7 +28,7 @@ play_sfx 0x100029B
 0x2D 0
 0x8C 1
 
-0xA6 0
+0xA6 1
 0xA4<1> 0xE
 
 0x75<1> 
@@ -51,7 +54,6 @@ endif
 rest 0x18	// 0.5 beats
 sub 5
 
-call loadInitialGames
 rest 0xC	// 0.25 beats
 
 0xA8<1> 0x5E
@@ -112,10 +114,29 @@ endif
 0x2B 0x20, 3
 0x2B 0x31, 3
 
+0xA7<2> 
+if 1
+	0x7C<2> 7
+	goto 0x5D0C
+	stop 
+else 
+	0xA7<3> 
+	if 1
+		0x2E 0x18
+	else 
+		0x9B 
+	endif 
+endif 
+call loadTutorial
+call tutorial
+
+label 0x5D0C
+call unload
+call loadInitialGames
 0x21 0x78
 0xB1 
 engine<4> 1
-async_call assets
+// async_call assets
 0x7C<1> 7, 1, 1
 fade 2, 1, 0
 
@@ -164,6 +185,7 @@ endif
 async_call sequenceBannerClapTrap
 rest 0x30
 async_call loadKarate3DS
+rest 0xC0
 getrest 7
 rest 0x30
 call fade
@@ -181,6 +203,7 @@ rest 0x18
 sub 3
 async_call sequence3DS
 rest 0x30
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -191,6 +214,7 @@ sub 3
 async_call sequenceTomodachi
 rest 0x30
 async_call loadKitties
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -201,6 +225,7 @@ sub 3
 async_call sequenceFinned
 rest 0x30
 async_call loadShootEmUp
+rest 0xC0
 async_call unloadTutorial
 getrest 7
 call fade
@@ -212,6 +237,7 @@ sub 3
 async_call sequenceDuckHunt
 rest 0x30
 async_call loadSeeSaw
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -222,6 +248,7 @@ sub 3
 async_call sequenceBanjoKazooie
 rest 0x30
 async_call loadDogNinja
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -232,6 +259,7 @@ sub 3
 async_call sequenceTMPokemon
 rest 0x30
 async_call loadMarcher
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -242,6 +270,7 @@ sub 3
 async_call sequenceCoH
 rest 0x30
 async_call loadFruitBasket
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -252,6 +281,7 @@ sub 3
 async_call sequenceDodo
 rest 0x30
 async_call loadAnimalAcrobat
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -262,6 +292,7 @@ sub 3
 async_call sequenceRivalsAether
 rest 0x30
 async_call loadCatchyTune
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -272,6 +303,7 @@ sub 3
 async_call sequenceCSD
 rest 0x30
 async_call loadGleeClub
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -282,6 +314,7 @@ sub 3
 async_call sequenceWiiMusic
 rest 0x30
 async_call loadCheerReaders
+rest 0xC0
 getrest 7
 call fade
 call lifeCheck
@@ -292,7 +325,9 @@ sub 3
 async_call sequenceDukeNukem
 rest 0x30
 async_call loadFinned
+rest 0xC0
 getrest 7
+rest 0x60
 call fade
 call lifeCheck
 
@@ -302,7 +337,9 @@ sub 3
 async_call sequenceAccumula
 rest 0x30
 async_call loadTap
+rest 0xC0
 getrest 7
+rest 0x60
 call fade
 call lifeCheck
 
@@ -312,6 +349,8 @@ sub 3
 async_call sequenceRhythmMasters
 rest 0x30
 getrest 7
+rest 0xC0
+rest 0x60
 call lifeCheck
 
 

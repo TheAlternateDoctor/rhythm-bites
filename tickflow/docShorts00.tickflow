@@ -3,6 +3,7 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
+
 #include utils/gate00/patterns.tickflow
 #include utils/gate00/loadAudio.tickflow
 #include utils/gate00/audio.tickflow
@@ -16,6 +17,8 @@
 #include utils/utils.tickflow
 
 #include utils/ports/builtToScaleDS.tickflow
+#include utils/ports/manzai.tickflow
+#include utils/ports/meatGrinderSubs.tickflow
 
 // #index 0x1A
 #index 0x10C
@@ -88,10 +91,6 @@ if 1
 	rest_reset 
 endif 
 rest 0xC	// 0.25 beats
-0x88 
-if 1
-	0x8A<3> 1
-endif 
 0x2D 1
 
 0x2B 0x41, 10
