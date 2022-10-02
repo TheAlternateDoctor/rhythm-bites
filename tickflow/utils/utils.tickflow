@@ -180,3 +180,10 @@ unloadGameSlot5:
     endif
     remove_sfx 5
 stop
+
+songDisappear:
+0xB0<7>
+rest 0xC0
+rest 0x60
+0xB0<9>
+stop

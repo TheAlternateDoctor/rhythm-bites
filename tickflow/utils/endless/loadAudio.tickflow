@@ -50,19 +50,19 @@ else
 endif
 stop
 
-loadStreetFighter:
+loadYokaiWatch:
 0xB2 2
 if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_STREET_FIGHTER"
+    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_YOKAI_WATCH"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_STREET_FIGHTER"
+    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_YOKAI_WATCH"
     0xB3 2,1
 endif
 stop

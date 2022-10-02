@@ -306,13 +306,13 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x27 //Street Fighter
+        case 0x27 //YokaiWatch
             0xB2 9
             if 0x27 //Stop games from being played next to each other
                 goto loadNextGame
             else
-                set_func 0, sequenceStreetFighter
-                set_func 1, loadStreetFighter
+                set_func 0, sequenceYokaiWatch
+                set_func 1, loadYokaiWatch
                 async_call loadRingSide
                 set_func 3, nop
                 set_func 2, nopR
@@ -554,7 +554,7 @@ loadNextGame:
                 set_func 0, sequenceTomodachi
                 set_func 1, loadTomodachi
                 async_call loadTutorial
-                set_func 3, unloadTutorial
+                set_func 3, nop
                 set_func 2, nopR
             endif
         break
