@@ -22,6 +22,7 @@
 #include utils/endless/loadAudio.tickflow
 #include utils/endless/audio.tickflow
 #include utils/endless/loadGames.tickflow
+#include utils/endless/score.tickflow
 #include utils/endless/utils.tickflow
 
 #include utils/ports/builtToScaleDS.tickflow
@@ -34,9 +35,9 @@
 #include utils/loadGamesCommon.tickflow
 #include utils/loadAudioCommon.tickflow
 #include utils/audioCommon.tickflow
+#include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
-#assets 0
 #index 0x10F
 // #index 0x1A
 start:
@@ -160,7 +161,6 @@ endif
 0x21 0x78
 0xB1 
 engine<4> 1
-// async_call assets
 0x7C<1> 7, 1, 1
 fade 2, 1, 0
 
@@ -179,6 +179,12 @@ input 0
 0xB3 2,1
 0xB3 3,0x1
 0xB3 5, 1
+0xB3 0, 0
+0x67<5> 2
+0x67<3> 0x6E
+0x67<4> 0x14
+0x67<7> 0xD0
+0x67<1> 2,"scoreCounter_0"
 set_func 4, deadSubEndless
 // set_func 4, nopR
 
@@ -215,6 +221,7 @@ call lifeCheck
 0xA2
 
 //main loop
+0x67<1> 2,"scoreCounter_1"
 label 0x1009
 	call playNextGame
 goto 0x1009
@@ -227,31 +234,8 @@ stop
 //-----------------------------------------------------------------------------------------------------------------------------------
 
 
-assets:
-set_cat 0
-0x92 3, 0x14
-0x93 3, 0x10, "remix_cp_RM_NRM_Hi", "remix_cp_RM_NRM_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 4, 0x14
-0x93 4, 0x10, "remix_cp_RM_KEP_Hi", "remix_cp_RM_KEP_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 5, 0x14
-0x93 5, 0x10, "remix_cp_RM_AIM_Hi", "remix_cp_RM_AIM_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 6, 0x14
-0x93 6, 0x10, "remix_cp_RM_RPT_Hi", "remix_cp_RM_RPT_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 7, 0x14
-0x93 7, 0x10, "remix_cp_STAR_Hi", "remix_cp_STAR_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x95 0x10, "remix_LED_caption"
-0x98 1, 1
-stop 
+// assets:
+// stop 
 
 
 loadInitialGames:
@@ -319,6 +303,8 @@ set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
 set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
 rest 0xC	// 0.25 beats
+set_sfx 9, u"GROUP_ENDLESS"
+rest 0xC	// 0.5 beats
 set_sfx 0xB, u"GROUP_SUMOU"
 rest 0xC	// 0.25 beats
 sub 3

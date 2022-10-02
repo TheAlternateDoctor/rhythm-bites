@@ -118,9 +118,16 @@ sequenceJackson:
     async_sub 0x5A
 stop
 
+randomPress:
+random 2
+if 0
+    0x101<2>
+endif
+stop
+
 sequenceKahoot:
 	set_cat 0
-	setrest 7, 0x390
+	setrest 7, 0x390+0x90
     call changeEngine
     engine 0x7
     rest 0x30
@@ -156,19 +163,26 @@ sequenceKahoot:
     0x101<2>
     rest 0x30
     0x101<2>
-    0x65<1> 7, "agbQuiz_dozo"
-    rest 0x60
-    0x101<0>
-    0x105<2>
-    0x104<1> 0x120
     rest 0x30
+    async_call randomPress
+    rest 0x18
+    async_call randomPress
+    rest 0x18
+    async_call randomPress
+
+    0x65<1> 7, "agbQuiz_dozo"
+    0x105<2>
+    0x104<1> 0x120+0x90
+    rest 0x18
+    0x101<0>
+    rest 0x18
     0x65<2>
     input 1
     play_sfx 0x1000B91
     0x104 1
     0x100<1>
     0x105
-    rest 0x120
+    rest 0x120+0x90
     0x104 0
     input 0
     play_sfx 0x1000B92
@@ -211,6 +225,10 @@ sequenceGalaga:
     0x21 152
 
 	fade<1> 1,1,0x30
+    play_sfx 0x10002DF
+    rest 0x30
+    play_sfx 0x10002E0
+    rest 0x30
     play_sfx 0x10002E1
     rest 0x30
     play_sfx 0x10002E7

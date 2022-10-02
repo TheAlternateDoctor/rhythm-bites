@@ -674,6 +674,7 @@ playNextGame:
 	call fade
     call lifeCheck
     // get_async 3, 0
+	async_call text
 return
 
 switchSickBeats:

@@ -215,7 +215,7 @@ stop
 
 sequenceZeldaWoodCat:
 	set_cat 0
-	setrest 7, 0x2B8
+	setrest 7, 0x258
 	call changeEngine
 	engine 0x3F
 	rest 0xC
@@ -225,10 +225,6 @@ sequenceZeldaWoodCat:
 	fade<1> 1,1,0x30
 
 	0x21 100
-	play_sfx 0x10002E5
-	rest 0x30
-	play_sfx 0x10002E7
-	rest 0x48
 	async_call playZeldaWoodCat
 
 	input 1

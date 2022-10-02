@@ -109,6 +109,7 @@ lifeCheck:
 	0x9F 1
 	0xA2
 	0x21 120
+	0xB4 0,1
 return
 
 beatLoop:

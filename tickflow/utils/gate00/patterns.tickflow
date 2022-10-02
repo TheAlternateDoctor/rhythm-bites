@@ -308,7 +308,7 @@ stop
 
 sequenceWariowareDIY:
 	set_cat 0
-	setrest 7,0x150
+	setrest 7,0xF0
 	call changeEngine
 	engine 0x04
 	rest 0x30
@@ -318,10 +318,6 @@ sequenceWariowareDIY:
 	0x21 120
 
 	fade<1> 1,1,0x30
-	play_sfx 0x10002E1
-	rest 0x30
-	play_sfx 0x10002E7
-	rest 0x48
 	async_call playWariowareDIY
 
 	input 1
@@ -374,8 +370,8 @@ sequencePMD:
 	rest 0x18	// 0.5 beats
 	0x106 0
 	rest 0x18	// 0.5 beats
-	0x103 0,3,0x30,4,2
-	0x103<1> 0,3,0x30,3,1
+	0x103 0,3,0xC,4,2
+	0x103<4> 0,3,0xC,0x5A
 
 
 stop

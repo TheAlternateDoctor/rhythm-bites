@@ -372,55 +372,18 @@ stop
 
 
 assets:
+fade 7,1,0x30
 set_cat 0
-0x92 3, 0x14
-0x93 3, 0x10, "remix_cp_RM_NRM_Hi", "remix_cp_RM_NRM_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 4, 0x14
-0x93 4, 0x10, "remix_cp_RM_KEP_Hi", "remix_cp_RM_KEP_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 5, 0x14
-0x93 5, 0x10, "remix_cp_RM_AIM_Hi", "remix_cp_RM_AIM_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 6, 0x14
-0x93 6, 0x10, "remix_cp_RM_RPT_Hi", "remix_cp_RM_RPT_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x92 7, 0x14
-0x93 7, 0x10, "remix_cp_STAR_Hi", "remix_cp_STAR_Ng"
-0x94 0, "result_common_Hi", "result_common_Ok", "result_common_Ng"
-0x95 0x10, "remix_caption"
-0x95 0x10, "remix_LED_caption"
-0x98 1, 1
-rest 0x60	// 2.0 beats
-0x88 
+call loadTutorial
+sub 8
+sub 6
+play_sfx 0x1000294
+0x88<7> 
 if 1
-	0x88<1> 
-	if 1
-		0x88<2> 
-		switch 
-			case 1
-				0x8A<4> 1, 1
-				break 
-			case 2
-				0x8A<4> 1, 2
-				break 
-			case 3
-				0x8A<4> 1, 3
-				break 
-		endswitch 
-	endif 
-else 
-	0xAB<3> 1
-	if 1
-		0xAC 0
-	else 
-		0xAD 0
-	endif 
+	play_sfx 0x1000292
 endif 
+call tutorial
+0x28<2>
 stop 
 
 
@@ -458,6 +421,8 @@ set_sfx 4, u"GROUP_WSD_TUTORIAL_AGB_PACHI_PACHI"
 rest 0x18	// 0.5 beats
 set_sfx 5, u"GROUP_WSD_TUTORIAL_AGB_KARATE"
 rest 0x18	// 0.5 beats
+set_sfx 9, u"GROUP_ENDLESS"
+rest 0xC	// 0.5 beats
 call randomBannerA
 rest 0xC	// 0.25 beats
 call randomBannerB
