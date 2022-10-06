@@ -20,9 +20,11 @@ random 2
 switch
 case 0
     set_sfx 0xA, u"shorts/A/GROUP_SHORTS_BANNER"
+    0xB0<5> 0xA, "docShorts_song_banner_megamix_2"
     break
 case 1
     set_sfx 0xA, u"shorts/A/GROUP_SHORTS_BANNER_ALT"
+    0xB0<5> 0xA, "docShorts_song_banner_megamix_2_bis"
     break
 endswitch
 return
@@ -31,9 +33,11 @@ random 2
 switch
 case 0
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_BANNER"
+    0xB0<5> 0xA, "docShorts_song_banner_megamix_2"
     break
 case 1
     set_sfx 0xB, u"shorts/A/GROUP_SHORTS_BANNER_ALT"
+    0xB0<5> 0xA, "docShorts_song_banner_megamix_2_bis"
     break
 endswitch
 return

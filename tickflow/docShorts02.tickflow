@@ -114,6 +114,8 @@ endif
 0x2B 0x20, 3
 0x2B 0x31, 3
 
+0xB0
+
 0xA7<2> 
 if 1
 	0x7C<2> 7
@@ -167,6 +169,7 @@ rest 0x60	// 2.0 beats
 sub 2
 0x55 1
 0xAF<2> 0, 0, "gate_explain_short"
+0xB0<4> 0xA, "docShorts_song_banner_megamix"
 play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
 rest 0xC0	// 4.0 beats
@@ -182,6 +185,7 @@ endif
 
 0xA2
 0x21 115
+async_call songDisappear
 async_call sequenceBannerClapTrap
 rest 0x30
 async_call loadKarate3DS

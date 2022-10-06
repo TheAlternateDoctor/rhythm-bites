@@ -101,6 +101,8 @@ rest 0xC	// 0.25 beats
 0x2B 0x25, 2
 0x2B 0xC, 2
 
+0xB0
+
 0xA7<2> 
 if 1
 	0x7C<2> 7
@@ -160,6 +162,7 @@ rest 0x60	// 2.0 beats
 sub 2
 0x55 1
 0xAF<2> 0, 0, "gate_explain_short"
+0xB0<4> 0xA, "docShorts_song_banner_megamix"
 play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
 rest 0xC0	// 4.0 beats
@@ -177,6 +180,7 @@ endif
 
 0x6C 1
 
+async_call songDisappear
 async_call loadKarateGBA
 async_call sequenceBannerCoin
 rest 0x30

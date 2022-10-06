@@ -45,6 +45,10 @@ sequenceWii:
 
 	fade<1> 1,1,0x30
     async_call WiiCowbell
+    0xB0<4> 0xA, "docShorts_song_remix_wii"
+    0xB0<5> 0xA, "docShorts_song_remix_wii_2"
+    setrest 8, 0x60
+    async_call songDisappear
     rest 0x60
     async_call playWii
 
@@ -100,6 +104,10 @@ sequenceJackson:
 
 	fade<1> 1,1,0x30
     play_sfx 0x1000291
+    0xB0<4> 0xA, "docShorts_song_moonwalker"
+    0xB0<5> 0xA, "docShorts_song_moonwalker_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     0x101
     rest 0x30
     play_sfx 0x1000291
@@ -144,6 +152,10 @@ sequenceKahoot:
 	fade<1> 1,1,0x30
     rest 0x30
     async_call playKahoot
+    0xB0<4> 0xA, "docShorts_song_kahoot"
+    0xB0<5> 0xA, "docShorts_song_kahoot_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     0x105<1>
     0x101<2>
     0x102<1>
@@ -225,6 +237,10 @@ sequenceGalaga:
     0x21 152
 
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_galaga"
+    0xB0<5> 0xA, "docShorts_song_galaga_2"
+    setrest 8, 0xC0*2
+    async_call songDisappear,0x18
     play_sfx 0x10002DF
     rest 0x30
     play_sfx 0x10002E0
@@ -260,6 +276,10 @@ sequenceMetroid:
 
     fade<1> 1,1,0x30
     async_call beatLoop
+    0xB0<4> 0xA, "docShorts_song_metroid_item"
+    0xB0<5> 0xA, "docShorts_song_metroid_item_2"
+    setrest 8, 0x90
+    async_call songDisappear
     play_sfx 0x1000291
     rest 0x30
     play_sfx 0x1000291
@@ -285,6 +305,10 @@ sequenceWiiFit:
 
     async_call playWiiFit
     fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_wii_fit"
+    0xB0<5> 0xA, "docShorts_song_wii_fit_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     input 1
     rest 0x18
     async_sub 0x57
@@ -327,6 +351,10 @@ sequencePhantomThief:
 
     async_call playPhantomThief
     fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_phantom_thief"
+    0xB0<5> 0xA, "docShorts_song_phantom_thief_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     input 1
     sub 0x56
     sub 0x5A
@@ -355,6 +383,10 @@ sequencePokemonBadge:
 
     fade<1> 1,1,0x30
     async_call kecleonBeat
+    0xB0<4> 0xA, "docShorts_song_pokemon_badge"
+    0xB0<5> 0xA, "docShorts_song_pokemon_badge_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     rest 0x30
     async_call playPokemonBadge
     input 1
@@ -393,6 +425,10 @@ sequenceRescueVvvvvv:
 	0xB3 9, 0x9
 
     async_call playRescueVvvvvv
+    0xB0<4> 0xA, "docShorts_song_vvvvvv_rescue"
+    0xB0<5> 0xA, "docShorts_song_vvvvvv_rescue_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     fade<1> 1,1,0x30
     input 1
     async_sub 0x56
@@ -416,6 +452,10 @@ sequenceHatInTime:
 	0xB3 9, 0x1B
 
     async_call playHatInTime
+    0xB0<4> 0xA, "docShorts_song_timepiece_ahit"
+    0xB0<5> 0xA, "docShorts_song_timepiece_ahit_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     0x104<1>
     fade<1> 1,1,0x30
     input 1
@@ -441,6 +481,9 @@ sequenceKlonoa:
 	0xB3 9, 0x3A
 
     fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_klonoa"
+    setrest 8, 0xC0
+    async_call songDisappear
     play_sfx 0x1000921
     rest 0x30
     play_sfx 0x1000921

@@ -29,7 +29,6 @@ engine 0x28
 sub 0xA
 async_call tutorial
 0x2D 1
-0x7C<1> 7, 0, 0x30
 stop 
 
 loadTutorial:
@@ -95,6 +94,7 @@ loadTutorial:
 return 
 
 tutorial:
+0xB3 4,1
 engine 0x28
 sub 0xA
 
@@ -109,7 +109,7 @@ input 0
 0x65<3> 0, -0x50
 0x65<5> 2
 0xAF<6> 0
-fade<1> 7, 1, 0x30
+0x7C<1> 7, 1, 0x30
 rest 0x30
 0x66 0xA, "docShorts_tutorial_a"
 0x66<1>
@@ -243,6 +243,7 @@ endif
 
 rest 0x30
 fade 1, 1, 0x20
+0xB3 4,0
 
 return
 

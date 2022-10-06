@@ -26,6 +26,10 @@ sequence3DS:
 
 	fade<1> 1,1,0x30
     play_sfx 0x1000291
+    0xB0<4> 0xA, "docShorts_song_remix_3ds"
+    0xB0<5> 0xA, "docShorts_song_remix_3ds_2"
+    setrest 8, 0x60
+    async_call songDisappear
     0x104 0
     rest 0x30
     play_sfx 0x1000291
@@ -60,6 +64,10 @@ sequenceFinned:
 
 	fade<1> 1,1,0x30
     async_call playFinned
+    0xB0<4> 0xA, "docShorts_song_finned"
+    0xB0<5> 0xA, "docShorts_song_finned_2"
+    setrest 8, 0xC0
+    async_call songDisappear
 
     input 1
     rest 0xA8
@@ -92,6 +100,10 @@ sequenceDuckHunt:
     rest 0x30
     0x21 225
     rest 0x60
+    0xB0<4> 0xA, "docShorts_song_duck_hunt"
+    0xB0<5> 0xA, "docShorts_song_duck_hunt_2"
+    setrest 8, 0x90
+    async_call songDisappear
     async_call playDuckHunt
     input 1
 
@@ -122,45 +134,6 @@ sequenceDuckHunt:
     async_sub 0x5E
 stop
 
-sequenceMarioHurryUp:
-	set_cat 0
-	setrest 7, 0x250
-    call changeEngine
-    engine 0x8
-    rest 0x30
-    set_cat 0x7D0
-	0xB3 9, 0x8
-
-    0x21 190
-    input 1
-    fade<1> 1,1,0x30
-    0x101
-    0x102<0>
-    rest 0x30
-    0x104 4
-    async_call playMarioHurryUp
-    0x101<1> 0
-    rest 0x30
-    0x103 0
-    0x100 0,0x90
-    0x100 1,0xC0
-    0x100 3,0xF0
-    0x100 0,0x120
-    0x100 0,0x150
-    0x100 1,0x180
-    0x100 6,0x1B0
-    0x101<1> 0
-    rest 0x30
-    0x103<1> 
-    0x101<1> 0
-    rest 0x30
-    0x101<1> 0
-    // 0x100 0,0x30
-    rest 0x180
-    0x102<1>
-    rest 0x90
-stop
-
 sequenceTMPokemon:
 	set_cat 0
 	setrest 7, 0x150
@@ -171,6 +144,10 @@ sequenceTMPokemon:
 	0xB3 9, 0x16
 
     fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_pokemon_tm"
+    0xB0<5> 0xA, "docShorts_song_pokemon_tm_2"
+    setrest 8, 0x90
+    async_call songDisappear
     0x21 139
     input 1
     0x101
@@ -222,6 +199,10 @@ sequenceCoH:
 
 	fade<1> 1,1,0x30
     async_call playCoH
+    0xB0<4> 0xA, "docShorts_song_cadence_hyrule"
+    0xB0<5> 0xA, "docShorts_song_cadence_hyrule_2"
+    setrest 8, 0xF0
+    async_call songDisappear
     play_sfx 0x1000B95  
     0x108
     rest 0x90
@@ -336,6 +317,10 @@ sequenceDodo:
 	0x21 125
 
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_dodo_air"
+    0xB0<5> 0xA, "docShorts_song_dodo_air_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     play_sfx 0x1000291
     rest 0x30
     play_sfx 0x1000291
@@ -347,23 +332,6 @@ sequenceDodo:
 	rest 0x18
 	async_sub 0x67
 stop
-
-// sequenceTetris:
-// 	set_cat 0
-// 	setrest 7, 0x1E0
-//     call changeEngine
-//     engine 0x1E
-//     rest 0x30
-//     rest 0x18
-// 	0xB3 9, 0x1E
-
-// 	fade<1> 1,1,0x30
-//     async_call playTetris
-//     async_sub 0x57
-//     rest 0xC0
-//     input 1
-//     async_sub 0x59
-// stop
 
 patternMaypul:
 bytes 1, 3, 4
@@ -395,6 +363,10 @@ sequenceRivalsAether:
     async_call maypulVoice
     rest 0x18
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_maypul_aether"
+    0xB0<5> 0xA, "docShorts_song_maypul_aether_2"
+    setrest 8, 0x90
+    async_call songDisappear
     0x103 0
     0x102 0x60
     0x109 
@@ -455,6 +427,10 @@ sequenceCSD:
 	0xB3 9, 0x3B
 
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_cook_serve"
+    0xB0<5> 0xA, "docShorts_song_cook_serve_2"
+    setrest 8, 0x90
+    async_call songDisappear
     async_call playCSD
     async_call beatCSD
     input 1
@@ -481,6 +457,10 @@ sequenceWiiMusic:
     
     input 1
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_wii_music"
+    0xB0<5> 0xA, "docShorts_song_wii_music_2"
+    setrest 8, 0x90
+    async_call songDisappear
     0x104 0, 0, 0x1000DAF, 0x3C, 0
     0x104 0, 2, 0x1000DB1, 0x78, -6
     0x104 1, 0, 0x1000DAF, 0x3C, 0
@@ -538,6 +518,10 @@ sequenceDukeNukem:
     0x21 170
 
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_duke_nukem"
+    0xB0<5> 0xA, "docShorts_song_duke_nukem_2"
+    setrest 8, 0x90
+    async_call songDisappear
     play_sfx 0x1000291
     0x107 1
     rest 0x30
@@ -602,6 +586,10 @@ sequenceBanjoKazooie:
 	0xB3 9, 0x31
 
     play_sfx 0x1000964
+    0xB0<4> 0xA, "docShorts_song_jiggy_banjo"
+    0xB0<5> 0xA, "docShorts_song_jiggy_banjo_2"
+    setrest 8, 0x60
+    async_call songDisappear
     async_call playBanjoKazooie
     fade<1> 1,1,0x30
     rest 0x30
@@ -623,7 +611,6 @@ sequenceAccumula:
     rest 0x30
     set_cat 0x7D0
 	0xB3 9, 0x23
-    // async_call loadFinnedLate
 
     
     zoom 3, 0x300, 0x300
@@ -639,6 +626,10 @@ sequenceAccumula:
 
     0x21 112
     fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_accumula"
+    0xB0<5> 0xA, "docShorts_song_accumula_2"
+    setrest 8, 0xC0
+    async_call songDisappear
     async_call transitionfromdashnopan
     rest 0x18
     rest 0x60

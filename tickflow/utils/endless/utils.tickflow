@@ -665,6 +665,7 @@ playNextGame:
     get_async 1, 0
     rest 0x30
     sub 3
+	async_call text
     get_sync 2
     get_async 0, 0
 	rest 0x30
@@ -674,7 +675,6 @@ playNextGame:
 	call fade
     call lifeCheck
     // get_async 3, 0
-	async_call text
 return
 
 switchSickBeats:
@@ -684,6 +684,7 @@ switchSickBeats:
     rest 0x30
     0xAF<6> 0
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_banner_megamix"
 return
 
 switchCoinToss:
@@ -693,6 +694,7 @@ switchCoinToss:
     rest 0x30
     0xAF<6> 0
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_banner_megamix"
 return
 
 switchClapTrap:
@@ -702,6 +704,7 @@ switchClapTrap:
     rest 0x30
     0xAF<6> 0
 	fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_banner_megamix"
 return
 
 nop:

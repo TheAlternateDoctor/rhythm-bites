@@ -281,7 +281,6 @@ sequenceNTR:
 
     
     fade<1> 1,1,0x30
-    0xB0
     0xB0<4> 0xA, "docShorts_song_remix_ds"
     0xB0<5> 0xA, "docShorts_song_remix_ds_2"
     async_call songDisappear
