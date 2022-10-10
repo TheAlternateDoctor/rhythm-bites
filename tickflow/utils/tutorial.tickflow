@@ -94,7 +94,6 @@ loadTutorial:
 return 
 
 tutorial:
-0xB3 4,1
 engine 0x28
 sub 0xA
 
@@ -134,6 +133,7 @@ endif
 0xA1
 
 async_call loadPackingPests
+0xB3 4,1
 
 call tutorialKarateNDS
 

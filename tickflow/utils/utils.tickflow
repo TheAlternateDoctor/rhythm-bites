@@ -182,8 +182,11 @@ unloadGameSlot5:
 stop
 
 songDisappear:
-0xB0<7>
-rest 0x30
-getrest 8
-0xB0<9>
+	0xB2 4
+	if 0
+		0xB0<7>
+		rest 0x30
+		getrest 8
+		0xB0<9>
+	endif
 stop

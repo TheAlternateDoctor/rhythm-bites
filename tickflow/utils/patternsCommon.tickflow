@@ -144,13 +144,10 @@ sequenceRhythmMasters:
 
 	async_call playRhythmMasters
 	fade<1> 1,1,0x30
-	0xB2 4
-	if 0
-		0xB0<4> 0xA, "docShorts_song_rhythm_masters"
-		0xB0<5> 0xA, "docShorts_song_rhythm_masters_2"
-		setrest 8, 0x60
-		async_call songDisappear
-	endif
+	0xB0<4> 0xA, "docShorts_song_rhythm_masters"
+	0xB0<5> 0xA, "docShorts_song_rhythm_masters_2"
+	setrest 8, 0x60
+	async_call songDisappear
 	0x101
 	input 1
 	rest 0x30
@@ -236,13 +233,10 @@ sequenceZeldaWoodCat:
 	fade<1> 1,1,0x30
 
 	0x21 100
-	0xB2 4
-	if 0
-		0xB0<4> 0xA, "docShorts_song_zelda_sword"
-		0xB0<5> 0xA, "docShorts_song_zelda_sword_2"
-		setrest 8, 0x60
-		async_call songDisappear
-	endif
+	0xB0<4> 0xA, "docShorts_song_zelda_sword"
+	0xB0<5> 0xA, "docShorts_song_zelda_sword_2"
+	setrest 8, 0x60
+	async_call songDisappear
 	async_call playZeldaWoodCat
 
 	input 1
@@ -267,13 +261,10 @@ sequenceRayman:
 
     0x106
     fade<1> 1,1,0x30
-	0xB2 4
-	if 0
-		0xB0<4> 0xA, "docShorts_song_rayman"
-		0xB0<5> 0xA, "docShorts_song_rayman_2"
-		setrest 8, 0x60
-		async_call songDisappear
-	endif
+	0xB0<4> 0xA, "docShorts_song_rayman"
+	0xB0<5> 0xA, "docShorts_song_rayman_2"
+	setrest 8, 0xC0
+	async_call songDisappear
     play_sfx 0x1000291
     rest 0x30
     play_sfx 0x1000291
@@ -304,13 +295,10 @@ sequenceKonga:
     0x21 120
 
     fade<1> 1,1,0x30
-	0xB2 4
-	if 0
-		0xB0<4> 0xA, "docShorts_song_konga"
-		0xB0<5> 0xA, "docShorts_song_konga_2"
-		setrest 8, 0x60
-		async_call songDisappear
-	endif
+	0xB0<4> 0xA, "docShorts_song_konga"
+	0xB0<5> 0xA, "docShorts_song_konga_2"
+	setrest 8, 0x60
+	async_call songDisappear
     zoom_gradual 3, 4, 4, 0x60, 0x150, 0x150
     async_call speedUpManzai
     play_sfx 0x1000921
@@ -395,13 +383,10 @@ sequenceCrashRacing:
     0x21 170
 
     fade<1> 1,1,0x30
-	0xB2 4
-	if 0
-		0xB0<4> 0xA, "docShorts_song_crash_racing"
-		0xB0<5> 0xA, "docShorts_song_crash_racing_2"
-		setrest 8, 0x90
-		async_call songDisappear
-	endif
+	0xB0<4> 0xA, "docShorts_song_crash_racing"
+	0xB0<5> 0xA, "docShorts_song_crash_racing_2"
+	setrest 8, 0x90
+	async_call songDisappear
 	input 1
 	rest 0x30
     async_call playCrashRacing
