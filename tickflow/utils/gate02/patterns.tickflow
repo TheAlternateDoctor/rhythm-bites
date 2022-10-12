@@ -102,7 +102,7 @@ sequenceDuckHunt:
     rest 0x60
     0xB0<4> 0xA, "docShorts_song_duck_hunt"
     0xB0<5> 0xA, "docShorts_song_duck_hunt_2"
-    setrest 8, 0x90
+    setrest 8, 0xC0
     async_call songDisappear
     async_call playDuckHunt
     input 1
@@ -203,6 +203,7 @@ sequenceCoH:
     0xB0<5> 0xA, "docShorts_song_cadence_hyrule_2"
     setrest 8, 0xF0
     async_call songDisappear
+    async_call youDisappear
     play_sfx 0x1000B95  
     0x108
     rest 0x90
@@ -429,7 +430,7 @@ sequenceCSD:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_cook_serve"
     0xB0<5> 0xA, "docShorts_song_cook_serve_2"
-    setrest 8, 0x90
+    setrest 8, 0xC0
     async_call songDisappear
     async_call playCSD
     async_call beatCSD
@@ -520,7 +521,7 @@ sequenceDukeNukem:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_duke_nukem"
     0xB0<5> 0xA, "docShorts_song_duke_nukem_2"
-    setrest 8, 0x90
+    setrest 8, 0xC0
     async_call songDisappear
     play_sfx 0x1000291
     0x107 1
@@ -588,8 +589,9 @@ sequenceBanjoKazooie:
     play_sfx 0x1000964
     0xB0<4> 0xA, "docShorts_song_jiggy_banjo"
     0xB0<5> 0xA, "docShorts_song_jiggy_banjo_2"
-    setrest 8, 0x60
+    setrest 8, 0xC0
     async_call songDisappear
+    async_call youDisappear
     async_call playBanjoKazooie
     fade<1> 1,1,0x30
     rest 0x30

@@ -429,6 +429,7 @@ sequenceRescueVvvvvv:
     0xB0<5> 0xA, "docShorts_song_vvvvvv_rescue_2"
     setrest 8, 0xC0
     async_call songDisappear
+    async_call youDisappear
     fade<1> 1,1,0x30
     input 1
     async_sub 0x56

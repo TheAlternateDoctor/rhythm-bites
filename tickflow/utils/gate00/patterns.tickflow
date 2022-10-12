@@ -40,6 +40,7 @@ sequenceAGB:
 	set_cat 0
 	setrest 7, 0x150
 	0xB3 9, 0x28
+	0xB3 7, 0x28
 	call changeEngine
 	engine 0x28
 	rest 0xC
@@ -295,6 +296,7 @@ sequenceValve:
 
 	0x21 85
 
+	0x8B 0,0
 	async_call playValve
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_valve"
@@ -418,6 +420,7 @@ sequenceKirby:
     0xB0<5> 0xA, "docShorts_song_kirby_victory_2"
 	setrest 8,0xC0
 	async_call songDisappear
+	async_call youDisappear
 	0x101 1
 	input 1
 	rest 0x30
@@ -507,6 +510,7 @@ sequenceSmash:
     0xB0<5> 0xA, "docShorts_song_smash_melee_2"
 	setrest 8,0x60
 	async_call songDisappear
+	async_call youDisappear
 	0x21 125
 	async_call beatSpace
 	play_sfx 0x1000291
@@ -535,6 +539,7 @@ sequenceHereIs:
     set_cat 0x7D0
 	0xB3 9, 0x1C
 
+	0x8B 0,0
     fade<1> 1, 3, 0x30
     0xB0<4> 0xA, "docShorts_song_here_is"
     0xB0<5> 0xA, "docShorts_song_here_is_2"

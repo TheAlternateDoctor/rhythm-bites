@@ -12,6 +12,7 @@ sequenceMiitopia:
     0xB0<5> 0xA, "docShorts_song_miitopia_2"
     setrest 8, 0xC0
     async_call songDisappear
+    async_call youDisappear
     async_sub 0x5D
     input 1
     rest 0x60
@@ -130,6 +131,7 @@ sequenceCaveStory:
     0xB0<5> 0xA, "docShorts_song_cave_story_2"
     setrest 8, 0xC0
     async_call songDisappear
+    async_call youDisappear
     async_call smallStartSeal
     input 1
     rest 0x18
@@ -140,6 +142,8 @@ sequenceCaveStory:
     rest 0xC0
     async_sub 0x6E
     async_call playCaveStory
+    rest 0xC0+0x78
+    input 0
 stop
 
 sequenceTF2:
@@ -158,8 +162,9 @@ sequenceTF2:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_tf2"
     0xB0<5> 0xA, "docShorts_song_tf2_2"
-    setrest 8, 0xC0
+    setrest 8, 0x60
     async_call songDisappear
+    async_call youDisappear
     input 1
     rest 0x1A
     0x102<0>
@@ -207,7 +212,7 @@ stop
 
 sequenceDaftPunk:
 	set_cat 0
-	setrest 7, 0x420
+	setrest 7, 0x3C0
 	// setrest 7, 0x4C0
     call changeEngine
     engine 0x11
@@ -215,7 +220,7 @@ sequenceDaftPunk:
     set_cat 0x7D0
 	0xB3 9, 0x11
     pan 3, -0x39, -0x35 
-    // async_call loadDJSchoolLate
+	0x8B 0,0
 
     async_call playDaftPunk
     fade<1> 1, 3, 0x30

@@ -4,7 +4,6 @@ loadNextGame:
     random 0x69
     // 0xB2 3
     // 0xB4 3,1
-    // set_condvar 0x1
     switch
         case 0x0 //Jimmy T.
             0xB2 9
@@ -661,6 +660,7 @@ loadNextGame:
 stop
 
 playNextGame:
+	0xB3 7, 0 //Resets screen fade
     0x21 120
     get_async 1, 0
     rest 0x30
@@ -686,6 +686,7 @@ switchSickBeats:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
     setrest 8, 0x90
+    async_call songDisappear
 return
 
 switchCoinToss:
@@ -697,6 +698,7 @@ switchCoinToss:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
     setrest 8, 0x60
+    async_call songDisappear
 return
 
 switchClapTrap:
@@ -708,6 +710,7 @@ switchClapTrap:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
     setrest 8, 0x60
+    async_call songDisappear
 return
 
 nop:

@@ -1,8 +1,8 @@
 
 fade:
 	rest 0x60
-	0x7C<3> 1
-	if_neq 1
+	0xB2 7
+	if_neq 0x28
 		fade 1, 1, 0x20
 	endif
 	rest 0x30
@@ -188,5 +188,15 @@ songDisappear:
 		rest 0x30
 		getrest 8
 		0xB0<9>
+	endif
+stop
+
+youDisappear:
+	0xB2 4
+	if 0
+		0x8B 0,0
+		rest 0x30
+		getrest 8
+		0x8B 0,1
 	endif
 stop

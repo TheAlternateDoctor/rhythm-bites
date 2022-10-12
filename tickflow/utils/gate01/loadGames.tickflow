@@ -11,19 +11,14 @@ rest 0x60
 if 1
     set_sfx 4, u"GROUP_KARATE"
     set_cellanim 4, u"rom:/cellanim/rvlKarate_3.zlib", -1
-    if_neq 0x28 
-        set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
-        game_effect 0x28, 4
-    endif
+    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    game_effect 0x28, 4
     game_cellanim 0x28, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_KARATE"
     set_cellanim 5, u"rom:/cellanim/rvlKarate_3.zlib", -1
-    if_neq 0x28 
-        set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
-        game_effect 0x28, 5
-    endif
+    set_effect 5, u"rom:/effect/rvlKarate.zlib", -1
     game_cellanim 0x28, 5
     game_effect 0x28, 5
     0xB3 1, 1
