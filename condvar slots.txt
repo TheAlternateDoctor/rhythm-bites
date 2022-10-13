@@ -6,7 +6,7 @@ Condvar
 4 - Show song titles or not
 5 - sfx in slot 6 (for recreations)
 6 - Audio pack was loaded previously
-7 - Game specific (Coin Toss)
+7 - Game specific (10 for Coin Toss, 0x28 for KMGBA's fade)
 8 - Audio Special case has already loaded
 9 - Engine loaded
 10 - 

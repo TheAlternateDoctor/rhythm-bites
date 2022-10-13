@@ -138,13 +138,13 @@ endif
 rest 0x60
 0xB2 1
 if 1
-    set_cellanim 4, u"rom:/cellanim/skiMeat_long.zlib", -1
+    set_cellanim 4, u"rom:/cellanim/skiMeat_tofu.zlib", -1
     set_effect 4, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 4
     game_effect 0x3C, 4
     0xB3 1, 0
 else
-    set_cellanim 5, u"rom:/cellanim/skiMeat_long.zlib", -1
+    set_cellanim 5, u"rom:/cellanim/skiMeat_tofu.zlib", -1
     set_effect 5, u"rom:/effect/ctrSumou.zlib", -1
     game_cellanim 0x3C, 5
     game_effect 0x3C, 5

@@ -219,10 +219,10 @@ rest 0x30
 call fade
 
 
-async_call loadCrashRacing
+async_call loadTofu
 rest 0x30
 sub 3
-async_call sequenceCrashRacing
+async_call sequenceTofu
 rest 0x30
 getrest 7
 rest 0x30

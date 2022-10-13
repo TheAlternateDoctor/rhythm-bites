@@ -641,17 +641,18 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x67 //Crash Team Racing
+        case 0x68 //Open Sesame Tofu!
             0xB2 9
             if 0x3C //Stop games from being played next to each other
                 goto loadNextGame
             else
-                set_func 0, sequenceCrashRacing
-                set_func 1, loadCrashRacing
+                set_func 0, sequenceTofu
+                set_func 1, loadTofu
                 async_call loadMeatGrinder
                 set_func 3, nop
                 set_func 2, nopR
             endif
+            0xB3 3,0
         break
         default //Restart until we get something damnit
             goto loadNextGame
