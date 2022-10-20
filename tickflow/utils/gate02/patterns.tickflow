@@ -647,6 +647,6 @@ sequenceAccumula:
     async_call twobeatdash
     rest 0x60
     async_call twobeatdash
-    rest 0x78
+    rest 0x6C
     input 0
 stop

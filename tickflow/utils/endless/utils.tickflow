@@ -1,9 +1,7 @@
 loadNextGame:
-    0xB3 10,0
-    0xB3 11,0
     random 0x69
-    // 0xB2 3
-    // 0xB4 3,1
+    0xB2 3
+    0xB4 3,1
     switch
         case 0x0 //Jimmy T.
             0xB2 9
@@ -185,6 +183,18 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
+        case 0x14 //The Lick
+            0xB2 9
+            if 0x14 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                set_func 0, sequenceTheLick
+                set_func 1, loadTheLick
+                async_call loadFrogHop
+                set_func 3, nop
+                set_func 2, nopR
+            endif
+        break
         case 0x16 //Pokémon TM
             0xB2 9
             if 0x16 //Stop games from being played next to each other
@@ -241,6 +251,18 @@ loadNextGame:
                 set_func 0, sequenceDukeNukem
                 set_func 1, loadDukeNukem
                 async_call loadCheerReaders
+                set_func 3, nop
+                set_func 2, nopR
+            endif
+        break
+        case 0x21 //Klonoa Heroes
+            0xB2 9
+            if 0x21 //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                set_func 0, sequenceKlonoaHeroes
+                set_func 1, loadKlonoaHeroes
+                async_call loadDoubleDate
                 set_func 3, nop
                 set_func 2, nopR
             endif
@@ -698,7 +720,7 @@ switchCoinToss:
     0xAF<6> 0
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
-    setrest 8, 0x60
+    setrest 8, 0xC0
     async_call songDisappear
 return
 

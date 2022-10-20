@@ -15,8 +15,8 @@
 #include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
-#include utils/ports/manzai.tickflow
-#include utils/ports/meatGrinderSubs.tickflow
+#include utils/games/manzai.tickflow
+#include utils/games/meatGrinderSubs.tickflow
 
 // #index 0x1A
 #index 0x10D

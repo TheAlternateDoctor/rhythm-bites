@@ -322,7 +322,8 @@ sequenceJimmyT:
 	rest 0x30
     set_cat 0x7D0
 	0xB3 9, 0
-    0x102<0> 0x8, 0x18
+    0x102 0x7, 0 
+    0x102<1> 0x8, 0x90
 
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_jimmy_t"
@@ -362,6 +363,7 @@ sequenceMGS:
     setrest 8, 0xF0
     async_call songDisappear
     fade<1> 1,1,0x30
+    0x106 1
     input 1
     rest 0x26
     rest 0xC0
@@ -437,4 +439,143 @@ sequenceGameWatch: //TODO
     async_call playGameWatch
     rest 0x30
     input 1
+stop
+
+frogLoop:
+    0x103 1
+    0x103 2
+    0x103 3
+    0x103 4
+    0x103 5
+    rest 0x30
+goto frogLoop
+
+frogSAX:
+    0x103<5> 0, 2
+    rest 0x30
+    0x103<5> 0, 0
+    rest 0x20
+    0x103<5> 0, 1
+    rest 0x40
+    0x103<5> 0, 1
+    rest 0x30
+
+    0x103<5> 0, 2
+    rest 0x30
+    0x103<5> 0, 0
+    rest 0x20
+    0x103<5> 0, 1
+    rest 0x40
+    0x103<5> 0, 1
+    rest 0x30
+
+    0x103<5> 0, 2
+    rest 0x30
+    0x103<5> 0, 0
+    rest 0x20
+    0x103<5> 0, 1
+    rest 0x40
+    0x103<5> 0, 1
+    rest 0x30
+
+    0x103<5> 0, 2
+    rest 0x30
+    0x103<5> 0, 0
+    rest 0x20
+    0x103<5> 0, 1
+
+    rest 0x70
+    0x103<5> 0, 0
+    rest 0x20
+    0x103<5> 0, 0
+    rest 0x10
+    0x103<5> 0, 0
+    rest 0x20
+    0x103<5> 0, 0
+    rest 0x10
+    0xB2 7
+    if 0 //If not sans undertale
+        0x103<5> 0, 0
+    endif
+
+    rest 0x30
+    0x103<5> 0,0
+    rest 0x20
+    0x103<5> 0,3
+    rest 0x90
+    0x103<5> 0,1
+stop
+
+sequenceTheLick:
+	set_cat 0
+	setrest 7, 0x30*24
+    call changeEngine
+    engine 0x14
+    rest 0x30
+    set_cat 0x7D0
+	0xB3 9, 0x14
+
+    fade<1> 1,1,0x30
+    input 1
+    0xB0<5> 0xA, "docShorts_song_the_lick_2"
+    setrest 8, 0x90
+    async_call songDisappear
+    rest 0x30
+    async_call playTheLick
+    async_call frogLoop
+    async_call frogSAX
+    async_call yahooNoSwing
+    rest 0x90
+    async_call spinItBoysNo
+    rest 0xF0
+    async_call yahooNoSwing
+    rest 0x90
+    async_call yeahYeahYeahNoSwing
+    rest 0xF0
+    async_call yahooNoSwing
+    rest 0x90
+    kill_loc frogLoop
+stop
+
+dateBeat:
+    0x102
+    0x103
+    0x104
+    rest 0x30
+goto dateBeat
+
+sequenceKlonoaHeroes:
+	set_cat 0
+	setrest 7, 0x30*10
+    call changeEngine
+    engine 0x21
+    rest 0x30
+    set_cat 0x7D0
+	0xB3 9, 0x21
+
+    fade<1> 1,1,0x30
+    0x21 155
+    0xB0<4> 0xA, "docShorts_song_klonoa_heroes"
+    0xB0<5> 0xA, "docShorts_song_klonoa_heroes_2"
+    setrest 8, 0x90
+    async_call songDisappear
+    async_call dateBeat
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+    rest 0x30
+    play_sfx 0x1000291
+    async_call playKlonoaHeroes, 0x30
+    input 1
+    async_sub 0x56
+    rest 0x78
+    async_sub 0x65
+    rest 0x30*5+0x18
+    kill_loc dateBeat
+    rest 0x30
+    0x106
+    0x102
+    0x104
 stop

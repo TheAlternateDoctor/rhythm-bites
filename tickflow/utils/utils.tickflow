@@ -120,8 +120,7 @@ beatLoop:
 stop
 
 unloadTutorial:
-	play_sfx 0x1000291
-	//remove extra tutorial stuff
+	//removes extra tutorial stuff
 	remove_cellanim 8
 	rest 0xC
 	remove_cellanim 9
@@ -132,8 +131,7 @@ unloadTutorial:
 stop
 
 unloadTango:
-	play_sfx 0x1000291
-	//remove extra Tangotronic stuff
+	//removes extra Tangotronic stuff
 	remove_model 4
 	rest 0xC
 	remove_model 5

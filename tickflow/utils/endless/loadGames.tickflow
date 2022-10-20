@@ -343,3 +343,47 @@ else
     0xB3 1, 1
 endif
 stop
+
+loadFrogHop:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_NTR_FROG"
+    set_cellanim 4, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
+    game_cellanim 0x14, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_NTR_FROG"
+    set_cellanim 5, u"rom:/cellanim/ntrFrog_arrange.zlib", -1
+    game_cellanim 0x14, 5
+    0xB3 1, 1
+endif
+stop
+
+loadDoubleDate:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_W_DATE"
+    set_cellanim 4, u"rom:/cellanim/rvlDate_v0.zlib", -1
+    game_cellanim 0x21, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_W_DATE"
+    set_cellanim 5, u"rom:/cellanim/rvlDate_v0.zlib", -1
+    game_cellanim 0x21, 5
+    0xB3 1, 1
+endif
+stop

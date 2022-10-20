@@ -16,9 +16,9 @@
 #include utils/tutorial.tickflow
 #include utils/utils.tickflow
 
-#include utils/ports/builtToScaleDS.tickflow
-#include utils/ports/manzai.tickflow
-#include utils/ports/meatGrinderSubs.tickflow
+#include utils/games/builtToScaleDS.tickflow
+#include utils/games/manzai.tickflow
+#include utils/games/meatGrinderSubs.tickflow
 
 // #index 0x1A
 #index 0x10C
@@ -163,7 +163,7 @@ sub 2
 0x55 1
 0xAF<2> 0, 0, "gate_explain_short"
 0xB0<4> 0xA, "docShorts_song_banner_megamix"
-setrest 8, 0x60
+setrest 8, 0xC0
 play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
 rest 0xC0	// 4.0 beats
