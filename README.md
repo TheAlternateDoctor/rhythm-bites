@@ -1,4 +1,4 @@
-# shorts-megamix
+# rhythm-bites
 
 A brand new endless game for Rhythm Heaven Megamix.
 
