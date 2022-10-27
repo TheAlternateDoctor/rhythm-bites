@@ -67,21 +67,9 @@ stop
 lifeCheck:
 	0xB2 9
 	switch
-	case 0x41 //Coin Toss
-		0xB2 7
-		if 10
-    		get_sync 4
-		endif
-		break
 	case 0x3 //Rhythm Tweezers
 		0x106 0
 		if_neq 1
-    		get_sync 4
-		endif
-		break
-	case 0x4F //Tutorial
-		0xB2 7
-		if 0
     		get_sync 4
 		endif
 		break
@@ -91,11 +79,22 @@ lifeCheck:
     		get_sync 4
 		endif
 		break
+	case 0x12 //Freeze Frame
+		0x104<2>
+		if_neq 0
+    		get_sync 4
+		endif
+		break
+	case 0x41 //Coin Toss
 	case 0x40 //Sick Beats
-		0x21 600
-		rest 0x90
-		0x108
-		if 1
+		0xB2 7
+		if 10
+    		get_sync 4
+		endif
+		break
+	case 0x4F //Tutorial
+		0xB2 7
+		if 0
     		get_sync 4
 		endif
 		break

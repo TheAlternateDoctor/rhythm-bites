@@ -409,13 +409,13 @@ patternGameWatch:
     0x105 1, 1
     0x105 2, 1
     play_sfx 0x1000E00
-    rest 0x30	// 1.0 beats
-    0x102 1
-    0x104<1> 0
-    0x105 0, 0
-    0x105 1, 0
-    0x105 2, 0
-    rest 0x30	// 1.0 beats
+    // rest 0x30	// 1.0 beats
+    // 0x102 1
+    // 0x104<1> 0
+    // 0x105 0, 0
+    // 0x105 1, 0
+    // 0x105 2, 0
+    // rest 0x30	// 1.0 beats
 stop
 
 sequenceGameWatch: //TODO
@@ -439,6 +439,14 @@ sequenceGameWatch: //TODO
     async_call playGameWatch
     rest 0x30
     input 1
+    rest 0x30*5
+    input 0
+    kill_loc beatLoop
+    rest 0x30*6
+    0x104<1> 0
+    0x105 0, 0
+    0x105 1, 0
+    0x105 2, 0
 stop
 
 frogLoop:

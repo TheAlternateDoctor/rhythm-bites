@@ -409,7 +409,7 @@ sequenceTofu:
 	rest 0x30
 	play_sfx 0x1000291
 	rest 0x30
-    async_call playTofu
+    async_call playTofu, 2
 	async_call beatMyMeat
 	async_call meatmain
 	rest 0x48

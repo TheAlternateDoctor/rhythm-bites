@@ -501,8 +501,12 @@ sequenceWiiMusic:
     0x104<1> 1, 2, 0x3C
     rest 0x30
     input 0
+    0xB0<6> 0xA, "docShorts_glee_club", 2
+    0xB0<8> 2
     0x105<0>
     0x106
+    rest 0x90
+    0xB0<0xA> 2
 stop
 
 sequenceDukeNukem:

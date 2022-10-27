@@ -5,6 +5,51 @@ sickBeat:
     goto 0xBEA7
 stop
 
+startVirus:
+    0x100 
+    0x101 0
+    rest 0x60	// 2.0 beats
+    0x103 0x30
+    rest 0x30	// 1.0 beats
+    0x104 
+    rest 0x30	// 1.0 beats
+    0x105 
+    if 1
+        0xB3 7, 10
+    endif
+stop 
+
+secondVirus:
+0x100 
+0x101 0
+rest 0x54	// 1.75 beats
+0x102 
+rest 6	// 0.125 beats
+0x102 
+rest 6	// 0.125 beats
+0x102 
+rest 0x30	// 1.0 beats
+rest 0x30	// 1.0 beats
+0x103 0x30
+rest 0x30	// 1.0 beats
+0x104 
+rest 0x30	// 1.0 beats
+0x105 
+if 1
+	0xB3 7, 10
+else
+    goto 0x6F
+endif
+0x102 
+rest 0x60	// 2.0 beats
+0x106<1> 
+rest 0x30	// 1.0 beats
+0x106<2> 
+rest 0x30	// 1.0 beats
+0x106<3> 
+label 0x6F
+stop 
+
 sequenceBannerSickBeats:
     setrest 7, 0xC0
 	0xB3 9, 0x40
@@ -13,9 +58,10 @@ sequenceBannerSickBeats:
     set_cat 0x7D0
 
     input 1
+    0xB3 7, 0
     async_call sickBeat
-    async_sub 0x56
-    async_sub 0x59
+    async_call startVirus
+    async_call secondVirus
     play_sfx 0x1000291
     rest 0x30
     play_sfx 0x1000291

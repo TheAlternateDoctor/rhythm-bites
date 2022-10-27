@@ -1,0 +1,8 @@
+wall00.bflim a biscuit-filled shelf
+wall01.bflim has a wall with pictures of Karate Joe's family!
+wall02.bflim replaced with a small table? With an onion? a ping pong racket? In any case, a reference to another minigame
+before.bflim is a simple table. Nothing interesting.
+pail.bflim replaced with a biscuit. 
+Anything else gets fucked and removed from the prologue. Should be easy enough
+
+Y'know what, fuck it. Just reuse Working Dough

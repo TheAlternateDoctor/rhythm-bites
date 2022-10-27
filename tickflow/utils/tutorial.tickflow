@@ -32,7 +32,7 @@ async_call tutorial
 stop 
 
 loadTutorial:
-    set_cellanim 4, u"rom:/cellanim/rvlKarate_2.zlib", -1
+    set_cellanim 3, u"rom:/cellanim/rvlKarate_2.zlib", -1
     label 0x4D2
     cellanim_busy 4
     if 0
@@ -42,7 +42,7 @@ loadTutorial:
     goto 0x4D2
     label 0x10E1
 
-    set_effect 4, u"rom:/effect/rvlKarate.zlib", -1
+    set_effect 3, u"rom:/effect/rvlKarate.zlib", -1
     label 0x4D5
     effect_busy 2
     if 0
@@ -81,8 +81,8 @@ loadTutorial:
     sub 3
     0x83 0
 
-    game_cellanim 0x28, 4
-    game_effect 0x28, 4
+    game_cellanim 0x28, 3
+    game_effect 0x28, 3
 
 
 
@@ -91,6 +91,7 @@ loadTutorial:
     0xB3 2,1
     0xB3 3,0x1
     0xB3 5, 1
+    0xB0
 return 
 
 tutorial:
@@ -108,6 +109,7 @@ input 0
 0x65<3> 0, -0x50
 0x65<5> 2
 0xAF<6> 0
+fade<1> 7, 1, 0x30
 0x7C<1> 7, 1, 0x30
 rest 0x30
 0x66 0xA, "docShorts_tutorial_a"
@@ -165,7 +167,7 @@ label 0x314A
 sub 0
 0x65<2> 
 rest 0x30
-fade 1, 1, 0x30
+fade 1, 1, 0x28
 async_call loadRayman
 rest 0x30
 
@@ -214,18 +216,24 @@ sub 3
 async_call sequenceKonga
 rest 0x30
 getrest 7
-async_call loadMeatGrinder
+async_call specialMeatLoad
 rest 0x30
 call fade
 
-
+async_call unloadManzai
+remove_sfx 5
+set_sfx 5, u"GROUP_MEAT"
+engine 0x28
+rest 0x18
+game_cellanim 0x3C, 5
+rest 0x18
 async_call loadTofu
 rest 0x30
 sub 3
 async_call sequenceTofu
 rest 0x30
 getrest 7
-rest 0x30
+rest 0x60
 input 0
 
 0x66 0xA, "docShorts_tutorial_e"
@@ -246,6 +254,12 @@ fade 1, 1, 0x20
 0xB3 4,0
 
 return
+
+specialMeatLoad:
+    async_call unloadGameSlot5
+    rest 0x30
+    set_cellanim 5, u"rom:/cellanim/skiMeat_tofu.zlib", -1
+stop
 
 tutorialKarateNDS:
     0x21 135

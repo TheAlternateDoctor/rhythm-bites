@@ -178,7 +178,7 @@ input 0
 0xB3 0,0 //Score
 0xB3 1,0 //Celanim
 0xB3 2,1 //Audio slot (Useless?)
-0xB3 3,0 //Debug purposes
+0xB3 3,0x12 //Debug purposes
 0xA7<2> 
 if 1 //No practice
 	0xB3 4,1 //No song indicator
@@ -192,8 +192,8 @@ endif
 0x67<4> 0x14
 0x67<7> 0xD0
 0x67<1> 2,"scoreCounter_0"
-// set_func 4, deadSubEndless
-set_func 4, nopR
+set_func 4, deadSubEndless
+// set_func 4, nopR
 
 call changeEngine
 engine 0x28
