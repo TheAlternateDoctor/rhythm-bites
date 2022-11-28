@@ -690,7 +690,7 @@ playNextGame:
     get_async 1, 0
     rest 0x30
     sub 3
-	async_call text
+	get_async 5, 0
     get_sync 2
     get_async 0, 0
 	rest 0x30

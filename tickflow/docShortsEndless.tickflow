@@ -193,6 +193,7 @@ endif
 0x67<7> 0xD0
 0x67<1> 2,"scoreCounter_0"
 set_func 4, deadSubEndless
+set_func 5, text
 // set_func 4, nopR
 
 call changeEngine

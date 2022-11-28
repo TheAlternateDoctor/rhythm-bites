@@ -18,6 +18,7 @@ Subs
 2 - Switch endless engines
 3 - Unload specifics
 4 - deadSub(Endless)
+5 - Score indicator thingy
 
 Rests
 7 - Shorts Rest
