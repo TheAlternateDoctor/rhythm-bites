@@ -764,10 +764,12 @@ deadSubEndless: //Just save, but then continue
 	play_sfx 0x1000AB7
 	rest 0xC0	// 4.0 beats
 	rest 0xC0	// 4.0 beats
-	fade 1, 1, 0x60
+	fade 1, 0, 0x60
 	rest 0x60
 	set_func 5, nop
+	set_func 4, nopR
 	0x67<2>
+    0x77 1, 0x0
 return
 
 nop:
