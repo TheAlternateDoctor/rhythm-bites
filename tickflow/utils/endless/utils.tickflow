@@ -1,6 +1,6 @@
 loadNextGame:
     random 0x69
-    0xB2 3
+    // 0xB2 3
     // 0xB4 3,1
     switch
         case 0x0 //Jimmy T.
