@@ -167,3 +167,14 @@ youDisappear:
 		0x8B 0,1
 	endif
 stop
+
+//Unloads Special case audio
+unloadSpeAudio:
+0xB2 5
+if_geq 1
+    remove_sfx 6
+endif
+if_geq 2
+    remove_sfx 7
+endif
+stop

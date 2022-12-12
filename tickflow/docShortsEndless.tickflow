@@ -31,6 +31,8 @@
 #include utils/games/manzai.tickflow
 #include utils/games/meatGrinderSubs.tickflow
 #include utils/games/frogHop.tickflow
+#include utils/games/soumen.tickflow
+#include utils/games/mrUpbeat.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/loadGamesCommon.tickflow
@@ -38,8 +40,8 @@
 #include utils/audioCommon.tickflow
 #include utils/utils.tickflow
 
-#index 0x10F
-// #index 0x1A
+// #index 0x10F
+#index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -178,7 +180,7 @@ input 0
 0xB3 0,0 //Score
 0xB3 1,0 //Celanim
 0xB3 2,1 //Audio slot (Useless?)
-0xB3 3,0x12 //Debug purposes
+0xB3 3,0x6A //Debug purposes
 0xA7<2> 
 if 1 //No practice
 	0xB3 4,1 //No song indicator

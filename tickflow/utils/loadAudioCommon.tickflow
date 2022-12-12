@@ -129,10 +129,7 @@ async_call loadManzaiLate
 stop
 
 loadManzaiLate:
-    0xB2 5
-    if 1
-        remove_sfx 6
-    endif
+    async_call unloadSpeAudio
     rest 0xC
     set_sfx 6, u"GROUP_COMEDIANS_VOICE_SHORTS"
     0xB3 5, 1

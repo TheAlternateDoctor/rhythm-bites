@@ -587,3 +587,70 @@ sequenceKlonoaHeroes:
     0x102
     0x104
 stop
+
+sequenceBallance:
+	set_cat 0
+	setrest 7, 0x30*18
+    call changeEngine
+    engine 0x1B
+    rest 0x18
+    0x106<1>
+    0x104<1>
+    zoom 3, -0xAE, 0xAE
+    pan 3, -0x35, 0x8
+    rest 0x18
+    set_cat 0x7D0
+	0xB3 9, 0x1B
+
+    fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_klonoa_heroes"
+    0xB0<5> 0xA, "docShorts_song_klonoa_heroes_2"
+    setrest 8, 0x90
+    input 1
+    async_call songDisappear
+    async_call somenBeat
+    async_call playBallance
+    rest 0x30
+    async_call bothhands
+    rest 0xC0
+    async_call shorthand
+    rest 0x90
+    async_call longhand
+    rest 0x90
+    async_call shorthand
+    rest 0x30*6
+    kill_loc somenBeat
+stop
+
+sequenceMelodii:
+	set_cat 0
+	setrest 7, 0x30*10
+    call changeEngine
+    engine 0x3C
+    rest 0x18
+    zoom 3, 0xC8, 0xC8
+    pan 3, 0, -0x20
+    rest 0x18
+    set_cat 0x7D0
+	0xB3 9, 0x3C
+
+    fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_klonoa_heroes"
+    0xB0<5> 0xA, "docShorts_song_klonoa_heroes_2"
+    setrest 8, 0x90
+    async_call songDisappear
+    async_call playMelodii
+    rest 0x18
+    async_call upbeatCountinNoVoice
+    rest 0x90
+    input 1
+    async_call metronome, 0x18
+    async_call cycle
+    rest 0xC0
+    rest 0x48
+    kill_loc cycle
+    rest 0x18
+    kill_loc metronome
+    play_sfx 0x100028D
+stop
+

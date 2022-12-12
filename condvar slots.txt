@@ -4,7 +4,7 @@ Condvar
 2 - Used audio slot (1 if 0xA)
 3 - Debug Endless, starting point of the block
 4 - Show song titles or not
-5 - sfx in slot 6 (for recreations)
+5 - multiple sfx (for recreations) - gets bigger with more slots, ie:1 is 6, 2 is 7, etc...
 6 - Audio pack was loaded previously
 7 - Game specific (10 for Coin Toss, 0x28 for KMGBA's fade)
 8 - Audio Special case has already loaded

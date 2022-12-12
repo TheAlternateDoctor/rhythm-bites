@@ -1,6 +1,6 @@
 loadNextGame:
     random 0x69
-    // 0xB2 3
+    0xB2 3
     // 0xB4 3,1
     switch
         case 0x0 //Jimmy T.
@@ -677,6 +677,32 @@ loadNextGame:
                 set_func 2, nopR
             endif
             0xB3 3,0
+        break
+        case 0x69 //Ballance
+            0xB2 9
+            if 0x1B //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                set_func 0, sequenceBallance
+                set_func 1, loadBallance
+                async_call loadSoumen
+                set_func 3, nop
+                set_func 2, nopR
+            endif
+            0xB3 3,0x6A
+        break
+        case 0x6A //Battle Start Melodii
+            0xB2 9
+            if 0x3C //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                set_func 0, sequenceMelodii
+                set_func 1, loadMelodii
+                async_call loadUpbeat
+                set_func 3, nop
+                set_func 2, nopR
+            endif
+            0xB3 3,0x69
         break
         default //Restart until we get something damnit
             goto loadNextGame

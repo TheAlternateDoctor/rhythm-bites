@@ -341,10 +341,7 @@ endif
 stop
 
 loadFinnedLate:
-    0xB2 5
-    if 1
-        remove_sfx 6
-    endif
+    async_call unloadSpeAudio
     rest 0xC
     set_sfx 6, u"GROUP_FRONTIER2"
     0xB3 5, 1

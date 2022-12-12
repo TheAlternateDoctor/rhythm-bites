@@ -248,3 +248,38 @@ case 1
     break
 endswitch
 return
+
+loadBallance:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_BALLANCE"
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_BALLANCE"
+    0xB3 2,1
+endif
+async_call loadSoumenLate
+stop
+
+loadMelodii:
+0xB2 2
+if 1
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_MELODII"
+    0xB3 2,0
+else 
+    remove_sfx 0xA
+    remove_sfx 0xB
+    rest 0xC
+    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_MELODII"
+    0xB3 2,1
+endif
+stop
