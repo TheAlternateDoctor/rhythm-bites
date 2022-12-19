@@ -2,7 +2,7 @@ loadNextGame:
     0xB2 10
     if 1
         0xB2 3
-        if -1
+        if 1337
             goto 0xD0C6A
         endif
     else

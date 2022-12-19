@@ -181,7 +181,7 @@ input 0
 0xB3 0,0 //Score
 0xB3 1,0 //Celanim
 0xB3 2,1 //Audio slot (Useless?)
-0xB3 3,-1 //Selects the shorts cycling mode(Debug mode only)
+0xB3 3,1337 //Selects the shorts cycling mode(Debug mode only)
 0xB3 10,0 //Enables Debug mode
 
 
