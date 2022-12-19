@@ -710,8 +710,8 @@ loadNextGame:
                 goto loadNextGame
             else
                 set_func 0, sequenceGrooveRush
-                set_func 1, loadGrooveRush
-                async_call loadTapTroupe
+                // set_func 1, loadGrooveRush
+                // async_call loadTapTroupe
                 set_func 3, nop
                 set_func 2, nopR
             endif
