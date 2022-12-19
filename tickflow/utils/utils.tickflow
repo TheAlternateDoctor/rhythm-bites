@@ -78,7 +78,10 @@ lifeCheck:
 	0x9F 1
 	0xA2
 	0x21 120
-	0xB4 0,1
+	0xB2 10
+	if 0
+		0xB4 0,1
+	endif
 return
 
 beatLoop:

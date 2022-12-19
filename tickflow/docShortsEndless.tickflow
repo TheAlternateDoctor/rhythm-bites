@@ -181,7 +181,10 @@ input 0
 0xB3 0,0 //Score
 0xB3 1,0 //Celanim
 0xB3 2,1 //Audio slot (Useless?)
-0xB3 3,0x6A //Debug purposes
+0xB3 3,-1 //Selects the shorts cycling mode(Debug mode only)
+0xB3 10,0 //Enables Debug mode
+
+
 0xA7<2> 
 if 1 //No practice
 	0xB3 4,1 //No song indicator
@@ -194,10 +197,14 @@ endif
 0x67<3> -0x6E
 0x67<4> 0x14
 0x67<7> 0xD0
-0x67<1> 2,"scoreCounter_0"
-set_func 4, deadSubEndless
+0x67<1> 2,"scoreCounter_99"
 set_func 5, text
-// set_func 4, nopR
+0xB2 10
+if 0
+	set_func 4, deadSubEndless
+else
+	set_func 4, nopR
+endif
 
 call changeEngine
 engine 0x28
@@ -236,7 +243,7 @@ call lifeCheck
 0xA2
 
 //main loop
-0x67<1> 2,"scoreCounter_1"
+async_call text
 label 0x1009
 	call playNextGame
 goto 0x1009
