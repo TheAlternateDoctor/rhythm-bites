@@ -1,5 +1,5 @@
 loadNextGame:
-    random 0x69
+    random 0x6B
     // 0xB2 3
     // 0xB4 3,1
     switch
@@ -699,6 +699,19 @@ loadNextGame:
                 set_func 0, sequenceMelodii
                 set_func 1, loadMelodii
                 async_call loadUpbeat
+                set_func 3, nop
+                set_func 2, nopR
+            endif
+            0xB3 3,0x69
+        break
+        case 0x6B //Groove Rush #1
+            0xB2 9
+            if 0xC //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                set_func 0, sequenceGrooveRush
+                set_func 1, loadGrooveRush
+                async_call loadTapTroupe
                 set_func 3, nop
                 set_func 2, nopR
             endif

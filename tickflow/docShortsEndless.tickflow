@@ -33,6 +33,7 @@
 #include utils/games/frogHop.tickflow
 #include utils/games/soumen.tickflow
 #include utils/games/mrUpbeat.tickflow
+#include utils/games/tapTroupe.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/loadGamesCommon.tickflow
@@ -40,8 +41,8 @@
 #include utils/audioCommon.tickflow
 #include utils/utils.tickflow
 
-// #index 0x10F
-#index 0x1A
+#index 0x10F
+// #index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats

@@ -603,8 +603,8 @@ sequenceBallance:
 	0xB3 9, 0x1B
 
     fade<1> 1,1,0x30
-    0xB0<4> 0xA, "docShorts_song_klonoa_heroes"
-    0xB0<5> 0xA, "docShorts_song_klonoa_heroes_2"
+    0xB0<4> 0xA, "docShorts_song_ballance"
+    0xB0<5> 0xA, "docShorts_song_ballance_2"
     setrest 8, 0x90
     input 1
     async_call songDisappear
@@ -635,8 +635,8 @@ sequenceMelodii:
 	0xB3 9, 0x3C
 
     fade<1> 1,1,0x30
-    0xB0<4> 0xA, "docShorts_song_klonoa_heroes"
-    0xB0<5> 0xA, "docShorts_song_klonoa_heroes_2"
+    0xB0<4> 0xA, "docShorts_song_melodii"
+    0xB0<5> 0xA, "docShorts_song_melodii_2"
     setrest 8, 0x90
     async_call songDisappear
     async_call playMelodii
@@ -652,5 +652,44 @@ sequenceMelodii:
     rest 0x18
     kill_loc metronome
     play_sfx 0x100028D
+stop
+
+tapTroupe2Count:
+play_sfx 0x10002E1
+rest 0x18	// 1.0 beats
+0x106<1> 0
+0x101
+rest 0x18	// 1.0 beats
+play_sfx 0x10002E2
+rest 0x18	// 1.0 beats
+0x106<1> 0
+0x101
+stop
+
+sequenceGrooveRush:
+	set_cat 0
+	setrest 7, 0x30*10
+    call changeEngine
+    engine 0xC
+    rest 0x18
+    zoom 3, 0xC8, 0xC8
+    0x105 1
+    rest 0x18
+    set_cat 0x7D0
+	0xB3 9, 0xC
+
+    fade<1> 1,1,0x30
+    0xB0<4> 0xA, "docShorts_song_groove_rush"
+    0xB0<5> 0xA, "docShorts_song_groove_rush_2"
+    setrest 8, 0x90
+    async_call songDisappear, 0x18
+    async_call playGrooveRush, 0x18
+    async_call tapTroupe2Count
+    rest 0x48
+    async_call fourbeatstepinitial
+    rest 0xC0
+    async_call twobeatstepprep
+    rest 0xC0
+    async_call threebomfinal
 stop
 

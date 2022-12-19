@@ -68,3 +68,13 @@ playMelodii:
 0x21 135
 play_sfx 0x10001F6
 stop
+
+playGrooveRush:
+0x21 138
+play_sfx 0x10001F7
+stop
+
+playMoleCricket:
+0x21 135
+play_sfx 0x10001F8
+stop
