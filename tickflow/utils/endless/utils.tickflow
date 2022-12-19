@@ -3,10 +3,10 @@ loadNextGame:
     if 1
         0xB2 3
         if 1337
-            goto 0xD0C6A
+            goto 0xD0C6
         endif
     else
-        label 0xD0C6A
+        label 0xD0C6
         random 0x6B
     endif
     switch
