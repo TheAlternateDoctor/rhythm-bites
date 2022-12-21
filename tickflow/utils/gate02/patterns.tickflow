@@ -1,6 +1,6 @@
 
 sequenceBannerClapTrap:
-    setrest 7, 0x90
+    setrest 7, clap.duration
 	0xB3 9, 0x42
     0x101 0
     set_cat 0x7D0
@@ -16,7 +16,7 @@ stop
 
 sequence3DS:
 	set_cat 0
-	setrest 7, 0x1D0
+	setrest 7, ctr.duration
 	0xB3 9, 0x28
     call changeEngine
     engine 0x28
@@ -28,7 +28,7 @@ sequence3DS:
     play_sfx 0x1000291
     0xB0<4> 0xA, "docShorts_song_remix_3ds"
     0xB0<5> 0xA, "docShorts_song_remix_3ds_2"
-    setrest 8, 0x60
+    setrest 8, ctr.banner
     async_call songDisappear
     0x104 0
     rest 0x30
@@ -54,7 +54,7 @@ stop
 
 sequenceFinned:
 	set_cat 0
-	setrest 7, 0x360
+	setrest 7, finned.duration
     call changeEngine
     engine 0x3E
     rest 0x30
@@ -66,7 +66,7 @@ sequenceFinned:
     async_call playFinned
     0xB0<4> 0xA, "docShorts_song_finned"
     0xB0<5> 0xA, "docShorts_song_finned_2"
-    setrest 8, 0xC0
+    setrest 8, finned.banner
     async_call songDisappear
 
     input 1
@@ -89,7 +89,7 @@ stop
 
 sequenceDuckHunt:
 	set_cat 0
-	setrest 7, 0x480
+	setrest 7, duckHunt.duration
 	call changeEngine
 	engine 0x19
 	rest 0x30
@@ -102,7 +102,7 @@ sequenceDuckHunt:
     rest 0x60
     0xB0<4> 0xA, "docShorts_song_duck_hunt"
     0xB0<5> 0xA, "docShorts_song_duck_hunt_2"
-    setrest 8, 0xC0
+    setrest 8, duckHunt.banner
     async_call songDisappear
     async_call playDuckHunt
     input 1
@@ -136,7 +136,7 @@ stop
 
 sequenceTMPokemon:
 	set_cat 0
-	setrest 7, 0x150
+	setrest 7, pokemonTM.duration
     call changeEngine
     engine 0x16
     rest 0x30
@@ -146,7 +146,7 @@ sequenceTMPokemon:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_pokemon_tm"
     0xB0<5> 0xA, "docShorts_song_pokemon_tm_2"
-    setrest 8, 0x90
+    setrest 8, pokemonTM.banner
     async_call songDisappear
     0x21 139
     input 1
@@ -186,7 +186,7 @@ return
 
 sequenceCoH:
 	set_cat 0
-	setrest 7, 0x500
+	setrest 7, cadenceHyrule.duration
     call changeEngine
     engine 0x5
     rest 0x30
@@ -201,7 +201,7 @@ sequenceCoH:
     async_call playCoH
     0xB0<4> 0xA, "docShorts_song_cadence_hyrule"
     0xB0<5> 0xA, "docShorts_song_cadence_hyrule_2"
-    setrest 8, 0xF0
+    setrest 8, cadenceHyrule.banner
     async_call songDisappear
     async_call youDisappear
     play_sfx 0x1000B95  
@@ -308,7 +308,7 @@ stop
 
 sequenceDodo:
 	set_cat 0
-	setrest 7,0x198
+	setrest 7,dodoAC.duration
 	call changeEngine
 	engine 0x38
 	rest 0x30
@@ -320,7 +320,7 @@ sequenceDodo:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_dodo_air"
     0xB0<5> 0xA, "docShorts_song_dodo_air_2"
-    setrest 8, 0xC0
+    setrest 8, dodoAC.banner
     async_call songDisappear
     play_sfx 0x1000291
     rest 0x30
@@ -350,7 +350,7 @@ stop
 
 sequenceRivalsAether:
 	set_cat 0
-	setrest 7, 0x400
+	setrest 7, rivals.duration
     call changeEngine
     engine 0x35
     rest 0x30
@@ -366,7 +366,7 @@ sequenceRivalsAether:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_maypul_aether"
     0xB0<5> 0xA, "docShorts_song_maypul_aether_2"
-    setrest 8, 0x90
+    setrest 8, rivals.banner
     async_call songDisappear
     0x103 0
     0x102 0x60
@@ -419,7 +419,7 @@ stop
 
 sequenceCSD:
 	set_cat 0
-	setrest 7, 0x1E0
+	setrest 7, csd.duration
     call changeEngine
     engine 0x3B
     rest 0x30
@@ -430,7 +430,7 @@ sequenceCSD:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_cook_serve"
     0xB0<5> 0xA, "docShorts_song_cook_serve_2"
-    setrest 8, 0xC0
+    setrest 8, csd.banner
     async_call songDisappear
     async_call playCSD
     async_call beatCSD
@@ -447,7 +447,7 @@ stop
 
 sequenceWiiMusic:
 	set_cat 0
-	setrest 7, 0x210
+	setrest 7, wiiMusic.duration
     call changeEngine
     engine 0x13
     rest 0x30
@@ -460,7 +460,7 @@ sequenceWiiMusic:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_wii_music"
     0xB0<5> 0xA, "docShorts_song_wii_music_2"
-    setrest 8, 0x90
+    setrest 8, wiiMusic.banner
     async_call songDisappear
     0x104 0, 0, 0x1000DAF, 0x3C, 0
     0x104 0, 2, 0x1000DB1, 0x78, -6
@@ -511,7 +511,7 @@ stop
 
 sequenceDukeNukem:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, dukeNukem.duration
     call changeEngine
     engine 0x20
     rest 0x60
@@ -525,7 +525,7 @@ sequenceDukeNukem:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_duke_nukem"
     0xB0<5> 0xA, "docShorts_song_duke_nukem_2"
-    setrest 8, 0xC0
+    setrest 8, dukeNukem.banner
     async_call songDisappear
     play_sfx 0x1000291
     0x107 1
@@ -583,7 +583,7 @@ return
 
 sequenceBanjoKazooie:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, banjoKazooie.duration
     call changeEngine
     engine 0x31
     rest 0x30
@@ -593,7 +593,7 @@ sequenceBanjoKazooie:
     play_sfx 0x1000964
     0xB0<4> 0xA, "docShorts_song_jiggy_banjo"
     0xB0<5> 0xA, "docShorts_song_jiggy_banjo_2"
-    setrest 8, 0xC0
+    setrest 8, banjoKazooie.banner
     async_call songDisappear
     async_call youDisappear
     async_call playBanjoKazooie
@@ -611,7 +611,7 @@ stop
 
 sequenceAccumula:
 	set_cat 0
-	setrest 7, 0x30*15
+	setrest 7, accumula.duration
     call changeEngine
     engine 0x23
     rest 0x30
@@ -634,7 +634,7 @@ sequenceAccumula:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_accumula"
     0xB0<5> 0xA, "docShorts_song_accumula_2"
-    setrest 8, 0xC0
+    setrest 8, accumula.banner
     async_call songDisappear
     async_call transitionfromdashnopan
     rest 0x18

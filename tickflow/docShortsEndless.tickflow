@@ -3,6 +3,13 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
+#include config/debug.tickflow
+#include config/commonTimings.tickflow
+#include config/gate1Timings.tickflow
+#include config/gate2Timings.tickflow
+#include config/gate3Timings.tickflow
+#include config/endlessTimings.tickflow
+
 #include utils/gate01/patterns.tickflow
 #include utils/gate01/audio.tickflow
 #include utils/gate01/loadGames.tickflow
@@ -181,8 +188,8 @@ input 0
 0xB3 0,0 //Score
 0xB3 1,0 //Celanim
 0xB3 2,1 //Audio slot (Useless?)
-0xB3 3,1337 //Selects the shorts cycling mode(Debug mode only)
-0xB3 10,0 //Enables Debug mode
+0xB3 3,cyclingMode //Selects the shorts cycling mode(Debug mode only)
+0xB3 10,debugMode //Enables Debug mode
 
 
 0xA7<2> 

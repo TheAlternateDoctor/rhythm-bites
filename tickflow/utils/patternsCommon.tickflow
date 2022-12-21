@@ -75,7 +75,7 @@ stop
 
 sequenceTomodachi:
 	set_cat 0
-	setrest 7, 0x450
+	setrest 7, tomodachi.duration
 	call changeEngine
 	engine 0x4F
 	sub 4
@@ -87,7 +87,7 @@ sequenceTomodachi:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_tomodachi"
     0xB0<5> 0xA, "docShorts_song_tomodachi_2"
-    setrest 8, 0xF0
+    setrest 8, tomodachi.banner
     async_call songDisappear
 	input 1
 	0x103 2
@@ -133,7 +133,7 @@ return
 
 sequenceRhythmMasters:
 	set_cat 0
-	setrest 7,0x3C0
+	setrest 7,rhythmMasters.duration
 	call changeEngine
 	engine 0xC
 	sub 4
@@ -147,7 +147,7 @@ sequenceRhythmMasters:
 	fade<1> 1,1,0x30
 	0xB0<4> 0xA, "docShorts_song_rhythm_masters"
 	0xB0<5> 0xA, "docShorts_song_rhythm_masters_2"
-	setrest 8, 0x90
+	setrest 8, rhythmMasters.banner
 	async_call songDisappear
 	0x101
 	input 1
@@ -224,7 +224,7 @@ stop
 
 sequenceZeldaWoodCat:
 	set_cat 0
-	setrest 7, 0x258
+	setrest 7, zeldaWood.duration
 	call changeEngine
 	engine 0x3F
 	rest 0xC
@@ -236,7 +236,7 @@ sequenceZeldaWoodCat:
 	0x21 100
 	0xB0<4> 0xA, "docShorts_song_zelda_sword"
 	0xB0<5> 0xA, "docShorts_song_zelda_sword_2"
-	setrest 8, 0x90
+	setrest 8, zeldaWood.banner
 	async_call songDisappear
 	async_call playZeldaWoodCat
 
@@ -252,7 +252,7 @@ stop
 
 sequenceRayman:
 	set_cat 0
-	setrest 7, 0x1B0
+	setrest 7, rayman.duration
     call changeEngine
     engine 0x32
     0x21 160
@@ -264,7 +264,7 @@ sequenceRayman:
     fade<1> 1,1,0x30
 	0xB0<4> 0xA, "docShorts_song_rayman"
 	0xB0<5> 0xA, "docShorts_song_rayman_2"
-	setrest 8, 0xC0
+	setrest 8, rayman.banner
 	async_call songDisappear
     play_sfx 0x1000291
     rest 0x30
@@ -284,7 +284,7 @@ stop
 
 sequenceKonga:
 	set_cat 0
-	setrest 7, 0x30*20
+	setrest 7, konga.duration
     call changeEngine
     engine 0x3C
 	rest 0x48
@@ -298,7 +298,7 @@ sequenceKonga:
     fade<1> 1,1,0x30
 	0xB0<4> 0xA, "docShorts_song_konga"
 	0xB0<5> 0xA, "docShorts_song_konga_2"
-	setrest 8, 0x60
+	setrest 8, konga.banner
 	async_call songDisappear
     zoom_gradual 3, 4, 4, 0x60, 0x150, 0x150
     async_call speedUpManzai
@@ -386,7 +386,7 @@ stop
 
 sequenceTofu:
 	set_cat 0
-	setrest 7, 0x30*32
+	setrest 7, tofu.duration
     call changeEngine
     engine 0x3C
 	rest 0x48
@@ -398,7 +398,7 @@ sequenceTofu:
     fade<1> 1,1,0x30
 	0xB0<4> 0xA, "docShorts_song_tofu"
 	0xB0<5> 0xA, "docShorts_song_tofu_2"
-	setrest 8, 0x90
+	setrest 8, tofu.banner
 	async_call songDisappear
 	input 1
 	play_sfx 0x1000291

@@ -1,0 +1,40 @@
+//Timings for each pattern. Format pattern.timing
+
+clap.duration = 0x90
+clap.banner = 0x60
+
+ctr.duration = 0x1D0
+ctr.banner = 0x60
+
+finned.duration = 0x360
+finned.banner = 0xC0
+
+duckHunt.duration = 0x480
+duckHunt.banner = 0xC0 
+
+pokemonTM.duration = 0x150
+pokemonTM.banner = 0x90
+
+cadenceHyrule.duration = 0x500
+cadenceHyrule.banner = 0xF0
+
+dodoAC.duration = 0x198
+dodoAC.banner = 0xC0
+
+rivals.duration = 0x400
+rivals.banner = 0x90
+
+csd.duration = 0x1E0
+csd.banner = 0xC0
+
+wiiMusic.duration = 0x210
+wiiMusic.banner = 0x90
+
+dukeNukem.duration = 0x300
+dukeNukem.banner = 0xC0
+
+banjoKazooie.duration = 0x300
+banjoKazooie.banner = 0xC0
+
+accumula.duration = 0x30*15
+accumula.banner = 0xC0

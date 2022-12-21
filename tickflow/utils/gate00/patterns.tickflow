@@ -1,5 +1,5 @@
 sequenceBannerCoin:
-	setrest 7, 0x180
+	setrest 7, coin.duration
 	0xB3 7,0
 	rest 0x30
     set_cat 0x7D0
@@ -38,7 +38,7 @@ stop
 
 sequenceAGB:
 	set_cat 0
-	setrest 7, 0x150
+	setrest 7, agb.duration
 	0xB3 9, 0x28
 	0xB3 7, 0x28
 	call changeEngine
@@ -50,7 +50,7 @@ sequenceAGB:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_remix_gba"
     0xB0<5> 0xA, "docShorts_song_remix_gba_2"
-	setrest 8,0x60
+	setrest 8,agb.banner
 	async_call songDisappear
 	// 0x111<0>
 	rest 0x30
@@ -85,7 +85,7 @@ stop
 
 sequenceZeldaHair:
 	set_cat 0
-	setrest 7,0x120
+	setrest 7,zeldaHair.duration
 	call changeEngine
 	engine 0x3
 	sub 4
@@ -99,7 +99,7 @@ sequenceZeldaHair:
 	0x21 105
     0xB0<4> 0xA, "docShorts_song_zelda_hair"
     0xB0<5> 0xA, "docShorts_song_zelda_hair_2"
-	setrest 8,0x78
+	setrest 8,zeldaHair.banner
 	async_call songDisappear
 	async_call playZeldaHair
 	0xA2<0>
@@ -140,7 +140,7 @@ stop
 
 sequenceSonic:
 	set_cat 0
-	setrest 7,0x2D0
+	setrest 7,sonicTitle.duration
 	call changeEngine
 	engine 0x06
 	rest 0x30
@@ -153,7 +153,7 @@ sequenceSonic:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_sonic_title"
     0xB0<5> 0xA, "docShorts_song_sonic_title_2"
-	setrest 8,0x60
+	setrest 8,sonicTitle.banner
 	async_call songDisappear
 
 	async_call playSonic
@@ -233,7 +233,7 @@ stop
 
 sequenceRhythmDr:
 	set_cat 0
-	setrest 7,0x330
+	setrest 7,rhythmDr.duration
 	call changeEngine
 	engine 0x25
 	rest 0x30
@@ -253,7 +253,7 @@ sequenceRhythmDr:
 	0xA2<0>
 	play_sfx 0x10002E1
 	rest 0x18
-	setrest 8,0x30
+	setrest 8,rhythmDr.banner
 	async_call songDisappear
 	0x103<4>
 	0x102<1>
@@ -287,7 +287,7 @@ stop
 
 sequenceValve:
 	set_cat 0
-	setrest 7,0x1B0
+	setrest 7,valve.duration
 	call changeEngine
 	engine 0x1C
 	rest 0x30
@@ -301,7 +301,7 @@ sequenceValve:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_valve"
     0xB0<5> 0xA, "docShorts_song_valve_2"
-	setrest 8,0x60
+	setrest 8,valve.banner
 	async_call songDisappear
 
 	async_sub 0x89
@@ -330,7 +330,7 @@ stop
 
 sequenceWariowareDIY:
 	set_cat 0
-	setrest 7,0xF0
+	setrest 7,wwdiy.duration
 	call changeEngine
 	engine 0x04
 	rest 0x30
@@ -342,7 +342,7 @@ sequenceWariowareDIY:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_warioware_diy"
     0xB0<5> 0xA, "docShorts_song_warioware_diy_2"
-	setrest 8,0x90
+	setrest 8,wwdiy.banner
 	async_call songDisappear
 	async_call playWariowareDIY
 
@@ -353,7 +353,7 @@ stop
 
 sequencePMD:
 	set_cat 0
-	setrest 7,0x180
+	setrest 7,pmd.duration
 	call changeEngine
 	engine 0x0E
 	sub 4
@@ -370,7 +370,7 @@ sequencePMD:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_pokemon_md"
     0xB0<5> 0xA, "docShorts_song_pokemon_md_2"
-	setrest 8,0x90
+	setrest 8,pmd.banner
 	async_call songDisappear
 	input 1
 	0x103<2> 0, 3, 0x60, -0xA, 8, 0xA
@@ -407,7 +407,7 @@ stop
 
 sequenceKirby:
 	set_cat 0
-	setrest 7,0x240
+	setrest 7,kirbyDance.duration
 	call changeEngine
 	engine 0x11
 	rest 0x30
@@ -418,7 +418,7 @@ sequenceKirby:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_kirby_victory"
     0xB0<5> 0xA, "docShorts_song_kirby_victory_2"
-	setrest 8,0xC0
+	setrest 8,kirbyDance.banner
 	async_call songDisappear
 	async_call youDisappear
 	0x101 1
@@ -448,7 +448,7 @@ stop
 
 sequenceIaiGiri:
 	set_cat 0
-	setrest 7,0x150
+	setrest 7,iaiGiri.duration
 	call changeEngine
 	engine 0x30
 	rest 0x30
@@ -466,7 +466,7 @@ sequenceIaiGiri:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_iai_giri"
     0xB0<5> 0xA, "docShorts_song_iai_giri_2"
-	setrest 8,0x90
+	setrest 8,iaiGiri.banner
 	async_call songDisappear, 0x18
 	play_sfx 0x10002E1
 	rest 0x30
@@ -497,7 +497,7 @@ stop
 
 sequenceSmash:
 	set_cat 0
-	setrest 7,0x180
+	setrest 7,smash.duration
 	call changeEngine
 	engine 0xB
 	rest 0x30
@@ -509,7 +509,7 @@ sequenceSmash:
 	0x111 10, 0, 10, 1
     0xB0<4> 0xA, "docShorts_song_smash_melee"
     0xB0<5> 0xA, "docShorts_song_smash_melee_2"
-	setrest 8,0x60
+	setrest 8,smash.banner
 	async_call songDisappear
 	async_call youDisappear
 	0x21 125
@@ -533,7 +533,7 @@ stop
 
 sequenceHereIs:
 	set_cat 0
-	setrest 7, 0x30*24
+	setrest 7, hereIs.duration
     call changeEngine
     engine 0x1C
 	rest 0x30
@@ -544,7 +544,7 @@ sequenceHereIs:
     fade<1> 1, 3, 0x30
     0xB0<4> 0xA, "docShorts_song_here_is"
     0xB0<5> 0xA, "docShorts_song_here_is_2"
-	setrest 8,0x90
+	setrest 8,hereIs.banner
 	async_call songDisappear
     rest 0x30
     async_call playHereIs

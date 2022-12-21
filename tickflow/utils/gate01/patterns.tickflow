@@ -51,7 +51,7 @@ label 0x6F
 stop 
 
 sequenceBannerSickBeats:
-    setrest 7, 0xC0
+    setrest 7, virus.duration
 	0xB3 9, 0x40
     0x109 1
     0x10A 0
@@ -81,7 +81,7 @@ stop
 
 sequenceWii:
 	set_cat 0
-	setrest 7, 0x210
+	setrest 7, wii.duration
 	0xB3 9, 0x28
 	call changeEngine
 	engine 0x28
@@ -93,7 +93,7 @@ sequenceWii:
     async_call WiiCowbell
     0xB0<4> 0xA, "docShorts_song_remix_wii"
     0xB0<5> 0xA, "docShorts_song_remix_wii_2"
-    setrest 8, 0x60
+    setrest 8, wii.banner
     async_call songDisappear
     rest 0x60
     async_call playWii
@@ -138,7 +138,7 @@ stop
 
 sequenceJackson:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, jackson.duration
 	call changeEngine
 	engine 0x3D
 	rest 0x30
@@ -152,7 +152,7 @@ sequenceJackson:
     play_sfx 0x1000291
     0xB0<4> 0xA, "docShorts_song_moonwalker"
     0xB0<5> 0xA, "docShorts_song_moonwalker_2"
-    setrest 8, 0xC0
+    setrest 8, jackson.banner
     async_call songDisappear
     0x101
     rest 0x30
@@ -181,7 +181,7 @@ stop
 
 sequenceKahoot:
 	set_cat 0
-	setrest 7, 0x390+0x90
+	setrest 7, kahoot.duration
     call changeEngine
     engine 0x7
     rest 0x30
@@ -200,7 +200,7 @@ sequenceKahoot:
     async_call playKahoot
     0xB0<4> 0xA, "docShorts_song_kahoot"
     0xB0<5> 0xA, "docShorts_song_kahoot_2"
-    setrest 8, 0xC0
+    setrest 8, kahoot.banner
     async_call songDisappear
     0x105<1>
     0x101<2>
@@ -267,7 +267,7 @@ stop
 
 sequenceGalaga:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, galaga.duration
 	call changeEngine
 	engine 0x23
 	rest 0x30
@@ -285,7 +285,7 @@ sequenceGalaga:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_galaga"
     0xB0<5> 0xA, "docShorts_song_galaga_2"
-    setrest 8, 0xC0*2
+    setrest 8, galaga.banner
     async_call songDisappear,0x18
     play_sfx 0x10002DF
     rest 0x30
@@ -312,7 +312,7 @@ stop
 
 sequenceMetroid:
 	set_cat 0
-	setrest 7, 0x150
+	setrest 7, metroid.duration
     call changeEngine
     engine 0x37
 	rest 0x30
@@ -324,7 +324,7 @@ sequenceMetroid:
     async_call beatLoop
     0xB0<4> 0xA, "docShorts_song_metroid_item"
     0xB0<5> 0xA, "docShorts_song_metroid_item_2"
-    setrest 8, 0x90
+    setrest 8, metroid.banner
     async_call songDisappear
     play_sfx 0x1000291
     rest 0x30
@@ -341,7 +341,7 @@ stop
 
 sequenceWiiFit:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, wiiFit.duration
     call changeEngine
     engine 0x3C
 	rest 0x30
@@ -353,7 +353,7 @@ sequenceWiiFit:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_wii_fit"
     0xB0<5> 0xA, "docShorts_song_wii_fit_2"
-    setrest 8, 0xC0
+    setrest 8, wiiFit.banner
     async_call songDisappear
     input 1
     rest 0x18
@@ -386,7 +386,7 @@ stop
 
 sequencePhantomThief:
 	set_cat 0
-	setrest 7, 0x300
+	setrest 7, phantomThief.duration
     call changeEngine
     engine 0x2
 	rest 0x30
@@ -399,7 +399,7 @@ sequencePhantomThief:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_phantom_thief"
     0xB0<5> 0xA, "docShorts_song_phantom_thief_2"
-    setrest 8, 0xC0
+    setrest 8, phantomThief.banner
     async_call songDisappear
     input 1
     sub 0x56
@@ -415,7 +415,7 @@ stop
 
 sequencePokemonBadge:
 	set_cat 0
-	setrest 7, 0x270
+	setrest 7, pokeBadge.duration
     call changeEngine
     engine 0x36
 	rest 0x30
@@ -431,7 +431,7 @@ sequencePokemonBadge:
     async_call kecleonBeat
     0xB0<4> 0xA, "docShorts_song_pokemon_badge"
     0xB0<5> 0xA, "docShorts_song_pokemon_badge_2"
-    setrest 8, 0xC0
+    setrest 8, pokeBadge.banner
     async_call songDisappear
     rest 0x30
     async_call playPokemonBadge
@@ -462,7 +462,7 @@ stop
 
 sequenceRescueVvvvvv:
 	set_cat 0
-	setrest 7, 0x1E0
+	setrest 7, vvvvvvRescue.duration
     call changeEngine
     engine 0x9
 	rest 0x30
@@ -473,7 +473,7 @@ sequenceRescueVvvvvv:
     async_call playRescueVvvvvv
     0xB0<4> 0xA, "docShorts_song_vvvvvv_rescue"
     0xB0<5> 0xA, "docShorts_song_vvvvvv_rescue_2"
-    setrest 8, 0xC0
+    setrest 8, vvvvvvRescue.banner
     async_call songDisappear
     async_call youDisappear
     fade<1> 1,1,0x30
@@ -491,7 +491,7 @@ stop
 
 sequenceHatInTime:
 	set_cat 0
-	setrest 7, 0x2A0
+	setrest 7, hatInTime.duration
     call changeEngine
     engine 0x1B
 	rest 0x30
@@ -501,7 +501,7 @@ sequenceHatInTime:
     async_call playHatInTime
     0xB0<4> 0xA, "docShorts_song_timepiece_ahit"
     0xB0<5> 0xA, "docShorts_song_timepiece_ahit_2"
-    setrest 8, 0xC0
+    setrest 8, hatInTime.banner
     async_call songDisappear
     0x104<1>
     fade<1> 1,1,0x30
@@ -520,7 +520,7 @@ stop
 
 sequenceKlonoa:
 	set_cat 0
-	setrest 7, 0x240
+	setrest 7, klonoaTitle.duration
     call changeEngine
     engine 0x3A
 	rest 0x48
@@ -529,7 +529,7 @@ sequenceKlonoa:
 
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_klonoa"
-    setrest 8, 0xC0
+    setrest 8, klonoaTitle.banner
     async_call songDisappear
     play_sfx 0x1000921
     rest 0x30

@@ -1,0 +1,37 @@
+//Timings for each pattern. Format pattern.timing
+
+virus.duration = 0xC0
+virus.banner = 0x90
+
+wii.duration = 0x210
+wii.banner = 0x60
+
+jackson.duration = 0x300
+jackson.banner = 0xC0
+
+kahoot.duration = 0x390+0x90
+kahoot.banner = 0xC0
+
+galaga.duration = 0x300
+galaga.banner = 0xC0*2
+
+metroid.duration = 0x150
+metroid.banner = 0x90
+
+wiiFit.duration = 0x300
+wiiFit.banner = 0xC0
+
+phantomThief.duration = 0x300
+phantomThief.banner = 0xC0
+
+pokeBadge.duration = 0x270
+pokeBadge.banner = 0xC0
+
+vvvvvvRescue.duration = 0x1E0
+vvvvvvRescue.banner = 0xC0
+
+hatInTime.duration = 0x2A0
+hatInTime.banner = 0xC0
+
+klonoaTitle.duration = 0x240
+klonoaTitle.banner = 0xC0

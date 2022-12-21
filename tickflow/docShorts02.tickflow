@@ -1,7 +1,10 @@
 // Rhythm Heaven Megamix Remix Tickflow Template w/o Comments
 // Created by EpicHaxGuy (Discord: Epic Hax Guy#0216). DM or ping to suggest changes/report bugs!
 // v1.4.3, updated January 7th, 2022
-// If you wanted the remix template without the comment clutter, here you go.
+// If you wanted the re
+
+#include config/commonTimings.tickflow
+#include config/gate3Timings.tickflow
 
 #include utils/gate02/patterns.tickflow
 #include utils/gate02/audio.tickflow
@@ -171,7 +174,7 @@ sub 2
 0x55 1
 0xAF<2> 0, 0, "gate_explain_short"
 0xB0<4> 0xA, "docShorts_song_banner_megamix"
-setrest 8, 0x60
+setrest 8, clap.banner
 play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
 rest 0xC0	// 4.0 beats

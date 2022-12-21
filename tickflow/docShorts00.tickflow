@@ -3,6 +3,8 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
+#include config/commonTimings.tickflow
+#include config/gate1Timings.tickflow
 
 #include utils/gate00/patterns.tickflow
 #include utils/gate00/loadAudio.tickflow
@@ -19,6 +21,7 @@
 #include utils/games/builtToScaleDS.tickflow
 #include utils/games/manzai.tickflow
 #include utils/games/meatGrinderSubs.tickflow
+
 
 // #index 0x1A
 #index 0x10C
@@ -162,7 +165,7 @@ sub 2
 0x55 1
 0xAF<2> 0, 0, "gate_explain_short"
 0xB0<4> 0xA, "docShorts_song_banner_megamix"
-setrest 8, 0xC0
+setrest 8, coin.banner
 play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
 rest 0xC0	// 4.0 beats
