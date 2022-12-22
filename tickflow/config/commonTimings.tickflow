@@ -1,19 +1,19 @@
 //Timings for each pattern. Format pattern.timing
 
-tomodachi.duration =0x450
-tomodachi.banner = 0xF0
+tomodachiDuration =0x450
+tomodachiBanner = 0xF0
 
-rhythmMasters.duration = 0x3C0
-rhythmMasters.banner = 0x90
+rhythmMastersDuration = 0x3C0
+rhythmMastersBanner = 0x90
 
-zeldaWood.duration = 0x258
-zeldaWood.banner = 0x90
+zeldaWoodDuration = 0x258
+zeldaWoodBanner = 0x90
 
-rayman.duration = 0x1B0
-rayman.banner = 0xC0
+raymanDuration = 0x1B0
+raymanBanner = 0xC0
 
-konga.duration = 0x30*20
-konga.banner = 0x60
+kongaDuration = 0x30*20
+kongaBanner = 0x60
 
-tofu.duration = 0x30*32
-tofu.banner = 0x90
+tofuDuration = 0x30*32
+tofuBanner = 0x90

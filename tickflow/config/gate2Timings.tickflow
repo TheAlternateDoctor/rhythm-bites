@@ -1,37 +1,37 @@
 //Timings for each pattern. Format pattern.timing
 
-virus.duration = 0xC0
-virus.banner = 0x90
+virusDuration = 0xC0
+virusBanner = 0x90
 
-wii.duration = 0x210
-wii.banner = 0x60
+wiiDuration = 0x210
+wiiBanner = 0x60
 
-jackson.duration = 0x300
-jackson.banner = 0xC0
+jacksonDuration = 0x300
+jacksonBanner = 0xC0
 
-kahoot.duration = 0x390+0x90
-kahoot.banner = 0xC0
+kahootDuration = 0x390+0x90
+kahootBanner = 0xC0
 
-galaga.duration = 0x300
-galaga.banner = 0xC0*2
+galagaDuration = 0x300
+galagaBanner = 0xC0*2
 
-metroid.duration = 0x150
-metroid.banner = 0x90
+metroidDuration = 0x150
+metroidBanner = 0x90
 
-wiiFit.duration = 0x300
-wiiFit.banner = 0xC0
+wiiFitDuration = 0x300
+wiiFitBanner = 0xC0
 
-phantomThief.duration = 0x300
-phantomThief.banner = 0xC0
+phantomThiefDuration = 0x300
+phantomThiefBanner = 0xC0
 
-pokeBadge.duration = 0x270
-pokeBadge.banner = 0xC0
+pokeBadgeDuration = 0x270
+pokeBadgeBanner = 0xC0
 
-vvvvvvRescue.duration = 0x1E0
-vvvvvvRescue.banner = 0xC0
+vvvvvvRescueDuration = 0x1E0
+vvvvvvRescueBanner = 0xC0
 
-hatInTime.duration = 0x2A0
-hatInTime.banner = 0xC0
+hatInTimeDuration = 0x2A0
+hatInTimeBanner = 0xC0
 
-klonoaTitle.duration = 0x240
-klonoaTitle.banner = 0xC0
+klonoaTitleDuration = 0x240
+klonoaTitleBanner = 0xC0

@@ -165,7 +165,7 @@ sub 2
 0x55 1
 0xAF<2> 0, 0, "gate_explain_short"
 0xB0<4> 0xA, "docShorts_song_banner_megamix"
-setrest 8, coin.banner
+setrest 8, coinBanner
 play_sfx 0x10002DC
 rest 0xC0	// 4.0 beats
 rest 0xC0	// 4.0 beats

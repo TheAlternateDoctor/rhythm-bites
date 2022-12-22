@@ -1,6 +1,6 @@
 sequenceMiitopia:
 	set_cat 0
-	setrest 7, miitopia.duration
+	setrest 7, miitopiaDuration
 	call changeEngine
 	engine 0x2F
 	rest 0x30
@@ -10,7 +10,7 @@ sequenceMiitopia:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_miitopia"
     0xB0<5> 0xA, "docShorts_song_miitopia_2"
-    setrest 8, miitopia.banner
+    setrest 8, miitopiaBanner
     async_call songDisappear
     async_call youDisappear
     async_sub 0x5D
@@ -33,7 +33,7 @@ goto beatYokaiWatch
 
 sequenceYokaiWatch:
 	set_cat 0
-	setrest 7, yokai.duration
+	setrest 7, yokaiDuration
 	call changeEngine
 	engine 0x27
     0x21 147
@@ -46,7 +46,7 @@ sequenceYokaiWatch:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_yokai_watch"
     0xB0<5> 0xA, "docShorts_song_yokai_watch_2"
-    setrest 8, yokai.banner
+    setrest 8, yokaiBanner
     async_call songDisappear
     async_call playYokaiWatch
     rest 0xC0
@@ -60,7 +60,7 @@ stop
 
 sequenceSplatoon:
 	set_cat 0
-	setrest 7, splatoon.duration
+	setrest 7, splatoonDuration
 	call changeEngine
 	engine 0x22
 	rest 0x60
@@ -73,7 +73,7 @@ sequenceSplatoon:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_splatoon"
     0xB0<5> 0xA, "docShorts_song_splatoon_2"
-    setrest 8, splatoon.banner
+    setrest 8, splatoonBanner
     async_call songDisappear
     async_call playSplatoon
     rest 0x1E
@@ -113,7 +113,7 @@ stop
 
 sequenceCaveStory:
 	set_cat 0
-	setrest 7, caveStory.duration
+	setrest 7, caveStoryDuration
 	call changeEngine
 	engine 0x26
     0x21 135
@@ -129,7 +129,7 @@ sequenceCaveStory:
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_cave_story"
     0xB0<5> 0xA, "docShorts_song_cave_story_2"
-    setrest 8, caveStory.banner
+    setrest 8, caveStoryBanner
     async_call songDisappear
     async_call youDisappear
     async_call smallStartSeal
@@ -148,7 +148,7 @@ stop
 
 sequenceTF2:
 	set_cat 0
-	setrest 7, tf2.duration
+	setrest 7, tf2Duration
     call changeEngine
     engine 0x1
 	rest 0x30
@@ -162,7 +162,7 @@ sequenceTF2:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_tf2"
     0xB0<5> 0xA, "docShorts_song_tf2_2"
-    setrest 8, tf2.banner
+    setrest 8, tf2Banner
     async_call songDisappear
     async_call youDisappear
     input 1
@@ -212,7 +212,7 @@ stop
 
 sequenceDaftPunk:
 	set_cat 0
-	setrest 7, daftPunk.duration
+	setrest 7, daftPunkDuration
 	// setrest 7, 0x4C0
     call changeEngine
     engine 0x11
@@ -226,7 +226,7 @@ sequenceDaftPunk:
     fade<1> 1, 3, 0x30
     0xB0<4> 0xA, "docShorts_song_daft_punk"
     0xB0<5> 0xA, "docShorts_song_daft_punk_2"
-    setrest 8, daftPunk.banner
+    setrest 8, daftPunkBanner
     async_call songDisappear
     async_call permadark
     async_call battement
@@ -243,7 +243,7 @@ stop
 
 sequencePacMan:
 	set_cat 0
-	setrest 7, pacman.duration
+	setrest 7, pacmanDuration
     call changeEngine
     engine 0x24
 	rest 0x30
@@ -255,7 +255,7 @@ sequencePacMan:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_pacman"
     0xB0<5> 0xA, "docShorts_song_pacman_2"
-    setrest 8, pacman.banner
+    setrest 8, pacmanBanner
     async_call songDisappear
     input 1
     rest 0x30
@@ -282,7 +282,7 @@ stop
 
 sequenceNTR:
 	set_cat 0
-	setrest 7, ntr.duration
+	setrest 7, ntrDuration
 	0xB3 9, 0x28
     call changeEngine
     engine 0x28
@@ -295,7 +295,7 @@ sequenceNTR:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_remix_ds"
     0xB0<5> 0xA, "docShorts_song_remix_ds_2"
-    setrest 8, ntr.banner
+    setrest 8, ntrBanner
     async_call songDisappear
     play_sfx 0x1000291
     0x104 0
@@ -316,7 +316,7 @@ stop
 
 sequenceJimmyT:
 	set_cat 0
-	setrest 7, jimmyT.duration
+	setrest 7, jimmyTDuration
     call changeEngine
     engine 0
 	rest 0x30
@@ -328,7 +328,7 @@ sequenceJimmyT:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_jimmy_t"
     0xB0<5> 0xA, "docShorts_song_jimmy_t_2"
-    setrest 8, jimmyT.banner
+    setrest 8, jimmyTBanner
     async_call songDisappear
     rest 0x60
     async_call playJimmyT
@@ -349,7 +349,7 @@ stop
 
 sequenceMGS:
 	set_cat 0
-	setrest 7, mgs.duration
+	setrest 7, mgsDuration
     call changeEngine
     engine 0x2E
     rest 0x30
@@ -360,7 +360,7 @@ sequenceMGS:
     async_call playMGS, 0x30
     0xB0<4> 0xA, "docShorts_song_metal_gear"
     0xB0<5> 0xA, "docShorts_song_metal_gear_2"
-    setrest 8, mgs.banner
+    setrest 8, mgsBanner
     async_call songDisappear
     fade<1> 1,1,0x30
     0x106 1
@@ -420,7 +420,7 @@ stop
 
 sequenceGameWatch: //TODO
 	set_cat 0
-	setrest 7, gameWatch.duration
+	setrest 7, gameWatchDuration
     call changeEngine
     engine 0x12
     rest 0x30
@@ -431,7 +431,7 @@ sequenceGameWatch: //TODO
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_game_watch_smash"
     0xB0<5> 0xA, "docShorts_song_game_watch_smash_2"
-    setrest 8, gameWatch.banner
+    setrest 8, gameWatchBanner
     async_call songDisappear
     async_call patternGameWatch
     rest 0x30
@@ -516,7 +516,7 @@ stop
 
 sequenceTheLick:
 	set_cat 0
-	setrest 7, lick.duration
+	setrest 7, lickDuration
     call changeEngine
     engine 0x14
     rest 0x30
@@ -526,7 +526,7 @@ sequenceTheLick:
     fade<1> 1,1,0x30
     input 1
     0xB0<5> 0xA, "docShorts_song_the_lick_2"
-    setrest 8, lick.banner
+    setrest 8, lickBanner
     async_call songDisappear
     rest 0x30
     async_call playTheLick
@@ -554,7 +554,7 @@ goto dateBeat
 
 sequenceKlonoaHeroes:
 	set_cat 0
-	setrest 7, klonoaHeroes.duration
+	setrest 7, klonoaHeroesDuration
     call changeEngine
     engine 0x21
     rest 0x30
@@ -565,7 +565,7 @@ sequenceKlonoaHeroes:
     0x21 155
     0xB0<4> 0xA, "docShorts_song_klonoa_heroes"
     0xB0<5> 0xA, "docShorts_song_klonoa_heroes_2"
-    setrest 8, klonoaHeroes.banner
+    setrest 8, klonoaHeroesBanner
     async_call songDisappear
     async_call dateBeat
     play_sfx 0x1000291
@@ -590,7 +590,7 @@ stop
 
 sequenceBallance:
 	set_cat 0
-	setrest 7, ballance.duration
+	setrest 7, ballanceDuration
     call changeEngine
     engine 0x1B
     rest 0x18
@@ -605,7 +605,7 @@ sequenceBallance:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_ballance"
     0xB0<5> 0xA, "docShorts_song_ballance_2"
-    setrest 8, ballance.banner
+    setrest 8, ballanceBanner
     input 1
     async_call songDisappear
     async_call somenBeat
@@ -624,7 +624,7 @@ stop
 
 sequenceMelodii:
 	set_cat 0
-	setrest 7, melodii.duration
+	setrest 7, melodiiDuration
     call changeEngine
     engine 0x3C
     rest 0x18
@@ -637,7 +637,7 @@ sequenceMelodii:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_melodii"
     0xB0<5> 0xA, "docShorts_song_melodii_2"
-    setrest 8, melodii.banner
+    setrest 8, melodiiBanner
     async_call songDisappear
     async_call playMelodii
     rest 0x18
@@ -668,7 +668,7 @@ stop
 
 sequenceGrooveRush:
 	set_cat 0
-	setrest 7, sonicRush.duration
+	setrest 7, sonicRushDuration
     call changeEngine
     engine 0xC
     rest 0x18
@@ -681,7 +681,7 @@ sequenceGrooveRush:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_groove_rush"
     0xB0<5> 0xA, "docShorts_song_groove_rush_2"
-    setrest 8, sonicRush.banner
+    setrest 8, sonicRushBanner
     async_call songDisappear, 0x18
     async_call playGrooveRush, 0x18
     async_call tapTroupe2Count

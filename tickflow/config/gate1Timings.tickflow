@@ -1,37 +1,37 @@
 //Timings for each pattern. Format pattern.timing
 
-coin.duration = 0x180
-coin.banner = 0xC0
+coinDuration = 0x180
+coinBanner = 0xC0
 
-agb.duration = 0x150
-agb.banner = 0x60
+agbDuration = 0x150
+agbBanner = 0x60
 
-zeldaHair.duration = 0x120
-zeldaHair.banner = 0x78
+zeldaHairDuration = 0x120
+zeldaHairBanner = 0x78
 
-sonicTitle.duration = 0x2D0
-sonicTitle.banner = 0x60
+sonicTitleDuration = 0x2D0
+sonicTitleBanner = 0x60
 
-rhythmDr.duration = 0x330
-rhythmDr.banner = 0x30
+rhythmDrDuration = 0x330
+rhythmDrBanner = 0x30
 
-valve.duration = 0x1B0
-valve.banner = 0x60
+valveDuration = 0x1B0
+valveBanner = 0x60
 
-wwdiy.duration = 0xF0
-wwdiy.banner = 0x90
+wwdiyDuration = 0xF0
+wwdiyBanner = 0x90
 
-pmd.duration = 0x180
-pmd.banner = 0x90
+pmdDuration = 0x180
+pmdBanner = 0x90
 
-kirbyDance.duration = 0x240
-kirbyDance.banner = 0xC0
+kirbyDanceDuration = 0x240
+kirbyDanceBanner = 0xC0
 
-iaiGiri.duration = 0x150
-iaiGiri.banner = 0x90
+iaiGiriDuration = 0x150
+iaiGiriBanner = 0x90
 
-smash.duration = 0x180
-smash.banner = 0x60
+smashDuration = 0x180
+smashBanner = 0x60
 
-hereIs.duration = 0x30*24
-hereIs.banner = 0x90
+hereIsDuration = 0x30*24
+hereIsBanner = 0x90

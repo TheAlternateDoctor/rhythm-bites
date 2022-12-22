@@ -1,49 +1,49 @@
 //Timings for each pattern. Format pattern.timing
 
-miitopia.duration = 0x270
-miitopia.banner = 0xC0
+miitopiaDuration = 0x270
+miitopiaBanner = 0xC0
 
-yokai.duration = 0x1E0
-yokai.banner = 0xF0
+yokaiDuration = 0x1E0
+yokaiBanner = 0xF0
 
-splatoon.duration = 0x1B0
-splatoon.banner = 0x90
+splatoonDuration = 0x1B0
+splatoonBanner = 0x90
 
-caveStory.duration = 0x1E0
-caveStory.banner = 0xC0
+caveStoryDuration = 0x1E0
+caveStoryBanner = 0xC0
 
-tf2.duration = 0x150
-tf2.banner = 0x60
+tf2Duration = 0x150
+tf2Banner = 0x60
 
-daftPunk.duration = 0x3C0
-daftPunk.banner = 0xF0
+daftPunkDuration = 0x3C0
+daftPunkBanner = 0xF0
 
-pacman.duration = 0x180
-pacman.banner = 0x90
+pacmanDuration = 0x180
+pacmanBanner = 0x90
 
-ntr.duration = 0x1B0
-ntr.banner = 0x90
+ntrDuration = 0x1B0
+ntrBanner = 0x90
 
-jimmyT.duration = 0x30*5
-jimmyT.banner = 0x90
+jimmyTDuration = 0x30*5
+jimmyTBanner = 0x90
 
-mgs.duration = 0x30*12
-mgs.banner = 0xF0
+mgsDuration = 0x30*12
+mgsBanner = 0xF0
 
-gameWatch.duration = 0x30*8
-gameWatch.banner = 0x90
+gameWatchDuration = 0x30*8
+gameWatchBanner = 0x90
 
-lick.duration = 0x30*24
-lick.banner = 0x90
+lickDuration = 0x30*24
+lickBanner = 0x90
 
-klonoaHeroes.duration = 0x30*10
-klonoaHeroes.banner = 0x90
+klonoaHeroesDuration = 0x30*10
+klonoaHeroesBanner = 0x90
 
-ballance.duration = 0x30*18
-ballance.banner = 0x90
+ballanceDuration = 0x30*18
+ballanceBanner = 0x90
 
-melodii.duration = 0x30*10
-melodii.banner = 0x90
+melodiiDuration = 0x30*10
+melodiiBanner = 0x90
 
-sonicRush.duration = 0x30*10
-sonicRush.banner = 0x90
+sonicRushDuration = 0x30*10
+sonicRushBanner = 0x90

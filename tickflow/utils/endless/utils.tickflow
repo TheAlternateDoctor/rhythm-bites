@@ -992,7 +992,7 @@ switchSickBeats:
     0xAF<6> 0
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
-    setrest 8, virus.banner
+    setrest 8, virusBanner
     async_call songDisappear
 return
 
@@ -1004,7 +1004,7 @@ switchCoinToss:
     0xAF<6> 0
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
-    setrest 8, coin.duration
+    setrest 8, coinDuration
     async_call songDisappear
 return
 
@@ -1016,7 +1016,7 @@ switchClapTrap:
     0xAF<6> 0
 	fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_banner_megamix"
-    setrest 8, clap.banner
+    setrest 8, clapBanner
     async_call songDisappear
 return
 
