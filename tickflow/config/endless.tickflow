@@ -2,48 +2,67 @@
 
 miitopiaDuration = 0x270
 miitopiaBanner = 0xC0
+miitopiaVolume = 0xAA
 
 yokaiDuration = 0x1E0
 yokaiBanner = 0xF0
+yokaiVolume = 0x188
 
 splatoonDuration = 0x1B0
 splatoonBanner = 0x90
+splatoonVolume = 0xCC
 
 caveStoryDuration = 0x1E0
 caveStoryBanner = 0xC0
+caveStoryVolume = 0x140
 
 tf2Duration = 0x150
 tf2Banner = 0x60
+tf2Volume = 0x88
 
 daftPunkDuration = 0x3C0
 daftPunkBanner = 0xF0
+daftPunkVolume = 0x211
 
 pacmanDuration = 0x180
 pacmanBanner = 0x90
+pacmanVolume = 0xCC
 
 ntrDuration = 0x1B0
 ntrBanner = 0x90
 
 jimmyTDuration = 0x30*5
 jimmyTBanner = 0x90
+jimmyTVolume = 0x200
 
 mgsDuration = 0x30*12
 mgsBanner = 0xF0
+mgsVolume = 0xFF
 
 gameWatchDuration = 0x30*8
 gameWatchBanner = 0x90
+gameWatchVolume = 0xFF
 
 lickDuration = 0x30*24
 lickBanner = 0x90
+lickVolume = 0xFF
 
 klonoaHeroesDuration = 0x30*10
 klonoaHeroesBanner = 0x90
+klonoaHeroesVolume = 0xFF
 
 ballanceDuration = 0x30*18
 ballanceBanner = 0x90
+ballanceVolume = 0xFF
 
 melodiiDuration = 0x30*10
 melodiiBanner = 0x90
+melodiiVolume = 0xFF
 
 sonicRushDuration = 0x30*10
 sonicRushBanner = 0x90
+sonicRushVolume = 0xFF
+
+moleCricketDuration = 0x30*10
+moleCricketBanner = 0x90
+moleCricketVolume = 0xFF

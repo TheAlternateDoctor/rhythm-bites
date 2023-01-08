@@ -5,33 +5,44 @@ coinBanner = 0xC0
 
 agbDuration = 0x150
 agbBanner = 0x60
+agbVolume = 0x150
 
 zeldaHairDuration = 0x120
 zeldaHairBanner = 0x78
+zeldaHairVolume = 0x130
 
 sonicTitleDuration = 0x2D0
 sonicTitleBanner = 0x60
+sonicTitleVolume = 0x150
 
 rhythmDrDuration = 0x330
 rhythmDrBanner = 0x30
+rhythmDrVolume = 0x188
 
 valveDuration = 0x1B0
 valveBanner = 0x60
+valveVolume = 0x188
 
 wwdiyDuration = 0xF0
 wwdiyBanner = 0x90
+wwdiyVolume = 0x150
 
 pmdDuration = 0x180
 pmdBanner = 0x90
+pmdVolume = 0xFF
 
 kirbyDanceDuration = 0x240
 kirbyDanceBanner = 0xC0
+kirbyDanceVolume = 0x130
 
 iaiGiriDuration = 0x150
 iaiGiriBanner = 0x90
+iaiGiriVolume = 0x300
 
 smashDuration = 0x180
 smashBanner = 0x60
+smashVolume = 0x88
 
 hereIsDuration = 0x30*24
 hereIsBanner = 0x90
+hereIsVolume = 0x250

@@ -5,36 +5,48 @@ clapBanner = 0x60
 
 ctrDuration = 0x1D0
 ctrBanner = 0x60
+ctrVolume = 0x100
 
 finnedDuration = 0x360
 finnedBanner = 0xC0
+finnedVolume = 0xCC
 
 duckHuntDuration = 0x480
 duckHuntBanner = 0xC0 
-
-pokemonTMDuration = 0x150
-pokemonTMBanner = 0x90
-
-cadenceHyruleDuration = 0x500
-cadenceHyruleBanner = 0xF0
-
-dodoACDuration = 0x198
-dodoACBanner = 0xC0
-
-rivalsDuration = 0x400
-rivalsBanner = 0x90
-
-csdDuration = 0x1E0
-csdBanner = 0xC0
-
-wiiMusicDuration = 0x210
-wiiMusicBanner = 0x90
-
-dukeNukemDuration = 0x300
-dukeNukemBanner = 0xC0
+duckHuntVolume = 0x150
 
 banjoKazooieDuration = 0x300
 banjoKazooieBanner = 0xC0
+banjoKazooieVolume = 0x188
+
+pokemonTMDuration = 0x150
+pokemonTMBanner = 0x90
+pokemonTMVolume = 0x150
+
+cadenceHyruleDuration = 0x500
+cadenceHyruleBanner = 0xF0
+cadenceHyruleVolume = 0xFF
+
+dodoACDuration = 0x198
+dodoACBanner = 0xC0
+dodoACVolume = 0x200
+
+rivalsDuration = 0x400
+rivalsBanner = 0x90
+rivalsVolume = 0x288
+
+csdDuration = 0x1E0
+csdBanner = 0xC0
+csdVolume = 0x100
+
+wiiMusicDuration = 0x210
+wiiMusicBanner = 0x90
+wiiMusicVolume = 0x100
+
+dukeNukemDuration = 0x300
+dukeNukemBanner = 0xC0
+dukeNukemVolume = 0x100
 
 accumulaDuration = 0x30*15
 accumulaBanner = 0xC0
+accumulaVolume = 0x180

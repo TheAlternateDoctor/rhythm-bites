@@ -51,8 +51,8 @@ loadNextGame:
                 if 1
                     0xB3 0, 0x2
                 endif
-                set_func 0, sequencePhantomThief
-                set_func 1, loadPhantomThief
+                set_func 0, sequenceRhythmThief
+                set_func 1, loadRhythmThief
                 async_call loadSneakySpirits
                 set_func 3, nop
                 set_func 2, nopR

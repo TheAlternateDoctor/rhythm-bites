@@ -384,9 +384,9 @@ sequenceWiiFit:
     async_sub 0x6D
 stop
 
-sequencePhantomThief:
+sequenceRhythmThief:
 	set_cat 0
-	setrest 7, phantomThiefDuration
+	setrest 7, rhythmThiefDuration
     call changeEngine
     engine 0x2
 	rest 0x30
@@ -395,11 +395,11 @@ sequencePhantomThief:
     0x101<1> 0xFA, 0
 	0xB3 9, 0x2
 
-    async_call playPhantomThief
+    async_call playRhythmThief
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_phantom_thief"
     0xB0<5> 0xA, "docShorts_song_phantom_thief_2"
-    setrest 8, phantomThiefBanner
+    setrest 8, rhythmThiefBanner
     async_call songDisappear
     input 1
     sub 0x56

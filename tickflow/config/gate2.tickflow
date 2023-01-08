@@ -5,33 +5,44 @@ virusBanner = 0x90
 
 wiiDuration = 0x210
 wiiBanner = 0x60
+wiiVolume = 0xD0
 
 jacksonDuration = 0x300
 jacksonBanner = 0xC0
+jacksonVolume = 0x188
 
 kahootDuration = 0x390+0x90
 kahootBanner = 0xC0
+kahootVolume = 0x130
 
 galagaDuration = 0x300
 galagaBanner = 0xC0*2
+galagaVolume = 0x77
 
 metroidDuration = 0x150
 metroidBanner = 0x90
+metroidVolume = 0x188
 
 wiiFitDuration = 0x300
 wiiFitBanner = 0xC0
+wiiFitVolume = 0x188
 
-phantomThiefDuration = 0x300
-phantomThiefBanner = 0xC0
-
-pokeBadgeDuration = 0x270
-pokeBadgeBanner = 0xC0
-
-vvvvvvRescueDuration = 0x1E0
-vvvvvvRescueBanner = 0xC0
-
-hatInTimeDuration = 0x2A0
-hatInTimeBanner = 0xC0
+rhythmThiefDuration = 0x300
+rhythmThiefBanner = 0xC0
+rhythmThiefVolume = 0xCC
 
 klonoaTitleDuration = 0x240
 klonoaTitleBanner = 0xC0
+klonoaTitleVolume = 0x133
+
+pokeBadgeDuration = 0x270
+pokeBadgeBanner = 0xC0
+pokeBadgeVolume = 0x222
+
+vvvvvvRescueDuration = 0x1E0
+vvvvvvRescueBanner = 0xC0
+vvvvvvRescueVolume = 0x130
+
+hatInTimeDuration = 0x2A0
+hatInTimeBanner = 0xC0
+hatInTimeVolume = 0x100

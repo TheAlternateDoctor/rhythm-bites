@@ -103,7 +103,7 @@ endif
 async_call loadSumoLate
 stop
 
-loadPhantomThief:
+loadRhythmThief:
 0xB2 2
 if 1
     remove_sfx 0xA

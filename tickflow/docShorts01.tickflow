@@ -279,10 +279,10 @@ getrest 7
 call fade
 call lifeCheck
 
-async_call loadPhantomThief
+async_call loadRhythmThief
 rest 0x18
 sub 3
-async_call sequencePhantomThief
+async_call sequenceRhythmThief
 rest 0x30
 async_call loadPajama
 rest 0xC0

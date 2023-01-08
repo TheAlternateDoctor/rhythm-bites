@@ -2,18 +2,27 @@
 
 tomodachiDuration =0x450
 tomodachiBanner = 0xF0
+tomodachiVolume = 0x188
 
 rhythmMastersDuration = 0x3C0
 rhythmMastersBanner = 0x90
+rhythmMastersVolume = 0x100
 
 zeldaWoodDuration = 0x258
 zeldaWoodBanner = 0x90
+zeldaWoodVolume = 0x1CC
 
 raymanDuration = 0x1B0
 raymanBanner = 0xC0
+raymanVolume = 0xFF
 
 kongaDuration = 0x30*20
 kongaBanner = 0x60
+kongaVolume = 0x100
 
 tofuDuration = 0x30*32
 tofuBanner = 0x90
+tofuVolume = 0x1BB
+
+ntrVolume = 0x130
+bannerVolume = 0xCC
