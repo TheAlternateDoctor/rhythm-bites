@@ -1,4 +1,4 @@
-//Timings for each pattern. Format pattern.timing
+//Config for each pattern. Format patternConfig
 
 miitopiaDuration = 0x270
 miitopiaBanner = 0xC0

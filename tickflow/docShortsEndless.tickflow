@@ -4,11 +4,11 @@
 // If you wanted the remix template without the comment clutter, here you go.
 
 #include config/debug.tickflow
-#include config/commonTimings.tickflow
-#include config/gate1Timings.tickflow
-#include config/gate2Timings.tickflow
-#include config/gate3Timings.tickflow
-#include config/endlessTimings.tickflow
+#include config/common.tickflow
+#include config/gate1.tickflow
+#include config/gate2.tickflow
+#include config/gate3.tickflow
+#include config/endless.tickflow
 
 #include utils/gate01/patterns.tickflow
 #include utils/gate01/audio.tickflow
@@ -48,8 +48,8 @@
 #include utils/audioCommon.tickflow
 #include utils/utils.tickflow
 
-#index 0x10F
-// #index 0x1A
+// #index 0x10F
+#index 0x1A
 start:
 play_sfx 0x1000294
 rest 0xC	// 0.25 beats
@@ -204,7 +204,7 @@ endif
 0x67<3> -0x6E
 0x67<4> 0x14
 0x67<7> 0xD0
-0x67<1> 2,"scoreCounter_99"
+0x67<1> 2,"scoreCounter_0"
 set_func 5, text
 0xB2 10
 if 0
@@ -239,6 +239,7 @@ label 0x54D
 0xB3 0,0
 
 0x21 115
+async_call toggleSubtitles
 async_call sequenceNTR
 rest 0x30
 async_call loadNextGame
@@ -330,7 +331,7 @@ set_sfx 6, u"GROUP_SHIWAKE"
 rest 0x18	// 0.5 beats
 set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
 rest 0x18	// 0.5 beats
-set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
+set_sfx 0xA, u"shorts/GROUP_SHORTS_NDS"
 rest 0xC	// 0.25 beats
 set_sfx 9, u"GROUP_ENDLESS"
 rest 0xC	// 0.5 beats

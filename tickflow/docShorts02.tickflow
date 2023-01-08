@@ -3,8 +3,8 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the re
 
-#include config/commonTimings.tickflow
-#include config/gate3Timings.tickflow
+#include config/common.tickflow
+#include config/gate3.tickflow
 
 #include utils/gate02/patterns.tickflow
 #include utils/gate02/audio.tickflow

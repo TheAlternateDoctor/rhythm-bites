@@ -3,8 +3,8 @@
 // v1.4.3, updated January 7th, 2022
 // If you wanted the remix template without the comment clutter, here you go.
 
-#include config/commonTimings.tickflow
-#include config/gate1Timings.tickflow
+#include config/common.tickflow
+#include config/gate1.tickflow
 
 #include utils/gate00/patterns.tickflow
 #include utils/gate00/loadAudio.tickflow
