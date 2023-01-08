@@ -5,13 +5,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_WII"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_WII"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_WII"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_WII"
     0xB3 2,1
 endif
 stop
@@ -22,13 +22,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_MOONWALKER"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_MOONWALKER"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_MOONWALKER"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_MOONWALKER"
     0xB3 2,1
 endif
 stop
@@ -39,13 +39,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_KAHOOT"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_KAHOOT"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_KAHOOT"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_KAHOOT"
     0xB3 2,1
 endif
 stop
@@ -56,13 +56,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/F/GROUP_SHORTS_GALAGA"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_GALAGA"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/F/GROUP_SHORTS_GALAGA"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_GALAGA"
     0xB3 2,1
 endif
 async_call loadMicroRowLate
@@ -74,13 +74,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_METROID"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_METROID"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_METROID"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_METROID"
     0xB3 2,1
 endif
 stop
@@ -91,13 +91,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_WII_FIT"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_WII_FIT"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_WII_FIT"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_WII_FIT"
     0xB3 2,1
 endif
 async_call loadSumoLate
@@ -109,13 +109,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_PHANTOM_THIEF"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_RHYTHM_THIEF"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_PHANTOM_THIEF"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_RHYTHM_THIEF"
     0xB3 2,1
 endif
 stop
@@ -140,11 +140,11 @@ randomKlonoaTitleA:
 random 2
 switch
 case 0
-    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_KLONOA_TITLE"
     0xB0<5> 0xA, "docShorts_song_klonoa_2_bis"
     break
 case 1
-    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE_ALT"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_KLONOA_TITLE_ALT"
     0xB0<5> 0xA, "docShorts_song_klonoa_2"
     break
 endswitch
@@ -153,11 +153,11 @@ randomKlonoaTitleB:
 random 2
 switch
 case 0
-    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_KLONOA_TITLE"
     0xB0<5> 0xA, "docShorts_song_klonoa_2_bis"
     break
 case 1
-    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_KLONOA_TITLE_ALT"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_KLONOA_TITLE_ALT"
     0xB0<5> 0xA, "docShorts_song_klonoa_2"
     break
 endswitch
@@ -169,13 +169,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/F/GROUP_SHORTS_POKEMON_BADGE"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_POKEMON_BADGE"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/F/GROUP_SHORTS_POKEMON_BADGE"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_POKEMON_BADGE"
     0xB3 2,1
 endif
 stop
@@ -186,13 +186,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_VVVVVV_RESCUE"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_VVVVVV_RESCUE"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_VVVVVV_RESCUE"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_VVVVVV_RESCUE"
     0xB3 2,1
 endif
 stop
@@ -203,13 +203,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_HAT_IN_TIME"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_HAT_IN_TIME"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_HAT_IN_TIME"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_HAT_IN_TIME"
     0xB3 2,1
 endif
 stop

@@ -4,13 +4,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_GBA"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_GBA"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_GBA"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_GBA"
     0xB3 2,1
 endif
 stop
@@ -21,13 +21,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_ZELDA_COOK"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_ZELDA_COOK"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_ZELDA_COOK"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_ZELDA_COOK"
     0xB3 2,1
 endif
 stop
@@ -38,13 +38,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/F/GROUP_SHORTS_SONIC"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_SONIC"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/F/GROUP_SHORTS_SONIC"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_SONIC"
     0xB3 2,1
 endif
 stop
@@ -55,13 +55,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_RHYTHM_DR"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_RHYTHM_DR"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_RHYTHM_DR"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_RHYTHM_DR"
     0xB3 2,1
 endif
 stop
@@ -72,13 +72,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_VALVE"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_VALVE"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_VALVE"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_VALVE"
     0xB3 2,1
 endif
 0xB2 1
@@ -95,13 +95,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_HURRY_UP_WW"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_HURRY_UP_WW"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_HURRY_UP_WW"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_HURRY_UP_WW"
     0xB3 2,1
 endif
 stop
@@ -112,13 +112,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/E/GROUP_SHORTS_TEAM_CHARM"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_TEAM_CHARM"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/E/GROUP_SHORTS_TEAM_CHARM"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_TEAM_CHARM"
     0xB3 2,1
 endif
 stop
@@ -129,13 +129,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/F/GROUP_SHORTS_MELEE"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_MELEE"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/F/GROUP_SHORTS_MELEE"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_MELEE"
     0xB3 2,1
 endif
 stop
@@ -146,13 +146,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_KIRBY_CLEAR"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_KIRBY_CLEAR"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_KIRBY_CLEAR"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_KIRBY_CLEAR"
     0xB3 2,1
 endif
 async_call loadKirbyLate
@@ -164,13 +164,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_IAI_GIRI"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_IAI_GIRI"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_IAI_GIRI"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_IAI_GIRI"
     0xB3 2,1
 endif
 stop
@@ -181,13 +181,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_HERE_IS"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_HERE_IS"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_HERE_IS"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_HERE_IS"
     0xB3 2,1
 endif
 0xB2 1

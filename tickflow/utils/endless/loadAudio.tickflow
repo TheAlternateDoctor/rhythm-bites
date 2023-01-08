@@ -5,13 +5,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_NDS"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_NDS"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_NDS"
     0xB3 2,1
 endif
 stop
@@ -22,13 +22,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_SPLATOON"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_SPLATOON"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_SPLATOON"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_SPLATOON"
     0xB3 2,1
 endif
 stop
@@ -39,13 +39,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_MIITOPIA"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_MIITOPIA"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_MIITOPIA"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_MIITOPIA"
     0xB3 2,1
 endif
 stop
@@ -56,13 +56,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_YOKAI_WATCH"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_YOKAI_WATCH"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_YOKAI_WATCH"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_YOKAI_WATCH"
     0xB3 2,1
 endif
 stop
@@ -73,13 +73,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_CAVE_STORY"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_CAVE_STORY"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_CAVE_STORY"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_CAVE_STORY"
     0xB3 2,1
 endif
 stop
@@ -90,13 +90,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_TF2"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_TF2"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_TF2"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_TF2"
     0xB3 2,1
 endif
 stop
@@ -107,13 +107,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_DAFT_PUNK"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_DAFT_PUNK"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_DAFT_PUNK"
     0xB3 2,1
 endif
 async_call loadDJSchoolLate
@@ -125,13 +125,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_PAC_MAN"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_PAC_MAN"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_PAC_MAN"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_PAC_MAN"
     0xB3 2,1
 endif
 stop
@@ -142,13 +142,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_JIMMY_T"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_JIMMY_T"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_JIMMY_T"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_JIMMY_T"
     0xB3 2,1
 endif
 stop
@@ -159,13 +159,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_MISSION_FAILED_MGS"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_MISSION_FAILED_MGS"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_MISSION_FAILED_MGS"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_MISSION_FAILED_MGS"
     0xB3 2,1
 endif
 stop
@@ -176,13 +176,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_VICTORY_GAME_WATCH"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_VICTORY_GAME_WATCH"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_VICTORY_GAME_WATCH"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_VICTORY_GAME_WATCH"
     0xB3 2,1
 endif
 stop
@@ -193,13 +193,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/H/GROUP_SHORTS_KLONOA_HEROES"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_KLONOA_HEROES"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/H/GROUP_SHORTS_KLONOA_HEROES"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_KLONOA_HEROES"
     0xB3 2,1
 endif
 stop
@@ -224,12 +224,12 @@ randomLickA:
 random 2
 switch
 case 0
-    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_THE_LICK"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_THE_LICK"
     0xB0<4> 0xA, "docShorts_song_the_lick"
     break
 case 1
     0xB3 7, 1
-    set_sfx 0xA, u"shorts/G/GROUP_SHORTS_THE_LICK_ALT"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_THE_LICK_ALT"
     0xB0<4> 0xA, "docShorts_song_the_lick_bis"
     break
 endswitch
@@ -238,12 +238,12 @@ randomLickB:
 random 2
 switch
 case 0
-    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_THE_LICK"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_THE_LICK"
     0xB0<4> 0xA, "docShorts_song_the_lick"
     break
 case 1
     0xB3 7, 1
-    set_sfx 0xB, u"shorts/G/GROUP_SHORTS_THE_LICK_ALT"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_THE_LICK_ALT"
     0xB0<4> 0xA, "docShorts_song_the_lick_bis"
     break
 endswitch
@@ -255,13 +255,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_BALLANCE"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_BALLANCE"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_BALLANCE"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_BALLANCE"
     0xB3 2,1
 endif
 async_call loadSoumenLate
@@ -273,13 +273,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_MELODII"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_MELODII"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_MELODII"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_MELODII"
     0xB3 2,1
 endif
 stop

@@ -19,11 +19,11 @@ randomBannerA:
 random 2
 switch
 case 0
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_BANNER"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_BANNER"
     0xB0<5> 0xA, "docShorts_song_banner_megamix_2"
     break
 case 1
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_BANNER_ALT"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_BANNER_ALT"
     0xB0<5> 0xA, "docShorts_song_banner_megamix_2_bis"
     break
 endswitch
@@ -32,11 +32,11 @@ randomBannerB:
 random 2
 switch
 case 0
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_BANNER"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_BANNER"
     0xB0<5> 0xA, "docShorts_song_banner_megamix_2"
     break
 case 1
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_BANNER_ALT"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_BANNER_ALT"
     0xB0<5> 0xA, "docShorts_song_banner_megamix_2_bis"
     break
 endswitch
@@ -48,13 +48,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/C/GROUP_SHORTS_TOMODACHI"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_TOMODACHI"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/C/GROUP_SHORTS_TOMODACHI"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_TOMODACHI"
     0xB3 2,1
 endif
 stop
@@ -65,13 +65,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_RHYTHM_MASTERS"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_RHYTHM_MASTERS"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_RHYTHM_MASTERS"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_RHYTHM_MASTERS"
     0xB3 2,1
 endif
 stop
@@ -82,13 +82,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/D/GROUP_SHORTS_MASTER_SWORD"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_MASTER_SWORD"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/D/GROUP_SHORTS_MASTER_SWORD"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_MASTER_SWORD"
     0xB3 2,1
 endif
 stop
@@ -99,13 +99,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_RAYMAN"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_RAYMAN"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/B/GROUP_SHORTS_RAYMAN"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_RAYMAN"
     0xB3 2,1
 endif
 stop
@@ -116,13 +116,13 @@ if 1
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xA, u"shorts/A/GROUP_SHORTS_KONGA"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_KONGA"
     0xB3 2,0
 else 
     remove_sfx 0xA
     remove_sfx 0xB
     rest 0xC
-    set_sfx 0xB, u"shorts/A/GROUP_SHORTS_KONGA"
+    set_sfx 0xB, u"shorts/GROUP_SHORTS_KONGA"
     0xB3 2,1
 endif
 async_call loadManzaiLate
@@ -147,13 +147,13 @@ loadTofu:
         remove_sfx 0xA
         remove_sfx 0xB
         rest 0xC
-        set_sfx 0xA, u"shorts/F/GROUP_SHORTS_TOFU"
+        set_sfx 0xA, u"shorts/GROUP_SHORTS_TOFU"
         0xB3 2,0
     else 
         remove_sfx 0xA
         remove_sfx 0xB
         rest 0xC
-        set_sfx 0xB, u"shorts/F/GROUP_SHORTS_TOFU"
+        set_sfx 0xB, u"shorts/GROUP_SHORTS_TOFU"
         0xB3 2,1
     endif
     0xB2 1

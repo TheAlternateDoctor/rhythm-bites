@@ -74,7 +74,7 @@ loadTutorial:
     rest 0x18	// 0.5 beats
     set_sfx 3, u"GROUP_WSD_JINGLE_GATE_GAME_START"
     rest 0x18	// 0.5 beats
-    set_sfx 0xA, u"shorts/B/GROUP_SHORTS_NDS"
+    set_sfx 0xA, u"shorts/GROUP_SHORTS_NDS"
     rest 0xC	// 0.25 beats
     set_sfx 0xB, u"GROUP_SUMOU"
     rest 0xC	// 0.25 beats
