@@ -7,7 +7,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x6B
+        random 0x4B
     endif
     switch
         case 0x0 //Jimmy T.
@@ -469,11 +469,37 @@ loadNextGame:
                 if 1
                     0xB3 0, 0x28
                 endif
-                set_func 0, sequenceAGB
-                set_func 1, loadGBA
-                async_call loadKarateGBA
-                set_func 3, nop
-                set_func 2, nopR
+                random 4
+                switch
+                    case 0
+                        set_func 0, sequenceAGB
+                        set_func 1, loadGBA
+                        async_call loadKarateGBA
+                        set_func 3, nop
+                        set_func 2, nopR
+                    break
+                    case 1
+                        set_func 0, sequenceNTR
+                        set_func 1, loadNDS
+                        async_call loadKarateNDS
+                        set_func 3, nop
+                        set_func 2, nopR
+                    break
+                    case 2
+                        set_func 0, sequence3DS
+                        set_func 1, load3DS
+                        async_call loadKarate3DS
+                        set_func 3, nop
+                        set_func 2, nopR
+                    break
+                    case 3
+                        set_func 0, sequenceWii
+                        set_func 1, loadWii
+                        async_call loadKarateWii
+                        set_func 3, nop
+                        set_func 2, nopR
+                    break
+                endswitch
             endif
         break
         case 0x2E //Mission Failed (MGS)
@@ -764,14 +790,14 @@ loadNextGame:
                 set_func 2, switchClapTrap
             endif
         break
-        case 0x4F //Tutorial
+        case 0x43 //Tutorial
             0xB2 9
             if 0x4F //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x4F
+                    0xB3 0, 0x43
                 endif
                 set_func 0, sequenceTomodachi
                 set_func 1, loadTomodachi
@@ -780,62 +806,14 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x61 //Remix Wii
-            0xB2 9
-            if 0x28 //Stop games from being played next to each other
-                goto loadNextGame
-            else
-                0xB2 10
-                if 1
-                    0xB3 0, 0x60
-                endif
-                set_func 0, sequenceWii
-                set_func 1, loadWii
-                async_call loadKarateWii
-                set_func 3, nop
-                set_func 2, nopR
-            endif
-        break
-        case 0x62 //Remix 3DS
-            0xB2 9
-            if 0x28 //Stop games from being played next to each other
-                goto loadNextGame
-            else
-                0xB2 10
-                if 1
-                    0xB3 0, 0x62
-                endif
-                set_func 0, sequence3DS
-                set_func 1, load3DS
-                async_call loadKarate3DS
-                set_func 3, nop
-                set_func 2, nopR
-            endif
-        break
-        case 0x63 //Remix DS
-            0xB2 9
-            if 0x28 //Stop games from being played next to each other
-                goto loadNextGame
-            else
-                0xB2 10
-                if 1
-                    0xB3 0, 0x63
-                endif
-                set_func 0, sequenceNTR
-                set_func 1, loadNDS
-                async_call loadKarateNDS
-                set_func 3, nop
-                set_func 2, nopR
-            endif
-        break
-        case 0x64 //Daft Punk
+        case 0x44 //Daft Punk
             0xB2 9
             if 0x11 //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x64
+                    0xB3 0, 0x44
                 endif
                 set_func 0, sequenceDaftPunk
                 set_func 1, loadDaftPunk
@@ -844,14 +822,14 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x65 //Here Is
+        case 0x45 //Here Is
             0xB2 9
             if 0x1C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x65
+                    0xB3 0, 0x45
                 endif
                 set_func 0, sequenceHereIs
                 set_func 1, loadHereIs
@@ -860,14 +838,14 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x66 //Konga Conga Kappa
+        case 0x46 //Konga Conga Kappa
             0xB2 9
             if 0x3C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x66
+                    0xB3 0, 0x46
                 endif
                 set_func 0, sequenceKonga
                 set_func 1, loadKonga
@@ -876,14 +854,14 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x67 //Accumula Town
+        case 0x47 //Accumula Town
             0xB2 9
             if 0x23 //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x67
+                    0xB3 0, 0x47
                 endif
                 set_func 0, sequenceAccumula
                 set_func 1, loadAccumula
@@ -892,14 +870,14 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x68 //Open Sesame Tofu!
+        case 0x48 //Open Sesame Tofu!
             0xB2 9
             if 0x3C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x68
+                    0xB3 0, 0x48
                 endif
                 set_func 0, sequenceTofu
                 set_func 1, loadTofu
@@ -909,14 +887,14 @@ loadNextGame:
             endif
             0xB3 3,0
         break
-        case 0x69 //Ballance
+        case 0x49 //Ballance
             0xB2 9
             if 0x1B //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x69
+                    0xB3 0, 0x49
                 endif
                 set_func 0, sequenceBallance
                 set_func 1, loadBallance
@@ -924,16 +902,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nopR
             endif
-            0xB3 3,0x6A
         break
-        case 0x6A //Battle Start Melodii
+        case 0x4A //Battle Start Melodii
             0xB2 9
             if 0x3C //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x6A
+                    0xB3 0, 0x4A
                 endif
                 set_func 0, sequenceMelodii
                 set_func 1, loadMelodii
@@ -941,16 +918,15 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nopR
             endif
-            0xB3 3,0x69
         break
-        case 0x6B //Groove Rush #1
+        case 0x4B //Groove Rush #1
             0xB2 9
             if 0xC //Stop games from being played next to each other
                 goto loadNextGame
             else
                 0xB2 10
                 if 1
-                    0xB3 0, 0x6B
+                    0xB3 0, 0x4B
                 endif
                 set_func 0, sequenceGrooveRush
                 // set_func 1, loadGrooveRush
@@ -958,7 +934,6 @@ loadNextGame:
                 set_func 3, nop
                 set_func 2, nopR
             endif
-            0xB3 3,0x69
         break
         default //Restart until we get something damnit
             goto loadNextGame
