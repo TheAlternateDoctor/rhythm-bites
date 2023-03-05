@@ -929,10 +929,11 @@ loadNextGame:
                     0xB3 0, 0x4B
                 endif
                 set_func 0, sequenceGrooveRush
-                // set_func 1, loadGrooveRush
-                // async_call loadTapTroupe
+                set_func 1, loadGrooveRush
+                async_call loadTapTroupe
                 set_func 3, nop
                 set_func 2, nopR
+                0xB3 3, 1337
             endif
         break
         default //Restart until we get something damnit
