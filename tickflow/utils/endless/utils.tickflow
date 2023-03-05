@@ -928,9 +928,9 @@ loadNextGame:
                 if 1
                     0xB3 0, 0x4B
                 endif
-                set_func 0, sequenceGrooveRush
-                set_func 1, loadGrooveRush
-                async_call loadTapTroupe
+                // set_func 0, sequenceGrooveRush
+                // set_func 1, loadGrooveRush
+                // async_call loadTapTroupe
                 set_func 3, nop
                 set_func 2, nopR
                 0xB3 3, 1337
@@ -1033,17 +1033,18 @@ return
 
 toggleSubtitles:
     set_cat 0
-    0x1F<0> 11
+    0x200<0> 11
     if 1
         0xB2 11
         if 0
-            play_sfx 0x1000291
             0xB3 11,1
             0xB2 4
             if 1
                 async_call songDisappear
                 0xB3 4, 0
             else
+                kill_loc songDisappear
+                0xB0<9>
                 0xB3 4, 1
             endif
         endif

@@ -3,13 +3,14 @@ Condvar
 1 - Used Cellanim (1 if 5)
 2 - Used audio slot (1 if 0xA)
 3 - Debug Endless, starting point of the block. Random if 1337
+4 - Subtitles Toggle. 1 has subtitles, 0 has not
 5 - multiple sfx (for recreations) - gets bigger with more slots, ie:1 is 6, 2 is 7, etc...
 6 - Audio pack was loaded previously
-7 - Game specific (10 for Coin Toss, 0x28 for KMGBA's fade)
+7 - Game specific, see section
 8 - Audio Special case has already loaded
 9 - Engine loaded
 10 - Debug mode
-11 - 
+11 - Used to check if we've just pressed Y, or if we held
 
 Subs
 0 - Pattern
@@ -22,3 +23,7 @@ Subs
 Rests
 7 - Shorts Rest
 8 - Song Title Rest
+
+Condvar 7
+10 - Coin Toss is successful
+0x28 - Special fade (Karate Man GBA)

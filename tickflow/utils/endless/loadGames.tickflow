@@ -447,3 +447,16 @@ else
     0xB3 1, 1
 endif
 stop
+
+loadUpbeatLate:
+rest 0xC
+async_call unloadSpeAudio
+rest 0xC
+0xB2 1
+if 1
+    set_sfx 6, u"GROUP_METRO_HELP"
+else
+    set_sfx 6, u"GROUP_METRO_HELP"
+endif
+0xB3 5,1
+stop
