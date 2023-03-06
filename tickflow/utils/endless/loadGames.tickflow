@@ -499,3 +499,25 @@ else
 endif
 0xB3 5,1
 stop
+
+loadSplashdown:
+0xB2 1
+if 1
+    async_call unloadGameSlot4
+else
+    async_call unloadGameSlot5
+endif
+rest 0x60
+0xB2 1
+if 1
+    set_sfx 4, u"GROUP_SPLASH"
+    set_cellanim 4, u"rom:/cellanim/ntrSyncro_long.zlib", -1
+    game_cellanim 0x13, 4
+    0xB3 1, 0
+else
+    set_sfx 5, u"GROUP_SPLASH"
+    set_cellanim 5, u"rom:/cellanim/ntrSyncro_long.zlib", -1
+    game_cellanim 0x13, 5
+    0xB3 1, 1
+endif
+stop

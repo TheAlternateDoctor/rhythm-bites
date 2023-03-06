@@ -41,6 +41,7 @@
 #include utils/games/soumen.tickflow
 #include utils/games/mrUpbeat.tickflow
 #include utils/games/tapTroupe.tickflow
+#include utils/games/splashdown.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/loadGamesCommon.tickflow

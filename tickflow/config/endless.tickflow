@@ -63,6 +63,6 @@ sonicRushDuration = 0x30*10
 sonicRushBanner = 0x90
 sonicRushVolume = 0xFF
 
-moleCricketDuration = 0x30*10
+moleCricketDuration = 0x30*8
 moleCricketBanner = 0x90
 moleCricketVolume = 0xFF

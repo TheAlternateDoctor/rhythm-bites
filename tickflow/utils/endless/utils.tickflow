@@ -936,6 +936,23 @@ loadNextGame:
                 0xB3 3, 1337
             endif
         break
+        case 0x4C //Mole Cricket
+            0xB2 9
+            if 0xC //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 0, 0x4B
+                endif
+                set_func 0, sequenceMoleCricket
+                set_func 1, loadMoleCricket
+                async_call loadSplashdown
+                set_func 3, nop
+                set_func 2, nopR
+                0xB3 3, 1337
+            endif
+        break
         default //Restart until we get something damnit
             goto loadNextGame
         break

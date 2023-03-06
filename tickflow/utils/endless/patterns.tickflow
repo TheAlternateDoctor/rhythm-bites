@@ -693,3 +693,26 @@ sequenceGrooveRush:
     async_call threebomfinal
 stop
 
+sequenceMoleCricket:
+	set_cat 0
+	setrest 7, moleCricketDuration
+    call changeEngine
+    engine 0x13
+    rest 0x18
+    async_call splashdownSetup
+    rest 0x18
+    set_cat 0x7D0
+	0xB3 9, 0x13
+
+    fade<1> 1,0,0x30
+    0xB0<4> 0xA, "docShorts_song_mole_cricket"
+    0xB0<5> 0xA, "docShorts_song_mole_cricket_2"
+    setrest 8, moleCricketBanner
+    async_call songDisappear
+    rest 0x30
+    async_call playMoleCricket
+    async_call down75
+    rest 0x60
+    async_call jump200
+stop
+
