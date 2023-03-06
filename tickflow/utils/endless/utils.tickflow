@@ -710,7 +710,7 @@ loadNextGame:
                 set_func 2, nopR
             endif
         break
-        case 0x3E //Finned Frontier
+        case 0x3E //Finned Frontier, EA Sports
             0xB2 9
             if 0x3E //Stop games from being played next to each other
                 goto loadNextGame
@@ -719,11 +719,23 @@ loadNextGame:
                 if 1
                     0xB3 0, 0x3E
                 endif
-                set_func 0, sequenceFinned
-                set_func 1, loadFinnedSting
-                async_call loadKitties
-                set_func 3, nop
-                set_func 2, nopR
+                random 2
+                switch
+                    case 0
+                        set_func 0, sequenceFinned
+                        set_func 1, loadFinnedSting
+                        async_call loadKitties
+                        set_func 3, nop
+                        set_func 2, nopR
+                    break
+                    case 1
+                        set_func 0, sequenceEASports
+                        set_func 1, loadEASports
+                        async_call loadKitties
+                        set_func 3, nop
+                        set_func 2, nopR
+                    break
+                endswitch
             endif
         break
         case 0x3F //Zelda Mastersword

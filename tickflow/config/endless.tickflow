@@ -66,3 +66,7 @@ sonicRushVolume = 0xFF
 moleCricketDuration = 0x30*8
 moleCricketBanner = 0x90
 moleCricketVolume = 0xFF
+
+eaSportsDuration = 0x30*4
+eaSportsBanner = 0x60
+eaSportsVolume = 0xFF

@@ -716,3 +716,22 @@ sequenceMoleCricket:
     async_call jump200
 stop
 
+sequenceEASports:
+	set_cat 0
+	setrest 7, eaSportsDuration
+    call changeEngine
+    engine 0x3E
+    rest 0x30
+    set_cat 0x7D0
+	0xB3 9, 0x3E
+    
+    fade<1> 1,0,0x30
+    0xB0<4> 0xA, "docShorts_song_ea_sports"
+    0xB0<5> 0xA, "docShorts_song_ea_sports_2"
+    setrest 8, eaSportsBanner
+    async_call songDisappear
+    rest 0x30
+    async_call playEASports
+    0x101 1
+    async_sub 0x56
+stop
