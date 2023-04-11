@@ -144,16 +144,16 @@ rest 0x60
 0xB2 1
 if 1
     set_sfx 4, u"GROUP_NTR_AIR_BOARD"
-    set_model 4, u"rom:/model/ntrAirBoard_long.zlib", 1
+    set_model 0, u"rom:/model/ntrAirBoard_long.zlib", 1
     set_effect 4, u"rom:/effect/ntrAirBoard.zlib", -1
-    game_model 0xE, 4
+    game_model 0xE, 0
     game_effect 0xE, 4
     0xB3 1, 0
 else
     set_sfx 5, u"GROUP_NTR_AIR_BOARD"
-    set_model 5, u"rom:/model/ntrAirBoard_long.zlib", 1
+    set_model 1, u"rom:/model/ntrAirBoard_long.zlib", 1
     set_effect 5, u"rom:/effect/ntrAirBoard.zlib", -1
-    game_model 0xE, 5
+    game_model 0xE, 1
     game_effect 0xE, 5
     0xB3 1, 1
 endif

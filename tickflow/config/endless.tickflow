@@ -59,7 +59,7 @@ melodiiDuration = 0x30*10
 melodiiBanner = 0x90
 melodiiVolume = 0xFF
 
-sonicRushDuration = 0x30*10
+sonicRushDuration = 0x30*12
 sonicRushBanner = 0x90
 sonicRushVolume = 0xFF
 
@@ -67,6 +67,6 @@ moleCricketDuration = 0x30*8
 moleCricketBanner = 0x90
 moleCricketVolume = 0xFF
 
-eaSportsDuration = 0x30*4
+eaSportsDuration = 0x30*2
 eaSportsBanner = 0x60
 eaSportsVolume = 0xFF

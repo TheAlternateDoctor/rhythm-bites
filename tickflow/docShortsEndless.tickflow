@@ -42,6 +42,7 @@
 #include utils/games/mrUpbeat.tickflow
 #include utils/games/tapTroupe.tickflow
 #include utils/games/splashdown.tickflow
+#include utils/games/ntrLoveLabSubs.tickflow
 
 #include utils/patternsCommon.tickflow
 #include utils/loadGamesCommon.tickflow

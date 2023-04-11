@@ -635,6 +635,7 @@ sequenceMelodii:
 	0xB3 9, 0x3C
 
     fade<1> 1,1,0x30
+    input 1
     0xB0<4> 0xA, "docShorts_song_melodii"
     0xB0<5> 0xA, "docShorts_song_melodii_2"
     setrest 8, melodiiBanner
@@ -651,7 +652,7 @@ sequenceMelodii:
     kill_loc cycle
     rest 0x18
     kill_loc metronome
-    play_sfx 0x100028D
+    play_sfx 0x1000B0F
 stop
 
 tapTroupe2Count:
@@ -672,7 +673,8 @@ sequenceGrooveRush:
     call changeEngine
     engine 0xC
     rest 0x18
-    zoom 3, 0xC8, 0xC8
+    zoom 3, 0x168, 0x168
+    pan 3, 8, 0
     0x105 1
     rest 0x18
     set_cat 0x7D0
@@ -681,20 +683,23 @@ sequenceGrooveRush:
     fade<1> 1,1,0x30
     0xB0<4> 0xA, "docShorts_song_groove_rush"
     0xB0<5> 0xA, "docShorts_song_groove_rush_2"
+    input 1
     setrest 8, sonicRushBanner
-    async_call songDisappear, 0x18
-    async_call playGrooveRush, 0x18
+    async_call songDisappear
+    async_call playGrooveRush
+    rest 0x12
     async_call tapTroupe2Count
     rest 0x48
     async_call fourbeatstepinitial
     rest 0xC0
-    async_call twobeatstepprep
+    async_call fourbeatstepprep
     rest 0xC0
     async_call threebomfinal
 stop
 
 sequenceMoleCricket:
 	set_cat 0
+    0x2B 0x13, 8
 	setrest 7, moleCricketDuration
     call changeEngine
     engine 0x13
@@ -707,13 +712,15 @@ sequenceMoleCricket:
     fade<1> 1,0,0x30
     0xB0<4> 0xA, "docShorts_song_mole_cricket"
     0xB0<5> 0xA, "docShorts_song_mole_cricket_2"
+    input 1
     setrest 8, moleCricketBanner
     async_call songDisappear
     rest 0x30
     async_call playMoleCricket
+    rest 0xA
     async_call down75
-    rest 0x60
-    async_call jump200
+    rest 0x66
+    async_call jumpAll
 stop
 
 sequenceEASports:
@@ -728,10 +735,12 @@ sequenceEASports:
     fade<1> 1,0,0x30
     0xB0<4> 0xA, "docShorts_song_ea_sports"
     0xB0<5> 0xA, "docShorts_song_ea_sports_2"
+    input 1
     setrest 8, eaSportsBanner
     async_call songDisappear
-    rest 0x30
-    async_call playEASports
+    rest 0x18
     0x101 1
     async_sub 0x56
+    rest 0x18
+    async_call playEASports
 stop

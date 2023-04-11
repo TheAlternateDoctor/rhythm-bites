@@ -7,7 +7,7 @@ loadNextGame:
         endif
     else
         label 0xD0C6
-        random 0x4B
+        random 0x4D
     endif
     switch
         case 0x0 //Jimmy T.
@@ -736,6 +736,7 @@ loadNextGame:
                         set_func 2, nopR
                     break
                 endswitch
+                0xB3 3, 1337
             endif
         break
         case 0x3F //Zelda Mastersword
@@ -800,6 +801,7 @@ loadNextGame:
                 async_call loadClapTrap
                 set_func 3, nop
                 set_func 2, switchClapTrap
+                0xB3 3, 1337
             endif
         break
         case 0x43 //Tutorial
@@ -913,6 +915,7 @@ loadNextGame:
                 async_call loadSoumen
                 set_func 3, nop
                 set_func 2, nopR
+                0xB3 3, 1337
             endif
         break
         case 0x4A //Battle Start Melodii
@@ -929,6 +932,7 @@ loadNextGame:
                 async_call loadUpbeat
                 set_func 3, nop
                 set_func 2, nopR
+                0xB3 3, 1337
             endif
         break
         case 0x4B //Groove Rush #1
@@ -965,6 +969,23 @@ loadNextGame:
                 0xB3 3, 1337
             endif
         break
+        case 6022 //For testing purposes
+            0xB2 9
+            if 0xC //Stop games from being played next to each other
+                goto loadNextGame
+            else
+                0xB2 10
+                if 1
+                    0xB3 0, 0x4B
+                endif
+                set_func 0, sequenceTest
+                set_func 1, nop
+                async_call loadLoveLab
+                set_func 3, nop
+                set_func 2, nopR
+                0xB3 3, 1337
+            endif
+        break
         default //Restart until we get something damnit
             goto loadNextGame
         break
@@ -980,7 +1001,10 @@ playNextGame:
 	get_async 5, 0
     get_sync 2
     get_async 0, 0
-    0xB0<9>
+	0xB2 4
+	if 0
+		0xB0<9>
+	endif
 	rest 0x30
 	async_call loadNextGame,0x60
 	getrest 7
@@ -1051,7 +1075,6 @@ deadSubEndless: //Just save, but then continue
 	0xAF<2> 1, 0, 0x50DFC6
 	play_sfx 0x1000AB7
 	rest 0xC0	// 4.0 beats
-	rest 0xC0	// 4.0 beats
 	fade 1, 0, 0x60
 	rest 0x60
 	set_func 5, nop
@@ -1062,6 +1085,7 @@ return
 
 toggleSubtitles:
     set_cat 0
+label 0xFC5
     0x200<0> 11
     if 1
         0xB2 11
@@ -1081,6 +1105,7 @@ toggleSubtitles:
         0xB3 11,0
     endif
     rest 1
+goto 0xFC5
 goto toggleSubtitles
 
 nop:

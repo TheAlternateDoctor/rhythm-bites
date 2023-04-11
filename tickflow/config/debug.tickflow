@@ -1,3 +1,33 @@
 //Debug config file.
-debugMode=0
-cyclingMode=1337
+debugMode=1
+cyclingMode=6022
+
+testDuration= 0x30 * 15
+
+sequenceTest:
+	set_cat 0
+	setrest 7, testDuration
+    call changeEngine
+    engine 0x15
+    rest 0x30
+    set_cat 0x7D0
+    
+    fade<1> 1,0,0x30
+    input 1
+    0x8B<1> 0, 14, -43, 28
+    async_call lovelabInputLoop
+    0x112<3>
+
+    rest 0x30
+    async_call cowbellLoop, 0x30
+    async_call lovelabBeatAnim, 0x30
+    call lovelabOneHeart
+    call lovelabOneHeart
+    call lovelabThreeHeart
+    kill_loc lovelabBeatAnim
+stop
+
+cowbellLoop:
+    play_sfx 0x1000291
+    rest 0x30
+goto cowbellLoop

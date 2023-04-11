@@ -74,7 +74,7 @@ playGrooveRush:
 stop
 
 playMoleCricket:
-0x21 135
+0x21 130
 0x40<1> 0x10011C7, moleCricketVolume
 stop
 
