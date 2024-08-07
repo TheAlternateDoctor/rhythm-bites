@@ -1,6 +1,6 @@
 //Debug config file.
-debugMode=1
-cyclingMode=6022
+debugMode=0
+cyclingMode=1337
 
 testDuration= 0x30 * 15
 

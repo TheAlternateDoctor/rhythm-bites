@@ -9,7 +9,43 @@ on:
   workflow_dispatch:
 
 jobs:
-  release:
+  full-mod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+
+      - name: Set up RomFS structure
+        run: |
+          mkdir -p out/
+          cd romfs
+          cp -r ./* ../out/
+
+      - name: Set up Tickflow structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10F/' tickflow/docShortsEndless.tickflow
+
+      - name: Build standard C00.bin
+        run: |
+          sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
+          java -jar tickompiler.jar c tickflow/ bin/
+          java -jar tickompiler.jar p bin/ shorts.bin out/C00.bin
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: Rhythm Bites
+          path: out/
+
+  c00s:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,46 +57,27 @@ jobs:
           java-version: 8
           distribution: adopt
           java-package: jre
-          
-      - name: Create out folder
-        run: mkdir -p out/
+
+      - name: Set up structure
+        run: |
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          mkdir -p out
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10F/' tickflow/docShortsEndless.tickflow
           
       - name: Build C00.bin
         run: |
           sed -i s/debugMode=1/debugMode=0/ tickflow/config/debug.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ shorts.bin out/C00.bin
+          java -jar tickompiler.jar p bin/ base.bin out/C00.bin
           
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: Latest C00
-          path: out/C00.bin
-          
-  debug:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Java
-        uses: actions/setup-java@v3.9.0
-        with:
-          java-version: 8
-          distribution: adopt
-          java-package: jre
-          
-      - name: Create out/debug folder
-        run: mkdir -p out/debug
-          
-      - name: Build C00.bin
+      - name: Build C00.bin debug
         run: |
           sed -i s/debugMode=0/debugMode=1/ tickflow/config/debug.tickflow
           java -jar tickompiler.jar c tickflow/ bin/
-          java -jar tickompiler.jar p bin/ shorts.bin out/debug/C00.bin
-          
+          java -jar tickompiler.jar p bin/ base.bin out/C00-debug.bin
+
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.1
         with:
-          name: Debug C00
-          path: out/debug/C00.bin
+          name: Latest C00.bins
+          path: out/
