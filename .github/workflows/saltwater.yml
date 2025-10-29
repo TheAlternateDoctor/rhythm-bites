@@ -1,0 +1,89 @@
+name: Build Saltwater
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  saltwater:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+          
+      - name: Set up structure
+        run: |
+          wget https://github.com/patataofcourse/Deckompiler/releases/download/v0.2.1/Deckompiler-linux.zip
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          unzip Deckompiler-linux.zip 
+          chmod u+x deckompiler
+          mkdir -p out
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10F/' tickflow/docShortsEndless.tickflow
+          
+      - name: Build release btk
+        run: |
+          java -jar tickompiler.jar c tickflow/ bin/
+          ./deckompiler btks bin/docShortsEndless.bin out/docShortsEndless.btk
+          ./deckompiler btks bin/docShorts00.bin out/docShorts00.btk
+          ./deckompiler btks bin/docShorts01.bin out/docShorts01.btk
+          ./deckompiler btks bin/docShorts02.bin out/docShorts02.btk
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: Latest Saltwater btks
+          path: out/
+          
+  full-mod:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3.9.0
+        with:
+          java-version: 8
+          distribution: adopt
+          java-package: jre
+          
+      - name: Set up RomFS structure
+        run: |
+          mkdir -p out/
+          cd romfs
+          cp -r ./* ../out/
+          cd ../romfs
+          cp -r ./* ../out/
+
+      - name: Set up structure
+        run: |
+          wget https://github.com/patataofcourse/Deckompiler/releases/download/v0.2.1/Deckompiler-linux.zip
+          wget https://github.com/rhmodding/Tickompiler/releases/download/v1.10.0-hotfix/tickompiler.jar
+          unzip Deckompiler-linux.zip 
+          chmod u+x deckompiler
+          sed -r -i 's/#index (0x[0-9A-F]+)/#index 0x10F/' tickflow/docShortsEndless.tickflow
+          
+      - name: Build release btk
+        run: |
+          java -jar tickompiler.jar c tickflow/ bin/
+          ./deckompiler btks bin/docShortsEndless.bin out/docShortsEndless.btk
+          ./deckompiler btks bin/docShorts00.bin out/docShorts00.btk
+          ./deckompiler btks bin/docShorts01.bin out/docShorts01.btk
+          ./deckompiler btks bin/docShorts02.bin out/docShorts02.btk
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: Rhythm Bites (Saltwater)
+          path: out/
